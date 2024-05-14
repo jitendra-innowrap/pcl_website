@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_234" data-name="Rectangle 234" width="20" height="20" transform="translate(20617 6011)" fill="none" stroke="#707070" stroke-width="1"/>
+    </clipPath>
+  </defs>
+  <g id="Workflow_Automation1" data-name="Workflow Automation1" transform="translate(-20617 -6011)" clip-path="url(#clip-path)">
+    <g id="Group_535" data-name="Group 535" transform="translate(2.916 2.916)">
+      <rect id="Rectangle_232" data-name="Rectangle 232" width="9" height="9" transform="translate(20616.084 6010.084)" fill="#cbcbcb"/>
+      <rect id="Rectangle_233" data-name="Rectangle 233" width="9" height="9" transform="translate(20623.084 6017.084)" fill="#cbcbcb"/>
+    </g>
+  </g>
+</svg>

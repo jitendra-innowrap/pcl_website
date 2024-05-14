@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="12px" viewBox="0 0 16 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 43.2 (39069) - http://www.bohemiancoding.com/sketch -->
+    <title>icon-gb-flag</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="16" height="12" rx="1.33333333"></rect>
+        <rect id="path-3" x="0" y="0" width="16" height="12" rx="1.33333333"></rect>
+        <rect id="path-5" x="0" y="0" width="16" height="12" rx="1.33333333"></rect>
+        <rect id="path-7" x="0" y="0" width="16" height="12" rx="1.33333333"></rect>
+        <rect id="path-9" x="0" y="0" width="16" height="12" rx="1.33333333"></rect>
+        <rect id="path-11" x="0" y="0" width="16" height="12" rx="1.33333333"></rect>
+        <rect id="path-13" x="0" y="0" width="16" height="12" rx="1.33333333"></rect>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="iPad-Pro-Portrait" transform="translate(-562.000000, -786.000000)">
+            <g id="icon-gb-flag" transform="translate(562.000000, 786.000000)">
+                <g id="Mask" fill-rule="nonzero" fill="#FFFFFF">
+                    <rect id="path-2" x="0" y="0" width="16" height="12" rx="1.33333333"></rect>
+                </g>
+                <g id="Mask-Copy-Clipped">
+                    <mask id="mask-2" fill="white">
+                        <use xlink:href="#path-1"></use>
+                    </mask>
+                    <g id="path-2"></g>
+                    <rect id="Mask-Copy" fill="#0A17A7" fill-rule="nonzero" mask="url(#mask-2)" x="0" y="0" width="16" height="12"></rect>
+                </g>
+                <g id="Rectangle-2-Clipped">
+                    <mask id="mask-4" fill="white">
+                        <use xlink:href="#path-3"></use>
+                    </mask>
+                    <g id="path-2"></g>
+                    <polygon id="Rectangle-2" fill="#FFFFFF" fill-rule="nonzero" mask="url(#mask-4)" points="3.60424474 8 -2.43138842e-13 8 -2.43138842e-13 4 3.60424474 4 -1.6062456 0.485479886 -0.711536955 -0.84098023 6.0952381 3.75024751 6.0952381 -0.8 9.9047619 -0.8 9.9047619 3.75024751 16.711537 -0.84098023 17.6062456 0.485479886 12.3957553 4 16 4 16 8 12.3957553 8 17.6062456 11.5145201 16.711537 12.8409802 9.9047619 8.24975249 9.9047619 12.8 6.0952381 12.8 6.0952381 8.24975249 -0.711536955 12.8409802 -1.6062456 11.5145201"></polygon>
+                </g>
+                <g id="Line-Clipped">
+                    <mask id="mask-6" fill="white">
+                        <use xlink:href="#path-5"></use>
+                    </mask>
+                    <g id="path-2"></g>
+                    <path d="M10.6674107,3.79931641 L17.9047619,-1.2" id="Line" stroke="#DB1F35" stroke-width="0.5" stroke-linecap="round" mask="url(#mask-6)"></path>
+                </g>
+                <g id="Line-Copy-2-Clipped">
+                    <mask id="mask-8" fill="white">
+                        <use xlink:href="#path-7"></use>
+                    </mask>
+                    <g id="path-2"></g>
+                    <path d="M11.4358724,12.8102041 L17.9237816,8.2185049" id="Line-Copy-2" stroke="#DB1F35" stroke-width="0.5" stroke-linecap="round" mask="url(#mask-8)" transform="translate(14.679827, 10.514355) scale(-1, 1) rotate(-180.000000) translate(-14.679827, -10.514355) "></path>
+                </g>
+                <g id="Line-Copy-Clipped">
+                    <mask id="mask-10" fill="white">
+                        <use xlink:href="#path-9"></use>
+                    </mask>
+                    <g id="path-2"></g>
+                    <path d="M4.57459077,3.7862793 L-2.19284784,-1.00258789" id="Line-Copy" stroke="#DB1F35" stroke-width="0.5" stroke-linecap="round" mask="url(#mask-10)"></path>
+                </g>
+                <g id="Line-Copy-3-Clipped">
+                    <mask id="mask-12" fill="white">
+                        <use xlink:href="#path-11"></use>
+                    </mask>
+                    <g id="path-2"></g>
+                    <path d="M5.30859375,13.3862785 L-2.19284784,8.1629387" id="Line-Copy-3" stroke="#DB1F35" stroke-width="0.5" stroke-linecap="round" mask="url(#mask-12)" transform="translate(1.557873, 10.774609) scale(-1, 1) rotate(-180.000000) translate(-1.557873, -10.774609) "></path>
+                </g>
+                <g id="Rectangle-2-Copy-3-Clipped">
+                    <mask id="mask-14" fill="white">
+                        <use xlink:href="#path-13"></use>
+                    </mask>
+                    <g id="path-2"></g>
+                    <polygon id="Rectangle-2-Copy-3" fill="#E6273E" fill-rule="nonzero" mask="url(#mask-14)" points="0 7.2 6.85714286 7.2 6.85714286 12 9.14285714 12 9.14285714 7.2 16 7.2 16 4.8 9.14285714 4.8 9.14285714 0 6.85714286 0 6.85714286 4.8 0 4.8"></polygon>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

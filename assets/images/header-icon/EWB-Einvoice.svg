@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_238" data-name="Rectangle 238" width="20" height="20" transform="translate(20656 5979)" fill="none" stroke="#707070" stroke-width="1"/>
+    </clipPath>
+  </defs>
+  <g id="EWB_Einvoice" data-name="EWB/Einvoice" transform="translate(-20656 -5979)" clip-path="url(#clip-path)">
+    <g id="Group_536" data-name="Group 536" transform="translate(20658.5 5980.667)">
+      <path id="Path_303" data-name="Path 303" d="M5.5,2.875V13.813H3v2.5a2.5,2.5,0,0,0,2.5,2.5h10a2.5,2.5,0,0,0,2.5-2.5V2.875ZM16.333,16.313a.833.833,0,0,1-1.667,0v-2.5h-7.5V4.646h9.167Z" transform="translate(-3 -2.875)" fill="#de7171"/>
+      <rect id="Rectangle_236" data-name="Rectangle 236" width="7.292" height="1.667" transform="translate(5.156 3.438)" fill="#de7171"/>
+      <rect id="Rectangle_237" data-name="Rectangle 237" width="7.292" height="1.667" transform="translate(5.156 5.938)" fill="#de7171"/>
+    </g>
+  </g>
+</svg>

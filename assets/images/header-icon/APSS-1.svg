@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_247" data-name="Rectangle 247" width="20" height="20" transform="translate(20877 5980)" fill="none" stroke="#707070" stroke-width="1"/>
+    </clipPath>
+  </defs>
+  <g id="APSS" transform="translate(-20877 -5980)" clip-path="url(#clip-path)">
+    <path id="Subtraction_3" data-name="Subtraction 3" d="M18,16H0L9,0l9,16ZM9,7a3,3,0,1,0,3,3A3,3,0,0,0,9,7Z" transform="translate(20878 5982)" fill="#de7171"/>
+  </g>
+</svg>
