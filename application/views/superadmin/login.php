@@ -11,6 +11,9 @@ $siteName = $ret->site_title;
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title><?php echo $siteName;?> - <?php echo $page_title;?></title>
+	
+	<link rel="icon" href="<?php echo base_url();?>assets/images/pcl_favicon.png" type="image/x-icon">
+	<link rel="shortcut icon" type="image/x-icon" href="<?php echo base_url();?>assets/images/pcl_favicon.png">
 
 	<!-- begin::global styles -->
 	<link rel="stylesheet" href="<?php echo base_url();?>adminassets/vendors/bundle.css" type="text/css">
@@ -35,13 +38,13 @@ $siteName = $ret->site_title;
 <div class="container h-100-vh">
 	<div class="row align-items-md-center h-100-vh">
 		<div class="col-lg-6 d-none d-lg-block">
-			<img class="img-fluid" src="<?php echo base_url();?>adminassets/media/svg/login.svg" alt="...">
+			<img class="img-fluid" style="border-radius: 50%;" src="<?php echo base_url();?>adminassets/login-side-img.jpg" alt="...">
 		</div>
 		<div class="col-lg-4 offset-lg-1">
-			<div class="m-b-20">
+			<div class="m-b-20" style="text-align: center;">
 				<img src="<?php echo base_url($ret->logo_img);?>" class="m-r-15" height="55" alt="">
 			</div>
-			<p>Sign in to continue.</p>
+			<p style="text-align: center;font-size: 16px;">Hi, Welcome to PCL Admin Console, Please enter your login credentials below</p>
 			<?php if($this->session->flashdata('success')): ?>
 				<?php echo '<div class="alert alert-success icons-alert">
                                                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -66,9 +69,11 @@ $siteName = $ret->site_title;
 			<?php endif; ?>
 			<form action="" method="post" enctype="multipart/form-data">
 				<div class="form-group mb-4">
+					<label for="email">Email*</label>
 					<input type="email" class="form-control form-control-lg" id="exampleInputEmail1" name="email" autofocus placeholder="Email">
 				</div>
 				<div class="form-group mb-4">
+					<label for="password">Password*</label>
 					<input type="password" class="form-control form-control-lg" id="exampleInputPassword1" name="password" placeholder="Password">
 				</div>
 				<button type="submit" name="btn_signin" class="btn btn-primary btn-lg btn-block btn-uppercase mb-4">Sign In</button>

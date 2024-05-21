@@ -31,6 +31,7 @@
 								<thead>
 								<tr class="text-uppercase">
 									<th>#</th>
+									<th>Name</th>
 									<th>Title</th>
 									<th>Description</th>
 									<th>URL</th>

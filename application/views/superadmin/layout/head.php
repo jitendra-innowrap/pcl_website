@@ -11,11 +11,11 @@
 	<meta property="og:image" content="" />
 	<meta property="og:site_name" content="<?php echo $sitename;?>"/>
 	<!-- FAVICONS ICON -->
-	<link rel="icon" href="<?php echo base_url('assets/images/favicon.ico')?>" type="image/x-icon" />
-	<link rel="shortcut icon" type="image/x-icon" href="<?php echo base_url('assets/images/favicon.ico')?>" />
+	<link rel="icon" href="<?php echo base_url();?>assets/images/pcl_favicon.png" type="image/x-icon" />
+	<link rel="shortcut icon" type="image/x-icon" href="<?php echo base_url();?>assets/images/pcl_favicon.png" />
 	<!-- begin::global styles -->
 	<meta name="msapplication-TileColor" content="#ffffff">
-	<meta name="msapplication-TileImage" content="<?php echo base_url('assets/images/favicon.ico')?>">
+	<meta name="msapplication-TileImage" content="<?php echo base_url();?>assets/images/pcl_favicon.png">
 	<meta name="theme-color" content="#ffffff">
 
 	<link rel="stylesheet" href="<?php echo base_url()?>adminassets/vendors/bundle.css" type="text/css">
@@ -51,6 +51,17 @@
 	<link rel="stylesheet" href="<?php echo base_url()?>/adminassets/vendors/tagsinput/bootstrap-tagsinput.css" type="text/css">
 	<link rel="stylesheet" href="<?php echo base_url()?>adminassets/js/trumbowyg-master/dist/ui/trumbowyg.min.css" type="text/css">
 	<!-- end::tagsinput -->
+	<!-- Select2 CSS -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" rel="stylesheet" />
+<!-- Select2 JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
+<!-- Toastr CSS -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet">
+
+<!-- Toastr JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+
 	<style>
 		.trumbowyg-editor ul{
 			margin-left: 20px;

@@ -16,9 +16,11 @@ class Blogs_Model extends CI_Model
 
 	private function _get_datatables_query()
 	{
-		$this->db->select('b.id,b.title,b.image,b.author,b.blog_date,bc.name,b.order_no,b.status,b.created_date');
-		$this->db->join('blog_category bc','bc.id=b.blog_cat_id','left');
+		$this->db->select('b.id,b.title,b.image,b.author,b.blog_date,GROUP_CONCAT(bc.name SEPARATOR ", ") as categories,b.order_no,b.status,b.created_date');
 		$this->db->from($this->table);
+		$this->db->join('blogs_multi_category bmc', 'bmc.blog_id = b.id', 'left');
+		$this->db->join('blog_category bc', 'bc.id = bmc.category_id', 'left');
+		$this->db->group_by('b.id');
 
 		$i = 0;
 

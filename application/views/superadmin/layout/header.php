@@ -29,7 +29,7 @@
 					</a>
 					<div class="dropdown-menu dropdown-menu-right dropdown-menu-big">
 						<div class="dropdown-menu-title text-center"
-							 data-backround-image="<?php echo base_url()?>/adminassets/media/image/image1.png">
+							 data-backround-image="<?php echo base_url()?>/adminassets/media/image/event_manager_visiting_card.png">
 							<figure class="avatar avatar-state-success avatar-sm m-b-10 bring-forward">
 								<img src="<?php echo base_url()?>/adminassets/media/image/avatar.jpg" class="rounded-circle" alt="image">
 							</figure>

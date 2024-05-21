@@ -9,24 +9,24 @@
 				</a>
 			</li>
 			<li class="side-menu-divider m-t-10">Pages</li>
-			<li class="<?php echo ($act == 2.2 ? 'open':'')?>">
+			<!-- <li class="<?php echo ($act == 2.2 ? 'open':'')?>">
 				<a href="<?php echo base_url() ?>superadmin/administrator/homebanner">
 					<i class="icon fa fa-file-image-o"></i>
 					<span>Home Banner</span>
 				</a>
-			</li>
+			</li> -->
 			<li class="<?php echo ($act == 2.1 ? 'open':'')?>">
 				<a href="<?php echo base_url() ?>superadmin/administrator/banner">
 					<i class="icon fa fa-image"></i>
 					<span>Banner</span>
 				</a>
 			</li>
-			<li class="<?php echo ($active == 3 ? 'open':'')?>">
+			<!-- <li class="<?php echo ($active == 3 ? 'open':'')?>">
 				<a href="<?php echo base_url() ?>superadmin/administrator/clientele">
 					<i class="icon fa fa-user-circle-o"></i>
 					<span>Clientele</span>
 				</a>
-			</li>
+			</li> -->
 <!--			<li class="--><?php //echo ($active == 4 ? 'open':'')?><!--">-->
 <!--				<a href="--><?php //echo base_url() ?><!--superadmin/administrator/counter">-->
 <!--					<i class="icon ti-layout-grid2-thumb"></i>-->
@@ -42,17 +42,20 @@
 					<li><a class="<?php echo ($act == 6.2 ? 'active':'')?>" href="<?php echo base_url() ?>superadmin/administrator/Blogs">Blogs Lists</a></li>
 				</ul>
 			</li>
-            <li class="<?php echo ($active == 7 ? 'open':'')?>">
+			<li><a class="<?php echo ($act == 10.1 ? 'active':'')?>" href="<?php echo base_url() ?>superadmin/administrator/manage_report_policies"> <i class="icon ti-volume"></i>Manage Reports & Policies</a></li>
+			<li><a class="<?php echo ($act == 16.1 ? 'active':'')?>" href="<?php echo base_url() ?>superadmin/administrator/Categories"> <i class="icon ti-notepad"></i>Success Story & Testimonial Categories</a></li>
+			<li><a class="<?php echo ($act == 7.2 ? 'active':'')?>" href="<?php echo base_url() ?>superadmin/administrator/SuccessStory"> <i class="icon ti-agenda"></i>Success Story</a></li>
+            <!-- <li class="<?php echo ($active == 7 ? 'open':'')?>">
                 <a href="#">
-                    <i class="icon ti-agenda"></i><span>Case Studies Master</span>
+                    <i class="icon ti-agenda"></i><span>Success Story Master</span>
                 </a>
                 <ul>
-                    <li><a class="<?php echo ($act == 7.1 ? 'active':'')?>" href="<?php echo base_url() ?>superadmin/administrator/CasestudiesCategory">Case Studies Category</a></li>
-                    <li><a class="<?php echo ($act == 7.2 ? 'active':'')?>" href="<?php echo base_url() ?>superadmin/administrator/Case_studies">Case Studies Lists</a></li>
+                    <li><a class="<?php echo ($act == 7.1 ? 'active':'')?>" href="<?php echo base_url() ?>superadmin/administrator/SuccessStoryCategory">Success Story Category</a></li>
+                    <li><a class="<?php echo ($act == 7.2 ? 'active':'')?>" href="<?php echo base_url() ?>superadmin/administrator/SuccessStory">Success Story</a></li>
                 </ul>
-            </li>
-            <li><a class="<?php echo ($act == 8.1 ? 'active':'')?>" href="<?php echo base_url() ?>superadmin/administrator/newsroom"> <i class="icon ti-notepad"></i> Manage Newsroom</a></li>
-			<li class="<?php echo ($active == 9 ? 'open':'')?>">
+            </li> -->
+      <!-- <li><a class="<?php echo ($act == 8.1 ? 'active':'')?>" href="<?php echo base_url() ?>superadmin/administrator/newsroom"> <i class="icon ti-notepad"></i> Manage Newsroom</a></li> -->
+			<!-- <li class="<?php echo ($active == 9 ? 'open':'')?>">
 				<a href="#">
 					<i class="icon ti-blackboard"></i><span>Webinar Master</span>
 				</a>
@@ -60,9 +63,8 @@
 					<li><a class="<?php echo ($act == 9.1 ? 'active':'')?>" href="<?php echo base_url() ?>superadmin/administrator/speakers">Speakers</a></li>
 					<li><a class="<?php echo ($act == 9.2 ? 'active':'')?>" href="<?php echo base_url() ?>superadmin/administrator/webinars">Webinars</a></li>
 				</ul>
-			</li>
-			<li><a class="<?php echo ($act == 10.1 ? 'active':'')?>" href="<?php echo base_url() ?>superadmin/administrator/gst_notification"> <i class="icon ti-volume"></i> Manage GST Notification</a></li>
-			<li class="<?php echo ($active == 11 ? 'open':'')?>">
+			</li> -->
+			<!-- <li class="<?php echo ($active == 11 ? 'open':'')?>">
 				<a href="#">
 					<i class="icon ti-archive"></i><span>Investors Master</span>
 				</a>
@@ -70,8 +72,8 @@
 					<li><a class="<?php echo ($act == 11.1 ? 'active':'')?>" href="<?php echo base_url() ?>superadmin/administrator/investors_category">Investors Category</a></li>
 					<li><a class="<?php echo ($act == 11.2 ? 'active':'')?>" href="<?php echo base_url() ?>superadmin/administrator/investors">Investors List</a></li>
 				</ul>
-			</li>
-			<li class="<?php echo ($active == 12 ? 'open':'')?>">
+			</li> -->
+			<!-- <li class="<?php echo ($active == 12 ? 'open':'')?>">
 				<a href="#">
 					<i class="icon ti-briefcase"></i><span>Careers Master</span>
 				</a>
@@ -79,8 +81,8 @@
 					<li><a class="<?php echo ($act == 12.1 ? 'active':'')?>" href="<?php echo base_url() ?>superadmin/administrator/careers_department">Careers Department</a></li>
 					<li><a class="<?php echo ($act == 12.2 ? 'active':'')?>" href="<?php echo base_url() ?>superadmin/administrator/careers">Careers</a></li>
 				</ul>
-			</li>
-			<li class="<?php echo ($active == 13 ? 'open':'')?>">
+			</li> -->
+			<!-- <li class="<?php echo ($active == 13 ? 'open':'')?>">
 				<a href="#">
 					<i class="icon ti-layout-accordion-list"></i><span>FAQ Master</span>
 				</a>
@@ -88,8 +90,8 @@
 					<li><a class="<?php echo ($act == 13.1 ? 'active':'')?>" href="<?php echo base_url() ?>superadmin/administrator/faqs_category">FAQ Category</a></li>
 					<li><a class="<?php echo ($act == 13.2 ? 'active':'')?>" href="<?php echo base_url() ?>superadmin/administrator/faqs">FAQ List</a></li>
 				</ul>
-			</li>
-			<li class="<?php echo ($active == 14 ? 'open':'')?>">
+			</li> -->
+			<!-- <li class="<?php echo ($active == 14 ? 'open':'')?>">
 				<a href="#">
 					<i class="icon ti-gallery"></i><span>Ricoh</span>
 				</a>
@@ -106,7 +108,29 @@
 					<li><a class="<?php echo ($act == 15.1 ? 'active':'')?>" href="<?php echo base_url() ?>superadmin/administrator/offers_categories">Offers Categories</a></li>
 					<li><a class="<?php echo ($act == 15.2 ? 'active':'')?>" href="<?php echo base_url() ?>superadmin/administrator/offers">Offers</a></li>
 				</ul>
-			</li>
+			</li> -->
+			<li><a class="<?php echo ($act == 16.2 ? 'active':'')?>" href="<?php echo base_url() ?>superadmin/administrator/Testimonial"> <i class="icon ti-layout-grid2"></i>Testimonial</a></li>
+			<!-- <li class="<?php echo ($active == 16 ? 'open':'')?>">
+				<a href="#">
+					<i class="icon ti-layout-grid2"></i><span>Testimonial Master</span>
+				</a>
+				<ul>
+					<li><a class="<?php echo ($act == 16.1 ? 'active':'')?>" href="<?php echo base_url() ?>superadmin/administrator/TestimonialCategories">Testimonial Categories</a></li>
+					<li><a class="<?php echo ($act == 16.2 ? 'active':'')?>" href="<?php echo base_url() ?>superadmin/administrator/Testimonial">Testimonial</a></li>
+				</ul>
+			</li> -->
+			<!-- <li class="<?php echo ($active == 17 ? 'open':'')?>">
+				<a href="#">
+					<i class="icon ti-gallery"></i><span>Manage Enquiry</span>
+				</a>
+				<ul>
+					<li><a class="<?php echo ($act == 17.1 ? 'active':'')?>" href="<?php echo base_url() ?>superadmin/administrator/franchise">Franchise
+</a></li>
+					<li><a class="<?php echo ($act == 17.2 ? 'active':'')?>" href="<?php echo base_url() ?>superadmin/administrator/entrepreneur">Entrepreneur program</a></li>
+					<li><a class="<?php echo ($act == 17.3 ? 'active':'')?>" href="<?php echo base_url() ?>superadmin/administrator/m_and_a">M&A</a></li>
+					<li><a class="<?php echo ($act == 17.4 ? 'active':'')?>" href="<?php echo base_url() ?>superadmin/administrator/contact_us">Contact us</a></li>
+				</ul>
+			</li> -->
 		</ul>
 	</div>
 </div>

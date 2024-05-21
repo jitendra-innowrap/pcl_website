@@ -127,12 +127,12 @@ foreach( $result as $row )
     $route[ 'blogs/'.$row->slug ] = 'Console/blogs_detail/$1';
 }
 //-----------------------------------
-$query = $db->get( 'case_studies' );
-$case_studies = $query->result();
-foreach( $case_studies as $case_study )
-{
-    $route[ 'case-studies/'.$case_study->slug ] = 'Console/case_studies_detail/$1';
-}
+// $query = $db->get( 'case_studies' );
+// $case_studies = $query->result();
+// foreach( $case_studies as $case_study )
+// {
+//     $route[ 'case-studies/'.$case_study->slug ] = 'Console/case_studies_detail/$1';
+// }
 //-----------------------------------
 $query = $db->get( 'newsroom' );
 $newsrooms = $query->result();
@@ -148,12 +148,12 @@ foreach( $webinars as $webinar )
 	$route[ 'webinars/'.$webinar->slug ] = 'Console/webinars_detail/$1';
 	$route['webinars-video/'.$webinar->slug] = 'Console/webinars_video/$1';
 }
-$query = $db->get( 'gst_notification' );
-$gst_notification = $query->result();
-foreach( $gst_notification as $notification )
-{
-	$route['gst-notification/'.$notification->slug] = 'Console/whitepaper_detail/$1';
-}
+// $query = $db->get( 'gst_notification' );
+// $gst_notification = $query->result();
+// foreach( $gst_notification as $notification )
+// {
+// 	$route['gst-notification/'.$notification->slug] = 'Console/whitepaper_detail/$1';
+// }
 //----------------------------------
 $query = $db->get( 'careers' );
 $careers = $query->result();
@@ -161,12 +161,12 @@ foreach( $careers as $career )
 {
 	$route[ 'careers/'.$career->slug ] = 'Console/careers_detail/$1';
 }
-$query = $db->get( 'gst_notification' );
-$gst_notification = $query->result();
-foreach( $gst_notification as $notification )
-{
-	$route['gst-notification/'.$notification->slug] = 'Console/whitepaper_detail/$1';
-}
+// $query = $db->get( 'gst_notification' );
+// $gst_notification = $query->result();
+// foreach( $gst_notification as $notification )
+// {
+// 	$route['gst-notification/'.$notification->slug] = 'Console/whitepaper_detail/$1';
+// }
 //----------------------------------
 //admin panel url-------------------
 $route['superadmin'] = 'superadmin/login';

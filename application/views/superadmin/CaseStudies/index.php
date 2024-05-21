@@ -16,9 +16,9 @@
 				</nav>
 			</div>
 			<div>
-				<a href="<?php echo base_url('superadmin/administrator/add_edit_Case_studies'); ?>"
+				<a href="<?php echo base_url('superadmin/administrator/add_edit_Success_Story'); ?>"
 				   class="btn btn-primary btn-uppercase">
-					<i class="fa fa-plus m-r-5"></i> Add Case Studies
+					<i class="fa fa-plus m-r-5"></i> Add Success Story
 				</a>
 			</div>
 		</div>
@@ -33,11 +33,11 @@
 								<thead>
 								<tr>
 									<th>#</th>
-									<th>Title</th>
-									<th>Image</th>
-									<th>Author</th>
-									<th>Case Studies date</th>
-									<th>Case Studies Category</th>
+									<th>Brand</th>
+									<th>Category</th>
+									<th>Client Name</th>
+									<th>Cover Photo</th>
+									<th>Home</th>
 									<th>Order No.</th>
 									<th>Created Date</th>
 									<th>Action</th>

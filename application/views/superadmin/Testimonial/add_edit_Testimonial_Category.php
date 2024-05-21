@@ -9,7 +9,7 @@
 			<nav aria-label="breadcrumb">
 				<ol class="breadcrumb">
 					<li class="breadcrumb-item"><a href="<?php echo base_url('superadmin/administrator/index');?>">Dashboard</a></li>
-					<li class="breadcrumb-item"><a href="<?php echo base_url('superadmin/administrator/SuccessStoryCategory');?>">Success Story Category</a></li>
+					<li class="breadcrumb-item"><a href="<?php echo base_url('superadmin/administrator/Categories');?>">Category</a></li>
 					<li class="breadcrumb-item active" aria-current="page"><?php echo $page_title;?></li>
 				</ol>
 			</nav>
@@ -24,7 +24,7 @@
 							<div class="form-row">
 								<div class="col-md-8 mb-3">
 									<label for="name">Category Name*</label>
-									<input class="form-control" name="name" placeholder="Enter Success Storys Category Name" value="<?php echo isset($edit['name']) ? $edit['name'] :'';?>" id="name" required>
+									<input class="form-control" name="name" placeholder="Enter Category Name" value="<?php echo isset($edit['name']) ? $edit['name'] :'';?>" id="name" required>
 								</div>
 								<div class="col-md-2 mb-3 align-self-end">
 									<div class="custom-control custom-switch">

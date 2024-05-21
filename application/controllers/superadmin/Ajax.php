@@ -71,6 +71,7 @@ class Ajax extends CI_Controller
 			$no++;
 			$row = array();
 			$row[] = $no;
+			$row[] = $banners->name;
 			$row[] = $banners->title;
 			$row[] = $banners->description;
 			$row[] = '<a class="btn btn-sm btn-primary" target="_blank" href="'.$banners->routing_url.'">URL</a>';
@@ -211,7 +212,7 @@ class Ajax extends CI_Controller
 			$row[] = "<img width='150px' src='".base_url($Blogs->image)."'/>";
 			$row[] = $Blogs->author;
 			$row[] = $Blogs->blog_date;
-			$row[] = $Blogs->name;
+			$row[] = $Blogs->categories;
 			$row[] = $Blogs->order_no;
 			$row[] = $Blogs->created_date;
 			$row[] = "<div class='btn-group'>".$status.$edit."</div>";
@@ -240,7 +241,7 @@ class Ajax extends CI_Controller
             }else{
                 $status = "<button class='btn btn-danger btn-square waves-effect waves-button waves-light'>Disabled</button>";
             }
-            $edit = "<a class='btn btn-dark btn-square waves-effect waves-button waves-light' href='".base_url('superadmin/administrator/add_edit_Casestudies_Category?id='.$BlogsCategory->id)."'>Edit</a>";
+            $edit = "<a class='btn btn-dark btn-square waves-effect waves-button waves-light' href='".base_url('superadmin/administrator/add_edit_Success_Story_Category?id='.$BlogsCategory->id)."'>Edit</a>";
             $no++;
             $row = array();
             $row[] = $no;
@@ -271,19 +272,29 @@ class Ajax extends CI_Controller
             }else{
                 $status = "<button class='btn btn-danger btn-square waves-effect waves-button waves-light'>Disabled</button>";
             }
-            $edit = "<a class='btn btn-dark btn-square waves-effect waves-button waves-light' href='".base_url('superadmin/administrator/add_edit_Case_studies?id='.$Blogs->id)."'>Edit</a>";
+            $edit = "<a class='btn btn-dark btn-square waves-effect waves-button waves-light' href='".base_url('superadmin/administrator/add_edit_Success_Story?id='.$Blogs->id)."'>Edit</a>";
             $img = '';
             if ($Blogs->image){
                 $img = "<img width='150px' src='".base_url($Blogs->image)."'/>";
             }
+						$brand = '';
+						if ($Blogs->brand){
+							$brand = $Blogs->brand;
+							$brand = str_replace('_', ' ', $brand);
+						}
+						if ($Blogs->home == 1){
+							$home = 'Yes';
+						}else{
+								$home = "No";
+						}
             $no++;
             $row = array();
             $row[] = $no;
-            $row[] = $Blogs->title;
+            $row[] = $brand;
+						$row[] = $Blogs->categories;
+						$row[] = $Blogs->client_name;
             $row[] = $img;
-            $row[] = $Blogs->author;
-            $row[] = $Blogs->case_date;
-            $row[] = $Blogs->name;
+            $row[] = $home;
             $row[] = $Blogs->order_no;
             $row[] = $Blogs->created_date;
             $row[] = "<div class='btn-group'>".$status.$edit."</div>";
@@ -299,6 +310,97 @@ class Ajax extends CI_Controller
         echo json_encode($output);
     }
 
+		//	  Testimonial ------------------------------------------------------------------------------------------------------
+
+    function testimonialCategory(){
+			$this->load->model('superadmin/testimonialCategory_Model','testimonialCategory');
+			$list = $this->testimonialCategory->get_datatables();
+			$data = array();
+			$no = $_POST['start'];
+			foreach ($list as $BlogsCategory) {
+					if ($BlogsCategory->status == 1){
+							$status = "<button class='btn btn-success btn-square waves-effect waves-button waves-light'>Enabled</button>";
+					}else{
+							$status = "<button class='btn btn-danger btn-square waves-effect waves-button waves-light'>Disabled</button>";
+					}
+					$edit = "<a class='btn btn-dark btn-square waves-effect waves-button waves-light' href='".base_url('superadmin/administrator/add_edit_Category?id='.$BlogsCategory->id)."'>Edit</a>";
+					$no++;
+					$row = array();
+					$row[] = $no;
+					$row[] = $BlogsCategory->name;
+					$row[] = $BlogsCategory->created_date;
+					$row[] = "<div class='btn-group'>".$status.$edit."</div>";
+					$data[] = $row;
+			}
+
+			$output = array(
+					"draw" => $_POST['draw'],
+					"recordsTotal" => $this->testimonialCategory->count_all(),
+					"recordsFiltered" => $this->testimonialCategory->count_filtered(),
+					"data" => $data,
+			);
+			//output to json format
+			echo json_encode($output);
+	}
+	
+	function Testimonial_list(){
+		$this->load->model('superadmin/Testimonial_Model','Testimonial');
+		$list = $this->Testimonial->get_datatables();
+		$data = array();
+		$no = $_POST['start'];
+		foreach ($list as $Blogs) {
+				if ($Blogs->status == 1){
+						$status = "<button class='btn btn-success btn-square waves-effect waves-button waves-light'>Enabled</button>";
+				}else{
+						$status = "<button class='btn btn-danger btn-square waves-effect waves-button waves-light'>Disabled</button>";
+				}
+				if ($Blogs->home == 1){
+					$home = "Yes";
+				}else{
+						$home = "No";
+				}
+				$edit = "<a class='btn btn-dark btn-square waves-effect waves-button waves-light' href='".base_url('superadmin/administrator/add_edit_Testimonial?id='.$Blogs->id)."'>Edit</a>";
+				
+				$video_btn = '';
+				if($Blogs->video_url){
+					$video_btn = "<a class='btn btn-sm btn-danger' target='_blank' href='$Blogs->video_url'><i class='ti ti-youtube'></i> Youtube</a>";
+				}else{
+					$video_btn = '';
+				}
+				
+				$img = '';
+				if ($Blogs->video_thumbnail){
+						$img = "<img width='150px' src='".base_url($Blogs->video_thumbnail)."'/>";
+				}
+				
+				$trimmed_text = implode(' ', array_slice(explode(' ', $Blogs->text), 0, 50));
+			
+				$no++;
+				$row = array();
+				$row[] = $no;
+				$row[] = $Blogs->client_name;
+				$row[] = $Blogs->company_name;
+				$row[] = $img;
+				$row[] = $video_btn;
+				$row[] = $trimmed_text;
+				$row[] = $Blogs->categories;
+				$row[] = $Blogs->brand;
+				$row[] = $home;
+				$row[] = $Blogs->order_no;
+				$row[] = $Blogs->created_date;
+				$row[] = "<div class='btn-group'>".$status.$edit."</div>";
+				$data[] = $row;
+		}
+
+		$output = array(
+				"draw" => $_POST['draw'],
+				"recordsTotal" => $this->Testimonial->count_all(),
+				"recordsFiltered" => $this->Testimonial->count_filtered(),
+				"data" => $data,
+		);
+		echo json_encode($output);
+}
+	
     function newsroom_list(){
         $this->load->model('superadmin/Newsroom_Model','Newsroom');
         $list = $this->Newsroom->get_datatables();
@@ -342,22 +444,26 @@ class Ajax extends CI_Controller
         $this->load->model('superadmin/GSTNotification_Model','GSTNotification');
         $list = $this->GSTNotification->get_datatables();
         $data = array();
-        $no = $_POST['start'];
+        $no = $_POST['start'];				
         foreach ($list as $Blogs) {
             if ($Blogs->status == 1){
                 $status = "<button class='btn btn-success btn-square waves-effect waves-button waves-light'>Enabled</button>";
             }else{
                 $status = "<button class='btn btn-danger btn-square waves-effect waves-button waves-light'>Disabled</button>";
             }
-            $edit = "<a class='btn btn-dark btn-square waves-effect waves-button waves-light' href='".base_url('superadmin/administrator/add_edit_gst_notification?id='.$Blogs->id)."'>Edit</a>";
+            $edit = "<a class='btn btn-dark btn-square waves-effect waves-button waves-light' href='".base_url('superadmin/administrator/add_edit_report_policies?id='.$Blogs->id)."'>Edit</a>";
+						$video_btn = '';
+						if($Blogs->pdf){
+							$pdf = "<a class='btn btn-sm btn-danger' target='_blank' href='".base_url(''.$Blogs->pdf)."' >pdf</a>";
+						}
+				
             $no++;
             $row = array();
             $row[] = $no;
-            $row[] = $Blogs->title;
-            $row[] = "<img width='150px' src='".base_url($Blogs->image_small)."'/>";
-            $row[] = $Blogs->author;
-            $row[] = $Blogs->notification_date;
-            $row[] = ($Blogs->is_url_route == 1 ? '<a class="btn btn-sm btn-primary" target="_blank" href="'.$Blogs->route_url.'">URL</a>':'');
+            $row[] = $Blogs->type;
+            $row[] = $Blogs->document_name;
+            $row[] = $pdf;
+            $row[] = $Blogs->document_date;
             $row[] = $Blogs->order_no;
             $row[] = $Blogs->created_date;
             $row[] = "<div class='btn-group'>".$status.$edit."</div>";

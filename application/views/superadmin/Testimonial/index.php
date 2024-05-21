@@ -16,26 +16,31 @@
 				</nav>
 			</div>
 			<div>
-				<a href="<?php echo base_url('superadmin/administrator/add_edit_report_policies'); ?>"
+				<a href="<?php echo base_url('superadmin/administrator/add_edit_Testimonial'); ?>"
 				   class="btn btn-primary btn-uppercase">
-					<i class="fa fa-plus m-r-5"></i> Add Report And Policies
+					<i class="fa fa-plus m-r-5"></i> Add Testimonial
 				</a>
 			</div>
 		</div>
 		<!-- end::page header -->
+
 		<div class="row">
 			<div class="col-md-12">
 				<div class="card">
 					<div class="card-body">
 						<div class="table-responsive">
-							<table class="table table-bordered" id="data_table" data-function="gst_notification_list">
+							<table class="table table-bordered" id="data_table" data-function="Testimonial_list">
 								<thead>
 								<tr>
 									<th>#</th>
-									<th>Type</th>
-									<th>Document Name</th>
-									<th>PDF</th>
-									<th>Document date</th>
+									<th>Client Name</th>
+									<th>Company Name</th>
+									<th>Video Thumbnail</th>
+									<th>Testimonial Video</th>
+									<th>Testimonial Text</th>
+									<th>Testimonial Category</th>
+									<th>Brand</th>
+									<th>Home Page</th>
 									<th>Order No.</th>
 									<th>Created Date</th>
 									<th>Action</th>

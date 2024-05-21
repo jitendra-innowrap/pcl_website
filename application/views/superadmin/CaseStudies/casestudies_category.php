@@ -15,8 +15,8 @@
 				</nav>
 			</div>
 			<div>
-				<a href="<?php echo base_url('superadmin/administrator/add_edit_Casestudies_Category');?>" class="btn btn-primary btn-uppercase">
-					<i class="fa fa-plus m-r-5"></i> Add Case Studies Category
+				<a href="<?php echo base_url('superadmin/administrator/add_edit_Success_Story_Category');?>" class="btn btn-primary btn-uppercase">
+					<i class="fa fa-plus m-r-5"></i> Add Success Story Category
 				</a>
 			</div>
 		</div>

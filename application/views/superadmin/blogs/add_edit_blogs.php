@@ -24,11 +24,13 @@
 							<div class="form-row">
 								<div class="col-md-3 mb-3">
 									<label for="name">Blogs Category*</label>
-									<select name="blog_cat_id" class="form-control" required>
-										<option value="" disabled>Select a category</option>
-										<?php foreach ($blogs_category as $value){?>
-											<option value="<?php echo $value->id;?>" <?php echo isset($edit['blog_cat_id']) ? $edit['blog_cat_id'] == $value->id ? 'selected':'':'';?>><?php echo $value->name;?></option>
-										<?php }?>
+									<select name="blog_cat_id[]" class="form-control select2" multiple required>
+											<option value="" disabled>Select categories</option>
+											<?php foreach ($blogs_category as $value): ?>
+													<option value="<?php echo $value->id;?>" <?php echo (isset($selected_categories) && in_array($value->id, $selected_categories)) ? 'selected' : ''; ?>>
+															<?php echo $value->name;?>
+													</option>
+											<?php endforeach; ?>
 									</select>
 								</div>
 								<div class="col-md-6 mb-3">
@@ -95,3 +97,11 @@
 		</div>
 	</div>
 </main>
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+$(document).ready(function() {
+	
+	$('.select2').select2({});
+});
+</script>

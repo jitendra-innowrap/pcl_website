@@ -1,7 +1,7 @@
 <?php
 
 
-class CaseStudies_Model extends CI_Model
+class TestimonialCategory_Model extends CI_Model
 {
 	public function __construct()
 	{
@@ -9,19 +9,14 @@ class CaseStudies_Model extends CI_Model
 		$this->load->database();
 	}
 
-	var $table = 'case_studies cs';
-	var $column_order = array(null, 'cs.title','cs.image','cs.author','cs.case_date','csc.name','cs.order_no','cs.status'); //set column field database for datatable orderable
-	var $column_search = array('cs.title','cs.image','cs.author','cs.case_date','csc.name','cs.order_no','cs.status'); //set column field database for datatable searchable
-	var $order = array('cs.order_id' => 'asc'); // default order
+	var $table = 'testimonial_category';
+	var $column_order = array(null, 'name', 'created_date','status'); //set column field database for datatable orderable
+	var $column_search = array('name', 'created_date','status'); //set column field database for datatable searchable
+	var $order = array('id' => 'asc'); // default order
 
 	private function _get_datatables_query()
 	{
-		$this->db->select('cs.id,cs.brand,cs.client_name,cs.home,cs.image,cs.case_date,GROUP_CONCAT(csc.name SEPARATOR ", ") as categories,cs.order_no,cs.status,cs.created_date');
 		$this->db->from($this->table);
-		$this->db->join('success_story_multi_category ssmc', 'ssmc.success_story_id = cs.id', 'left');
-		$this->db->join('testimonial_category csc','csc.id=ssmc.category_id', 'left');
-		$this->db->group_by('cs.id');
-		
 
 		$i = 0;
 

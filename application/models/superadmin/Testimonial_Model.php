@@ -1,7 +1,7 @@
 <?php
 
 
-class CaseStudies_Model extends CI_Model
+class Testimonial_Model extends CI_Model
 {
 	public function __construct()
 	{
@@ -9,19 +9,19 @@ class CaseStudies_Model extends CI_Model
 		$this->load->database();
 	}
 
-	var $table = 'case_studies cs';
-	var $column_order = array(null, 'cs.title','cs.image','cs.author','cs.case_date','csc.name','cs.order_no','cs.status'); //set column field database for datatable orderable
-	var $column_search = array('cs.title','cs.image','cs.author','cs.case_date','csc.name','cs.order_no','cs.status'); //set column field database for datatable searchable
-	var $order = array('cs.order_id' => 'asc'); // default order
+	var $table = 'testimonial t';
+	var $column_order = array(null, 't.client_name','t.company_name','t.video','t.text','tc.name','t.order_no','t.status'); //set column field database for datatable orderable
+	var $column_search = array('t.client_name','t.company_name','t.video','t.text','tc.name','t.order_no','t.status'); //set column field database for datatable searchable
+	var $order = array('t.order_id' => 'asc'); // default order
 
 	private function _get_datatables_query()
-	{
-		$this->db->select('cs.id,cs.brand,cs.client_name,cs.home,cs.image,cs.case_date,GROUP_CONCAT(csc.name SEPARATOR ", ") as categories,cs.order_no,cs.status,cs.created_date');
+	{	
+    
+    $this->db->select('t.id,t.client_name,t.company_name,t.video_url,t.brand,t.home,t.video_thumbnail,t.text,GROUP_CONCAT(tc.name SEPARATOR ", ") as categories,t.order_no,t.status,t.created_date');
 		$this->db->from($this->table);
-		$this->db->join('success_story_multi_category ssmc', 'ssmc.success_story_id = cs.id', 'left');
-		$this->db->join('testimonial_category csc','csc.id=ssmc.category_id', 'left');
-		$this->db->group_by('cs.id');
-		
+		$this->db->join('testimonial_multi_category tmc', 'tmc.testimonial_id  = t.id', 'left');
+		$this->db->join('testimonial_category tc', 'tc.id = tmc.category_id', 'left');
+		$this->db->group_by('t.id');
 
 		$i = 0;
 
