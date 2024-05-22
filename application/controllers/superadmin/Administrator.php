@@ -1230,7 +1230,7 @@ class Administrator extends CI_Controller
 			if ($id) {
 					$title = 'Edit Testimonial';
 					$this->db->where('id',$id);
-					$query = $this->db->get('Testimonial');
+					$query = $this->db->get('testimonial');
 					$result = $query->row_array();
 					if ($result){
 							$data['edit'] = $result;
