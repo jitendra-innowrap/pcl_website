@@ -30,6 +30,8 @@
 										<option value="Vows_Vachan" 	<?php echo isset($edit['brand'])?($edit['brand'] == 'Vows_Vachan' ? 'selected' : ''):'';?> >Vows Vachan</option>
 										<option value="Event_Factory" 	<?php echo isset($edit['brand'])?($edit['brand'] == 'Event_Factory' ? 'selected' : ''):'';?> >Event Factory</option>
 										<option value="Live_Space" 	<?php echo isset($edit['brand'])?($edit['brand'] == 'Live_Space' ? 'selected' : ''):'';?> >Live Space</option>
+										<option value="Venue_Affairs" 	<?php echo isset($edit['brand'])?($edit['brand'] == 'Venue_Affairs' ? 'selected' : ''):'';?> >Venue Affairs</option>
+										<option value="Party_House" 	<?php echo isset($edit['brand'])?($edit['brand'] == 'Party_House' ? 'selected' : ''):'';?> >Party House</option>
 									</select>
 								</div>
 								<div class="col-md-4 mb-3">
