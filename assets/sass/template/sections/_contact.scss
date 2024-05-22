@@ -1,0 +1,147 @@
+.contact-area-1 {
+    padding-left: 120px;
+    padding-right: 120px;
+    .contact-form-area {
+        padding-left: 120px;
+        padding-right: 120px;
+        position: relative;
+        &:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: #363832;
+            mix-blend-mode: overlay;
+        }
+    }
+    .contact-form {
+        position: relative;
+        z-index: 1;
+        select, .single-select, .form-control, .form-select, input {
+            height: 60px;
+
+        }
+        .form-group.form-icon-left > i {
+            color: $white-color;
+        }
+        .btn {
+            padding: 23.5px 40px;
+            &:before, &:after {
+                border-top: 30px solid var(--title-color);
+                border-bottom: 30px solid var(--title-color);
+            }
+            &:before {
+                border-right: 30px solid transparent;
+            }
+        }
+    }
+    @include xl {
+        padding-left: 50px;
+        padding-right: 50px;
+        .contact-form-area {
+            padding-left: 60px;
+            padding-right: 60px;
+        }
+    }
+    @include xs {
+        padding-left: 15px;
+        padding-right: 15px;
+        .contact-form-area {
+            padding-left: 30px;
+            padding-right: 30px;
+        }
+    }
+}
+
+/*contact page******************/
+.contact-info {
+    background: $white-color;
+    padding: 60px 30px 50px;
+    text-align: center;
+    min-height: 393px;
+    .contact-icon {
+        background: #FFF7F4;
+        border-radius: 50%;
+        height: 100px;
+        width: 100px;
+        line-height: 100px;
+        text-align: center;
+        position: relative;
+        display: inline-block;
+        margin-bottom: 20px;
+        &:after {
+            content: '';
+            position: absolute;
+            left: -10px;
+            top: -10px;
+            height: 100%;
+            width: 100%;
+            border: 1px solid $theme-color;
+            border-radius: 50%;
+            transition: 0.4s;
+        }
+    }
+    .contact-details {
+        .title {
+            font-size: 30px;
+            font-weight: 400;
+            margin-bottom: -2px;
+        }
+        span {
+            font-size: 14px;
+            font-weight: 300;
+            color: $body-color;
+            display: block;
+            margin-bottom: 24px;
+        }
+        p {
+            font-size: 16px;
+            font-weight: 300;
+            margin-bottom: 0;
+            &:last-child {
+                margin-bottom: -0.5em;
+            }
+        }
+    }
+    &:hover {
+        .contact-icon:after {
+            left: 0;
+            top: 0;
+        }
+    }
+}
+.map-sec {
+    line-height: 0;
+    filter: grayscale(1);
+    iframe {
+        width: 100%;
+        height: 610px;
+        @include sm {
+            height: 300px;
+        }
+    }
+}
+/*reservation page******************/
+.contact-page-wrap,
+.reservation-page {
+    background: #F8F7F4;
+}
+.contact-form-wrap,
+.reservation-form-wrap {
+    background: #F8F7F4;
+    padding: 90px;
+}
+@include ml {
+    .contact-form-wrap,
+    .reservation-form-wrap {
+        padding: 50px;
+    }
+}
+@include xs {
+    .contact-form-wrap,
+    .reservation-form-wrap {
+        padding: 50px 30px;
+    }
+}
