@@ -1,5 +1,5 @@
 <!-- begin::main content -->
-<main class="main-content">
+<!-- <main class="main-content">
 	<div class="container-fluid">
     <div class="row row-sm">
               
@@ -61,4 +61,4 @@
     
     </div>
   </div>
-</main> 
+</main>  -->

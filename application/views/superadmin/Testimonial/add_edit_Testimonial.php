@@ -67,7 +67,7 @@
 									</div>
 								<?php }?>  
 								<div class="col-md-12 mb-3">
-									<label for="description">Testimonial Text</label>
+									<label for="description">Testimonial Text*</label>
 									<textarea class="form-control description"  maxlength="500" name="text" id="description" required><?php echo isset($edit['text'])?$edit['text']:'';?></textarea>
 								</div>
 								<div class="col-md-12 mb-3">
@@ -87,7 +87,7 @@
 									<input class="form-control" name="meta_desc" value="<?php echo isset($edit['meta_desc'])?$edit['meta_desc']:'';?>" >
 								</div>
 								<div class="col-md-2 mb-3">
-									<label for="order">Order No.*</label>
+									<label for="order">Order No.</label>
 									<input class="form-control" type="number" min="0" name="order_no" id="order" value="<?php echo isset($edit['order_no'])?$edit['order_no']:'';?>" placeholder="Enter Order No.">
 								</div>
 								<div class="col-md-2 mb-3 align-self-end">

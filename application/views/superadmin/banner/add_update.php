@@ -27,20 +27,20 @@
 									<input class="form-control" name="name" placeholder="Enter Name" value="<?php echo isset($edit['name']) ? $edit['name'] :'';?>" id="name" required>
 								</div>
 								<div class="col-md-5 mb-3">
-									<label for="title">Banner Title</label>
-									<input class="form-control" name="title" placeholder="Enter Banner Title" value="<?php echo isset($edit['title']) ? $edit['title'] :'';?>" id="title">
+									<label for="title">Display Title</label>
+									<input class="form-control" name="title" placeholder="Enter Display Title" value="<?php echo isset($edit['title']) ? $edit['title'] :'';?>" id="title">
 								</div>
 								<div class="col-md-2 mb-3">
 									<label for="order">Order No.</label>
 									<input class="form-control" type="number" min="0" name="order_no" id="order" value="<?php echo isset($edit['order_no'])?$edit['order_no']:'';?>" placeholder="Enter Order No.">
 								</div>
 								<div class="col-md-12 mb-3">
-									<label for="description">Description</label>
+									<label for="description">Display Short description</label>
 									<textarea class="form-control" maxlength="100" name="description" id="description"><?php echo isset($edit['description'])?$edit['description']:'';?></textarea>
 								</div>
 								<div class="row col-md-12 mb-3 banner">
 									<div class="col-md-6 mb-3">
-										<label for="banner_img">Banner image*</label>
+										<label for="banner_img">Banner image* (jpeg/png/jpg)</label>
 										<input class="form-control" type="file" accept="image/jpeg,image/png,image/jpg" name="file" <?php echo isset($edit['image']) ? '':'required'?>>
 									</div>
 									<div class="col-md-6 mb-3">
@@ -50,7 +50,7 @@
 								</div>
 								<?php if (isset($edit['image']) && !empty($edit['image'])){?>
 									<div class="col-md-12 mb-3 banner banner-img">
-										<img src="<?php echo base_url($edit['image']);?>" class="img-fluid"/>
+										<img  style="width:100px;height:auto;"  src="<?php echo base_url($edit['image']);?>" class="img-fluid"/>
 									</div>
 								<?php }?>                               
 								<div class="col-md-2 mb-3 align-self-center">
@@ -66,7 +66,7 @@
 									</div>
 								</div>
 								<div class="col-md-8 mb-3" style="display: <?php echo isset($edit['is_button']) ? $edit['is_button'] == 1 ? 'block':'none':'none';?>" id="routing">
-									<input class="form-control" type="url" name="routing_url" id="routing_url" value="<?php echo isset($edit['routing_url'])?$edit['routing_url']:'';?>" placeholder="Enter Button url">
+									<input class="form-control" type="url" name="routing_url" id="routing_url" value="<?php echo isset($edit['routing_url'])?$edit['routing_url']:'';?>" placeholder="Enter Routing URL">
 								</div>
 							</div>
 							<button type="submit" name="submit" class="btn btn-primary">Submit</button>

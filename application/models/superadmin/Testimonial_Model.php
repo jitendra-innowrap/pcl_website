@@ -10,8 +10,8 @@ class Testimonial_Model extends CI_Model
 	}
 
 	var $table = 'testimonial t';
-	var $column_order = array(null, 't.client_name','t.company_name','t.video','t.text','tc.name','t.order_no','t.status'); //set column field database for datatable orderable
-	var $column_search = array('t.client_name','t.company_name','t.video','t.text','tc.name','t.order_no','t.status'); //set column field database for datatable searchable
+	var $column_order = array(null, 't.client_name','t.company_name','t.video_url','t.text','tc.name','t.order_no','t.status'); //set column field database for datatable orderable
+	var $column_search = array('t.client_name','t.company_name','t.video_url','t.text','tc.name','t.order_no','t.status'); //set column field database for datatable searchable
 	var $order = array('t.order_id' => 'asc'); // default order
 
 	private function _get_datatables_query()

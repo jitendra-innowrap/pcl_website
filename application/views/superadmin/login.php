@@ -45,13 +45,7 @@ $siteName = $ret->site_title;
 				<img src="<?php echo base_url($ret->logo_img);?>" class="m-r-15" height="55" alt="">
 			</div>
 			<p style="text-align: center;font-size: 16px;">Hi, Welcome to PCL Admin Console, Please enter your login credentials below</p>
-			<?php if($this->session->flashdata('success')): ?>
-				<?php echo '<div class="alert alert-success icons-alert">
-                                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                                            <i class="icofont icofont-close-line-circled"></i>
-                                                        </button>
-                                                        <p><strong>Success! &nbsp;&nbsp;</strong>'.$this->session->flashdata('success').'</p></div>'; ?>
-			<?php endif; ?>
+		
 			<?php if($this->session->flashdata('danger')): ?>
 				<?php echo '<div class="alert alert-danger icons-alert">
                                                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -70,11 +64,11 @@ $siteName = $ret->site_title;
 			<form action="" method="post" enctype="multipart/form-data">
 				<div class="form-group mb-4">
 					<label for="email">Email*</label>
-					<input type="email" class="form-control form-control-lg" id="exampleInputEmail1" name="email" autofocus placeholder="Email">
+					<input type="email" class="form-control form-control-lg" required id="exampleInputEmail1" name="email" autofocus placeholder="Email">
 				</div>
 				<div class="form-group mb-4">
 					<label for="password">Password*</label>
-					<input type="password" class="form-control form-control-lg" id="exampleInputPassword1" name="password" placeholder="Password">
+					<input type="password" class="form-control form-control-lg" required id="exampleInputPassword1" name="password" placeholder="Password">
 				</div>
 				<button type="submit" name="btn_signin" class="btn btn-primary btn-lg btn-block btn-uppercase mb-4">Sign In</button>
 				<div class="d-flex justify-content-between align-items-center mb-4">

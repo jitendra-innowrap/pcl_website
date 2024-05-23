@@ -10,8 +10,8 @@ class Banner_Model extends CI_Model
 	}
 
 	var $table = 'banner';
-	var $column_order = array(null, 'title','description','routing_url','order_no','created_date','status'); //set column field database for datatable orderable
-	var $column_search = array('title','description','routing_url','order_no','created_date','status'); //set column field database for datatable searchable
+	var $column_order = array(null, 'name','title','description','routing_url','order_no','created_date','status'); //set column field database for datatable orderable
+	var $column_search = array( 'name','title','description','routing_url','order_no','created_date','status'); //set column field database for datatable searchable
 	var $order = array('id' => 'asc'); // default order
 
 	private function _get_datatables_query()

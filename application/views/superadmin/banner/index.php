@@ -35,7 +35,7 @@
 									<th>Title</th>
 									<th>Description</th>
 									<th>URL</th>
-									<th>Images/URL</th>
+									<th>Banner Image</th>
 									<th>Order No.</th>
 									<th>Created Date</th>
 									<th>Action</th>
