@@ -90,8 +90,8 @@
 									<input class="form-control" name="client_name" value="<?php echo isset($edit['client_name'])?$edit['client_name']:'';?>" placeholder="Enter Client Name" required>
 								</div>
 								<div class="col-md-4 mb-3">
-									<label for="img">Cover Photo</label>
-									<input type="file" class="form-control" name="cover_photo" accept="image/jpeg,image/png,image/jpg" placeholder="Select a cover photo" <?php echo isset($edit['image']) ? '':'required'?>>
+									<label for="img">Cover Photo*</label>
+									<input type="file" class="form-control" id="cover_img" name="cover_photo" accept="image/jpeg,image/png,image/jpg" placeholder="Select a cover photo" <?php echo isset($edit['image']) ? '':'required'?>>
 								</div>
 								<div class="col-md-4 mb-3">
 									<label for="image_alt">Cover Photo Alt</label>
@@ -104,7 +104,7 @@
 								<?php }?>
 								<div class="col-md-12 mb-3">
 									<label for="editor">Description</label>
-									<textarea class="form-control editor" name="content" id="editor" required><?php echo isset($edit['content'])?$edit['content']:'';?></textarea>
+									<textarea class="form-control editor" name="content" id="editor"><?php echo isset($edit['content'])?$edit['content']:'';?></textarea>
 								</div>
 								<div class="col-md-12 mb-3">
 									<label for="editor">Photos</label>
@@ -112,7 +112,7 @@
 										<div class="mup-msg">
 												<span class="mup-main-msg">click to upload images.</span>
 												<span class="mup-msg" id="max-upload-number">Upload up to 25 images</span>
-												<span class="mup-msg">Only images files are allowed for upload</span>
+												<span class="mup-msg">Only images files(JPEG, PNG, JPG) are allowed for upload</span>
 										</div>
 									</div>
 								</div>
@@ -138,7 +138,7 @@
 													</div>
 													<div class="col-md-4">
 															<label for="thumbnail_edit-<?php echo $index; ?>">Video Thumbnail</label>
-															<input type="file" class="form-control" data-id="<?php echo $video['id']; ?>" id="thumbnail_edit-<?php echo $index; ?>" name="thumbnail_edit[]" accept="image/*">
+															<input type="file" class="form-control file-input-edit" data-id="<?php echo $video['id']; ?>" id="thumbnail_edit-<?php echo $index; ?>" name="thumbnail_edit[]" accept="image/*">
 													</div>
 													<div class="col-md-4">
 														<input type="hidden" value="<?php echo $video['id']; ?>" name="videos_edit_id[]" >
@@ -226,7 +226,7 @@ $(document).ready(function() {
                 </div>
                 <div class="col-md-4">
                     <label for="thumbnail-${rowCount}">Video Thumbnail</label>
-                    <input type="file" class="form-control" id="thumbnail-${rowCount}" name="thumbnail[]" accept="image/*" required>
+                    <input type="file" class="form-control file-input" id="thumbnail-${rowCount}" name="thumbnail[]" accept="image/*" required>
                 </div>
                 <div class="col-md-2">
                     <button type="button" class="btn btn-danger remove-btn mt-4">Delete</button>
@@ -238,6 +238,23 @@ $(document).ready(function() {
         } else {
 						toastr.error('You can only add up to ' + maxRows + ' rows.', "Error");
         }
+				
+				// Function to attach event listener to file inputs
+				const validImageTypes = ['image/jpeg', 'image/png', 'image/jpg'];
+				function attachFileInputValidation(fileInput) {
+						fileInput.addEventListener('change', function() {
+								const file = fileInput.files[0];
+								if (file) {
+										if (!validImageTypes.includes(file.type)) {
+												toastr.error('Please upload a valid image (JPEG, PNG).', 'Error');
+												fileInput.value = ''; // Clear the input
+										}
+								}
+						});
+				}
+
+				// Attach validation to initial file inputs
+				document.querySelectorAll('input[type="file"].file-input').forEach(attachFileInputValidation);
     });
 
     $('#video-rows').on('click', '.remove-btn', function() {
@@ -302,5 +319,43 @@ $(document).ready(function() {
         });
     });
 	
+});
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const fileInput = document.getElementById('cover_img');
+    if (fileInput) {
+        fileInput.addEventListener('change', function() {
+            const file = fileInput.files[0];
+            const validImageTypes = ['image/jpeg', 'image/png', 'image/jpg'];
+            const maxSize = 2 * 1024 * 1024; // 2MB
+
+            if (file) {
+                if (!validImageTypes.includes(file.type)) {
+										toastr.error('Please upload a valid image (JPEG, PNG, JPG)', "Error");
+                    fileInput.value = ''; // Clear the input
+                } else if (file.size > maxSize) {
+										toastr.error('File size must be less than 2MB', "Error");
+                    fileInput.value = ''; // Clear the input
+                }
+            }
+        });
+    }
+		const fileInputs1 = document.querySelectorAll('input[type="file"].file-input-edit');
+    const validImageTypes = ['image/jpeg', 'image/png', 'image/jpg'];
+		
+    fileInputs1.forEach(function(fileInput1) {
+        fileInput1.addEventListener('change', function() {
+            const file = fileInput1.files[0];
+
+            if (file) {
+                if (!validImageTypes.includes(file.type)) {
+                    toastr.error('Please upload a valid image (JPEG, PNG).', 'Error');
+                    fileInput1.value = ''; // Clear the input
+                }
+            }
+        });
+    });
 });
 </script>

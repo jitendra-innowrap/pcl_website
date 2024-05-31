@@ -52,7 +52,7 @@ $siteName = $ret->site_title;
                                                             <i class="icofont icofont-close-line-circled"></i>
                                                         </button>
                                                         <p><strong>Error! &nbsp;&nbsp;</strong>'.$this->session->flashdata('danger').'</p></div>'; ?>
-			<?php endif; ?>
+			<?php  $this->session->unset_userdata('danger'); endif; ?>
 
 			<?php if(validation_errors() != null): ?>
 				<?php echo '<div class="alert alert-warning icons-alert">

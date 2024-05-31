@@ -1,0 +1,412 @@
+/* Gallery 1 ---------------------------------- */
+.portfolio-shape1_1 {
+    mix-blend-mode: luminosity;
+}
+.portfolio-thumb {
+    position: relative;
+    overflow: hidden;
+    img {
+        border-radius: 0px;
+        width: 100%;
+    }
+    .icon-btn {
+        --btn-size: 80px;
+        --btn-font-size: 26px;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -30%);
+        background: $white-color;
+        border-radius: 50%;
+        color: $theme-color;
+        opacity: 0;
+        z-index: 2;
+    }
+    &:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        border-radius: 0px;
+        background: $title-color;
+        mix-blend-mode: multiply;
+        z-index: 0;
+        opacity: 0;
+        transition: 0.4s;
+    }
+    .portfolio-details {
+        position: absolute;
+        left: 0;
+        bottom: -20px;
+        z-index: 1;
+        opacity: 0;
+        padding: 40px;
+        transition: 0.4s;
+        p {
+            font-size: 12px;
+            font-weight: 300;
+            text-transform: uppercase;
+            color: $white-color;
+            margin-bottom: 10px;
+        }
+        h3 {
+            font-size: 30px;
+            font-weight: 400;
+            margin-bottom: -0.3em;
+            a {
+                color: $white-color;
+                &:hover {
+                    color: $theme-color;
+                }
+            }
+        }
+    }
+    &:hover {
+        .portfolio-details {
+            opacity: 1;
+            bottom: 0;
+        }
+        &:after {
+            opacity: 0.93;
+        }
+        .icon-btn {
+            opacity: 1;
+            transform: translate(-50%, -50%);
+        }
+    }
+}
+@include xs {
+    .portfolio-thumb .icon-btn {
+        --btn-size: 60px;
+        --btn-font-size: 18px;
+    }
+    .portfolio-thumb .portfolio-details {
+        padding: 30px;
+    }
+    .portfolio-thumb .portfolio-details h3 {
+        font-size: 24px;
+    }
+}
+/* project card ---------------------------------- */
+.project-area-2 {
+    padding: 20px 30px 0;
+}
+.project-card {
+    background: #FFF4EF;
+    padding: 110px 90px;
+    h3 {
+        font-size: 40px;
+        font-weight: 400;
+        margin-top: -0.3em;
+        margin-bottom: 38px;
+        span {
+            display: block;
+        }
+    }
+    .icon-btn {
+        --btn-size: 100px;
+        border-radius: 50%;
+        background: transparent;
+        border: 1px solid $theme-color;
+        &:hover {
+            background: $white-color;
+            border-color: $white-color;
+            box-shadow: 0 0 40px 2px rgba(199, 134, 101, 0.05);
+        }
+    }
+}
+@include xxl {
+    .project-card {
+        padding: 90px 70px;
+    }
+}
+@include ml {
+    .project-card {
+        padding: 70px 50px;
+        .icon-btn {
+            --btn-size: 80px;
+        }
+    }
+}
+@include xl {
+    .project-card {
+        padding: 50px 40px;
+        h3 {
+            font-size: 36px;
+        }
+    }
+}
+@include lg {
+    .project-card {
+        padding: 40px;
+        h3 {
+            font-size: 28px;
+        }
+        .icon-btn {
+            --btn-size: 70px;
+        }
+    }
+}
+@include xs {
+    .project-area-2 {
+        padding: 20px 15px 0;
+    }
+    .project-card {
+        padding: 30px;
+        h3 {
+            margin-bottom: 28px;
+        }
+    }
+}
+
+
+/*portfolio area 4******************/
+.portfolio-area-4 {
+    background: #363832;
+    padding: 40px 40px 40px calc(370px + 40px);
+}
+.portfolio-thumb.style2 {
+    &:after {
+        border: 1px solid #575754;
+        background: rgba(9, 10, 7, 0.62);
+        backdrop-filter: blur(43.5px);
+    }
+    .portfolio-details {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        inset: 0;
+        text-align: center;
+        padding: 20px;
+        .card-wrap {
+            transform: translate(0, 30px);
+            transition: 0.4s;
+        }
+        h3 {
+            font-size: 24px;
+        }
+        p {
+            margin-bottom: -0.3em;
+            margin-top: 20px;
+        }
+    }
+    &:hover {
+        &:after {
+            opacity: 0.99;
+        }
+        .portfolio-details {
+            .card-wrap {
+                transform: translate(0, 0px);
+            }
+        }
+    }
+}
+@include md {
+    .portfolio-area-4 {
+        padding: 40px 40px 40px calc(300px + 40px);
+    }
+}
+@include sm {
+    .portfolio-area-4 {
+        padding: 30px 30px 30px calc(106px + 30px);
+    }
+}
+
+/*project area 5******************/
+.project-area-5 {
+    background: #EEEEEE;
+    padding: 130px 80px 80px;
+    height: 100vh;
+}
+.project-slider-showcase {
+    border: 1px solid $title-color;
+    .slick-slide {
+        border-right: 1px solid $title-color;
+    }
+}
+.project-card.style2 {
+    padding: 40px;
+    background: transparent;
+    .global-img {
+        img {
+            max-height: 405px;
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+    .project-card-details {
+        padding-top: 40px;
+        h3 {
+            font-size: 30px;
+            margin-bottom: 15px;
+            a {
+                color: $title-color;
+                &:hover {
+                    color: $theme-color;
+                }
+            }
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            li {
+                font-weight: 300;
+                line-height: 30px;
+                span {
+                    color: $title-color;
+                    font-weight: 400;
+                    margin-right: 5px;
+                }
+            }
+        }
+        .project-date {
+            color: $body-color;
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 1.4px;
+            text-transform: uppercase;
+            margin-bottom: -0.4em;
+            margin-top: 40px;
+        }
+    }
+}
+@include hd {
+    .project-card.style2 .global-img img {
+        max-height: 450px;
+    }
+}
+@include xxl {
+    .project-card.style2 .global-img img {
+        max-height: none;
+    }
+    .project-card.style2 .project-card-details .project-date {
+        margin-top: 109px;
+    }
+}
+@include ml {
+    .project-card.style2 .project-card-details .project-date {
+        margin-top: 30px;
+    }
+    .project-card.style2 .global-img img {
+        max-height: 253px;
+    }
+}
+@include xl {
+    .project-card.style2 .project-card-details h3 {
+        font-size: 24px;
+    }
+    .project-card.style2 .global-img img {
+        max-height: none;
+    }
+    .project-card.style2 .project-card-details .project-date {
+        margin-top: 61px;
+    }
+}
+@include md {
+    .project-area-5 {
+        padding: 130px 50px 50px;
+    }
+}
+@include xs {
+    .project-area-5 {
+        padding: 130px 15px 20px;
+    }
+    .project-card.style2 {
+        padding: 30px;
+    }
+}
+
+.portfolio-page-2 {
+    border: 1px solid #E3E5DE;
+    padding: 120px;
+    margin: 120px;
+    @include xxl {
+        padding: 95px;
+    }
+    @include xl {
+        padding: 80px;
+    }
+    @include md {
+        margin: 80px;
+    }
+    @include sm {
+        border: 0;
+        margin: 0;
+        padding: 80px 40px;
+    }
+    @include xs {
+        padding: 80px 15px;
+    }
+}
+/*project page******************/
+.project-tab {
+    margin-top: -7px;
+    text-align: center;
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: center;
+    gap: 30px 65px;
+    flex-wrap: wrap;
+    button {
+        font-size: 14px;
+        font-weight: 300;
+        color: $body-color;
+        letter-spacing: 1.4px;
+        text-transform: uppercase;
+        background: transparent;
+        border: 0;
+        position: relative;
+        padding: 0;
+        &:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 0;
+            transition: 0.4s;
+            background: $theme-color;
+            height: 1px;
+        }
+        &.active {
+            color: $theme-color;
+            &:after {
+                width: 100%;
+            }
+        }
+    }
+}
+.project-box {
+    .project-img {
+        img {
+            width: 100%;
+        }
+    }
+    .project-card-details {
+        text-align: center;
+        border: 1px solid #E3E5DE;
+        border-top: 0;
+        padding: 35px 25px;
+        .subtitle {
+            font-size: 12px;
+            font-weight: 300;
+            text-transform: uppercase;
+            margin-bottom: 6px;
+            margin-top: -0.3em;
+            letter-spacing: 0.72px;
+        }
+        .title {
+            font-size: 24px;
+            font-weight: 400;
+            margin-bottom: -0.3em;
+            a {
+                color: $title-color;
+                &:hover {
+                    color: $theme-color;
+                }
+            }
+        }
+    }
+}

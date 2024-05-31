@@ -40,8 +40,8 @@
 								</div>
 								<div class="row col-md-12 mb-3 banner">
 									<div class="col-md-6 mb-3">
-										<label for="banner_img">Banner image* (jpeg/png/jpg)</label>
-										<input class="form-control" type="file" accept="image/jpeg,image/png,image/jpg" name="file" <?php echo isset($edit['image']) ? '':'required'?>>
+										<label for="banner_img">Banner image*</label>
+										<input class="form-control" id="banner_img" type="file" accept="image/jpeg,image/png,image/jpg" name="file" <?php echo isset($edit['image']) ? '':'required'?>>
 									</div>
 									<div class="col-md-6 mb-3">
 										<label for="banner_img">Banner image alt text</label>
@@ -77,3 +77,26 @@
 		</div>
 	</div>
 </main>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const fileInput = document.getElementById('banner_img');
+    if (fileInput) {
+        fileInput.addEventListener('change', function() {
+            const file = fileInput.files[0];
+            const validImageTypes = ['image/jpeg', 'image/png', 'image/jpg'];
+            const maxSize = 2 * 1024 * 1024; // 2MB
+
+            if (file) {
+                if (!validImageTypes.includes(file.type)) {
+										toastr.error('Please upload a valid image (JPEG, PNG, JPG)', "Error");
+                    fileInput.value = ''; // Clear the input
+                } else if (file.size > maxSize) {
+										toastr.error('File size must be less than 2MB', "Error");
+                    fileInput.value = ''; // Clear the input
+                }
+            }
+        });
+    }
+});
+</script>

@@ -59,7 +59,7 @@
 								</div>
 								<div class="col-md-4 mb-3">
 									<label for="video">Testimonial Video Thumbnail Image</label>
-									<input type="file" class="form-control" name="file" accept="image/*" placeholder="Select a image">
+									<input type="file" class="form-control" name="file" id="cover_img" accept="image/*" placeholder="Select a image">
 								</div>
 								<?php if (isset($edit['video_thumbnail']) && !empty($edit['video_thumbnail'])){?>
 									<div class="col-md-12 mb-3 banner banner-img">
@@ -67,8 +67,8 @@
 									</div>
 								<?php }?>  
 								<div class="col-md-12 mb-3">
-									<label for="description">Testimonial Text*</label>
-									<textarea class="form-control description"  maxlength="500" name="text" id="description" required><?php echo isset($edit['text'])?$edit['text']:'';?></textarea>
+									<label for="description">Testimonial Text</label>
+									<textarea class="form-control description"  maxlength="500" name="text" id="description"><?php echo isset($edit['text'])?$edit['text']:'';?></textarea>
 								</div>
 								<div class="col-md-12 mb-3">
 									<h6 class="card-title mb-3 text-green">Page SEO</h6>
@@ -116,5 +116,28 @@
 <script>
 $(document).ready(function() {
 	$('.select2').select2();
+});
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const fileInput = document.getElementById('cover_img');
+    if (fileInput) {
+        fileInput.addEventListener('change', function() {
+            const file = fileInput.files[0];
+            const validImageTypes = ['image/jpeg', 'image/png', 'image/jpg', 'image/gif'];
+            const maxSize = 2 * 1024 * 1024; // 2MB
+
+            if (file) {
+                if (!validImageTypes.includes(file.type)) {
+										toastr.error('Please upload a valid image (JPEG, PNG, JPG)', "Error");
+                    fileInput.value = ''; // Clear the input
+                } else if (file.size > maxSize) {
+										toastr.error('File size must be less than 2MB', "Error");
+                    fileInput.value = ''; // Clear the input
+                }
+            }
+        });
+    }
 });
 </script>

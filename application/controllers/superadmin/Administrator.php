@@ -170,6 +170,7 @@ class Administrator extends CI_Controller
 				$image = $this->Master->upload('file', $path);
 				if ($image['code'] == 1) {
 					$img_url = $image['img_url'];
+					$this->_create_thumbs($image['file_name'],$img_url);
 				}
 			}
             $update = array();
@@ -201,9 +202,12 @@ class Administrator extends CI_Controller
             if ($routing_url) {
                 $update['routing_url'] = $routing_url;
             }
-            if ($img_url) {
-                $update['image'] = $img_url;
-            }
+						if ($img_url){
+							$update['image'] = $img_url;
+							$update['image_large'] = 'assets/images/large/'.$image['file_name'];
+							$update['image_medium'] = 'assets/images/medium/'.$image['file_name'];
+							$update['image_small'] = 'assets/images/small/'.$image['file_name'];
+						}
             if ($is_video) {
                 $update['is_video'] = $is_video;
             }
@@ -908,7 +912,7 @@ class Administrator extends CI_Controller
                 }
             }
 						
-						echo '<pre>';print_r($img_url);
+						// echo '<pre>';print_r($img_url);
 						
 						$thumb_img_urls = array();
 						if (isset($_FILES['thumbnail'])) {
@@ -931,7 +935,7 @@ class Administrator extends CI_Controller
 							}
 						}
 						
-						echo '<pre>';print_r($thumb_img_urls);
+						// echo '<pre>';print_r($thumb_img_urls);
 						
 						$thumb_img_urls_edit = array();
 						if (isset($_FILES['thumbnail_edit'])) {
@@ -956,7 +960,7 @@ class Administrator extends CI_Controller
 							}
 						}
 						
-						echo '<pre>';print_r($thumb_img_urls_edit);
+						// echo '<pre>';print_r($thumb_img_urls_edit);
 						
 						$img_urls = array();
 						if (isset($_FILES['images'])) {
@@ -979,7 +983,7 @@ class Administrator extends CI_Controller
 							}
 						}
 						
-						echo '<pre>';print_r($img_urls);
+						// echo '<pre>';print_r($img_urls);
 
             $image_alt = $this->input->post('image_alt');
             $content = $this->input->post('content');
@@ -1029,8 +1033,8 @@ class Administrator extends CI_Controller
 								$add['home'] = 0;
 						}
 						
-						echo '<pre>';print_r($add);
-						echo '<pre>';print_r($case_s_id);
+						// echo '<pre>';print_r($add);
+						// echo '<pre>';print_r($case_s_id);
 						
 						
             if ($id) {
@@ -2645,8 +2649,8 @@ class Administrator extends CI_Controller
 				'image_library' => 'GD2',
 				'source_image'  => $source_image,
 				'maintain_ratio'=> true,
-				'width'         => 700,
-				'height'        => 467,
+				'width'         => 900,
+				'height'        => 900,
 				'new_image'     => './assets/images/large/'.$file_name
 			),
 			// Medium Image
@@ -2655,7 +2659,7 @@ class Administrator extends CI_Controller
 				'source_image'  => $source_image,
 				'maintain_ratio'=> true,
 				'width'         => 600,
-				'height'        => 400,
+				'height'        => 600,
 				'new_image'     => './assets/images/medium/'.$file_name
 			),
 			// Small Image

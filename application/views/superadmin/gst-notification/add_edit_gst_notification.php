@@ -66,7 +66,7 @@
 								</div>
 								<div class="col-md-4 mb-3">
 									<label for="img"> Upload Document file*</label>
-									<input type="file" class="form-control" name="file" accept=".pdf" placeholder="Select a PDF Document" <?php echo isset($edit['pdf']) ? '':'required'?>>
+									<input type="file" class="form-control" id="pdf_file" name="file"  accept="application/pdf" placeholder="Select a PDF Document" <?php echo isset($edit['pdf']) ? '':'required'?>>
 								</div>
 								<?php if (isset($edit['pdf']) && !empty($edit['pdf'])){?>
 									<div class="col-md-12 mb-3">
@@ -408,4 +408,23 @@ $(document).ready(function() {
 
 });
 
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const fileInput = document.getElementById('pdf_file');
+    if (fileInput) {
+        fileInput.addEventListener('change', function() {
+            const file = fileInput.files[0];
+            const validImageTypes = 'application/pdf';
+
+            if (file) {
+                if (!validImageTypes.includes(file.type)) {
+										toastr.error('Please upload a valid file (PDF)', "Error");
+                    fileInput.value = ''; // Clear the input
+                }
+            }
+        });
+    }
+});
 </script>

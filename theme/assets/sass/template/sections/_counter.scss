@@ -1,0 +1,96 @@
+/* Counter 1 ---------------------------------- */
+.counter-area-1 {
+    padding-top: 224px;
+    margin-top: -224px;
+    background-size: auto;
+    @include md {
+        background-size: cover;
+        padding-top: 100px;
+        margin-top: -100px;
+    }
+}
+.counter-card {
+    background: #FFF7F4;
+    height: 200px;
+    width: 200px;
+    display: flex;
+    border-radius: 50%;
+    align-items: center;
+    padding: 30px;
+    position: relative;
+    margin-top: 10px;
+    &:after {
+        content: '';
+        position: absolute;
+        left: -10px;
+        top: -10px;
+        height: 100%;
+        width: 100%;
+        border: 1px solid $theme-color;
+        border-radius: 50%;
+    }
+    &_number {
+        margin-bottom: 0;
+        .odometer {
+            font-size: 48px;
+            font-weight: 400;
+            font-family: $title-font;
+            color: $theme-color;
+            margin-bottom: 5px;
+            margin-top: -0.3em;
+        }
+    }
+    &_text {
+        font-size: 18px;
+        font-weight: 400;
+        font-family: $title-font;
+        margin-bottom: -0.3em;
+    }
+    @include md {
+        margin: 10px auto 0;
+    }
+}
+.marquee-wrap {
+    overflow: hidden;
+    border-top: 1px solid #4B4D49;    
+    padding: 21px 0;
+    max-width: 1920px;
+    .marquee__group {
+        list-style-type: none;
+        padding: 0;
+        display: flex;
+        .m-item {
+            flex-shrink: 0;
+            padding-inline: 2px;
+            animation-duration: 6s;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+            animation-name: marquee;
+            font-size: 12px;
+            font-weight: 400;
+            color: $white-color;
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
+            display: flex;
+            gap: 25px;
+            align-items: center;
+            margin-right: 25px;
+            &:before {
+                content: '';
+                position: relative;
+                height: 6px;
+                width: 6px;
+                background: #D9D9D9;
+                transform: rotate(45deg);
+            }
+        }
+    }
+}
+@keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+}

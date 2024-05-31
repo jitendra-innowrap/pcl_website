@@ -68,13 +68,19 @@ class Ajax extends CI_Controller
             if ($banners->is_video == 1){
                 $img = "<a class='btn btn-sm btn-danger' target='_blank' href='$banners->video_url'><i class='ti ti-youtube'></i> Youtube</a>";
             }
+						$url = '';
+						if($banners->is_button == 1){
+							if($banners->routing_url){
+								$url = '<a class="btn btn-sm btn-primary" target="_blank" href="'.$banners->routing_url.'">URL</a>';
+							}
+						}
 			$no++;
 			$row = array();
 			$row[] = $no;
 			$row[] = $banners->name;
 			$row[] = $banners->title;
 			$row[] = $banners->description;
-			$row[] = '<a class="btn btn-sm btn-primary" target="_blank" href="'.$banners->routing_url.'">URL</a>';
+			$row[] = $url;
 			$row[] = $img;
 			$row[] = $banners->order_no;
 			$row[] = $banners->created_date;
@@ -455,6 +461,8 @@ class Ajax extends CI_Controller
 						$video_btn = '';
 						if($Blogs->pdf){
 							$pdf = "<a class='btn btn-sm btn-danger' target='_blank' href='".base_url(''.$Blogs->pdf)."' >pdf</a>";
+						}else{
+							$pdf = "";
 						}
 				
             $no++;

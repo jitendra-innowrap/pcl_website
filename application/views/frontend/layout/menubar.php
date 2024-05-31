@@ -8,41 +8,37 @@
 <div class="cursor-follower"></div>
 <!-- Cursor End -->
 
-<!--==============================
-    Preloader
-==============================-->
-<div class="preloader ">
-    <div class="preloader-inner">
-        <img class="company-logo" src="<?php echo base_url();?>assets/images/pcl_logo.png" alt="Party Cruisers">
-        <span class="loader"></span>
-    </div>
-</div>
-
 <div class="sidemenu-wrapper">
     <div class="sidemenu-content">
         <button class="closeButton sideMenuCls"><i class="fas fa-times"></i></button>
         <div class="widget footer-widget">
             <div class="widget-about">
                 <div class="footer-logo">
-                    <a href="<?php echo base_url();?>"><img src="assets/img/logo-white.svg" alt="Ovation"></a>
+                    <a href="<?php echo base_url();?>"><img class="company-logo" src="<?php echo base_url();?>assets/images/logo/Party Cruisers Limited black.png" alt="Ovation"></a>
                 </div>
                 <p class="about-text">Lorem ipsum dolor sit amet consectetur adipiscing elit sociosqu integer, suscipit nascetur aliquet posuere aptent vehicula ligula pulvinar praesent.</p>
                 <div class="social-btn style2">
-                    <a href="https://www.facebook.com/"><i class="fab fa-facebook"></i></a>
-                    <a href="https://twitter.com/"><i class="fab fa-twitter"></i></a>                            
-                    <a href="https://pinterest.com/"><i class="fab fa-pinterest-p"></i></a>
-                    <a href="https://instagram.com/"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/partycruisersltd" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://wa.me/918433659225" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    <a href="https://youtube.com/@partycruiserslimited9671?si=eXu-T4VSv8e-IbBY" target="_blank"><i class="fab fa-youtube"></i></a>
+                    <a href="https://www.linkedin.com/company/partycruisersltd/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://www.instagram.com/partycruisersltd?igsh=OWVrZXBlNnNsMGQz" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://in.pinterest.com/partycruisers/" target="_blank"><i class="fab fa-pinterest"></i></a>
                 </div>
             </div>
         </div>
         <div class="widget widget_nav_menu footer-widget">
-            <h3 class="widget_title">Quick Links</h3>
+            <h3 class="widget_title">Business Opportunity</h3>
             <ul class="menu">
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="project-details.html">Our Mission</a></li>
-                <li><a href="team.html">Meet The Teams</a></li>
-                <li><a href="project.html">Our Projects</a></li>
-                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="<?php echo base_url();?>franchise">Franchise</a></li>
+                <li><a href="<?php echo base_url();?>entrepreneur-program">Entrepreneur Program</a></li>
+                <li><a href="<?php echo base_url();?>m-and-a">M&A</a></li>
+            </ul>
+            <h3 class="widget_title mt-5">Privacy & Policy</h3>
+            <ul class="menu">
+                <li><a href="<?php echo base_url();?>investor-relation">Investor Relation</a></li>
+                <li><a href="<?php echo base_url();?>company-internal-policy">Company Internal Policy</a></li>
+                <li><a href="<?php echo base_url();?>privacy-policy">Privacy & Policy</a></li>
             </ul>
         </div>
     </div>
@@ -54,91 +50,35 @@ Mobile Menu
     <div class="mobile-menu-area text-center">
         <button class="menu-toggle"><i class="fas fa-times"></i></button>
         <div class="mobile-logo">
-            <a href="<?php echo base_url();?>"><img src="assets/img/logo-white.svg" alt="Ovation"></a>
+            <a href="<?php echo base_url();?>"><img class="company-logo" src="<?php echo base_url();?>assets/images/logo/Party Cruisers Limited black.png" alt="Ovation"></a>
         </div>
         <div class="mobile-menu">
             <ul>
-                <li class="menu-item-has-children">
-                    <a href="#">Home</a>
-                    <ul class="sub-menu">
-                        <li class="menu-item-has-children">
-                            <a href="#">Multipage</a>
-                            <ul class="sub-menu">
-                                <li>
-                                    <a href="<?php echo base_url();?>">Home 01 (Wedding)</a>
-                                </li>
-                                <!-- <li>
-                                    <a href="home-2.html">Home 02 (Event)</a>
-                                </li>
-                                <li>
-                                    <a href="home-3.html">Home 03 (Photography)</a>
-                                </li>
-                                <li>
-                                    <a href="home-4.html">Home 04 (Showcase)</a>
-                                </li>
-                                <li>
-                                    <a href="home-5.html">Home 05 (Slider Showcase)</a>
-                                </li> -->
-                            </ul>
-                        </li>
-                        <!-- <li class="menu-item-has-children">
-                            <a href="#">RTL</a>
-                            <ul class="sub-menu">
-                                <li>
-                                    <a href="home-1-rtl.html">Home 01 (Wedding)</a>
-                                </li>
-                                <li>
-                                    <a href="home-2-rtl.html">Home 02 (Event)</a>
-                                </li>
-                                <li>
-                                    <a href="home-3-rtl.html">Home 03 (Photography)</a>
-                                </li>
-                                <li>
-                                    <a href="home-4-rtl.html">Home 04 (Showcase)</a>
-                                </li>
-                                <li>
-                                    <a href="home-5-rtl.html">Home 05 (Slider Showcase)</a>
-                                </li>
-                            </ul> -->
-                        </li>
-                    </ul>
+                <li>
+                    <a href="<?php echo base_url();?>">Home</a>
+                </li>
+                <li>
+                    <a href="<?php echo base_url();?>about-us">About US</a>
+                </li>
+                <li>
+                    <a href="<?php echo base_url();?>testimonials">Testimonials</a>
+                </li>
+                <li>
+                    <a href="<?php echo base_url();?>blog">Blog</a>
                 </li>
                 <li class="menu-item-has-children">
-                    <a href="#">Pages</a>
+                    <a href="#">Brands</a>
                     <ul class="sub-menu">
-                        <li><a href="about.html">About Page</a></li>
-                        <li><a href="team.html">Team Page</a></li>
-                        <li><a href="team-details.html">Team Details</a></li>
-                        <li><a href="faq.html">FAQ Page</a></li>
-                        <li><a href="reservation.html">Reservation Page</a></li>
-                        <li><a href="pricing.html">Pricing Page</a></li>
-                    </ul>
-                </li>
-                <li class="menu-item-has-children">
-                    <a href="#">Portfolio</a>
-                    <ul class="sub-menu">
-                        <li><a href="project.html">Case Studies Page</a></li>
-                        <li><a href="project-2.html">Portfolio Showcase Page</a></li>
-                        <li><a href="project-details.html">Portfolio Details</a></li>
-                    </ul>
-                </li>
-                <li class="menu-item-has-children">
-                    <a href="#">Blog</a>
-                    <ul class="sub-menu">
-                        <li><a href="blog.html">Blog</a></li>
-                        <li><a href="blog-details.html">Blog Details</a></li>
-                    </ul>
-                </li>
-                <li class="menu-item-has-children">
-                    <a href="#">Shop</a>
-                    <ul class="sub-menu">
-                        <li><a href="shop.html">Shop Grid</a></li>
-                        <li><a href="shop-2.html">Shop grid with sidebar</a></li>
-                        <li><a href="shop-details.html">Shop Details</a></li>
+                        <li><a href="<?php echo base_url();?>house-of-vivah">House of Vivah</a></li>
+                        <li><a href="<?php echo base_url();?>vows-vachan">Vows Vachan</a></li>
+                        <li><a href="<?php echo base_url();?>event-factory">Event Factory</a></li>
+                        <li><a href="<?php echo base_url();?>live-space">Live Space</a></li>
+                        <li><a href="<?php echo base_url();?>venue-affairs">Venue Affairs</a></li>
+                        <li><a href="<?php echo base_url();?>party-house">Party House</a></li>
                     </ul>
                 </li>
                 <li>
-                    <a href="contact.html">Contact</a>
+                    <a href="<?php echo base_url();?>contact">Contact</a>
                 </li>
             </ul>
         </div>
@@ -148,14 +88,14 @@ Mobile Menu
 Header Area
 ==============================-->
 <header class="nav-header header-layout1">
-    <div class="header-top">
+    <!-- <div class="header-top">
         <div class="container-fluid">
             <div class="row justify-content-center justify-content-lg-between align-items-center gy-2">
                 <div class="col-auto d-none d-lg-block">
                     <div class="header-links">
                         <ul>
-                            <li><i class="far fa-clock"></i>Working: 8.00am - 5.00pm</li>
-                            <li><i class="far fa-envelope"></i><a href="mailto:info@gmail.com">wedding@ovation.com</a></li>
+                            <li><i class="far fa-clock"></i>Working: 10 AM - 8 PM</li>
+                            <li><i class="far fa-envelope"></i><a href="mailto:marketing@partycruisersindia.com">marketing@partycruisersindia.com</a></li>
                         </ul>
                     </div>
                 </div>
@@ -164,18 +104,20 @@ Header Area
                         <ul>
                             <li class="d-none d-sm-block">
                                 <ul class="header-sub-links">
-                                    <li><a href="contact.html">Help</a></li>
-                                    <li><a href="contact.html">Support</a></li>
-                                    <li><a href="contact.html">Contact</a></li>
+                                    <li><a href="<?php echo base_url();?>contact">Help</a></li>
+                                    <li><a href="<?php echo base_url();?>contact">Support</a></li>
+                                    <li><a href="<?php echo base_url();?>contact">Contact</a></li>
                                 </ul>
                             </li>
                             <li>
                                 <div class="social-links">
                                     <span class="me-2">Visit Us:</span>
-                                    <a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
-                                    <a href="https://www.twitter.com/"><i class="fab fa-twitter"></i></a>
-                                    <a href="https://www.linkedin.com/"><i class="fab fa-linkedin-in"></i></a>
-                                    <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+                                    <a href="https://www.facebook.com/partycruisersltd" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                                    <a href="https://wa.me/918433659225" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                                    <a href="https://youtube.com/@partycruiserslimited9671?si=eXu-T4VSv8e-IbBY" target="_blank"><i class="fab fa-youtube"></i></a>
+                                    <a href="https://www.linkedin.com/company/partycruisersltd/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                                    <a href="https://www.instagram.com/partycruisersltd?igsh=OWVrZXBlNnNsMGQz" target="_blank"><i class="fab fa-instagram"></i></a>
+                                    <a href="https://in.pinterest.com/partycruisers/" target="_blank"><i class="fab fa-pinterest"></i></a>
                                 </div>
                             </li>
                         </ul>
@@ -183,7 +125,7 @@ Header Area
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     <div class="sticky-wrapper">
         <!-- Main Menu Area -->
         <div class="menu-area">
@@ -191,93 +133,37 @@ Header Area
                 <div class="row align-items-center justify-content-between">
                     <div class="col-auto">
                         <div class="header-logo">
-                            <a href="<?php echo base_url();?>"><img class="company-logo" src="<?php echo base_url();?>assets/images/pcl_logo.png" alt="logo"></a>
+                            <a href="<?php echo base_url();?>"><img class="company-logo" src="<?php echo base_url();?>assets/images/logo/Party Cruisers Limited black.png" alt="logo"></a>
                         </div>
                     </div>
                     <div class="col-auto">
                         <nav class="main-menu d-none d-lg-inline-block">
                             <ul>
-                                <li class="menu-item-has-children">
-                                    <a href="#">Home</a>
-                                    <ul class="sub-menu">
-                                        <li class="menu-item-has-children">
-                                            <a href="#">Multipage</a>
-                                            <ul class="sub-menu">
-                                                <li>
-                                                    <a href="<?php echo base_url();?>">Home 01 (Wedding)</a>
-                                                </li>
-                                                <!-- <li>
-                                                    <a href="home-2.html">Home 02 (Event)</a>
-                                                </li>
-                                                <li>
-                                                    <a href="home-3.html">Home 03 (Photography)</a>
-                                                </li>
-                                                <li>
-                                                    <a href="home-4.html">Home 04 (Showcase)</a>
-                                                </li>
-                                                <li>
-                                                    <a href="home-5.html">Home 05 (Slider Showcase)</a>
-                                                </li> -->
-                                            </ul>
-                                        </li>
-                                        <!-- <li class="menu-item-has-children">
-                                            <a href="#">RTL</a>
-                                            <ul class="sub-menu">
-                                                <li>
-                                                    <a href="home-1-rtl.html">Home 01 (Wedding)</a>
-                                                </li>
-                                                <li>
-                                                    <a href="home-2-rtl.html">Home 02 (Event)</a>
-                                                </li>
-                                                <li>
-                                                    <a href="home-3-rtl.html">Home 03 (Photography)</a>
-                                                </li>
-                                                <li>
-                                                    <a href="home-4-rtl.html">Home 04 (Showcase)</a>
-                                                </li>
-                                                <li>
-                                                    <a href="home-5-rtl.html">Home 05 (Slider Showcase)</a>
-                                                </li>
-                                            </ul>
-                                        </li> -->
-                                    </ul>
+                                <li>
+                                    <a href="<?php echo base_url();?>">Home</a>
+                                </li>
+                                <li>
+                                    <a href="<?php echo base_url();?>about-us">About US</a>
+                                </li>
+                                <li>
+                                    <a href="<?php echo base_url();?>testimonials">Testimonials</a>
+                                </li>
+                                <li>
+                                    <a href="<?php echo base_url();?>blog">Blog</a>
                                 </li>
                                 <li class="menu-item-has-children">
-                                    <a href="#">Pages</a>
+                                    <a href="#">Brands</a>
                                     <ul class="sub-menu">
-                                        <li><a href="about.html">About Page</a></li>
-                                        <li><a href="team.html">Team Page</a></li>
-                                        <li><a href="team-details.html">Team Details</a></li>
-                                        <li><a href="faq.html">FAQ Page</a></li>
-                                        <li><a href="reservation.html">Reservation Page</a></li>
-                                        <li><a href="pricing.html">Pricing Page</a></li>
-                                    </ul>
-                                </li>
-                                <li class="menu-item-has-children">
-                                    <a href="#">Portfolio</a>
-                                    <ul class="sub-menu">
-                                        <li><a href="project.html">Case Studies Page</a></li>
-                                        <li><a href="project-2.html">Portfolio Showcase Page</a></li>
-                                        <li><a href="project-details.html">Portfolio Details</a></li>
-                                    </ul>
-                                </li>
-                                <li class="menu-item-has-children">
-                                    <a href="#">Blog</a>
-                                    <ul class="sub-menu">
-                                        <li><a href="blog.html">Blog</a></li>
-                                        <li><a href="blog-details.html">Blog Details</a></li>
-                                    </ul>
-                                </li>
-                                <li class="menu-item-has-children">
-                                    <a href="#">Shop</a>
-                                    <ul class="sub-menu">
-                                        <li><a href="shop.html">Shop Grid</a></li>
-                                        <li><a href="shop-2.html">Shop grid with sidebar</a></li>
-                                        <li><a href="shop-details.html">Shop Details</a></li>
+                                        <li><a href="<?php echo base_url();?>house-of-vivah">House of Vivah</a></li>
+                                        <li><a href="<?php echo base_url();?>vows-vachan">Vows Vachan</a></li>
+                                        <li><a href="<?php echo base_url();?>event-factory">Event Factory</a></li>
+                                        <li><a href="<?php echo base_url();?>live-space">Live Space</a></li>
+                                        <li><a href="<?php echo base_url();?>venue-affairs">Venue Affairs</a></li>
+                                        <li><a href="<?php echo base_url();?>party-house">Party House</a></li>
                                     </ul>
                                 </li>
                                 <li>
-                                    <a href="contact.html">Contact</a>
+                                    <a href="<?php echo base_url();?>contact">Contact</a>
                                 </li>
                             </ul>
                         </nav>
@@ -287,7 +173,7 @@ Header Area
                     </div>
                     <div class="col-auto d-none d-lg-block">
                         <div class="header-button">
-                            <a href="contact.html" class="btn d-none d-xl-block">
+                            <a href="<?php echo base_url();?>contact" class="btn d-none d-xl-block">
                                 GET A QUOTATION 
                             </a>
                             <button type="button" class="sidebar-btn sideMenuToggler">

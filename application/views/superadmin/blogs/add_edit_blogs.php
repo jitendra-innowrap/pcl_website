@@ -47,7 +47,7 @@
 								</div>
 								<div class="col-md-4 mb-3">
 									<label for="img">Image</label>
-									<input type="file" class="form-control" name="file" accept="image/jpeg,image/png,image/jpg" placeholder="Select a image" <?php echo isset($edit['image']) ? '':'required'?>>
+									<input type="file" class="form-control" id="cover_img" name="file" accept="image/jpeg,image/png,image/jpg" placeholder="Select a image" <?php echo isset($edit['image']) ? '':'required'?>>
 								</div>
 								<div class="col-md-4 mb-3">
 									<label for="image_alt">Image Alt</label>
@@ -103,5 +103,28 @@
 $(document).ready(function() {
 	
 	$('.select2').select2({});
+});
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const fileInput = document.getElementById('cover_img');
+    if (fileInput) {
+        fileInput.addEventListener('change', function() {
+            const file = fileInput.files[0];
+            const validImageTypes = ['image/jpeg', 'image/png', 'image/jpg'];
+            const maxSize = 2 * 1024 * 1024; // 2MB
+
+            if (file) {
+                if (!validImageTypes.includes(file.type)) {
+										toastr.error('Please upload a valid image (JPEG, PNG, JPG)', "Error");
+                    fileInput.value = ''; // Clear the input
+                } else if (file.size > maxSize) {
+										toastr.error('File size must be less than 2MB', "Error");
+                    fileInput.value = ''; // Clear the input
+                }
+            }
+        });
+    }
 });
 </script>

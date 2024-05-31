@@ -10,8 +10,8 @@ class CaseStudies_Model extends CI_Model
 	}
 
 	var $table = 'case_studies cs';
-	var $column_order = array(null, 'cs.title','cs.image','cs.author','cs.case_date','csc.name','cs.order_no','cs.status'); //set column field database for datatable orderable
-	var $column_search = array('cs.title','cs.image','cs.author','cs.case_date','csc.name','cs.order_no','cs.status'); //set column field database for datatable searchable
+	var $column_order = array(null, 'cs.brand','cs.client_name','cs.case_date','csc.name'); //set column field database for datatable orderable
+	var $column_search = array('cs.brand','cs.client_name','cs.case_date','csc.name'); //set column field database for datatable searchable
 	var $order = array('cs.order_id' => 'asc'); // default order
 
 	private function _get_datatables_query()

@@ -46,7 +46,7 @@ class Login extends MY_Controller {
 					$this->session->set_flashdata('success', 'Welcome to administrator Dashboard.');
 					redirect('superadmin/Administrator');
 				}else{
-					$this->session->set_flashdata('danger', 'Login Credential in invalid!');
+					$this->session->set_flashdata('danger', 'Login Credentials is invalid!');
 					redirect('superadmin/login');
 				}
 
