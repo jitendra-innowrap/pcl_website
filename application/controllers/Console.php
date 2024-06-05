@@ -268,6 +268,73 @@ class Console extends CI_Controller
 		
 		$this->load->view('frontend/layout/template', $data);
 	}
+	
+	public function sendMail($to,$from,$subject,$message) {
+		$config = array(
+			'priority' => '1',
+			'protocol' => 'smtp',
+			'smtp_crypto' => 'tls',
+			'smtp_host' => 'smtp.gmail.com',
+			'smtp_port' => 587,
+			'smtp_user' => 'priya@innowrap.com', // change it to yours
+			'smtp_pass' => '', // change it to yours
+			'mailtype' => 'html',
+			'charset' => 'iso-8859-1',
+			'wordwrap' => TRUE,
+			'newline' => "\r\n"
+		);
+		$this->email->initialize($config);
+		$this->email->from($from);
+		$this->email->to("$to");
+		$this->email->subject($subject);
+		$this->email->message($message);
+		// echo $this->email->print_debugger();
+		if ($this->email->send()){
+			return true;
+		}else{
+			return false;
+		}
+	}
+	
+	public function add_contact(){
+		// echo '<pre>';print_r($_POST);exit();
+		$add['u_name'] = $this->input->post('name');
+		$add['country_code'] = $this->input->post('countryCode');
+		$add['u_mobile'] = $this->input->post('contact');
+		$add['u_email'] = $this->input->post('email');
+		$add['location'] = $this->input->post('location');
+		$add['date'] = $this->input->post('date');
+		$add['number'] = $this->input->post('number');
+		$add['event'] = $this->input->post('event');
+		
+		if($add['event'] === 'other'){
+			$add['subEvent'] = $this->input->post('otherEvent');
+		}else{
+			$add['subEvent'] = $this->input->post('subEvent');
+		}
+		
+		if ($this->db->insert('submit_contact', $add)){
+			$msg_subject = "[PCL] Thanks for the inquiry";
+			$msg = "HI". $add['u_name'] ."</br>Thank you for contact with us. <br>We will get back to you shortly.<br>Thanks<br>Team PARTY CRUISERS LTD.";
+			$from_email = "priya@innowrap.com";
+			if ($this->sendMail($add['u_email'],$from_email,$msg_subject,$msg)) {
+				$phone =  $this->input->post('phone_number',true);
+				$html = "Name: " . $add['u_name'] . "<br>Email: " . $add['u_email'] . "<br>Phone: " . $add['country_code'] . $add['u_mobile'] . "<br>Inquiry for: " . $add['event'] . " - " . $add['subEvent'] . "<br>Location: " . $add['location'] . "<br>Date: " . $add['date'] . "<br>No. of Guest: " . $add['number'] . ".";
+				$from_email = "priya@innowrap.com";
+				$msg_subject = "[PCL] Thanks for the inquiry";
+				$this->sendMail($from_email,$from_email,$msg_subject,$html);
+					if($this->Master_model->contact_us($name,$email,$msg_subject,$phone_number,$message,$ip_address)){
+						echo json_encode(['code' => 1]);
+					}else{
+						echo json_encode(['code' => 0]);
+					}
+			}else {
+				echo json_encode(['code' => 0]);
+			}
+		}else{
+			echo json_encode(['code' => 0]);
+		}
+	}
 		
 }
 

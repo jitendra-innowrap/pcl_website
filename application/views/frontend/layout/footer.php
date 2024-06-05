@@ -163,6 +163,10 @@
 
 <!-- Main Js File -->
 <script src="<?php echo base_url();?>assets/js/main.js"></script>
+
+ <!-- Custom CSS -->
+<script src="<?php echo base_url();?>assets/js/contact.js"></script>
+<script src="<?php echo base_url();?>assets/js/common.js"></script>
 </body>
 
 </html>

@@ -697,12 +697,20 @@
                 },
                 youtu_be: {
                     index: 'youtu.be/', // String that detects type of video (in this case YouTube)
-                    id: 'youtu.be/', // String that detects the video ID
+                    id: function(url) {
+                        var m = url.match(/youtu\.be\/([^?&]+)/);
+                        if (!m || !m[1]) return null;
+                        return m[1];
+                    },
                     src: 'https://www.youtube.com/embed/%id%' // URL used to show the video
                 },
-                youtube: {
+                youtube_shorts: {
                     index: 'youtube.com/shorts/', // String that detects type of video (in this case YouTube Shorts)
-                    id: 'shorts/', // String that detects the video ID
+                    id: function(url) {
+                        var m = url.match(/shorts\/([^?&]+)/);
+                        if (!m || !m[1]) return null;
+                        return m[1];
+                    },
                     src: 'https://www.youtube.com/embed/%id%' // URL used to show the video
                 }
             }
@@ -710,7 +718,6 @@
         mainClass: 'mfp-zoom-in', 
         removalDelay: 260,
     });
-
     /* magnificPopup video view */
     $(".popup-content").magnificPopup({
         type: "inline",

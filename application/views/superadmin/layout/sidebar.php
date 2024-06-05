@@ -119,18 +119,18 @@
 					<li><a class="<?php echo ($act == 16.2 ? 'active':'')?>" href="<?php echo base_url() ?>superadmin/administrator/Testimonial">Testimonial</a></li>
 				</ul>
 			</li> -->
-			<!-- <li class="<?php echo ($active == 17 ? 'open':'')?>">
+			<li class="<?php echo ($active == 17 ? 'open':'')?>">
 				<a href="#">
 					<i class="icon ti-gallery"></i><span>Manage Enquiry</span>
 				</a>
 				<ul>
-					<li><a class="<?php echo ($act == 17.1 ? 'active':'')?>" href="<?php echo base_url() ?>superadmin/administrator/franchise">Franchise
+					<!-- <li><a class="<?php echo ($act == 17.1 ? 'active':'')?>" href="<?php echo base_url() ?>superadmin/administrator/franchise">Franchise
 </a></li>
 					<li><a class="<?php echo ($act == 17.2 ? 'active':'')?>" href="<?php echo base_url() ?>superadmin/administrator/entrepreneur">Entrepreneur program</a></li>
-					<li><a class="<?php echo ($act == 17.3 ? 'active':'')?>" href="<?php echo base_url() ?>superadmin/administrator/m_and_a">M&A</a></li>
+					<li><a class="<?php echo ($act == 17.3 ? 'active':'')?>" href="<?php echo base_url() ?>superadmin/administrator/m_and_a">M&A</a></li> -->
 					<li><a class="<?php echo ($act == 17.4 ? 'active':'')?>" href="<?php echo base_url() ?>superadmin/administrator/contact_us">Contact us</a></li>
 				</ul>
-			</li> -->
+			</li>
 		</ul>
 	</div>
 </div>

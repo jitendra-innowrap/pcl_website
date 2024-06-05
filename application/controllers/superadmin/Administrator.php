@@ -25,6 +25,10 @@ class Administrator extends CI_Controller
 		$data['active'] = 1;
 		$data['act'] = 1.1;
 		$data['middle_content'] = 'dashboard';
+		
+		$this->db->from('submit_contact');
+		$data['contact_count'] = $this->db->count_all_results();
+		
 		$this->load->view('superadmin/layout/template', $data);
 	}
 
@@ -2878,6 +2882,14 @@ class Administrator extends CI_Controller
 				redirect('superadmin/administrator/manage_offer');
 			}
 		}
+		$this->load->view('superadmin/layout/template', $data);
+	}
+	
+	public function contact_us(){
+		$data['page_title'] = "Contact US";
+		$data['active'] = 17;
+		$data['act'] = 17.4;
+		$data['middle_content'] = 'form/contact_us';
 		$this->load->view('superadmin/layout/template', $data);
 	}
 }

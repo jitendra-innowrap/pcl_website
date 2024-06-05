@@ -905,4 +905,36 @@ class Ajax extends CI_Controller
 		//output to json format
 		echo json_encode($output);
 	}
+	
+	function Contact_list(){
+		$this->load->model('superadmin/Form_Model','Contact');
+		$list = $this->Contact->get_datatables();
+		$data = array();
+		$no = $_POST['start'];
+		foreach ($list as $Blogs) {				
+				$contact = $Blogs->country_code ."-" . $Blogs->u_mobile;
+				$event = $Blogs->event. " - " . $Blogs->subEvent;
+				$no++;
+				$row = array();
+				$row[] = $no;
+				$row[] = $Blogs->u_name;
+				$row[] = $contact;
+				$row[] = $Blogs->u_email;
+				$row[] = $Blogs->location;
+				$row[] = $Blogs->date;
+				$row[] = $Blogs->number;
+				$row[] = $event;
+				$row[] = $Blogs->created_date;
+				$data[] = $row;
+		}
+
+		$output = array(
+				"draw" => $_POST['draw'],
+				"recordsTotal" => $this->Contact->count_all(),
+				"recordsFiltered" => $this->Contact->count_filtered(),
+				"data" => $data,
+		);
+		echo json_encode($output);
 }
+}
+?>

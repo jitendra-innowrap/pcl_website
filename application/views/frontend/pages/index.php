@@ -437,55 +437,75 @@ Service Area 01
               </div>
             </div>
           </div> -->
-          <div class="col-lg-6 col-md-12">
+          <div class="col-lg-6 col-md-12 small-fa-play">
             <div class="row">
               <?php if(isset($testimonial['video']['0']->video_thumbnail)){?>
-              <div class="col-5">
+              <div class="col-5 video-wrap">
                 <div class="responsive-container aspect-ratio-1-2">
                   <img
                     src="<?php echo (isset($testimonial['video']['0']->video_thumbnail) ? $testimonial['video']['0']->video_thumbnail : 'assets/images/logo/Party Cruisers Limited black.png') ?>"
                     alt="Image">
                 </div>
+                <a href="<?php echo $testimonial['video']['0']->video_url ?>"
+                  class="play-btn popup-video background-image">
+                  <i class="fas fa-solid fa-play"></i>
+                </a>
               </div>
               <?php } ?>
               <?php if(isset($testimonial['video']['1']->video_thumbnail)){?>
-              <div class="col-7">
+              <div class="col-7 video-wrap">
                 <div class="responsive-container aspect-ratio-3-2">
                   <img
                     src="<?php echo (isset($testimonial['video']['1']->video_thumbnail) ? $testimonial['video']['1']->video_thumbnail : 'assets/images/logo/Party Cruisers Limited black.png') ?>"
                     alt="Image">
                 </div>
+                <a href="<?php echo $testimonial['video']['1']->video_url ?>"
+                  class="play-btn popup-video background-image">
+                  <i class="fas fa-solid fa-play"></i>
+                </a>
               </div>
               <?php } ?>
               <div class="col-12 mt-4 mb-4">
                 <div class="row">
                   <?php if(isset($testimonial['video']['2']->video_thumbnail)){?>
-                  <div class="col-7">
+                  <div class="col-7 video-wrap">
                     <div class="responsive-container aspect-ratio-1-3">
                       <img
                         src="<?php echo (isset($testimonial['video']['2']->video_thumbnail) ? $testimonial['video']['2']->video_thumbnail : 'assets/images/logo/Party Cruisers Limited black.png') ?>"
                         alt="Image">
                     </div>
+                    <a href="<?php echo $testimonial['video']['2']->video_url ?>"
+                      class="play-btn popup-video background-image">
+                      <i class="fas fa-solid fa-play"></i>
+                    </a>
                   </div>
                   <?php } ?>
                   <div class="col-5">
                     <div class="row">
                       <?php if(isset($testimonial['video']['3']->video_thumbnail)){?>
-                      <div class="col-12 mb-4">
+                      <div class="col-12 mb-4 video-wrap">
                         <div class="responsive-container aspect-ratio-1-2">
                           <img
                             src="<?php echo (isset($testimonial['video']['3']->video_thumbnail) ? $testimonial['video']['3']->video_thumbnail : 'assets/images/logo/Party Cruisers Limited black.png') ?>"
                             alt="Image">
                         </div>
+                        <a href="<?php echo $testimonial['video']['3']->video_url ?>"
+                          class="play-btn popup-video background-image">
+                          <i class="fas fa-solid fa-play"></i>
+                        </a>
                       </div>
                       <?php } ?>
                       <?php if(isset($testimonial['video']['4']->video_thumbnail)){?>
-                      <div class="col-12">
+                      <div class="col-12 video-wrap">
                         <div class="responsive-container aspect-ratio-1-2">
                           <img
                             src="<?php echo (isset($testimonial['video']['4']->video_thumbnail) ? $testimonial['video']['4']->video_thumbnail : 'assets/images/logo/Party Cruisers Limited black.png') ?>"
                             alt="Image">
                         </div>
+                        <a href="<?php echo $testimonial['video']['4']->video_url ?>"
+                          class="play-btn popup-video background-image">
+                          <i class="fas fa-solid fa-play"></i>
+                        </a>
                       </div>
                       <?php } ?>
                     </div>
@@ -493,12 +513,16 @@ Service Area 01
                 </div>
               </div>
               <?php if(isset($testimonial['video']['5']->video_thumbnail)){?>
-              <div class="col-12 mb-4">
+              <div class="col-12 mb-4 video-wrap">
                 <div class="responsive-container aspect-ratio-4-2">
                   <img
                     src="<?php echo (isset($testimonial['video']['5']->video_thumbnail) ? $testimonial['video']['5']->video_thumbnail : 'assets/images/logo/Party Cruisers Limited black.png') ?>"
                     alt="Image">
                 </div>
+                <a href="<?php echo $testimonial['video']['5']->video_url ?>"
+                  class="play-btn popup-video background-image">
+                  <i class="fas fa-solid fa-play"></i>
+                </a>
               </div>
               <?php } ?>
             </div>
@@ -508,39 +532,39 @@ Service Area 01
               <div class="col-md-6 col-sm-12 mb-4">
                 <?php if(isset($testimonial['text']['0']->text)){ ?>
                 <div class="responsive-container testimonial-text">
-                  <p><?php echo $testimonial['text']['0']->text; ?></p>
+                  <span class="more"><?php echo $testimonial['text']['0']->text; ?></span>
                   <p class="author"><?php echo $testimonial['text']['0']->client_name; ?></p>
-                </div>
-                <?php } ?>
-                <?php if(isset($testimonial['text']['1']->text)){ ?>
-                <div class="responsive-container testimonial-text mt-4">
-                  <p><?php echo $testimonial['text']['1']->text; ?></p>
-                  <p class="author"><?php echo $testimonial['text']['1']->client_name; ?></p>
                 </div>
                 <?php } ?>
                 <?php if(isset($testimonial['text']['2']->text)){ ?>
                 <div class="responsive-container testimonial-text mt-4">
-                  <p><?php echo $testimonial['text']['2']->text; ?></p>
+                  <span class="more1"><?php echo $testimonial['text']['2']->text; ?></span>
                   <p class="author"><?php echo $testimonial['text']['2']->client_name; ?></p>
-                </div>
-                <?php } ?>
-              </div>
-              <div class="col-md-6 col-sm-12">
-                <?php if(isset($testimonial['text']['3']->text)){ ?>
-                <div class="responsive-container testimonial-text">
-                  <p><?php echo $testimonial['text']['3']->text; ?></p>
-                  <p class="author"><?php echo $testimonial['text']['3']->client_name; ?></p>
                 </div>
                 <?php } ?>
                 <?php if(isset($testimonial['text']['4']->text)){ ?>
                 <div class="responsive-container testimonial-text mt-4">
-                  <p><?php echo $testimonial['text']['4']->text; ?></p>
+                  <span class="more"><?php echo $testimonial['text']['4']->text; ?></span>
                   <p class="author"><?php echo $testimonial['text']['4']->client_name; ?></p>
+                </div>
+                <?php } ?>
+              </div>
+              <div class="col-md-6 col-sm-12">
+                <?php if(isset($testimonial['text']['1']->text)){ ?>
+                <div class="responsive-container testimonial-text">
+                  <span class="more1"><?php echo $testimonial['text']['1']->text; ?></span>
+                  <p class="author"><?php echo $testimonial['text']['1']->client_name; ?></p>
+                </div>
+                <?php } ?>
+                <?php if(isset($testimonial['text']['3']->text)){ ?>
+                <div class="responsive-container testimonial-text mt-4">
+                  <span class="more"><?php echo $testimonial['text']['3']->text; ?></span>
+                  <p class="author"><?php echo $testimonial['text']['3']->client_name; ?></p>
                 </div>
                 <?php } ?>
                 <?php if(isset($testimonial['text']['5']->text)){ ?>
                 <div class="responsive-container testimonial-text mt-4">
-                  <p><?php echo $testimonial['text']['5']->text; ?></p>
+                  <span class="more1"><?php echo $testimonial['text']['5']->text; ?></span>
                   <p class="author"><?php echo $testimonial['text']['5']->client_name; ?></p>
                 </div>
                 <?php } ?>
@@ -557,69 +581,7 @@ Service Area 01
 <!--==============================
     Contact Area  
 ==============================-->
-<div class="contact-area-1 space overflow-hidden" data-bg-src="<?php echo base_url();?>assets/images/contact-1-bg.webp">
-  <div class="contact-shape1_1 shape-mockup jump d-lg-block d-none" data-top="0%" data-right="-8%">
-    <img src="<?php echo base_url();?>assets/img/normal/contact-shape_1-1.png" alt="img">
-  </div>
-  <div class="contact-shape1_2 shape-mockup jump-reverse d-lg-block d-none" data-bottom="-3%" data-left="-12%">
-    <img src="<?php echo base_url();?>assets/img/normal/contact-shape_1-2.png" alt="img">
-  </div>
-  <div class="container-fluid p-0">
-    <div class="contact-form-area space">
-      <div class="title-area text-center title-anim">
-        <span class="sub-title style2 text-white">LET US KNOW IF YOU COMING
-        </span>
-        <h2 class="sec-title text-white">WE CANT WAIT TO SEE YOU!</h2>
-      </div>
-      <div class="row">
-        <div class="col-lg-12">
-          <form action="mail.php" method="POST" class="contact-form ajax-contact">
-            <div class="row">
-              <div class="col-lg-6">
-                <div class="form-group form-icon-left">
-                  <i class="far fa-user"></i>
-                  <input type="text" class="form-control style-border" name="name" id="name"
-                    placeholder="Enter full name">
-                </div>
-              </div>
-              <div class="col-lg-6">
-                <div class="form-group form-icon-left">
-                  <i class="far fa-envelope"></i>
-                  <input type="text" class="form-control style-border" name="email" id="email"
-                    placeholder="Enter email address">
-                </div>
-              </div>
-              <div class="col-lg-4">
-                <div class="form-group form-icon-left">
-                  <i class="far fa-calendar"></i>
-                  <input type="date" class="form-control style-border" name="date" id="date">
-                </div>
-              </div>
-              <div class="col-lg-4">
-                <div class="form-group form-icon-left">
-                  <i class="far fa-calendar"></i>
-                  <input type="text" class="form-control style-border" name="number" id="number"
-                    placeholder="Number of guest">
-                </div>
-              </div>
-              <div class="col-lg-4">
-                <div class="form-group form-icon-left">
-                  <i class="far fa-calendar"></i>
-                  <input type="text" class="form-control style-border" name="message" id="meal"
-                    placeholder="Meal preference">
-                </div>
-              </div>
-            </div>
-
-            <div class="form-btn col-12 text-center">
-              <button type="submit" class="btn">MAKE RESERVATION</button>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+<?php include 'contact_form.php'; ?>
 
 <!--==============================
 Blog Area  

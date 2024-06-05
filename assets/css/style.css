@@ -14373,3 +14373,18 @@ span.select2-selection.select2-selection--single:focus {
     padding: 0px 136px 0px 30px;
   }
 }
+
+.small-fa-play .play-btn > i {
+  display: inline-block;
+  width: var(--icon-size, 50px);
+  height: var(--icon-size, 50px);
+  line-height: var(--icon-size, 50px);
+  text-align: center;
+  background-color: var(--white-color);
+  border: 1px solid rgba(199, 134, 101, 0.2);
+  color: var(--theme-color);
+  font-size: var(--icon-font-size, 15px);
+  border-radius: 50%;
+  z-index: 1;
+  transition: all ease 0.4s;
+}
