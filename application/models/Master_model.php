@@ -256,30 +256,31 @@ class Master_model extends CI_Model
 	}
 
 	public function upload($imagePost, $path = FALSE)
-	{
-		if (!is_dir('uploads/'.$path))
-		{
-			mkdir('./uploads/' . $path, 0777, TRUE);
-		}
-		$config['upload_path'] = './uploads/' . $path . '/';
-		$config['allowed_types'] = 'jpg|png|gif|jpeg|xls|xlsx|doc|docx|rtf|ppt|pptx|pptm|pdf|jfif|JFIF';
-		$this->load->library('upload', $config);
-		$this->upload->initialize($config);
-		$data['code'] = 0;
-		if (!$this->upload->do_upload($imagePost)) {
-			$error = array('error' => $this->upload->display_errors());
-			$data['msg'] = 'file not uploaded';
-			return $data;
-		} else {
-			$data1 = array('upload_data' => $this->upload->data());
-			$image_path = "uploads/" . $path . '/' . $this->upload->data()["file_name"];
+{
+    if (!is_dir('uploads/' . $path))
+    {
+        mkdir('./uploads/' . $path, 0777, TRUE);
+    }
+    $config['upload_path'] = './uploads/' . $path . '/';
+    $config['allowed_types'] = 'jpg|png|gif|jpeg|xls|xlsx|doc|docx|rtf|ppt|pptx|pptm|pdf|jfif|JFIF|webp';
+    $this->load->library('upload', $config);
+    $this->upload->initialize($config);
+    $data['code'] = 0;
+    if (!$this->upload->do_upload($imagePost)) {
+        $error = $this->upload->display_errors();
+        $data['msg'] = 'File not uploaded: ' . $error;
+        return $data;
+    } else {
+        $upload_data = $this->upload->data();
+        $image_path = "uploads/" . $path . '/' . $upload_data["file_name"];
 
-			$data['code'] = 1;
-			$data['img_url'] = $image_path;
-			$data['file_name'] = $this->upload->data()["file_name"];
-			return $data;
-		}
-	}
+        $data['code'] = 1;
+        $data['img_url'] = $image_path;
+        $data['file_name'] = $upload_data["file_name"];
+        return $data;
+    }
+}
+
 
     public function insertDocumentImages($table, $data = null)
 	{

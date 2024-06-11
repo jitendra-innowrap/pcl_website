@@ -907,7 +907,7 @@ class Ajax extends CI_Controller
 	}
 	
 	function Contact_list(){
-		$this->load->model('superadmin/Form_Model','Contact');
+		$this->load->model('superadmin/Contact_Model','Contact');
 		$list = $this->Contact->get_datatables();
 		$data = array();
 		$no = $_POST['start'];
@@ -920,6 +920,7 @@ class Ajax extends CI_Controller
 				$row[] = $Blogs->u_name;
 				$row[] = $contact;
 				$row[] = $Blogs->u_email;
+				$row[] = $Blogs->enquiry_for;
 				$row[] = $Blogs->location;
 				$row[] = $Blogs->date;
 				$row[] = $Blogs->number;
@@ -936,5 +937,99 @@ class Ajax extends CI_Controller
 		);
 		echo json_encode($output);
 }
+
+function house_of_vivah_list(){
+	$this->load->model('superadmin/House_of_vivah_Model','Contact');
+	$list = $this->Contact->get_datatables();
+	$data = array();
+	$no = $_POST['start'];
+	foreach ($list as $Blogs) {				
+			$contact = $Blogs->country_code ."-" . $Blogs->u_mobile;
+			$no++;
+			$row = array();
+			$row[] = $no;
+			$row[] = $Blogs->u_name;
+			$row[] = $contact;
+			$row[] = $Blogs->u_email;
+			$row[] = $Blogs->location;
+			$row[] = $Blogs->date;
+			$row[] = $Blogs->venue;
+			$row[] = $Blogs->event;
+			$row[] = $Blogs->created_date;
+			$data[] = $row;
+	}
+
+	$output = array(
+			"draw" => $_POST['draw'],
+			"recordsTotal" => $this->Contact->count_all(),
+			"recordsFiltered" => $this->Contact->count_filtered(),
+			"data" => $data,
+	);
+	echo json_encode($output);
+}
+
+function vows_vachan_list(){
+	$this->load->model('superadmin/Vows_vachan_Model','Contact');
+	$list = $this->Contact->get_datatables();
+	$data = array();
+	$no = $_POST['start'];
+	foreach ($list as $Blogs) {				
+			$contact = $Blogs->country_code ."-" . $Blogs->u_mobile;
+			$no++;
+			$row = array();
+			$row[] = $no;
+			$row[] = $Blogs->u_name;
+			$row[] = $contact;
+			$row[] = $Blogs->u_email;
+			$row[] = $Blogs->location;
+			$row[] = $Blogs->date;
+			$row[] = $Blogs->venue;
+			$row[] = $Blogs->event;
+			$row[] = $Blogs->created_date;
+			$data[] = $row;
+	}
+
+	$output = array(
+			"draw" => $_POST['draw'],
+			"recordsTotal" => $this->Contact->count_all(),
+			"recordsFiltered" => $this->Contact->count_filtered(),
+			"data" => $data,
+	);
+	echo json_encode($output);
+}
+
+function event_factory_list(){
+	$this->load->model('superadmin/Event_factory_Model','Contact');
+	$list = $this->Contact->get_datatables();
+	$data = array();
+	$no = $_POST['start'];
+	foreach ($list as $Blogs) {				
+			$contact = $Blogs->country_code ."-" . $Blogs->u_mobile;
+			$event = $Blogs->event. " - " . $Blogs->subEvent;
+			$no++;
+			$row = array();
+			$row[] = $no;
+			$row[] = $Blogs->u_name;
+			$row[] = $Blogs->companyname;
+			$row[] = $Blogs->designation;
+			$row[] = $contact;
+			$row[] = $Blogs->u_email;
+			$row[] = $Blogs->location;
+			$row[] = $Blogs->date;
+			$row[] = $Blogs->venue;
+			$row[] = $event;
+			$row[] = $Blogs->created_date;
+			$data[] = $row;
+	}
+
+	$output = array(
+			"draw" => $_POST['draw'],
+			"recordsTotal" => $this->Contact->count_all(),
+			"recordsFiltered" => $this->Contact->count_filtered(),
+			"data" => $data,
+	);
+	echo json_encode($output);
+}
+
 }
 ?>

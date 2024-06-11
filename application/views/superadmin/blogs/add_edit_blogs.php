@@ -46,7 +46,7 @@
 									<input class="form-control" name="author" value="<?php echo isset($edit['author'])?$edit['author']:'';?>" placeholder="Enter Author Name" required>
 								</div>
 								<div class="col-md-4 mb-3">
-									<label for="img">Image</label>
+									<label for="img">Image (1200*745)</label>
 									<input type="file" class="form-control" id="cover_img" name="file" accept="image/jpeg,image/png,image/jpg" placeholder="Select a image" <?php echo isset($edit['image']) ? '':'required'?>>
 								</div>
 								<div class="col-md-4 mb-3">
@@ -112,12 +112,12 @@ document.addEventListener('DOMContentLoaded', function() {
     if (fileInput) {
         fileInput.addEventListener('change', function() {
             const file = fileInput.files[0];
-            const validImageTypes = ['image/jpeg', 'image/png', 'image/jpg'];
+						const validImageTypes = ['image/jpeg', 'image/png', 'image/jpg', 'image/webp'];
             const maxSize = 2 * 1024 * 1024; // 2MB
 
             if (file) {
                 if (!validImageTypes.includes(file.type)) {
-										toastr.error('Please upload a valid image (JPEG, PNG, JPG)', "Error");
+									toastr.error('Please upload a valid image (JPEG, PNG, JPG, WebP)', "Error");
                     fileInput.value = ''; // Clear the input
                 } else if (file.size > maxSize) {
 										toastr.error('File size must be less than 2MB', "Error");

@@ -1,19 +1,19 @@
 <!--==============================
     Breadcumb
     ============================== -->
-<div class="breadcumb-wrapper" data-bg-src="assets/img/bg/breadcrumb-bg.png">
+    <div class="breadcumb-wrapper" data-bg-src="assets/img/bg/breadcrumb-bg.png">
   <!-- bg animated image/ -->
   <div class="container">
     <div class="row justify-content-between align-items-center">
       <div class="col-md-8">
         <div class="breadcumb-content">
-          <h1 class="breadcumb-title">House of Vivaah</h1>
+          <h1 class="breadcumb-title">Event Factory</h1>
         </div>
       </div>
       <div class="col-md-4">
         <ul class="breadcumb-menu text-md-end">
           <li><a href="<?php echo base_url();?>">Home</a></li>
-          <li class="active">House of Vivaah</li>
+          <li class="active">Event Factory</li>
         </ul>
       </div>
     </div>
@@ -26,22 +26,19 @@
     ==============================-->
 <div class="space">
   <div class="container">
-    <div class="row flex-row-reverse align-items-center justify-content-between">
+  <div class="row flex-row-reverse align-items-center justify-content-between">
       <div class="col-lg-6">
-        <div class="about-thumb mb-5 mb-lg-0 text-lg-end text-center img-anim"
-          style="display:flex;align-items: center;justify-content: center;">
-          <img class="about-img-1" style="width:100%;max-width:500px;" src="<?php echo base_url();?>assets/images/logo/vivaah logo 1.png" alt="img">
+        <div class="about-thumb mb-5 mb-lg-0 text-lg-end text-center img-anim" style="display:flex;align-items: center;justify-content: center;">
+          <img class="about-img-1" style="width:100%;max-width:500px;" src="<?php echo base_url();?>assets/images/logo/EVENT FACTORY .png" alt="img">
         </div>
       </div>
       <div class="col-lg-6">
         <div class="about-content-wrap title-anim text-center">
           <div class="title-area mb-0">
             <span class="sub-title style2">More About Us</span>
-            <h2 class="sec-title"> House of Vivaah</h2>
-            <h4 class="sec-title"> Design | Décor | Production</h4>
-            <p class="sec-text">Explore unparalleled luxury weddings with House of Vivaah, a flagship brand of Party
-              Cruisers Ltd., offering full-service wedding decor, ambiance styling, innovative wedding designs &
-              seamless production.</p>
+            <h2 class="sec-title">Event Factory</h2>
+            <h4 class="sec-title">Corporate Impression Management Company</h4>
+            <p class="sec-text">We specialize in lavish luxury/black-tie corporate events. Annual Meet, Product Launch, Team-Building Retreats, Gala Dinner, Activations, Mall Decor, MICE, Exhibition Installation, Stall Designing & Fabrication are the kinds of projects we work on.</p>
           </div>
         </div>
       </div>
@@ -359,10 +356,10 @@ Service Area 01
       <div class="row">
         <div class="col-lg-12">
           <h4 class="form-messages"></h4>
-          <form action="<?php echo base_url("console/house_of_vivah_form"); ?>" method="POST"
-            class="contact-form form-contact-black" id="houseOfVivahForm">
+          <form action="<?php echo base_url("console/event_factory_form"); ?>" method="POST"
+            class="contact-form form-contact-black" id="eventFactoryForm">
             <div class="row">
-              <input type="hidden" name="enquiry_for" value="House of vivah" />
+            <input type="hidden" name="enquiry_for" value="Event Factory" />
               <div class="col-lg-4">
                 <label>Full Name*</label>
                 <div class="form-group form-icon-left">
@@ -370,6 +367,24 @@ Service Area 01
                   <input type="text" class="form-control style-border" name="name" id="name"
                     placeholder="Enter Full Name">
                   <div class="error" id="nameError"></div>
+                </div>
+              </div>
+              <div class="col-lg-4">
+                <label>Company Name*</label>
+                <div class="form-group form-icon-left">
+                  <i class="far fa-user"></i>
+                  <input type="text" class="form-control style-border" name="companyname" id="companyname"
+                    placeholder="Enter Company Name">
+                  <div class="error" id="companynameError"></div>
+                </div>
+              </div>
+              <div class="col-lg-4">
+                <label>Designation*</label>
+                <div class="form-group form-icon-left">
+                  <i class="far fa-user"></i>
+                  <input type="text" class="form-control style-border" name="designation" id="designation"
+                    placeholder="Enter Designation">
+                  <div class="error" id="designationError"></div>
                 </div>
               </div>
               <div class="col-lg-4">
@@ -383,7 +398,7 @@ Service Area 01
                     <i class="fas fa-phone-alt"></i>
                     <input type="number" class="form-control style-border" name="contact" id="contact"
                       placeholder="Enter Contact">
-                    <div class="error" id="contactError"></div>
+                      <div class="error" id="contactError"></div>
                   </div>
                 </div>
               </div>
@@ -427,14 +442,21 @@ Service Area 01
                 <div class="form-group form-icon-left">
                   <select name="event" id="event" class="form-control style-border">
                     <option value="">Select Event</option>
-                    <option value="Engagement">Engagement</option>
-                    <option value="Haldi">Haldi</option>
-                    <option value="Mehendi">Mehendi</option>
-                    <option value="Sangeet">Sangeet</option>
-                    <option value="Wedding">Wedding</option>
-                    <option value="All the Above">All the Above</option>
+                    <option value="MICE">MICE</option>
+                    <option value="R&R/ Annual Awards">R&R/ Annual Awards</option>
+                    <option value="Product Launch">Product Launch</option>
+                    <option value="Offsite">Offsite</option>
+                    <option value="Other">Other</option>
                   </select>
                   <div class="error" id="eventError"></div>
+                </div>
+              </div>
+              <div class="col-lg-4" id="otherEventContainer" style="display:none;">
+                <label>Other Event*</label>
+                <div class="">
+                  <input type="text" class="form-control style-border"  maxlength="100" name="otherEvent" id="otherEvent"
+                    placeholder="Specify Other Event">
+                  <div class="error" id="otherEventError"></div>
                 </div>
               </div>
             </div>

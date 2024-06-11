@@ -1,19 +1,19 @@
 <!--==============================
     Breadcumb
     ============================== -->
-<div class="breadcumb-wrapper" data-bg-src="assets/img/bg/breadcrumb-bg.png">
+    <div class="breadcumb-wrapper" data-bg-src="assets/img/bg/breadcrumb-bg.png">
   <!-- bg animated image/ -->
   <div class="container">
     <div class="row justify-content-between align-items-center">
       <div class="col-md-8">
         <div class="breadcumb-content">
-          <h1 class="breadcumb-title">House of Vivaah</h1>
+          <h1 class="breadcumb-title">Venue Affairs</h1>
         </div>
       </div>
       <div class="col-md-4">
         <ul class="breadcumb-menu text-md-end">
           <li><a href="<?php echo base_url();?>">Home</a></li>
-          <li class="active">House of Vivaah</li>
+          <li class="active">Venue Affairs</li>
         </ul>
       </div>
     </div>
@@ -26,22 +26,19 @@
     ==============================-->
 <div class="space">
   <div class="container">
-    <div class="row flex-row-reverse align-items-center justify-content-between">
+  <div class="row flex-row-reverse align-items-center justify-content-between">
       <div class="col-lg-6">
-        <div class="about-thumb mb-5 mb-lg-0 text-lg-end text-center img-anim"
-          style="display:flex;align-items: center;justify-content: center;">
-          <img class="about-img-1" style="width:100%;max-width:500px;" src="<?php echo base_url();?>assets/images/logo/vivaah logo 1.png" alt="img">
+        <div class="about-thumb mb-5 mb-lg-0 text-lg-end text-center img-anim" style="display:flex;align-items: center;justify-content: center;">
+          <img class="about-img-1" style="width:100%;max-width:500px;" src="<?php echo base_url();?>assets/images/logo/venue affairs.cdr_ctc.png" alt="img">
         </div>
       </div>
       <div class="col-lg-6">
         <div class="about-content-wrap title-anim text-center">
           <div class="title-area mb-0">
             <span class="sub-title style2">More About Us</span>
-            <h2 class="sec-title"> House of Vivaah</h2>
-            <h4 class="sec-title"> Design | Décor | Production</h4>
-            <p class="sec-text">Explore unparalleled luxury weddings with House of Vivaah, a flagship brand of Party
-              Cruisers Ltd., offering full-service wedding decor, ambiance styling, innovative wedding designs &
-              seamless production.</p>
+            <h2 class="sec-title">Venue Affairs</h2>
+            <!-- <h4 class="sec-title"> Design | Décor | Production</h4> -->
+            <p class="sec-text">An entertainment, artist and talent management agency specially designed and developed for budding new talents and artist who want a break through in wedding industry. We also have a special team to serve our wedding clients with unique entertainment acts.</p>
           </div>
         </div>
       </div>
@@ -362,7 +359,7 @@ Service Area 01
           <form action="<?php echo base_url("console/house_of_vivah_form"); ?>" method="POST"
             class="contact-form form-contact-black" id="houseOfVivahForm">
             <div class="row">
-              <input type="hidden" name="enquiry_for" value="House of vivah" />
+            <input type="hidden" name="enquiry_for" value="Venue Affairs" />
               <div class="col-lg-4">
                 <label>Full Name*</label>
                 <div class="form-group form-icon-left">
@@ -383,7 +380,7 @@ Service Area 01
                     <i class="fas fa-phone-alt"></i>
                     <input type="number" class="form-control style-border" name="contact" id="contact"
                       placeholder="Enter Contact">
-                    <div class="error" id="contactError"></div>
+                      <div class="error" id="contactError"></div>
                   </div>
                 </div>
               </div>

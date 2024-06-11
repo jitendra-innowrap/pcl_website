@@ -40,7 +40,7 @@
 								</div>
 								<div class="row col-md-12 mb-3 banner">
 									<div class="col-md-6 mb-3">
-										<label for="banner_img">Banner image*</label>
+										<label for="banner_img">Banner image* (1920*745)</label>
 										<input class="form-control" id="banner_img" type="file" accept="image/jpeg,image/png,image/jpg" name="file" <?php echo isset($edit['image']) ? '':'required'?>>
 									</div>
 									<div class="col-md-6 mb-3">
@@ -84,12 +84,12 @@ document.addEventListener('DOMContentLoaded', function() {
     if (fileInput) {
         fileInput.addEventListener('change', function() {
             const file = fileInput.files[0];
-            const validImageTypes = ['image/jpeg', 'image/png', 'image/jpg'];
+						const validImageTypes = ['image/jpeg', 'image/png', 'image/jpg', 'image/webp'];
             const maxSize = 2 * 1024 * 1024; // 2MB
 
             if (file) {
                 if (!validImageTypes.includes(file.type)) {
-										toastr.error('Please upload a valid image (JPEG, PNG, JPG)', "Error");
+									toastr.error('Please upload a valid image (JPEG, PNG, JPG, WebP)', "Error");
                     fileInput.value = ''; // Clear the input
                 } else if (file.size > maxSize) {
 										toastr.error('File size must be less than 2MB', "Error");

@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  var form = "#contactForm";
+  var form = "#eventFactoryForm";
   var invalidCls = "is-invalid";
   var $email = '[name="email"]';
   var $validation = '[name="name"],[name="email"],[name="subject"],[name="number"],[name="message"]';
@@ -22,6 +22,14 @@ $(document).ready(function() {
       validateName();
   });
   
+  $('#companyname').on('keyup', function() {
+    validateCompanyName();
+  });
+
+  $('#designation').on('keyup', function() {
+    validateDesignation();
+  });
+  
   $('#location').on('keyup', function() {
     validateLocation();
   });
@@ -33,46 +41,31 @@ $(document).ready(function() {
   $('#email').on('keyup', function() {
       validateEmail();
   });
-
-  $('#date').on('change', function() { // Change event for date input
-      validateDate();
+  
+  $('#venue').on('keyup', function() {
+    validateVenue();
   });
 
-  $('#number').on('keyup', function() {
-      validateNumberOfGuests();
+  $('#date').on('change', function() { 
+      validateDate();
   });
 
   $('#event').on('change', function() {
       validateEvent();
   });
   
-  $('#otherEvent').on('change', function() {
-    validateSubEvent();
+  $('#event').on('change', function() {
+    var selectedEvent = $(this).val();
+    var subEventOptions = '';
+    if (selectedEvent === 'Other') {
+        $('#otherEventContainer').show();
+    }else{
+    $('#otherEventContainer').hide();
+  }  
   });
 
-  // Event dropdown change handler
-  $('#event').on('change', function() {
-      var selectedEvent = $(this).val();
-      var subEventOptions = '';
-      if (selectedEvent === 'other') {
-          $('#otherEventContainer').show();
-          $('#subEventContainer').hide();
-      } else if (selectedEvent === 'wedding') {
-        subEventOptions = '<option value="haldi">Haldi</option><option value="sangeet">Sangeet</option><option value="mehendi">Mehendi</option><option value="wedding">Wedding</option>';
-        $('#otherEventContainer').hide();
-        $('#subEventContainer').show();
-        $('#subEvent').html(subEventOptions);
-    }else if(selectedEvent === 'birthday') {
-        subEventOptions = '<option value="1 - 20 age">1 to 20 Age</option><option value="21 - 49 age">21 to 49 Age</option><option value="50 +">50 and Above</option>';
-        $('#otherEventContainer').hide();
-        $('#subEventContainer').show();
-        $('#subEvent').html(subEventOptions);
-    } else{
-      $('#subEventContainer').hide();
-      $('#otherEventContainer').hide();
-    }
-
-         
+  $('#otherEvent').on('change', function() {
+    validateSubEvent();
   });
 
   // Function to validate the entire form
@@ -81,9 +74,11 @@ $(document).ready(function() {
       if (!validateName()) isValid = false;
       if (!validateLocation()) isValid = false;
       if (!validateContact()) isValid = false;
+      if (!validateCompanyName()) isValid = false;
+      if (!validateDesignation()) isValid = false;
       if (!validateEmail()) isValid = false;
       if (!validateDate()) isValid = false;
-      if (!validateNumberOfGuests()) isValid = false;
+      if (!validateVenue()) isValid = false;
       if (!validateEvent()) isValid = false;
       if (!validateSubEvent()) isValid = false;
       return isValid;
@@ -103,6 +98,31 @@ $(document).ready(function() {
       }
   }
   
+  function validateCompanyName() {
+    var companyname = $('#companyname').val();
+    if (!/^[a-zA-Z\s]+$/.test(companyname)) {
+        $('#companynameError').text('Please company name.');
+        $('#companyname').addClass(invalidCls);
+        return false;
+    } else {
+        $('#companynameError').text('');
+        $('#companyname').removeClass(invalidCls);
+        return true;
+    }
+  }
+  function validateDesignation() {
+    var designation = $('#designation').val();
+    if (!/^[a-zA-Z\s]+$/.test(designation)) {
+        $('#designationError').text('Please designation.');
+        $('#designation').addClass(invalidCls);
+        return false;
+    } else {
+        $('#designationError').text('');
+        $('#designation').removeClass(invalidCls);
+        return true;
+    }
+  }
+  
   function validateLocation() {
     var location = $('#location').val().trim(); // Trim whitespace from the input
     if (location === '') {
@@ -112,6 +132,19 @@ $(document).ready(function() {
     } else {
         $('#locationError').text('');
         $('#location').removeClass(invalidCls);
+        return true;
+    }
+  }
+  
+  function validateVenue() {
+    var venue = $('#venue').val().trim(); // Trim whitespace from the input
+    if (venue === '') {
+      $('#venueError').text('Please enter venue.');
+      $('#venue').addClass(invalidCls);
+      return false;
+    } else {
+        $('#venueError').text('');
+        $('#venue').removeClass(invalidCls);
         return true;
     }
   }
@@ -142,6 +175,26 @@ $(document).ready(function() {
           return true;
       }
   }
+  
+  function validateSubEvent() {
+    var otherEvent = $('#otherEvent').val();
+    var event = $('#event').val();
+    if (event === 'Other'){
+        if (!otherEvent) {
+            $('#otherEventError').text('Please enter an sub event.');
+            $('#otherEvent').addClass(invalidCls);
+            return false;
+        } else {
+            $('#otherEventError').text('');
+            $('#otherEvent').removeClass(invalidCls);
+            return true;
+        }
+    } else {
+        $('#otherEventError').text('');
+        $('#otherEvent').removeClass(invalidCls);
+        return true;
+    }
+  }
 
   function validateDate() {
       var date1 = $('#date').val();;
@@ -163,19 +216,6 @@ $(document).ready(function() {
       }
   }
 
-  function validateNumberOfGuests() {
-      var numberOfGuests = $('#number').val();
-      if (numberOfGuests < 1 || numberOfGuests > 100000) {
-          $('#numberError').text('Please enter a number of guests between 0 and 100,000.');
-          $('#number').addClass(invalidCls);
-          return false;
-      } else {
-          $('#numberError').text('');
-          $('#number').removeClass(invalidCls);
-          return true;
-      }
-  }
-
   function validateEvent() {
       var event = $('#event').val();
       if (!event) {
@@ -187,69 +227,46 @@ $(document).ready(function() {
           $('#event').removeClass(invalidCls);
           return true;
       }
-  }
-  
-  function validateSubEvent() {
-    var otherEvent = $('#otherEvent').val();
-    var event = $('#event').val();
-    if (event === 'other'){
-        if (!otherEvent) {
-            $('#otherEventError').text('Please enter an sub event.');
-            $('#otherEvent').addClass(invalidCls);
-            return false;
-        } else {
-            $('#otherEventError').text('');
-            $('#otherEvent').removeClass(invalidCls);
-            return true;
-        }
-    } else {
-        $('#otherEventError').text('');
-        $('#otherEvent').removeClass(invalidCls);
-        return true;
-    }
-  }
-  
-  function sendContact() {
-    var formData = $(form).serialize();
-    var valid;
-    valid = validateContact();
-    if (valid) {
-        jQuery
-            .ajax({
-                url: $(form).attr("action"),
-                data: formData,
-                type: "POST",
-            })
-            .done(function (response) {
-                console.log("Response from server: ", response);
-                response = JSON.parse(response); // Ensure response is parsed correctly
-                if(response.code === 1){
-                    // Make sure that the formMessages div has the 'success' class.
-                    formMessages.removeClass("error");
-                    formMessages.addClass("success");
-                    // Set the message text.
-                    formMessages.text('Thank you!!');
-                    // Clear the form.
-                    $(form)[0].reset();
-                    $('#subEventContainer').hide();
-                    $('#otherEventContainer').hide();
-                } else {
-                    formMessages.addClass("error");
-                    formMessages.text('Something went wrong!!');
-                }
-            })
-            .fail(function (data) {
-                // Make sure that the formMessages div has the 'error' class.
-                formMessages.removeClass("success");
-                formMessages.addClass("error");
-                // Set the message text.
-                if (data.responseText !== "") {
-                    formMessages.html(data.responseText);
-                } else {
-                    formMessages.html("Oops! An error occurred and your message could not be sent.");
-                }
-            });
-    }
-}
+  }  
 
+  function sendContact() {
+      var formData = $(form).serialize();
+      var valid;
+      valid = validateContact();
+      if (valid) {
+          jQuery
+              .ajax({
+                  url: $(form).attr("action"),
+                  data: formData,
+                  type: "POST",
+              })
+              .done(function (response) {
+                response = JSON.parse(response);
+                if(response.code === 1){
+                   // Make sure that the formMessages div has the 'success' class.
+                   formMessages.removeClass("error");
+                   formMessages.addClass("success");
+                   // Set the message text.
+                   formMessages.text('Thank you!!');
+                   // Clear the form.
+                   $(form)[0].reset();
+                   $('#otherEventContainer').hide();
+                }else{
+                  formMessages.addClass("error");
+                  formMessages.text('Something wents Wrong!!');
+                }
+              })
+              .fail(function (data) {
+                  // Make sure that the formMessages div has the 'error' class.
+                  formMessages.removeClass("success");
+                  formMessages.addClass("error");
+                  // Set the message text.
+                  if (data.responseText !== "") {
+                      formMessages.html(data.responseText);
+                  } else {
+                      formMessages.html("Oops! An error occurred and your message could not be sent.");
+                  }
+              });
+      }
+  }
 });

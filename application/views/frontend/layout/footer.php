@@ -10,29 +10,6 @@
     <img src="<?php echo base_url();?>assets/img/normal/footer-1-shape2.png" alt="img">
   </div>
   <div class="container">
-    <div class="footer-top">
-      <div class="row align-items-center justify-content-between">
-        <div class="col-sm-auto">
-          <div class="footer-logo mb-40 mb-sm-0">
-            <a href="<?php echo base_url();?>"><img class="company-logo"
-                src="<?php echo base_url();?>assets/images/logo/Party Cruisers Limited black.png" alt="logo"></a>
-          </div>
-        </div>
-        <div class="col-sm-auto">
-          <div class="social-btn style2">
-            <a href="https://www.facebook.com/partycruisersltd" target="_blank"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://youtube.com/@partycruiserslimited9671?si=eXu-T4VSv8e-IbBY" target="_blank"><i
-                class="fab fa-youtube"></i></a>
-            <a href="https://wa.me/918433659225" target="_blank"><i class="fab fa-whatsapp"></i></a>
-            <a href="https://www.linkedin.com/company/partycruisersltd/" target="_blank"><i
-                class="fab fa-linkedin-in"></i></a>
-            <a href="https://www.instagram.com/partycruisersltd?igsh=OWVrZXBlNnNsMGQz" target="_blank"><i
-                class="fab fa-instagram"></i></a>
-            <a href="https://in.pinterest.com/partycruisers/" target="_blank"><i class="fab fa-pinterest"></i></a>
-          </div>
-        </div>
-      </div>
-    </div>
     <div class="widget-area">
       <div class="row justify-content-between">
         <div class="col-md-6 col-lg-4 col-xl-3">
@@ -64,7 +41,7 @@
         </div>
         <div class="col-md-6 col-lg-4 col-xl-3">
           <div class="widget widget_nav_menu footer-widget">
-            <h3 class="widget_title">Privacy & Policy</h3>
+            <h3 class="widget_title">Policy</h3>
             <div class="menu-all-pages-container list-column2">
               <ul class="menu">
                 <li><a href="<?php echo base_url();?>investor-relation">Investor Relation</a></li>
@@ -75,15 +52,16 @@
           </div>
         </div>
         <div class="col-md-6 col-lg-4 col-xl-3">
-          <div class="widget footer-widget">
-            <h3 class="widget_title">Subscribe Now</h3>
-            <p class="footer-text">Don’t worry we don’t spam your email</p>
-            <form class="newsletter-form">
-              <div class="form-group">
-                <input class="form-control" type="email" placeholder="Email Address" required="">
-              </div>
-              <button type="submit" class="btn">SUBSCRIBE</button>
-            </form>
+          <div class="social-btn style2">
+            <a href="https://www.facebook.com/partycruisersltd" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://youtube.com/@partycruiserslimited9671?si=eXu-T4VSv8e-IbBY" target="_blank"><i
+                class="fab fa-youtube"></i></a>
+            <a href="https://wa.me/918433659225" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://www.linkedin.com/company/partycruisersltd/" target="_blank"><i
+                class="fab fa-linkedin-in"></i></a>
+            <a href="https://www.instagram.com/partycruisersltd?igsh=OWVrZXBlNnNsMGQz" target="_blank"><i
+                class="fab fa-instagram"></i></a>
+            <a href="https://in.pinterest.com/partycruisers/" target="_blank"><i class="fab fa-pinterest"></i></a>
           </div>
         </div>
       </div>
@@ -164,8 +142,16 @@
 <!-- Main Js File -->
 <script src="<?php echo base_url();?>assets/js/main.js"></script>
 
- <!-- Custom CSS -->
+<!-- Custom CSS -->
+<?php if($act === 1.1  || $act === 3.1 || $act === 12.1){ ?>
 <script src="<?php echo base_url();?>assets/js/contact.js"></script>
+<?php } ?>
+<?php if($act === 4.1 || $act === 5.1 || $act === 8.1){ ?>
+<script src="<?php echo base_url();?>assets/js/house-of-vivah.js"></script>
+<?php } ?>
+<?php if($act === 6.1){ ?>
+<script src="<?php echo base_url();?>assets/js/event-factory.js"></script>
+<?php } ?>
 <script src="<?php echo base_url();?>assets/js/common.js"></script>
 </body>
 

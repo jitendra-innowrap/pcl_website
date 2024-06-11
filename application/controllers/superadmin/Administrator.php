@@ -172,27 +172,20 @@ class Administrator extends CI_Controller
 			if (isset($_FILES['file'])) {
 				$path = 'slider';
 				$image = $this->Master->upload('file', $path);
+				print_r($image);exit();
 				if ($image['code'] == 1) {
 					$img_url = $image['img_url'];
 					$this->_create_thumbs($image['file_name'],$img_url);
 				}
 			}
             $update = array();
-            if ($title) {
-                $update['title'] = $title;
-            }
+						$update['title'] = $title;
+						$update['image_alt'] = $image_alt;
+						$update['order_no'] = $order_no;
+						$update['description'] = $description;
 						if ($name) {
 								$update['name'] = $name;
 						}
-						if ($image_alt) {
-							$update['image_alt'] = $image_alt;
-						}
-            if ($order_no) {
-                $update['order_no'] = $order_no;
-            }
-            if ($description) {
-                $update['description'] = $description;
-            }
             if ($is_button) {
                 $update['is_button'] = $is_button;
             }else{
@@ -203,21 +196,21 @@ class Administrator extends CI_Controller
             }else{
                 $update['status'] = 0;
             }
-            if ($routing_url) {
-                $update['routing_url'] = $routing_url;
-            }
+						if ($routing_url) {
+							$update['routing_url'] = $routing_url;
+					}
 						if ($img_url){
 							$update['image'] = $img_url;
 							$update['image_large'] = 'assets/images/large/'.$image['file_name'];
 							$update['image_medium'] = 'assets/images/medium/'.$image['file_name'];
 							$update['image_small'] = 'assets/images/small/'.$image['file_name'];
 						}
-            if ($is_video) {
-                $update['is_video'] = $is_video;
-            }
-            if ($video_url) {
-                $update['video_url'] = $video_url;
-            }
+						if ($is_video) {
+							$update['is_video'] = $is_video;
+					}
+					if ($video_url) {
+							$update['video_url'] = $video_url;
+					}
 			if ($id) {
 				$this->db->where('id', $id);
 				if ($this->db->update('banner', $update)) {
@@ -829,6 +822,9 @@ class Administrator extends CI_Controller
         $this->db->where('status',1);
         $data['casestudies_category'] = $this->db->get('testimonial_category')->result();
 				
+				$this->db->where('status',1);
+        $data['brand'] = $this->db->get('investors_category')->result();
+				
 				$this->db->select('t.id, t.client_name, t.brand,t.video_url, GROUP_CONCAT(tc.name SEPARATOR ", ") as categories');
 				$this->db->where('t.status',1);
 				$this->db->from('testimonial t');
@@ -1234,6 +1230,8 @@ class Administrator extends CI_Controller
 	public function add_edit_Testimonial(){
 			$this->db->where('status',1);
 			$data['Testimonial_category'] = $this->db->get('testimonial_category')->result();
+			$this->db->where('status',1);
+        $data['brand'] = $this->db->get('investors_category')->result();
 			$id = $this->input->get('id');
 			if ($id) {
 					$title = 'Edit Testimonial';
@@ -2890,6 +2888,30 @@ class Administrator extends CI_Controller
 		$data['active'] = 17;
 		$data['act'] = 17.4;
 		$data['middle_content'] = 'form/contact_us';
+		$this->load->view('superadmin/layout/template', $data);
+	}
+	
+	public function house_of_vivah(){
+		$data['page_title'] = "House of Vivah";
+		$data['active'] = 17;
+		$data['act'] = 17.5;
+		$data['middle_content'] = 'form/house_of_vivah';
+		$this->load->view('superadmin/layout/template', $data);
+	}
+	
+	public function vows_vachan(){
+		$data['page_title'] = "Vows Vachan";
+		$data['active'] = 17;
+		$data['act'] = 17.6;
+		$data['middle_content'] = 'form/vows_vachan';
+		$this->load->view('superadmin/layout/template', $data);
+	}
+	
+	public function event_factory(){
+		$data['page_title'] = "Event Factory";
+		$data['active'] = 17;
+		$data['act'] = 17.7;
+		$data['middle_content'] = 'form/event_factory';
 		$this->load->view('superadmin/layout/template', $data);
 	}
 }

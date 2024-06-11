@@ -25,13 +25,12 @@
 								<div class="col-md-4 mb-3">
 									<label for="name">Brand*</label>
 									<select name="brand" class="form-control select2" required>
-										<option value="" disabled>Select categories</option>
-										<option value="House_of_Vivaah" 	<?php echo isset($edit['brand'])?($edit['brand'] == 'House_of_Vivaah' ? 'selected' : ''):'';?>>House of Vivaah</option>
-										<option value="Vows_Vachan" 	<?php echo isset($edit['brand'])?($edit['brand'] == 'Vows_Vachan' ? 'selected' : ''):'';?> >Vows Vachan</option>
-										<option value="Event_Factory" 	<?php echo isset($edit['brand'])?($edit['brand'] == 'Event_Factory' ? 'selected' : ''):'';?> >Event Factory</option>
-										<option value="Live_Space" 	<?php echo isset($edit['brand'])?($edit['brand'] == 'Live_Space' ? 'selected' : ''):'';?> >Live Space</option>
-										<option value="Venue_Affairs" 	<?php echo isset($edit['brand'])?($edit['brand'] == 'Venue_Affairs' ? 'selected' : ''):'';?> >Venue Affairs</option>
-										<option value="Party_House" 	<?php echo isset($edit['brand'])?($edit['brand'] == 'Party_House' ? 'selected' : ''):'';?> >Party House</option>
+									<option value="" disabled>Select Brand</option>
+										<?php foreach ($brand as $value){?>
+											<option value="<?php echo $value->name;?>" <?php echo isset($edit['brand'])?($edit['brand'] == $value->name ? 'selected' : ''):'';?>>
+															<?php echo $value->name;?>
+													</option>
+										<?php }?>
 									</select>
 								</div>
 								<div class="col-md-4 mb-3">
@@ -125,12 +124,12 @@ document.addEventListener('DOMContentLoaded', function() {
     if (fileInput) {
         fileInput.addEventListener('change', function() {
             const file = fileInput.files[0];
-            const validImageTypes = ['image/jpeg', 'image/png', 'image/jpg', 'image/gif'];
+            const validImageTypes = ['image/jpeg', 'image/png', 'image/jpg', 'image/webp', 'image/gif'];
             const maxSize = 2 * 1024 * 1024; // 2MB
 
             if (file) {
                 if (!validImageTypes.includes(file.type)) {
-										toastr.error('Please upload a valid image (JPEG, PNG, JPG)', "Error");
+										toastr.error('Please upload a valid image (JPEG, PNG, JPG, gif, webp)', "Error");
                     fileInput.value = ''; // Clear the input
                 } else if (file.size > maxSize) {
 										toastr.error('File size must be less than 2MB', "Error");

@@ -94,8 +94,8 @@
   --success-color: #28a745;
   --error-color: #dc3545;
   --border-color: #E3E3E3;
-  --title-font: "Playfair Display", serif;
-  --body-font: "Poppins", sans-serif;
+  --title-font: "Montserrat", sans-serif;
+  --body-font: "Montserrat", sans-serif;
   --icon-font: "Font Awesome 5 Free";
   --main-container: 1320px;
   --container-gutters: 24px;
@@ -270,7 +270,7 @@ h4,
 h5,
 .h6,
 h6 {
-  font-family: var(--title-font);font-style: italic;
+  font-family: var(--title-font);
   color: var(--title-color);
   text-transform: none;
   font-weight: 700;
@@ -407,7 +407,7 @@ h6 {
   position: relative;
   font-size: 24px;
   font-weight: 500 !important;
-  font-family: var(--title-font);font-style: italic;
+  font-family: var(--title-font);
   line-height: 1em;
   margin: -0.12em 0 25px 0;
 }
@@ -2249,7 +2249,7 @@ textarea.is-invalid {
   color: var(--title-color);
   border: 1px solid var(--title-color);
   border-radius: 0;
-  font-family: var(--title-font);font-style: italic;
+  font-family: var(--title-font);
 }
 .btn.btn-border4:before {
   display: none;
@@ -2624,7 +2624,7 @@ textarea.is-invalid {
 .shadow-text {
   font-size: 120px;
   font-weight: 500;
-  font-family: var(--title-font);font-style: italic;
+  font-family: var(--title-font);
   color: rgba(0, 0, 0, 0.03);
 }
 
@@ -2955,7 +2955,7 @@ textarea.is-invalid {
 }
 
 .font-title {
-  font-family: var(--title-font);font-style: italic;
+  font-family: var(--title-font);
 }
 
 .font-body {
@@ -3769,7 +3769,7 @@ a.text-theme:hover,
   position: relative;
   font-size: 24px;
   font-weight: 500;
-  font-family: var(--title-font);font-style: italic;
+  font-family: var(--title-font);
   line-height: 1em;
   margin: -0.12em 0 47px 0;
 }
@@ -3840,7 +3840,7 @@ a.text-theme:hover,
 .widget-author .widget-author-desig {
   font-size: 18px;
   font-weight: 400;
-  font-family: var(--title-font);font-style: italic;
+  font-family: var(--title-font);
   color: var(--body-color);
   display: block;
 }
@@ -3960,7 +3960,7 @@ a.text-theme:hover,
   font-weight: 500;
   font-size: 20px;
   margin: 6px 0 0;
-  font-family: var(--title-font);font-style: italic;
+  font-family: var(--title-font);
   text-transform: capitalize;
 }
 .recent-post .recent-post-meta {
@@ -4207,7 +4207,7 @@ a.text-theme:hover,
   color: var(--body-color);
   font-size: 16px;
   font-weight: 500;
-  font-family: var(--title-font);font-style: italic;
+  font-family: var(--title-font);
   font-weight: 600;
   color: var(--title-color);
 }
@@ -4246,7 +4246,7 @@ a.text-theme:hover,
   font-family: var(--body-font);
 }
 .widget_shopping_cart .total strong {
-  font-family: var(--title-font);font-style: italic;
+  font-family: var(--title-font);
 }
 .widget_shopping_cart .amount {
   padding-left: 5px;
@@ -5012,11 +5012,17 @@ ul.wp-block-latest-posts li:last-child {
 .main-menu a {
   display: block;
   position: relative;
-  font-weight: 400;
-  font-size: 12px;
+  font-weight: 600;
+  font-size: 16px;
   color: var(--title-color);
-  letter-spacing: 3.6px;
+  letter-spacing: 0.3px;
   text-transform: uppercase;
+}
+@media (max-width: 1160px) {
+  .main-menu a {
+    font-size: 12px;
+      letter-spacing: 0px;
+  }
 }
 .main-menu a:before {
   content: "";
@@ -5025,9 +5031,10 @@ ul.wp-block-latest-posts li:last-child {
   width: 6px;
   display: inline-block;
   border-radius: 50%;
-  border: 1px solid var(--title-color);
+  border: 2px solid var(--title-color);
   top: -1px;
-  margin-right: 10px;
+  background-color: var(--title-color);
+  margin-right: 5px;
   transition: 0.4s;
 }
 .main-menu a:hover {
@@ -5035,12 +5042,20 @@ ul.wp-block-latest-posts li:last-child {
 }
 .main-menu a:hover:before {
   background: var(--theme-color);
+  border: 2px solid var(--theme-color);
+}
+.main-menu .active a {
+  color: var(--theme-color);
+}
+.main-menu .active a:before {
+  background: var(--theme-color);
+  border: 2px solid var(--theme-color);
 }
 .main-menu > ul > li {
   margin: 0 18px;
 }
 .main-menu > ul > li > a {
-  padding: 42px 0;
+  padding: 5px 0;
 }
 .main-menu > ul > li > a:hover {
   color: var(--theme-color);
@@ -5737,7 +5752,7 @@ ul.wp-block-latest-posts li:last-child {
   font-size: 22px;
   font-weight: 400;
   font-style: italic;
-  font-family: var(--title-font);font-style: italic;
+  font-family: var(--title-font);
   padding: 38px 30px;
 }
 .footer-layout3 .footer-bottom .social-link a:not(:last-child) {
@@ -5887,7 +5902,7 @@ ul.wp-block-latest-posts li:last-child {
 
 .breadcumb-wrapper {
   background-size: cover;
-  padding: 130px 0;
+  padding: 30px 0;
   overflow: hidden;
   position: relative;
   z-index: auto;
@@ -6043,7 +6058,7 @@ blockquote,
 }
 blockquote p,
 .wp-block-quote p {
-  font-family: var(--title-font);font-style: italic;
+  font-family: var(--title-font);
   font-size: 30px;
   font-style: normal;
   font-weight: 400;
@@ -6076,7 +6091,7 @@ blockquote cite,
   margin-bottom: -0.1em;
   font-style: normal;
   color: var(--title-color);
-  font-family: var(--title-font);font-style: italic;
+  font-family: var(--title-font);
 }
 blockquote cite span,
 .wp-block-quote cite span {
@@ -6817,7 +6832,7 @@ blockquote.has-text-align-right:before,
   font-weight: 700;
   font-size: 12px;
   color: var(--body-color);
-  font-family: var(--title-font);font-style: italic;
+  font-family: var(--title-font);
   display: inline-block;
 }
 .comments-wrap .reply-btn i {
@@ -7196,7 +7211,7 @@ li.trackback {
 /* Hero 1 ---------------------------------- */
 .hero-subtitle {
   font-size: 30px;
-  font-family: var(--title-font);font-style: italic;
+  font-family: var(--title-font);
   font-weight: 400;
   color: var(--theme-color);
   display: block;
@@ -7207,7 +7222,7 @@ li.trackback {
 .hero-subtitle2 {
   font-size: 24px;
   font-weight: 400;
-  font-family: var(--title-font);font-style: italic;
+  font-family: var(--title-font);
   color: var(--body-color);
   display: block;
   margin-bottom: 28px;
@@ -7467,7 +7482,7 @@ li.trackback {
 }
 .hero-style3 .hero-text {
   font-size: 22px;
-  font-family: var(--title-font);font-style: italic;
+  font-family: var(--title-font);
   margin-bottom: -0.3em;
   margin-top: 33px;
 }
@@ -8119,7 +8134,7 @@ table.variations del,
 .woocommerce-grouped-product-list.group_table label {
   margin: 0 0 0 10px;
   margin: 0 0 0 10px;
-  font-family: var(--title-font);font-style: italic;
+  font-family: var(--title-font);
   font-size: 18px;
 }
 .woocommerce-grouped-product-list.group_table .qty-input {
@@ -8427,7 +8442,7 @@ table.woocommerce-product-attributes {
 }
 .cart_table td:before,
 .cart_table th {
-  font-family: var(--title-font);font-style: italic;
+  font-family: var(--title-font);
   color: var(--title-color);
   font-weight: 800;
   border: none;
@@ -9016,7 +9031,7 @@ span.select2-selection.select2-selection--single:focus {
 .tinv-wishlist td.product-name {
   font-size: 16px;
   font-weight: 700;
-  font-family: var(--title-font);font-style: italic;
+  font-family: var(--title-font);
 }
 .tinv-wishlist td.product-name a {
   color: var(--body-color);
@@ -9031,7 +9046,7 @@ span.select2-selection.select2-selection--single:focus {
 .tinv-wishlist .social-buttons > span {
   font-weight: 700;
   margin-right: 10px;
-  font-family: var(--title-font);font-style: italic;
+  font-family: var(--title-font);
   color: var(--title-color);
 }
 .tinv-wishlist .social-buttons li {
@@ -9136,7 +9151,7 @@ span.select2-selection.select2-selection--single:focus {
   top: 0;
   width: 100%;
   height: 100%;
-  background: #363832;
+  background: #000000;
   mix-blend-mode: overlay;
 }
 .contact-area-1 .contact-form {
@@ -9348,7 +9363,7 @@ span.select2-selection.select2-selection--single:focus {
 .marquee-wrap.style2 .marquee__group .m-item {
   font-size: 120px;
   font-weight: 400;
-  font-family: var(--title-font);font-style: italic;
+  font-family: var(--title-font);
   color: var(--title-color);
   line-height: normal;
   letter-spacing: normal;
@@ -9708,7 +9723,7 @@ span.select2-selection.select2-selection--single:focus {
 .single-team-details .team-about-card .team-about-card_box .team-about-card_info p {
   font-size: 22px;
   font-weight: 400;
-  font-family: var(--title-font);font-style: italic;
+  font-family: var(--title-font);
   color: var(--title-color);
   margin-bottom: -0.5em;
 }
@@ -9784,13 +9799,13 @@ span.select2-selection.select2-selection--single:focus {
   margin-top: -0.35em;
   font-size: 30px;
   font-weight: 500;
-  font-family: var(--title-font);font-style: italic;
+  font-family: var(--title-font);
   color: var(--title-color);
 }
 .testi-box_profile .testi-box_desig {
   font-size: 18px;
   font-weight: 400;
-  font-family: var(--title-font);font-style: italic;
+  font-family: var(--title-font);
   color: var(--body-color);
   display: block;
 }
@@ -9837,7 +9852,7 @@ span.select2-selection.select2-selection--single:focus {
 .testi-box2_text {
   font-size: 36px;
   font-weight: 400;
-  font-family: var(--title-font);font-style: italic;
+  font-family: var(--title-font);
   color: var(--title-color);
   text-transform: uppercase;
   margin-bottom: 30px;
@@ -9932,7 +9947,7 @@ span.select2-selection.select2-selection--single:focus {
 .counter-card_number .odometer {
   font-size: 48px;
   font-weight: 400;
-  font-family: var(--title-font);font-style: italic;
+  font-family: var(--title-font);
   color: var(--theme-color);
   margin-bottom: 5px;
   margin-top: -0.3em;
@@ -9940,7 +9955,7 @@ span.select2-selection.select2-selection--single:focus {
 .counter-card_text {
   font-size: 18px;
   font-weight: 400;
-  font-family: var(--title-font);font-style: italic;
+  font-family: var(--title-font);
   margin-bottom: -0.3em;
 }
 @media (max-width: 991px) {
@@ -10447,7 +10462,7 @@ span.select2-selection.select2-selection--single:focus {
   border-radius: 6px;
   background-color: rgb(247, 244, 239);
   padding: 17px 30px;
-  font-family: var(--title-font);font-style: italic;
+  font-family: var(--title-font);
 }
 .checklist.style2 ul li:not(:last-child) {
   margin-bottom: 20px;
@@ -10644,7 +10659,7 @@ span.select2-selection.select2-selection--single:focus {
   padding: 0 120px;
 }
 .video-area-2 .video-quote {
-  font-family: var(--title-font);font-style: italic;
+  font-family: var(--title-font);
   font-style: italic;
   font-size: 30px;
   line-height: 40px;
@@ -10859,7 +10874,7 @@ span.select2-selection.select2-selection--single:focus {
 .accordion-card .accordion-button {
   font-size: 30px;
   font-weight: 400;
-  font-family: var(--title-font);font-style: italic;
+  font-family: var(--title-font);
   color: var(--title-color);
   border: 0;
   background-color: transparent;
@@ -10995,7 +11010,7 @@ span.select2-selection.select2-selection--single:focus {
   color: var(--theme-color);
   font-weight: 400;
   font-size: 14px;
-  font-family: var(--title-font);font-style: italic;
+  font-family: var(--title-font);
   position: relative;
   padding-left: 18px;
   margin-bottom: 5px;
@@ -11157,7 +11172,7 @@ span.select2-selection.select2-selection--single:focus {
   background: transparent;
   font-size: 16px;
   font-weight: 600;
-  font-family: var(--title-font);font-style: italic;
+  font-family: var(--title-font);
   color: var(--title-color);
   text-transform: uppercase;
   padding: 17px 52px 17px 30px;
@@ -11211,7 +11226,7 @@ span.select2-selection.select2-selection--single:focus {
   color: var(--theme-color);
   font-size: 60px;
   font-weight: 700;
-  font-family: var(--title-font);font-style: italic;
+  font-family: var(--title-font);
 }
 
 /* Medium Large devices */
@@ -11263,7 +11278,7 @@ span.select2-selection.select2-selection--single:focus {
 .cta-area-2 .cta-btn {
   font-size: 48px;
   font-style: italic;
-  font-family: var(--title-font);font-style: italic;
+  font-family: var(--title-font);
   font-weight: 400;
   color: var(--title-color);
   background: transparent;
@@ -11497,7 +11512,7 @@ span.select2-selection.select2-selection--single:focus {
 .wcu-grid_text {
   font-size: 16px;
   font-weight: 600;
-  font-family: var(--title-font);font-style: italic;
+  font-family: var(--title-font);
   color: var(--white-color);
   text-transform: uppercase;
   margin-bottom: -0.4em;
@@ -11700,7 +11715,7 @@ span.select2-selection.select2-selection--single:focus {
   color: var(--body-color);
   font-weight: 400;
   font-size: 16px;
-  font-family: var(--title-font);font-style: italic;
+  font-family: var(--title-font);
   margin-bottom: 2px;
   margin-top: -0.5em;
 }
@@ -11863,7 +11878,7 @@ span.select2-selection.select2-selection--single:focus {
 .product-card .action-btn {
   background-color: var(--white-color);
   font-size: 14px;
-  font-family: var(--title-font);font-style: italic;
+  font-family: var(--title-font);
   text-transform: uppercase;
   font-weight: bold;
   display: inline-block;
@@ -12064,7 +12079,7 @@ span.select2-selection.select2-selection--single:focus {
   background-color: var(--white-color);
   text-align: center;
   position: relative;
-  font-family: var(--title-font);font-style: italic;
+  font-family: var(--title-font);
   font-weight: 600;
   font-size: 16px;
   text-transform: capitalize;
@@ -12186,7 +12201,7 @@ span.select2-selection.select2-selection--single:focus {
   display: inline-block;
   font-weight: 600;
   color: var(--title-color);
-  font-family: var(--title-font);font-style: italic;
+  font-family: var(--title-font);
   margin: 0;
   align-self: center;
   margin-right: 10px;
@@ -12430,7 +12445,7 @@ span.select2-selection.select2-selection--single:focus {
   display: block;
   margin-bottom: 25px;
   margin-right: 10px;
-  font-family: var(--title-font);font-style: italic;
+  font-family: var(--title-font);
   line-height: inherit;
 }
 .summary-content > .price del,
@@ -14387,4 +14402,8 @@ span.select2-selection.select2-selection--single:focus {
   border-radius: 50%;
   z-index: 1;
   transition: all ease 0.4s;
+}
+
+.owl-theme .owl-nav {
+  margin-top: 0px !important;
 }

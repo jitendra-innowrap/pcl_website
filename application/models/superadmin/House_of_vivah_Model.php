@@ -1,7 +1,7 @@
 <?php
 
 
-class Form_Model extends CI_Model
+class House_of_vivah_Model extends CI_Model
 {
 	public function __construct()
 	{
@@ -9,17 +9,18 @@ class Form_Model extends CI_Model
 		$this->load->database();
 	}
 
-	var $table = 'submit_contact c';
-	var $column_order = array(null, 'c.u_name','c.u_email','c.u_mobile','c.location','c.date','c.number','c.event','c.subEvent'); //set column field database for datatable orderable
-	var $column_search = array( 'c.u_name','c.u_email','c.u_mobile','c.location','c.date','c.number','c.event','c.subEvent'); 
+	var $table = 'submit_house_of_vivah shov';
+	var $column_order = array(null, 'shov.u_name','shov.u_email','shov.u_mobile','shov.location','shov.date','shov.venue','shov.event'); //set column field database for datatable orderable
+	var $column_search = array( 'shov.u_name','shov.u_email','shov.u_mobile','shov.location','shov.date','shov.venue','shov.event'); 
 
 	private function _get_datatables_query()
 	{	
     
-    $this->db->select('c.*');
+    $this->db->select('shov.*');
 		$this->db->from($this->table);
-		$this->db->group_by('c.id');
-    $this->db->order_by('c.id', 'DESC');
+		$this->db->group_by('shov.id');
+		$this->db->where('shov.enquiry_for', 'House of vivah');
+    $this->db->order_by('shov.id', 'DESC');
 
 		$i = 0;
 
@@ -73,6 +74,7 @@ class Form_Model extends CI_Model
 
 	public function count_all()
 	{
+    $this->db->where('shov.enquiry_for', 'House of vivah');
 		$this->db->from($this->table);
 		return $this->db->count_all_results();
 	}

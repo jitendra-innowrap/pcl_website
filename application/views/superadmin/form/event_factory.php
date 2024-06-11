@@ -29,17 +29,18 @@
 				<div class="card">
 					<div class="card-body">
 						<div class="table-responsive">
-							<table class="table table-bordered" id="data_table" data-function="Contact_list">
+							<table class="table table-bordered" id="data_table" data-function="event_factory_list">
 								<thead>
 								<tr>
 									<th>#</th>
 									<th>Client Name</th>
+									<th>Company Name</th>
+									<th>Designation</th>
 									<th>Contact No</th>
 									<th>Email</th>
-									<th>Enquiry For</th>
 									<th>Location</th>
 									<th>Date of Event</th>
-									<th>No of Guest</th>
+									<th>Venue</th>
 									<th>Event</th>
 									<th>Date</th>
 								</tr>

@@ -7,13 +7,13 @@
     <div class="row justify-content-between align-items-center">
       <div class="col-md-8">
         <div class="breadcumb-content">
-          <h1 class="breadcumb-title">House of Vivaah</h1>
+          <h1 class="breadcumb-title">Live Space</h1>
         </div>
       </div>
       <div class="col-md-4">
         <ul class="breadcumb-menu text-md-end">
           <li><a href="<?php echo base_url();?>">Home</a></li>
-          <li class="active">House of Vivaah</li>
+          <li class="active">Live Space</li>
         </ul>
       </div>
     </div>
@@ -30,18 +30,18 @@
       <div class="col-lg-6">
         <div class="about-thumb mb-5 mb-lg-0 text-lg-end text-center img-anim"
           style="display:flex;align-items: center;justify-content: center;">
-          <img class="about-img-1" style="width:100%;max-width:500px;" src="<?php echo base_url();?>assets/images/logo/vivaah logo 1.png" alt="img">
+          <img class="about-img-1" style="width:100%;max-width:500px;" src="<?php echo base_url();?>assets/images/logo/Live Space Logo.png" alt="img">
         </div>
       </div>
       <div class="col-lg-6">
         <div class="about-content-wrap title-anim text-center">
           <div class="title-area mb-0">
             <span class="sub-title style2">More About Us</span>
-            <h2 class="sec-title"> House of Vivaah</h2>
-            <h4 class="sec-title"> Design | Décor | Production</h4>
-            <p class="sec-text">Explore unparalleled luxury weddings with House of Vivaah, a flagship brand of Party
-              Cruisers Ltd., offering full-service wedding decor, ambiance styling, innovative wedding designs &
-              seamless production.</p>
+            <h2 class="sec-title">Live Space</h2>
+            <!-- <h4 class="sec-title"> Design | Décor | Production</h4> -->
+            <p class="sec-text">An entertainment, artist and talent management agency specially designed and developed
+              for budding new talents and artist who want a break through in wedding industry. We also have a special
+              team to serve our wedding clients with unique entertainment acts.</p>
           </div>
         </div>
       </div>
@@ -359,10 +359,10 @@ Service Area 01
       <div class="row">
         <div class="col-lg-12">
           <h4 class="form-messages"></h4>
-          <form action="<?php echo base_url("console/house_of_vivah_form"); ?>" method="POST"
+          <form action="<?php echo base_url("console/live_space_form"); ?>" method="POST"
             class="contact-form form-contact-black" id="houseOfVivahForm">
             <div class="row">
-              <input type="hidden" name="enquiry_for" value="House of vivah" />
+              <input type="hidden" name="enquiry_for" value="Live space" />
               <div class="col-lg-4">
                 <label>Full Name*</label>
                 <div class="form-group form-icon-left">
@@ -422,19 +422,22 @@ Service Area 01
                   <div class="error" id="venueError"></div>
                 </div>
               </div>
-              <div class="col-lg-4">
-                <label>Event*</label>
+              <div class="col-lg-4 mt-2">
+                <label>Event Type*</label>
                 <div class="form-group form-icon-left">
-                  <select name="event" id="event" class="form-control style-border">
-                    <option value="">Select Event</option>
-                    <option value="Engagement">Engagement</option>
-                    <option value="Haldi">Haldi</option>
-                    <option value="Mehendi">Mehendi</option>
-                    <option value="Sangeet">Sangeet</option>
-                    <option value="Wedding">Wedding</option>
-                    <option value="All the Above">All the Above</option>
-                  </select>
-                  <div class="error" id="eventError"></div>
+                  <i class="far fa-user"></i>
+                  <input type="text" class="form-control style-border" name="eventType" id="eventType"
+                    placeholder="Enter Event Type">
+                  <div class="error" id="eventTypeError"></div>
+                </div>
+              </div>
+              <div class="col-lg-4 mt-2">
+                <label>Artist Requirement*</label>
+                <div class="form-group form-icon-left">
+                  <i class="far fa-user"></i>
+                  <input type="text" class="form-control style-border" name="artistRequirement" id="artistRequirement"
+                    placeholder="Enter Artist Requirement">
+                  <div class="error" id="artistRequirementError"></div>
                 </div>
               </div>
             </div>
