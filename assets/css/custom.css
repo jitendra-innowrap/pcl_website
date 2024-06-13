@@ -402,7 +402,7 @@
 
 @media (min-width: 991px) {
 .blog-custom-img img{
-  max-height: 100vh;
+  max-height: 85vh;
 }
 .logo-custom-padding{
   padding: 0px;
@@ -423,8 +423,11 @@
   background-color: #000;
 }
 .success{
-  color: green;
-  font-size: 2em;
+  font-size: 18px !important;
+    background-color: white !important;
+    width: fit-content !important;
+    padding: 5px 10px !important;
+    border-radius: 5px !important;
 }
 .form-contact-white select.style-border, .form-contact-white .single-select.style-border, .form-contact-white .form-control.style-border, .form-contact-white .form-select.style-border,.form-contact-white textarea.style-border, .form-contact-white input.style-border {
   background: transparent;

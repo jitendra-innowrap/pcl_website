@@ -111,9 +111,9 @@ class Console extends CI_Controller
 		$this->load->view('frontend/layout/template', $data);
 	}
 	
-	public function blog()
+	public function blogs()
 	{
-		$data['page_title'] = "Blog - Party Cruisers";
+		$data['page_title'] = "Blogs - Party Cruisers";
 		$data['meta_desc'] = "";
 		$data['meta_keyword'] = "";
 		$data['meta_image'] = '';
@@ -165,7 +165,7 @@ class Console extends CI_Controller
 			
 			$data['data'] = $this->Console_Model->get_blog_details($slug);
 			if(!$data['data']){
-				redirect('blog');
+				redirect('blogs');
 			}
 			
 			// echo'<pre>';print_r($data);exit();
@@ -189,7 +189,7 @@ class Console extends CI_Controller
 			
 			$this->load->view('frontend/layout/template', $data);
 		} else {
-			redirect('blog');
+			redirect('blogs');
 		}
 	}
 	

@@ -78,7 +78,7 @@
           <a href="<?php echo base_url();?>testimonials">Testimonials</a>
         </li>
         <li>
-          <a href="<?php echo base_url();?>blog">Blog</a>
+          <a href="<?php echo base_url();?>blogs">Blogs</a>
         </li>
         <li>
           <a href="<?php echo base_url();?>contact">Contact</a>

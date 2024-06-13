@@ -13,7 +13,7 @@
       <div class="col-md-4">
         <ul class="breadcumb-menu text-md-end">
           <li><a href="<?php echo base_url(); ?>">Home</a></li>
-          <li><a href="<?php echo base_url('blog'); ?>">Blog</a></li>
+          <li><a href="<?php echo base_url('blogs'); ?>">Blogs</a></li>
           <li class="active">Blog Details</li>
         </ul>
       </div>
@@ -62,7 +62,7 @@
       </div>
       <div class="col-xxl-12">
         <div class="title-area text-center title-anim">
-          <span class="sub-title style2">Our Blog Posts
+          <span class="sub-title style2">Our Blogs Posts
           </span>
           <h2 class="sec-title">Latest from our Journal</h2>
         </div>

@@ -247,7 +247,7 @@ $(document).ready(function() {
                    formMessages.removeClass("error");
                    formMessages.addClass("success");
                    // Set the message text.
-                   formMessages.text('Thank you!!');
+                   formMessages.text('Thank You for contacting us!');
                    // Clear the form.
                    $(form)[0].reset();
                    $('#otherEventContainer').hide();

@@ -21,11 +21,11 @@
   </div>
 </div>
 
-<div class="space">
+<div class="space-top">
   <div class="container">
-    <div class="row align-items-center justify-content-between">
-      <div class="col-lg-6 mb-5">
-        <div class="about-content-wrap title-anim text-center">
+    <div class="row flex-row-reverse align-items-center justify-content-between">
+      <div class="col-lg-12">
+         <div class="about-content-wrap title-anim text-center">
           <div class="title-area mb-0">
             <h2 class="sec-title">Franchise</h2>
             <p class="sec-text">Expanding our wings across the country. Come join us and become a part of this booming
@@ -34,7 +34,19 @@
           </div>
         </div>
       </div>
-      <div class="col-lg-6 custom-franchise">
+    </div>
+  </div>
+</div>
+
+<div class="space">
+  <div class="container">
+    <div class="row align-items-center flex-row-reverse justify-content-between">
+      <div class="col-lg-5 mb-5">
+        <div class="reservation-thumb">
+            <img class="w-100" src="<?php echo base_url();?>assets/images/Franchise.jpg" alt="img">
+        </div>
+      </div>
+      <div class="col-lg-7 custom-franchise">
         <div class="reservation-form-wrap">
           <div class="title-area text-center mb-30">
             <h2 class="sec-title">Contact Us</h2>
@@ -107,7 +119,7 @@
   </div>
 </div>
 
-<div class="space position-relative space-bottom" style="background: #543718;">
+<div class="pt-4 pb-4 position-relative" style="background: #543718;">
   <div class="container">
     <div class="row align-items-center">
       <div class="col-lg-12 text-center">

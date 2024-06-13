@@ -137,93 +137,12 @@ Service Area 01
         providers.</p>
     </div>
     <div class="btn-wrap mt-40">
-      <a href="<?php echo base_url();?>about-us" class="btn">More</a>
+      <a href="<?php echo base_url();?>about-us" class="btn">Know More</a>
     </div>
   </div>
 </div>
 </div>
 </div>
-</div>
-
-<!--==============================
-    Video Area  
-    ==============================-->
-<div class="video-area-1 space-top overflow-hidden">
-  <div class="container">
-    <div class="title-area text-center title-anim">
-      <span class="sub-title style2">ENJOY OUR MOMENTS</span>
-      <h2 class="sec-title">COME WITH US</h2>
-    </div>
-  </div>
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-12">
-        <div class="video-wrap">
-          <div class="service-shape1_1 shape-mockup jump d-lg-block d-none z-index-3" data-top="-10%" data-right="-10%">
-            <img src="assets/img/normal/video-shape_1-1.png" alt="img">
-          </div>
-          <div class="img-anim">
-            <img src="<?php echo base_url();?>assets/images/youtube.jpg" alt="img">
-          </div>
-          <a href="https://youtu.be/lGCVvEju__c?feature=shared" class="play-btn popup-video background-image">
-            <i class="fas fa-solid fa-play"></i>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!--==============================
-    Counter Area  
-    ==============================-->
-<div class="counter-area-1" style="background-color: #543718;">
-  <div class="counter-wrap1 space counter-item">
-    <div class="container">
-      <div class="row gy-40 justify-content-lg-between justify-content-center">
-        <div class="col-sm-6 col-lg-auto">
-          <div class="counter-card">
-            <div class="media-body" style="text-align: center;">
-              <h3 class="counter-card_number">
-                <span class="odometer" data-odometer-final="256">.</span>
-              </h3>
-              <p class="counter-card_text">Weddings per year</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-lg-auto">
-          <div class="counter-card">
-            <div class="media-body" style="text-align: center;">
-              <h3 class="counter-card_number">
-                <span class="odometer" data-odometer-final="28">.</span>
-              </h3>
-              <p class="counter-card_text">Years of celebration</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-lg-auto">
-          <div class="counter-card">
-            <div class="media-body" style="text-align: center;">
-              <h3 class="counter-card_number">
-                <span class="odometer" data-odometer-final="1369">.</span>
-              </h3>
-              <p class="counter-card_text">Flower bouquest</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-lg-auto">
-          <div class="counter-card">
-            <div class="media-body" style="text-align: center;">
-              <h3 class="counter-card_number">
-                <span class="odometer" data-odometer-final="256">.</span>
-              </h3>
-              <p class="counter-card_text">Sunny days per year</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
 </div>
 
 <!--==============================
@@ -332,6 +251,87 @@ Service Area 01
           </div>
           <?php } } ?>
 
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--==============================
+    Video Area  
+    ==============================-->
+<div class="video-area-1 overflow-hidden">
+  <div class="container">
+    <div class="title-area text-center title-anim">
+      <span class="sub-title style2">ENJOY OUR MOMENTS</span>
+      <h2 class="sec-title">COME WITH US</h2>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="video-wrap">
+          <div class="service-shape1_1 shape-mockup jump d-lg-block d-none z-index-3" data-top="-10%" data-right="-10%">
+            <img src="assets/img/normal/video-shape_1-1.png" alt="img">
+          </div>
+          <div class="img-anim">
+            <img src="<?php echo base_url();?>assets/images/youtube.jpg" alt="img">
+          </div>
+          <a href="https://youtu.be/lGCVvEju__c?feature=shared" class="play-btn popup-video background-image">
+            <i class="fas fa-solid fa-play"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--==============================
+    Counter Area  
+    ==============================-->
+<div class="counter-area-1" style="background-color: #D6A87F;">
+  <div class="counter-wrap1 space counter-item">
+    <div class="container">
+      <div class="row gy-40 justify-content-lg-between justify-content-center">
+        <div class="col-sm-6 col-lg-auto">
+          <div class="counter-card">
+            <div class="media-body" style="text-align: center;">
+              <h3 class="counter-card_number">
+                <span class="odometer" data-odometer-final="256">.</span>
+              </h3>
+              <p class="counter-card_text">Weddings Per Year</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-auto">
+          <div class="counter-card">
+            <div class="media-body" style="text-align: center;">
+              <h3 class="counter-card_number">
+                <span class="odometer" data-odometer-final="28">.</span>
+              </h3>
+              <p class="counter-card_text">Years Of Celebration</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-auto">
+          <div class="counter-card">
+            <div class="media-body" style="text-align: center;">
+              <h3 class="counter-card_number">
+                <span class="odometer" data-odometer-final="1369">.</span>
+              </h3>
+              <p class="counter-card_text">Flower Bouquest</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-auto">
+          <div class="counter-card">
+            <div class="media-body" style="text-align: center;">
+              <h3 class="counter-card_number">
+                <span class="odometer" data-odometer-final="256">.</span>
+              </h3>
+              <p class="counter-card_text">Sunny Days Per Year</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -524,7 +524,7 @@ Service Area 01
 <section class="blog-area-2 space">
   <div class="container">
     <div class="title-area text-center title-anim">
-      <span class="sub-title style2">Our Blog Posts
+      <span class="sub-title style2">Our Blogs Posts
       </span>
       <h2 class="sec-title">Latest from our Journal</h2>
     </div>
@@ -569,17 +569,18 @@ Service Area 01
       <div class="col-xl-3 col-lg-6 col-md-6 filter-item">
         <div class="blog-card style4 title-anim">
           <div class="blog-img">
-          <img style="max-height: 250px;min-height: 250px;" src="<?php echo $blog['1']['image_medium']; ?>"
-          alt="<?php echo $blog['1']['image_alt']; ?>">
+            <img style="max-height: 250px;min-height: 250px;" src="<?php echo $blog['1']['image_medium']; ?>"
+              alt="<?php echo $blog['1']['image_alt']; ?>">
           </div>
           <div class="blog-content">
             <div class="post-meta-item blog-meta">
-            <a><?php echo strtoupper($blog['1']['author']); ?></a>
+              <a><?php echo strtoupper($blog['1']['author']); ?></a>
               <a><?php echo $formattedDate; ?></a>
               <a><?php echo $blog['1']['categories']; ?></a>
             </div>
             <h3 class="blog-title"><a
-            href="<?php echo base_url('blog-details'); ?>?slug=<?php echo $blog['1']['slug']; ?>"><?php echo $blog['1']['title']; ?></a></h3>
+                href="<?php echo base_url('blog-details'); ?>?slug=<?php echo $blog['1']['slug']; ?>"><?php echo $blog['1']['title']; ?></a>
+            </h3>
           </div>
         </div>
       </div>
@@ -594,17 +595,18 @@ Service Area 01
       <div class="col-xl-3 col-lg-6 col-md-6 filter-item">
         <div class="blog-card style4 title-anim">
           <div class="blog-img">
-          <img style="max-height: 250px;min-height: 250px;" src="<?php echo $blog['2']['image_medium']; ?>"
-          alt="<?php echo $blog['2']['image_alt']; ?>">
+            <img style="max-height: 250px;min-height: 250px;" src="<?php echo $blog['2']['image_medium']; ?>"
+              alt="<?php echo $blog['2']['image_alt']; ?>">
           </div>
           <div class="blog-content">
             <div class="post-meta-item blog-meta">
-            <a><?php echo strtoupper($blog['2']['author']); ?></a>
+              <a><?php echo strtoupper($blog['2']['author']); ?></a>
               <a><?php echo $formattedDate; ?></a>
               <a><?php echo $blog['2']['categories']; ?></a>
             </div>
             <h3 class="blog-title"><a
-            href="<?php echo base_url('blog-details'); ?>?slug=<?php echo $blog['2']['slug']; ?>"><?php echo $blog['2']['title']; ?></a></h3>
+                href="<?php echo base_url('blog-details'); ?>?slug=<?php echo $blog['2']['slug']; ?>"><?php echo $blog['2']['title']; ?></a>
+            </h3>
           </div>
         </div>
       </div>
@@ -619,17 +621,18 @@ Service Area 01
       <div class="col-xl-3 col-lg-6 col-md-6 filter-item">
         <div class="blog-card style4 title-anim">
           <div class="blog-img">
-          <img style="max-height: 250px;min-height: 250px;" src="<?php echo $blog['3']['image_medium']; ?>"
-          alt="<?php echo $blog['3']['image_alt']; ?>">
+            <img style="max-height: 250px;min-height: 250px;" src="<?php echo $blog['3']['image_medium']; ?>"
+              alt="<?php echo $blog['3']['image_alt']; ?>">
           </div>
           <div class="blog-content">
             <div class="post-meta-item blog-meta">
-            <a><?php echo strtoupper($blog['3']['author']); ?></a>
+              <a><?php echo strtoupper($blog['3']['author']); ?></a>
               <a><?php echo $formattedDate; ?></a>
               <a><?php echo $blog['3']['categories']; ?></a>
             </div>
             <h3 class="blog-title"><a
-            href="<?php echo base_url('blog-details'); ?>?slug=<?php echo $blog['3']['slug']; ?>"><?php echo $blog['3']['title']; ?></a></h3>
+                href="<?php echo base_url('blog-details'); ?>?slug=<?php echo $blog['3']['slug']; ?>"><?php echo $blog['3']['title']; ?></a>
+            </h3>
           </div>
         </div>
       </div>
@@ -644,17 +647,18 @@ Service Area 01
       <div class="col-xl-3 col-lg-6 col-md-6 filter-item">
         <div class="blog-card style4 title-anim">
           <div class="blog-img">
-          <img style="max-height: 250px;min-height: 250px;" src="<?php echo $blog['4']['image_medium']; ?>"
-          alt="<?php echo $blog['4']['image_alt']; ?>">
+            <img style="max-height: 250px;min-height: 250px;" src="<?php echo $blog['4']['image_medium']; ?>"
+              alt="<?php echo $blog['4']['image_alt']; ?>">
           </div>
           <div class="blog-content">
             <div class="post-meta-item blog-meta">
-            <a><?php echo strtoupper($blog['4']['author']); ?></a>
+              <a><?php echo strtoupper($blog['4']['author']); ?></a>
               <a><?php echo $formattedDate; ?></a>
               <a><?php echo $blog['4']['categories']; ?></a>
             </div>
             <h3 class="blog-title"><a
-            href="<?php echo base_url('blog-details'); ?>?slug=<?php echo $blog['4']['slug']; ?>"><?php echo $blog['4']['title']; ?></a></h3>
+                href="<?php echo base_url('blog-details'); ?>?slug=<?php echo $blog['4']['slug']; ?>"><?php echo $blog['4']['title']; ?></a>
+            </h3>
           </div>
         </div>
       </div>
@@ -673,7 +677,7 @@ $('.owl-carousel').owlCarousel({
   nav: true,
   mouseDrag: false,
   autoplay: true,
-  autoplayTimeout: 5000,
+  autoplayTimeout: 8000,
   animateOut: 'fadeOut',
   animateIn: 'fadeIn',
   responsive: {
@@ -688,5 +692,4 @@ $('.owl-carousel').owlCarousel({
     }
   }
 });
-
 </script>

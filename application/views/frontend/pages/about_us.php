@@ -173,7 +173,7 @@
             </h2>
           </div>
           <div class="btn-area mt-35">
-            <a href="<?php echo base_url();?>contact" class="btn">SHARE WITH US</a>
+            <a href="<?php echo base_url();?>contact" class="btn">CONTACT US</a>
           </div>
         </div>
       </div>

@@ -1,3 +1,13 @@
+<style>
+  p {
+    font-size: 18px !important;
+    line-height: 1.5 !important;
+    font-weight: 400 !important;
+     font-family:  "Montserrat", sans-serif !important;
+    margin-bottom:10px !important;
+  }
+</style>
+
 <!--==============================
   Breadcumb
   ============================== -->
@@ -7,13 +17,13 @@
     <div class="row justify-content-between align-items-center">
       <div class="col-md-8">
         <div class="breadcumb-content">
-          <h1 class="breadcumb-title">Blog</h1>
+          <h1 class="breadcumb-title">Blogs</h1>
         </div>
       </div>
       <div class="col-md-4">
         <ul class="breadcumb-menu text-md-end">
           <li><a href="<?php echo base_url(); ?>">Home</a></li>
-          <li class="active">Blog</li>
+          <li class="active">Blogs</li>
         </ul>
       </div>
     </div>

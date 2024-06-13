@@ -37,11 +37,11 @@
                 <img class="w-100" src="<?php echo isset($item['image']) ? $item['image'] :'';?>"
                   alt="<?php echo $item['image_alt']; ?>">
               </div>
-              <h3 class="post-title blog-title"><?php echo isset($item['client_name']) ? $item['client_name'] :'';?>
+              <h3 class="post-title blog-title" style="margin-bottom: 0px;"><?php echo isset($item['client_name']) ? $item['client_name'] :'';?>
               </h3>
               <div class="post-contents with-thum-img blog-content">
                 <div class="post-meta-item blog-meta">
-                <h6><?php echo isset($item['categories']) ? $item['categories'] :'';?></h6>
+                <h6><?php echo isset($item['categories']) ? $item['categories'] :'';?> - <?php echo isset($success_stories['0']['brand']) ? $success_stories['0']['brand'] :'Success Story';?></h6>
                 </div>
                 <div class="post-content blog-text">
                   <?php echo isset($item['content']) ? $item['content'] :'';?>

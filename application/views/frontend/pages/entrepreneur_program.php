@@ -21,27 +21,44 @@
   </div>
 </div>
 
-<div class="space">
+
+<div class="space-top">
   <div class="container">
-    <div class="row align-items-center justify-content-between">
-      <div class="col-lg-6 mb-5">
-        <div class="about-content-wrap title-anim text-center">
+    <div class="row flex-row-reverse align-items-center justify-content-between">
+      <div class="col-lg-12">
+      <div class="about-content-wrap title-anim text-center">
           <div class="title-area mb-0">
             <h2 class="sec-title">Entrepreneur Program</h2>
-            <p class="hero-text title-animation"><a href="https://henna.freevision.me/wedding-planner/vendors/" target="_blank" class="btn style2">Know
-            More</a></p>            
-            <p class="sec-text">A platform for budding Entrepreneurs to boost, support, nurture any person with entrepreneurial qualities and develop a mutual beneficial arrangement. Not every potential entrepreneur has the opportunity to establish a successful business due to various reasons.</p>
-            <p class="sec-text">PEP mentors and supports people who have been in the industry, tried their hand out but yet to taste success. Provide an individual, the opportunity to become an Entrepreneur. It is for those who have had lack of support or backend support to pursue their dream.</p>
+            <p class="hero-text title-animation"><a href="https://henna.freevision.me/wedding-planner/vendors/"
+                target="_blank" class="btn style2">Know
+                More</a></p>
+            <p class="sec-text">A platform for budding Entrepreneurs to boost, support, nurture any person with
+              entrepreneurial qualities and develop a mutual beneficial arrangement. Not every potential entrepreneur
+              has the opportunity to establish a successful business due to various reasons.</p>
+            <p class="sec-text">PEP mentors and supports people who have been in the industry, tried their hand out but
+              yet to taste success. Provide an individual, the opportunity to become an Entrepreneur. It is for those
+              who have had lack of support or backend support to pursue their dream.</p>
           </div>
         </div>
       </div>
-      <div class="col-lg-6 custon-franchise">
+    </div>
+  </div>
+</div>
+
+<div class="space">
+  <div class="container">
+    <div class="row align-items-center flex-row-reverse justify-content-between">
+      <div class="col-lg-5 mb-5">
+        <div class="reservation-thumb">
+          <img class="w-100" src="<?php echo base_url();?>assets/images/Franchise.jpg" alt="img">
+        </div>
+      </div>
+      <div class="col-lg-7 custom-franchise">
         <div class="reservation-form-wrap">
           <div class="title-area text-center mb-30">
             <h2 class="sec-title">Contact Us</h2>
           </div>
-          <form action="" method="POST"
-            class="contact-form form-contact-white" id="franchiseForm">
+          <form action="" method="POST" class="contact-form form-contact-white" id="franchiseForm">
             <div class="row">
               <input type="hidden" name="enquiry_for" value="Party Cruisers Limited" />
               <div class="col-lg-6">
