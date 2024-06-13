@@ -49,7 +49,7 @@ Service Area 01
             <div class="flip-container">
               <div class="flipper"><a href="<?php echo base_url();?>house-of-vivah">
                   <div clas="front">
-                    <img src="<?php echo base_url();?>assets/images/logo/vivaah logo 1.png">
+                    <img src="<?php echo base_url();?>assets/images/logo/vivaah.png">
                   </div>
                   <div class="back">
                     <p>For your big fat indian
@@ -63,7 +63,7 @@ Service Area 01
           <div class="flip-container">
             <div class="flipper"><a href="<?php echo base_url();?>vows-vachan">
                 <div clas="front">
-                  <img src="<?php echo base_url();?>assets/images/logo/vows vachan logo.png">
+                  <img src="<?php echo base_url();?>assets/images/logo/vows-vachan.png">
                 </div>
                 <div class="back">
                   <p>For an intimate celebration, your search ends right here.</p>
@@ -75,7 +75,7 @@ Service Area 01
         <div class="flip-container">
           <div class="flipper"><a href="<?php echo base_url();?>event-factory">
               <div clas="front">
-                <img src="<?php echo base_url();?>assets/images/logo/EVENT FACTORY .png">
+                <img src="<?php echo base_url();?>assets/images/logo/event-factory.png">
               </div>
               <div class="back">
                 <p>Elegant black tie affairs and more organized for + organizations
@@ -88,7 +88,7 @@ Service Area 01
       <div class="flip-container">
         <div class="flipper"><a href="<?php echo base_url();?>live-space">
             <div clas="front">
-              <img src="<?php echo base_url();?>assets/images/logo/Live Space Logo.png">
+              <img src="<?php echo base_url();?>assets/images/logo/live-space.png">
             </div>
             <div class="back">
               <p>Sunday, Sept. 18th 2022.
@@ -102,7 +102,7 @@ Service Area 01
     <div class="flip-container">
       <div class="flipper"><a href="<?php echo base_url();?>venue-affairs">
           <div clas="front">
-            <img src="<?php echo base_url();?>assets/images/logo/venue affairs.cdr_ctc.png">
+            <img src="<?php echo base_url();?>assets/images/logo/venue-affairs.png">
           </div>
           <div class="back">
             <p>Sunday, Sept. 18th 2022. Lymni Restaurant, 123 Francois Street</p>
@@ -114,7 +114,7 @@ Service Area 01
   <div class="flip-container">
     <div class="flipper"><a href="<?php echo base_url();?>party-house">
         <div clas="front">
-          <img src="<?php echo base_url();?>assets/images/logo/Party House logo.png">
+          <img src="<?php echo base_url();?>assets/images/logo/party-house.png">
         </div>
         <div class="back">
           <p>Sunday, Sept. 18th 2022. Rooftoop, 123 Terry Francois Street</p>
@@ -177,13 +177,13 @@ Service Area 01
 <!--==============================
     Counter Area  
     ==============================-->
-<div class="counter-area-1" data-bg-src="<?php echo base_url();?>assets/images/contact-page-bg.webp">
+<div class="counter-area-1" style="background-color: #543718;">
   <div class="counter-wrap1 space counter-item">
     <div class="container">
       <div class="row gy-40 justify-content-lg-between justify-content-center">
         <div class="col-sm-6 col-lg-auto">
           <div class="counter-card">
-            <div class="media-body">
+            <div class="media-body" style="text-align: center;">
               <h3 class="counter-card_number">
                 <span class="odometer" data-odometer-final="256">.</span>
               </h3>
@@ -193,7 +193,7 @@ Service Area 01
         </div>
         <div class="col-sm-6 col-lg-auto">
           <div class="counter-card">
-            <div class="media-body">
+            <div class="media-body" style="text-align: center;">
               <h3 class="counter-card_number">
                 <span class="odometer" data-odometer-final="28">.</span>
               </h3>
@@ -203,7 +203,7 @@ Service Area 01
         </div>
         <div class="col-sm-6 col-lg-auto">
           <div class="counter-card">
-            <div class="media-body">
+            <div class="media-body" style="text-align: center;">
               <h3 class="counter-card_number">
                 <span class="odometer" data-odometer-final="1369">.</span>
               </h3>
@@ -213,7 +213,7 @@ Service Area 01
         </div>
         <div class="col-sm-6 col-lg-auto">
           <div class="counter-card">
-            <div class="media-body">
+            <div class="media-body" style="text-align: center;">
               <h3 class="counter-card_number">
                 <span class="odometer" data-odometer-final="256">.</span>
               </h3>
@@ -263,7 +263,7 @@ Service Area 01
               <div class="col-lg-8 col-md-12">
                 <div class="row">
                   <?php if(isset($item['data']['0']['image'])){?>
-                  <div class="col-4">
+                  <div class="col-4 mb-4">
                     <div class="responsive-container aspect-ratio-1-1"><a
                         href="<?php echo base_url();?>success-story?id=<?php echo $item['data']['0']['id']; ?>">
                         <img
@@ -273,7 +273,7 @@ Service Area 01
                   </div>
                   <?php } ?>
                   <?php if(isset($item['data']['1']['image'])){?>
-                  <div class="col-4">
+                  <div class="col-4 mb-4">
                     <div class="responsive-container aspect-ratio-1-1"><a
                         href="<?php echo base_url();?>success-story?id=<?php echo $item['data']['1']['id']; ?>">
                         <img
@@ -283,7 +283,7 @@ Service Area 01
                   </div>
                   <?php } ?>
                   <?php if(isset($item['data']['2']['image'])){?>
-                  <div class="col-4">
+                  <div class="col-4 mb-4">
                     <div class="responsive-container aspect-ratio-1-1"><a
                         href="<?php echo base_url();?>success-story?id=<?php echo $item['data']['2']['id']; ?>">
                         <img
@@ -293,7 +293,7 @@ Service Area 01
                   </div>
                   <?php } ?>
                   <?php if(isset($item['data']['4']['image'])){?>
-                  <div class="col-12 mt-4 mb-4">
+                  <div class="col-12 mb-4">
                     <div class="responsive-container aspect-ratio-2-1"><a
                         href="<?php echo base_url();?>success-story?id=<?php echo $item['data']['4']['id']; ?>">
                         <img
@@ -673,7 +673,9 @@ $('.owl-carousel').owlCarousel({
   nav: true,
   mouseDrag: false,
   autoplay: true,
-  animateOut: 'slideOutRight',
+  autoplayTimeout: 5000,
+  animateOut: 'fadeOut',
+  animateIn: 'fadeIn',
   responsive: {
     0: {
       items: 1
@@ -686,4 +688,5 @@ $('.owl-carousel').owlCarousel({
     }
   }
 });
+
 </script>

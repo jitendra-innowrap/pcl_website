@@ -1,4 +1,4 @@
-<div class="contact-area-1 space overflow-hidden" data-bg-src="<?php echo base_url();?>assets/images/form-bg.jpg">
+<div class="contact-area-1 space overflow-hidden" style="background-color: #543718;">
   <div class="contact-shape1_1 shape-mockup jump d-lg-block d-none" data-top="0%" data-right="-8%">
     <img src="<?php echo base_url();?>assets/img/normal/contact-shape_1-1.png" alt="img">
   </div>
@@ -30,7 +30,7 @@
               </div>
               <div class="col-lg-4">
                 <label>Contact No*</label>
-                <div class="d-flex form-group form-icon-left">
+                <div class="d-flex form-group form-icon-left" style="margin:0px;">
                   <select id="countryCode" name="countryCode" class="form-control style-border"
                     style="max-width: 70px;padding: 0px 5px;">
                     <?php include 'country_code.php'; ?>

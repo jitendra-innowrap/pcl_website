@@ -41,7 +41,7 @@
               </h3>
               <div class="post-contents with-thum-img blog-content">
                 <div class="post-meta-item blog-meta">
-                  <a><?php echo isset($item['categories']) ? $item['categories'] :'';?></a>
+                <h6><?php echo isset($item['categories']) ? $item['categories'] :'';?></h6>
                 </div>
                 <div class="post-content blog-text">
                   <?php echo isset($item['content']) ? $item['content'] :'';?>
@@ -50,8 +50,8 @@
             </article>
             <?php if (isset($item['photos'])) {
             foreach ($item['photos'] as $index => $photo) { ?>
-            <div class="row mt-4">
-              <div class="col-lg-8 col-md-12">
+            <div class="row">
+              <div class="col-lg-8 mt-4 col-md-12">
                 <div class="row">
                   <?php if(isset($photo['0']['photo'])){?>
                   <div class="col-4">
@@ -111,10 +111,10 @@
                   <?php } ?>
                 </div>
               </div>
-              <div class="col-lg-4 col-md-12">
+              <div class="col-lg-4 mt-4 col-md-12">
                 <div class="row">
                   <?php if(isset($photo['3']['photo'])){?>
-                  <div class="col-lg-12 col-6 mb-4">
+                  <div class="col-lg-12 col-6">
                     <div class="portfolio-thumb fade_left">
                       <a class="popup-image icon-btn"
                         href="<?php echo (isset($photo['3']['photo']) ? $photo['3']['photo'] : 'assets/images/logo/Party Cruisers Limited black.png') ?>"><i
@@ -128,7 +128,7 @@
                   </div>
                   <?php } ?>
                   <?php if(isset($photo['5']['photo'])){?>
-                  <div class="col-lg-12 col-6">
+                  <div class="col-lg-12 col-6 mt-4">
                     <div class="portfolio-thumb fade_left">
                       <a class="popup-image icon-btn"
                         href="<?php echo (isset($photo['5']['photo']) ? $photo['5']['photo'] : 'assets/images/logo/Party Cruisers Limited black.png') ?>"><i

@@ -24,7 +24,7 @@
 <!--==============================
     About Area  
     ==============================-->
-<div class="space">
+<div class="mt-4 mb-4">
   <div class="container">
     <div class="row flex-row-reverse align-items-center justify-content-between">
       <div class="col-lg-6">
@@ -53,13 +53,13 @@
 <!--==============================
     Counter Area  
     ==============================-->
-<div class="counter-area-2">
-  <div class="counter-wrap1 space-bottom counter-item">
+<div class="counter-area-2" style="background-color: #543718;">
+  <div class="counter-wrap1 space counter-item">
     <div class="container">
       <div class="row gy-40 justify-content-lg-between justify-content-center">
         <div class="col-sm-6 col-lg-auto">
           <div class="counter-card">
-            <div class="media-body">
+            <div class="media-body" style="text-align: center;">
               <h3 class="counter-card_number">
                 <span class="odometer" data-odometer-final="256">.</span>
               </h3>
@@ -69,7 +69,7 @@
         </div>
         <div class="col-sm-6 col-lg-auto">
           <div class="counter-card">
-            <div class="media-body">
+            <div class="media-body" style="text-align: center;">
               <h3 class="counter-card_number">
                 <span class="odometer" data-odometer-final="28">.</span>
               </h3>
@@ -79,7 +79,7 @@
         </div>
         <div class="col-sm-6 col-lg-auto">
           <div class="counter-card">
-            <div class="media-body">
+            <div class="media-body" style="text-align: center;">
               <h3 class="counter-card_number">
                 <span class="odometer" data-odometer-final="1369">.</span>
               </h3>
@@ -89,7 +89,7 @@
         </div>
         <div class="col-sm-6 col-lg-auto">
           <div class="counter-card">
-            <div class="media-body">
+            <div class="media-body" style="text-align: center;">
               <h3 class="counter-card_number">
                 <span class="odometer" data-odometer-final="256">.</span>
               </h3>

@@ -478,205 +478,6 @@ class Console extends CI_Controller
 		}
 	}
 	
-	public function success_story()
-	{
-		$id = $this->input->get('id');
-		
-		if ($id) {
-			
-			$this->db->select('cs.*,GROUP_CONCAT(tc.name SEPARATOR ", ") as categories,t.video_url,t.video_thumbnail');
-			$this->db->where('cs.status', 1);
-			$this->db->where('cs.id', $id);
-			$this->db->order_by('cs.order_no', 'asc');
-			$this->db->group_by('cs.id');
-			$this->db->join('success_story_multi_category ssmc', 'ssmc.success_story_id  = cs.id', 'left');
-			$this->db->join('testimonial_category tc', 'tc.id = ssmc.category_id', 'left');
-			$this->db->join('testimonial t', 't.id = cs.testimonial', 'left');
-			$data['success_stories'] = $this->db->get("case_studies cs")->result_array();
-			if($data['success_stories']){
-				foreach ($data['success_stories'] as $key => $item) {
-					$this->db->select('ssmp.photo');
-					$this->db->where('ssmp.success_story_id ', $item['id']);
-					$photo_results = $this->db->get("success_story_multi_photos ssmp")->result_array();
-					if($photo_results){
-						$photo_chunks = array_chunk($photo_results, 6);
-						$data['success_stories'][$key]['photos'] = $photo_chunks;
-					}
-					
-					$this->db->select('ssmv.video_url,ssmv.video_thumbnail_url');
-					$this->db->where('ssmv.success_story_id ', $item['id']);
-					$video_results = $this->db->get("success_story_multi_videos ssmv")->result_array();
-					if($video_results){
-						$video_chunks = array_chunk($video_results, 6);
-						$data['success_stories'][$key]['videos'] = $video_chunks;
-					}
-				}
-			}		
-		// echo '<pre>'; print_r($data['success_stories']);  echo'</pre>'; exit();
-			if(!$data['success_stories']){
-				redirect();
-			}
-			
-			// echo'<pre>';print_r($data);exit();
-			
-			$data['page_title'] = $data['success_stories']['0']['brand']." - Party Cruisers";
-			$data['meta_desc'] = "";
-			$data['meta_keyword'] = "";
-			$data['meta_image'] = '';
-			$data['active'] = 11;
-			$data['act'] = 11.1;
-			$data['middle_content'] = 'success_story';	
-			
-			$this->load->view('frontend/layout/template', $data);
-		} else {
-			redirect();
-		}
-	}
-	
-	public function testimonials(){
-		$data['page_title'] = "Testimonials - Party Cruisers";
-		$data['meta_desc'] = "";
-		$data['meta_keyword'] = "";
-		$data['meta_image'] = '';
-		$data['active'] = 12;
-		$data['act'] = 12.1;
-		$data['middle_content'] = 'testimonials';	
-		
-		$this->db->select('name as brand');
-		$this->db->where('status', 1);
-		$this->db->order_by('order_no', 'asc');
-		$brands = $this->db->get("investors_category")->result_array();
-		
-		// echo '<pre>';print_r($brands);exit();
-
-		$testimonials = [];
-
-		if ($brands) {
-				foreach ($brands as $brand) {
-					
-					$this->db->select('id,video_thumbnail,video_url');
-					$this->db->where('status', 1);
-					$this->db->where('brand', $brand['brand']);
-					$this->db->where('video_thumbnail !=', '');
-					$this->db->where('video_url !=', '');
-					$this->db->order_by('order_no', 'asc');
-					$query = $this->db->get("testimonial");
-					$video = $query->result();
-					
-					$this->db->select('id,text,client_name');
-					$this->db->where('status', 1);
-					$this->db->where('brand', $brand['brand']);
-					$this->db->where('client_name !=', '');
-					$this->db->where('text !=', '');
-					$this->db->order_by('order_no', 'asc');
-					$query = $this->db->get("testimonial");
-					$text = $query->result();
-					
-					if (!empty($video) || !empty($text)) {
-            $testimonials_data = [
-                'brand' => $brand['brand'],
-                'data' => []
-            ];
-
-            if (!empty($video)) {
-                $video_chunks = array_chunk($video, 10);
-                $testimonials_data['data']['video'] = $video_chunks;
-            }
-
-            if (!empty($text)) {
-                $testimonials_data['data']['text'] = $text;
-            }
-
-            $testimonials[] = $testimonials_data;
-        	}
-				}
-		}
-
-
-		// echo '<pre>';print_r($testimonials);exit();
-		
-		$data['testimonials'] = array_values($testimonials);
-			
-		$this->load->view('frontend/layout/template', $data);
-	}
-	
-	public function house_of_vivah_form(){
-		// echo '<pre>';print_r($_POST);exit();
-		$add['u_name'] = $this->input->post('name');
-		$add['country_code'] = $this->input->post('countryCode');
-		$add['u_mobile'] = $this->input->post('contact');
-		$add['u_email'] = $this->input->post('email');
-		$add['location'] = $this->input->post('location');
-		$add['venue'] = $this->input->post('venue');
-		$add['date'] = $this->input->post('date');
-		$add['event'] = $this->input->post('event');
-		$add['enquiry_for'] = $this->input->post('enquiry_for');
-		
-		if ($this->db->insert('submit_house_of_vivah', $add)){
-			// $msg_subject = "[PCL] Thanks for the inquiry";
-			// $msg = "HI". $add['u_name'] ."</br>Thank you for contact with us. <br>We will get back to you shortly.<br>Thanks<br>Team PARTY CRUISERS LTD.";
-			// $from_email = "priya@innowrap.com";
-			// if ($this->sendMail($add['u_email'],$from_email,$msg_subject,$msg)) {
-			// 	$phone =  $this->input->post('phone_number',true);
-			// 	$html = "Name: " . $add['u_name'] . "<br>Email: " . $add['u_email'] . "<br>Phone: " . $add['country_code'] . $add['u_mobile'] . "<br>Inquiry for: " . $add['event'] . "<br>Location: " . $add['location'] . "<br>Date: " . $add['date'] . "<br>Venue: " . $add['venue'] . ".";
-			// 	$from_email = "priya@innowrap.com";
-			// 	$msg_subject = "[PCL] Thanks for the inquiry";
-			// 	$this->sendMail($from_email,$from_email,$msg_subject,$html);
-			// 		if($this->Master_model->contact_us($name,$email,$msg_subject,$phone_number,$message,$ip_address)){
-			// 			echo json_encode(['code' => 1]);
-			// 		}else{
-			// 			echo json_encode(['code' => 0]);
-			// 		}
-			// }else {
-			// 	echo json_encode(['code' => 0]);
-			// }
-			echo json_encode(['code' => 1]);
-		}else{
-			echo json_encode(['code' => 0]);
-		}
-	}
-	
-	public function event_factory_form(){
-		// echo '<pre>';print_r($_POST);exit();
-		$add['u_name'] = $this->input->post('name');
-		$add['companyname'] = $this->input->post('companyname');
-		$add['designation'] = $this->input->post('designation');
-		$add['country_code'] = $this->input->post('countryCode');
-		$add['u_mobile'] = $this->input->post('contact');
-		$add['u_email'] = $this->input->post('email');
-		$add['location'] = $this->input->post('location');
-		$add['venue'] = $this->input->post('venue');
-		$add['date'] = $this->input->post('date');
-		$add['event'] = $this->input->post('event');
-		$add['enquiry_for'] = $this->input->post('enquiry_for');
-		if($add['event'] === 'Other'){
-			$add['subEvent'] = $this->input->post('otherEvent');
-		}
-		
-		if ($this->db->insert('submit_event_factory', $add)){
-			// $msg_subject = "[PCL] Thanks for the inquiry";
-			// $msg = "HI". $add['u_name'] ."</br>Thank you for contact with us. <br>We will get back to you shortly.<br>Thanks<br>Team PARTY CRUISERS LTD.";
-			// $from_email = "priya@innowrap.com";
-			// if ($this->sendMail($add['u_email'],$from_email,$msg_subject,$msg)) {
-			// 	$phone =  $this->input->post('phone_number',true);
-			// 	$html = "Name: " . $add['u_name'] . "<br>Email: " . $add['u_email'] . "<br>Phone: " . $add['country_code'] . $add['u_mobile'] . "<br>Inquiry for: " . $add['event'] . "<br>Location: " . $add['location'] . "<br>Date: " . $add['date'] . "<br>Venue: " . $add['venue'] . ".";
-			// 	$from_email = "priya@innowrap.com";
-			// 	$msg_subject = "[PCL] Thanks for the inquiry";
-			// 	$this->sendMail($from_email,$from_email,$msg_subject,$html);
-			// 		if($this->Master_model->contact_us($name,$email,$msg_subject,$phone_number,$message,$ip_address)){
-			// 			echo json_encode(['code' => 1]);
-			// 		}else{
-			// 			echo json_encode(['code' => 0]);
-			// 		}
-			// }else {
-			// 	echo json_encode(['code' => 0]);
-			// }
-			echo json_encode(['code' => 1]);
-		}else{
-			echo json_encode(['code' => 0]);
-		}
-	}
-	
 	public function live_space(){
 		$data['page_title'] = "Live Space - Party Cruisers";
 		$data['meta_desc'] = "";
@@ -891,6 +692,301 @@ class Console extends CI_Controller
 		$data['middle_content'] = 'about_us';	
 		
 		$this->load->view('frontend/layout/template', $data);
+	}
+		
+	public function investor_relation(){
+		$data['page_title'] = "Investor Relation - Party Cruisers";
+		$data['meta_desc'] = "";
+		$data['meta_keyword'] = "";
+		$data['meta_image'] = '';
+		$data['active'] = 11;
+		$data['act'] = 11.1;
+		$data['middle_content'] = 'investor_relation';	
+		
+		$this->load->view('frontend/layout/template', $data);
+	}
+	
+	public function disclosures_under_regulation_46_of_the_lODR(){
+		$data['page_title'] = "Disclosures under Regulation 46 of the LODR - Party Cruisers";
+		$data['meta_desc'] = "";
+		$data['meta_keyword'] = "";
+		$data['meta_image'] = '';
+		$data['active'] = 12;
+		$data['act'] = 12.1;
+		$data['middle_content'] = 'disclosures_under_regulation_46_of_the_lODR';	
+		
+		$this->load->view('frontend/layout/template', $data);
+	}
+	
+	public function company_internal_policy(){
+		$data['page_title'] = "Company Internal Policy- Party Cruisers";
+		$data['meta_desc'] = "";
+		$data['meta_keyword'] = "";
+		$data['meta_image'] = '';
+		$data['active'] = 13;
+		$data['act'] = 13.1;
+		$data['middle_content'] = 'company_internal_policy';	
+		
+		$this->load->view('frontend/layout/template', $data);
+	}
+	
+	public function company_policies(){
+		$data['page_title'] = "Company Policies - Party Cruisers";
+		$data['meta_desc'] = "";
+		$data['meta_keyword'] = "";
+		$data['meta_image'] = '';
+		$data['active'] = 14;
+		$data['act'] = 14.1;
+		$data['middle_content'] = 'company_policies';	
+		
+		$this->load->view('frontend/layout/template', $data);
+	}
+	
+	public function privacy_policy(){
+		$data['page_title'] = "Privacy Policy - Party Cruisers";
+		$data['meta_desc'] = "";
+		$data['meta_keyword'] = "";
+		$data['meta_image'] = '';
+		$data['active'] = 15;
+		$data['act'] = 15.1;
+		$data['middle_content'] = 'privacy_policy';	
+		
+		$this->load->view('frontend/layout/template', $data);
+	}
+	
+	public function franchise(){
+		$data['page_title'] = "Franchise - Party Cruisers";
+		$data['meta_desc'] = "";
+		$data['meta_keyword'] = "";
+		$data['meta_image'] = '';
+		$data['active'] = 16;
+		$data['act'] = 16.1;
+		$data['middle_content'] = 'franchise';	
+		
+		$this->load->view('frontend/layout/template', $data);
+	}
+	
+	public function entrepreneur_program(){
+		$data['page_title'] = "Entrepreneur Program - Party Cruisers";
+		$data['meta_desc'] = "";
+		$data['meta_keyword'] = "";
+		$data['meta_image'] = '';
+		$data['active'] = 17;
+		$data['act'] = 17.1;
+		$data['middle_content'] = 'entrepreneur_program';	
+		
+		$this->load->view('frontend/layout/template', $data);
+	}
+	
+	public function m_and_a(){
+		$data['page_title'] = "Merger & Acquisition - Party Cruisers";
+		$data['meta_desc'] = "";
+		$data['meta_keyword'] = "";
+		$data['meta_image'] = '';
+		$data['active'] = 18;
+		$data['act'] = 18.1;
+		$data['middle_content'] = 'm_and_a';	
+		
+		$this->load->view('frontend/layout/template', $data);
+	}
+	
+	public function success_story()
+	{
+		$id = $this->input->get('id');
+		
+		if ($id) {
+			
+			$this->db->select('cs.*,GROUP_CONCAT(tc.name SEPARATOR ", ") as categories,t.video_url,t.video_thumbnail');
+			$this->db->where('cs.status', 1);
+			$this->db->where('cs.id', $id);
+			$this->db->order_by('cs.order_no', 'asc');
+			$this->db->group_by('cs.id');
+			$this->db->join('success_story_multi_category ssmc', 'ssmc.success_story_id  = cs.id', 'left');
+			$this->db->join('testimonial_category tc', 'tc.id = ssmc.category_id', 'left');
+			$this->db->join('testimonial t', 't.id = cs.testimonial', 'left');
+			$data['success_stories'] = $this->db->get("case_studies cs")->result_array();
+			if($data['success_stories']){
+				foreach ($data['success_stories'] as $key => $item) {
+					$this->db->select('ssmp.photo');
+					$this->db->where('ssmp.success_story_id ', $item['id']);
+					$photo_results = $this->db->get("success_story_multi_photos ssmp")->result_array();
+					if($photo_results){
+						$photo_chunks = array_chunk($photo_results, 6);
+						$data['success_stories'][$key]['photos'] = $photo_chunks;
+					}
+					
+					$this->db->select('ssmv.video_url,ssmv.video_thumbnail_url');
+					$this->db->where('ssmv.success_story_id ', $item['id']);
+					$video_results = $this->db->get("success_story_multi_videos ssmv")->result_array();
+					if($video_results){
+						$video_chunks = array_chunk($video_results, 6);
+						$data['success_stories'][$key]['videos'] = $video_chunks;
+					}
+				}
+			}		
+		// echo '<pre>'; print_r($data['success_stories']);  echo'</pre>'; exit();
+			if(!$data['success_stories']){
+				redirect();
+			}
+			
+			// echo'<pre>';print_r($data);exit();
+			
+			$data['page_title'] = $data['success_stories']['0']['brand']." - Party Cruisers";
+			$data['meta_desc'] = "";
+			$data['meta_keyword'] = "";
+			$data['meta_image'] = '';
+			$data['active'] = 19;
+			$data['act'] = 19.1;
+			$data['middle_content'] = 'success_story';	
+			
+			$this->load->view('frontend/layout/template', $data);
+		} else {
+			redirect();
+		}
+	}
+	
+	public function testimonials(){
+		$data['page_title'] = "Testimonials - Party Cruisers";
+		$data['meta_desc'] = "";
+		$data['meta_keyword'] = "";
+		$data['meta_image'] = '';
+		$data['active'] = 20;
+		$data['act'] = 20.1;
+		$data['middle_content'] = 'testimonials';	
+		
+		$this->db->select('name as brand');
+		$this->db->where('status', 1);
+		$this->db->order_by('order_no', 'asc');
+		$brands = $this->db->get("investors_category")->result_array();
+		
+		// echo '<pre>';print_r($brands);exit();
+
+		$testimonials = [];
+
+		if ($brands) {
+				foreach ($brands as $brand) {
+					
+					$this->db->select('id,video_thumbnail,video_url');
+					$this->db->where('status', 1);
+					$this->db->where('brand', $brand['brand']);
+					$this->db->where('video_thumbnail !=', '');
+					$this->db->where('video_url !=', '');
+					$this->db->order_by('order_no', 'asc');
+					$query = $this->db->get("testimonial");
+					$video = $query->result();
+					
+					$this->db->select('id,text,client_name');
+					$this->db->where('status', 1);
+					$this->db->where('brand', $brand['brand']);
+					$this->db->where('client_name !=', '');
+					$this->db->where('text !=', '');
+					$this->db->order_by('order_no', 'asc');
+					$query = $this->db->get("testimonial");
+					$text = $query->result();
+					
+					if (!empty($video) || !empty($text)) {
+            $testimonials_data = [
+                'brand' => $brand['brand'],
+                'data' => []
+            ];
+
+            if (!empty($video)) {
+                $video_chunks = array_chunk($video, 10);
+                $testimonials_data['data']['video'] = $video_chunks;
+            }
+
+            if (!empty($text)) {
+                $testimonials_data['data']['text'] = $text;
+            }
+
+            $testimonials[] = $testimonials_data;
+        	}
+				}
+		}
+
+
+		// echo '<pre>';print_r($testimonials);exit();
+		
+		$data['testimonials'] = array_values($testimonials);
+			
+		$this->load->view('frontend/layout/template', $data);
+	}
+	
+	public function house_of_vivah_form(){
+		// echo '<pre>';print_r($_POST);exit();
+		$add['u_name'] = $this->input->post('name');
+		$add['country_code'] = $this->input->post('countryCode');
+		$add['u_mobile'] = $this->input->post('contact');
+		$add['u_email'] = $this->input->post('email');
+		$add['location'] = $this->input->post('location');
+		$add['venue'] = $this->input->post('venue');
+		$add['date'] = $this->input->post('date');
+		$add['event'] = $this->input->post('event');
+		$add['enquiry_for'] = $this->input->post('enquiry_for');
+		
+		if ($this->db->insert('submit_house_of_vivah', $add)){
+			// $msg_subject = "[PCL] Thanks for the inquiry";
+			// $msg = "HI". $add['u_name'] ."</br>Thank you for contact with us. <br>We will get back to you shortly.<br>Thanks<br>Team PARTY CRUISERS LTD.";
+			// $from_email = "priya@innowrap.com";
+			// if ($this->sendMail($add['u_email'],$from_email,$msg_subject,$msg)) {
+			// 	$phone =  $this->input->post('phone_number',true);
+			// 	$html = "Name: " . $add['u_name'] . "<br>Email: " . $add['u_email'] . "<br>Phone: " . $add['country_code'] . $add['u_mobile'] . "<br>Inquiry for: " . $add['event'] . "<br>Location: " . $add['location'] . "<br>Date: " . $add['date'] . "<br>Venue: " . $add['venue'] . ".";
+			// 	$from_email = "priya@innowrap.com";
+			// 	$msg_subject = "[PCL] Thanks for the inquiry";
+			// 	$this->sendMail($from_email,$from_email,$msg_subject,$html);
+			// 		if($this->Master_model->contact_us($name,$email,$msg_subject,$phone_number,$message,$ip_address)){
+			// 			echo json_encode(['code' => 1]);
+			// 		}else{
+			// 			echo json_encode(['code' => 0]);
+			// 		}
+			// }else {
+			// 	echo json_encode(['code' => 0]);
+			// }
+			echo json_encode(['code' => 1]);
+		}else{
+			echo json_encode(['code' => 0]);
+		}
+	}
+	
+	public function event_factory_form(){
+		// echo '<pre>';print_r($_POST);exit();
+		$add['u_name'] = $this->input->post('name');
+		$add['companyname'] = $this->input->post('companyname');
+		$add['designation'] = $this->input->post('designation');
+		$add['country_code'] = $this->input->post('countryCode');
+		$add['u_mobile'] = $this->input->post('contact');
+		$add['u_email'] = $this->input->post('email');
+		$add['location'] = $this->input->post('location');
+		$add['venue'] = $this->input->post('venue');
+		$add['date'] = $this->input->post('date');
+		$add['event'] = $this->input->post('event');
+		$add['enquiry_for'] = $this->input->post('enquiry_for');
+		if($add['event'] === 'Other'){
+			$add['subEvent'] = $this->input->post('otherEvent');
+		}
+		
+		if ($this->db->insert('submit_event_factory', $add)){
+			// $msg_subject = "[PCL] Thanks for the inquiry";
+			// $msg = "HI". $add['u_name'] ."</br>Thank you for contact with us. <br>We will get back to you shortly.<br>Thanks<br>Team PARTY CRUISERS LTD.";
+			// $from_email = "priya@innowrap.com";
+			// if ($this->sendMail($add['u_email'],$from_email,$msg_subject,$msg)) {
+			// 	$phone =  $this->input->post('phone_number',true);
+			// 	$html = "Name: " . $add['u_name'] . "<br>Email: " . $add['u_email'] . "<br>Phone: " . $add['country_code'] . $add['u_mobile'] . "<br>Inquiry for: " . $add['event'] . "<br>Location: " . $add['location'] . "<br>Date: " . $add['date'] . "<br>Venue: " . $add['venue'] . ".";
+			// 	$from_email = "priya@innowrap.com";
+			// 	$msg_subject = "[PCL] Thanks for the inquiry";
+			// 	$this->sendMail($from_email,$from_email,$msg_subject,$html);
+			// 		if($this->Master_model->contact_us($name,$email,$msg_subject,$phone_number,$message,$ip_address)){
+			// 			echo json_encode(['code' => 1]);
+			// 		}else{
+			// 			echo json_encode(['code' => 0]);
+			// 		}
+			// }else {
+			// 	echo json_encode(['code' => 0]);
+			// }
+			echo json_encode(['code' => 1]);
+		}else{
+			echo json_encode(['code' => 0]);
+		}
 	}
 
 }

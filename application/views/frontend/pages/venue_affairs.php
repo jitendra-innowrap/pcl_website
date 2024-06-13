@@ -24,12 +24,12 @@
 <!--==============================
     About Area  
     ==============================-->
-<div class="space">
+<div class="mt-4 mb-4">
   <div class="container">
   <div class="row flex-row-reverse align-items-center justify-content-between">
       <div class="col-lg-6">
         <div class="about-thumb mb-5 mb-lg-0 text-lg-end text-center img-anim" style="display:flex;align-items: center;justify-content: center;">
-          <img class="about-img-1" style="width:100%;max-width:500px;" src="<?php echo base_url();?>assets/images/logo/venue affairs.cdr_ctc.png" alt="img">
+          <img class="about-img-1" style="width:100%;max-width:500px;" src="<?php echo base_url();?>assets/images/logo/venue-affairs.png" alt="img">
         </div>
       </div>
       <div class="col-lg-6">
@@ -81,8 +81,8 @@
             id="pills-<?php echo $item['category_id']; ?>" role="tabpanel"
             aria-labelledby="pills-<?php echo $item['category_id']; ?>-tab">
             <?php  foreach ($item['case_studies'] as $index => $photo) { ?>
-            <div class="row mt-4">
-              <div class="col-lg-8 col-md-12">
+            <div class="row">
+              <div class="col-lg-8 mt-4 col-md-12">
                 <div class="row">
                   <?php if(isset($photo['0']['image'])){?>
                   <div class="col-4">
@@ -115,7 +115,7 @@
                   </div>
                   <?php } ?>
                   <?php if(isset($photo['4']['image'])){?>
-                  <div class="col-12 mt-4 mb-4">
+                  <div class="col-12 mt-4">
                     <div class="responsive-container aspect-ratio-2-1"><a
                         href="<?php echo base_url();?>success-story?id=<?php echo $photo['4']['id']; ?>">
                         <img
@@ -126,10 +126,10 @@
                   <?php } ?>
                 </div>
               </div>
-              <div class="col-lg-4 col-md-12">
+              <div class="col-lg-4 mt-4 col-md-12">
                 <div class="row">
                   <?php if(isset($photo['3']['image'])){?>
-                  <div class="col-lg-12 col-6 mb-4">
+                  <div class="col-lg-12 col-6">
                     <div class="responsive-container aspect-ratio-1-2"><a
                         href="<?php echo base_url();?>success-story?id=<?php echo $photo['3']['id']; ?>">
                         <img
@@ -139,7 +139,7 @@
                   </div>
                   <?php } ?>
                   <?php if(isset($photo['5']['image'])){?>
-                  <div class="col-lg-12 col-6">
+                  <div class="col-lg-12 col-6 mt-4">
                     <div class="responsive-container aspect-ratio-3-2"><a
                         href="<?php echo base_url();?>success-story?id=<?php echo $photo['5']['id']; ?>">
                         <img
@@ -339,7 +339,7 @@ Service Area 01
     Contact Area  
 ==============================-->
 
-<div class="contact-area-1 space overflow-hidden" data-bg-src="<?php echo base_url();?>assets/images/form-bg.jpg">
+<div class="contact-area-1 space overflow-hidden" style="background-color: #543718;">
   <div class="contact-shape1_1 shape-mockup jump d-lg-block d-none" data-top="0%" data-right="-8%">
     <img src="<?php echo base_url();?>assets/img/normal/contact-shape_1-1.png" alt="img">
   </div>
@@ -371,7 +371,7 @@ Service Area 01
               </div>
               <div class="col-lg-4">
                 <label>Contact No*</label>
-                <div class="d-flex form-group form-icon-left">
+                <div class="d-flex form-group form-icon-left" style="margin:0px;">
                   <select id="countryCode" name="countryCode" class="form-control style-border"
                     style="max-width: 70px;padding: 0px 5px;">
                     <?php include 'country_code.php'; ?>

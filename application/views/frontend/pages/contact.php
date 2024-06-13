@@ -22,7 +22,7 @@
  </div>
 
  <div class="contact-area space custom-contact" data-bg-src="assets/img/bg/contact-page-bg.webp">
-   <div class="container">
+   <div class="container" style="overflow:hidden;">
      <div class="row gy-4 justify-content-center">
        <div class="col-xxl-4 col-lg-6">
          <div class="footer-contact-wrap title-anim">
@@ -157,7 +157,7 @@
                  </div>
                  <div class="col-lg-6">
                    <label>Contact No*</label>
-                   <div class="d-flex form-group style-4 form-icon-left">
+                   <div class="d-flex form-group style-4 form-icon-left" style="margin:0px;">
                      <select id="countryCode" name="countryCode" class="style-4 form-control style-border"
                      style="max-width: 70px;padding: 0px 5px;">
                        <?php include 'country_code.php'; ?>

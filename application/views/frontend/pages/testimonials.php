@@ -214,7 +214,7 @@ Service Area 01
                 <div class="row mt-4">
                   <?php  if(!empty($item['data']['text'])){
                 foreach ($item['data']['text'] as $index => $text) { ?>
-                  <div class="col-md-3 col-sm-12 mb-4">
+                  <div class="col-md-6 col-lg-3 col-sm-12 mb-4">
                     <?php if(isset($text->text)){ ?>
                     <div class="responsive-container testimonial-text">
                       <span class="more"><?php echo $text->text; ?></span>

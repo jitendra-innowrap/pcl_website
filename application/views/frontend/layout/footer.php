@@ -10,19 +10,19 @@
     <img src="<?php echo base_url();?>assets/img/normal/footer-1-shape2.png" alt="img">
   </div>
   <div class="container">
-    <div class="widget-area">
+    <div class="widget-area custom-footer">
       <div class="row justify-content-between">
         <div class="col-md-6 col-lg-4 col-xl-3">
           <div class="widget widget_nav_menu footer-widget">
             <h3 class="widget_title">Brands</h3>
             <div class="menu-all-pages-container list-column2">
               <ul class="menu">
-                <li><a href="<?php echo base_url();?>house-of-vivah">House of Vivah</a></li>
-                <li><a href="<?php echo base_url();?>vows-vachan">Vows Vachan</a></li>
-                <li><a href="<?php echo base_url();?>event-factory">Event Factory</a></li>
-                <li><a href="<?php echo base_url();?>live-space">Live Space</a></li>
-                <li><a href="<?php echo base_url();?>venue-affairs">Venue Affairs</a></li>
-                <li><a href="<?php echo base_url();?>party-house">Party House</a></li>
+                <li class="<?= ($active === 4 ? 'active' : '') ?>"><a href="<?php echo base_url();?>house-of-vivah">House of Vivah</a></li>
+                <li  class="<?= ($active === 5 ? 'active' : '') ?>"><a href="<?php echo base_url();?>vows-vachan">Vows Vachan</a></li>
+                <li  class="<?= ($active === 6 ? 'active' : '') ?>"><a href="<?php echo base_url();?>event-factory">Event Factory</a></li>
+                <li  class="<?= ($active === 7 ? 'active' : '') ?>"><a href="<?php echo base_url();?>live-space">Live Space</a></li>
+                <li  class="<?= ($active === 8 ? 'active' : '') ?>"><a href="<?php echo base_url();?>venue-affairs">Venue Affairs</a></li>
+                <li  class="<?= ($active === 9 ? 'active' : '') ?>"><a href="<?php echo base_url();?>party-house">Party House</a></li>
               </ul>
             </div>
           </div>
@@ -32,9 +32,9 @@
             <h3 class="widget_title">Business Opportunity</h3>
             <div class="menu-all-pages-container list-column2">
               <ul class="menu">
-                <li><a href="<?php echo base_url();?>franchise">Franchise</a></li>
-                <li><a href="<?php echo base_url();?>entrepreneur-program">Entrepreneur Program</a></li>
-                <li><a href="<?php echo base_url();?>m-and-a">M&A</a></li>
+                <li  class="<?= ($active === 16 ? 'active' : '') ?>"><a href="<?php echo base_url();?>franchise">Franchise</a></li>
+                <li  class="<?= ($active === 17 ? 'active' : '') ?>"><a href="<?php echo base_url();?>entrepreneur-program">Entrepreneur Program</a></li>
+                <li  class="<?= ($active === 18 ? 'active' : '') ?>"><a href="<?php echo base_url();?>m-and-a">M&A</a></li>
               </ul>
             </div>
           </div>
@@ -44,9 +44,9 @@
             <h3 class="widget_title">Policy</h3>
             <div class="menu-all-pages-container list-column2">
               <ul class="menu">
-                <li><a href="<?php echo base_url();?>investor-relation">Investor Relation</a></li>
-                <li><a href="<?php echo base_url();?>company-internal-policy">Company Internal Policy</a></li>
-                <li><a href="<?php echo base_url();?>privacy-policy">Privacy & Policy</a></li>
+                <li class="<?= ($active === 11 ? 'active' : '') ?>"><a href="<?php echo base_url();?>investor-relation">Investor Relation</a></li>
+                <li class="<?= ($active === 13 ? 'active' : '') ?>"><a href="<?php echo base_url();?>company-internal-policy">Company Internal Policy</a></li>
+                <li class="<?= ($active === 15 ? 'active' : '') ?>"><a href="<?php echo base_url();?>privacy-policy">Privacy & Policy</a></li>
               </ul>
             </div>
           </div>
@@ -142,7 +142,7 @@
 <!-- Main Js File -->
 <script src="<?php echo base_url();?>assets/js/main.js"></script>
 
-<!-- Custom CSS -->
+<!-- Custom JS -->
 <?php if($act === 1.1  || $act === 3.1 || $act === 12.1){ ?>
 <script src="<?php echo base_url();?>assets/js/contact.js"></script>
 <?php } ?>

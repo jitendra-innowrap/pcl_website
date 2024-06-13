@@ -279,6 +279,12 @@
     font-size: 14px;
     font-weight: 500;
 }
+.success-story ul{
+  justify-content: space-evenly;
+}
+.custom-bolg-latest-post{
+  display: none;
+}
 }
 
 .success-story .aspect-ratio-3-2::before {
@@ -493,9 +499,100 @@
 
 .back {
   -webkit-transform: rotateY(180deg);
-  background: rgb(255 255 255 / 78%);
+  background: rgb(255, 255, 255);
   padding: 15px;
   border-radius: 10px;
   text-align: center;
   align-content: center;
+}
+
+.policy-contaner{
+  width: 100%;
+  background: #f9f3f0;
+  padding: 9px 12px;
+  margin-bottom: 15px;
+}
+
+.policy-contaner p{
+  margin: 0px;
+  font-size: 16px !important;
+  font-weight: 600;
+  color: #666861;
+  display: flex;
+  justify-content: space-between;
+}
+
+.custom-accodin .accordion-card .accordion-button {
+  background-color: #f9f3f0 !important;
+  padding: 9px 12px !important;
+  font-size: 16px;
+  font-weight: 600;
+  font-family: var(--title-font);
+  color: var(--title-color);
+  border: 0;
+  background-color: transparent;
+  padding: 0px 65px 0px 0px;
+  min-height: auto;
+  gap: 10px;
+  margin-bottom: 0;
+  text-align: left;
+  transition: 0.3s;
+  position: relative;
+  margin-bottom: 15px;
+}
+
+.custom-accodin .accordion-card
+{
+  border:none;
+}
+
+.custom-accodin .accordion-card .accordion-button:after {
+  top: 0px !important;
+}
+
+.custom-accodin .accordion-card .accordion-body {
+  padding: 3rem 2rem;
+}
+
+.custom-table-2 .heading1{
+  background: #434640;
+  color: white;
+}
+.custom-table-2 .heading2{
+  background: #434640;
+    color: white;
+  width: 300px;
+}
+
+.policy-contaner-sub{
+  width: 100%;
+  background: #b7b8b5;
+  padding: 9px 12px;
+  margin-bottom: 15px;
+}
+
+.policy-contaner-sub p{
+  margin: 0px;
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  color: #666861;
+  display: flex;
+  justify-content: space-between;
+}
+
+.custom-franchise .reservation-form-wrap {
+  padding: 90px 40px !important;
+}
+
+.custom-footer .active:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  height: 1px;
+  width: 50px;
+  background: var(--title-color);
+}
+.custom-footer .active a{
+  color: black;
 }

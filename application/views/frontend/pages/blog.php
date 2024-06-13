@@ -30,19 +30,9 @@
       <div class="col-xxl-8 col-lg-7">
         <div class="row gy-4 all-posts-wrapper" id="blog-container">
         </div>
-        <div class="pagination">
-          <ul>
-            <li><a href="blog.html">01</a></li>
-            <li><a href="blog.html">02</a></li>
-            <li><a href="blog.html">03</a></li>
-            <li><a href="blog.html">Next <i class="fas fa-angle-double-right"></i>
-              </a></li>
-          </ul>
-        </div>
       </div>
-
       <div class="col-xxl-4 col-lg-5 sidebar-widget-area">
-        <aside class="sidebar-sticky-area sidebar-area">
+        <aside class="sidebar-sticky-area sidebar-area custom-bolg-latest-post">
           <div class="widget">
             <h3 class="widget_title">Latest Posts</h3>
             <div class="recent-post-wrap">
@@ -70,25 +60,11 @@
             </div>
           </div>
         </aside>
-        <div id="blog-container-2">
-          <div class="blog-area mb-4">
-            <div class="blog-grid style2 style-big title-anim">
-              <div class="blog-img">
-                <img src="assets/img/blog/blog_1_3.png" alt="blog image">
-              </div>
-              <div class="blog-content">
-                <div class="post-meta-item blog-meta">
-                  <a href="blog.html">15 JAN, 2023</a>
-                  <a href="blog.html">BY HARSH ARKA</a>
-                </div>
-                <h3 class="blog-title"><a href="blog-details.html">Enthusiast's Handbook: From Manicures
-                    to Nail Health</a></h3>
-                <a href="blog-details.html" class="link-btn style2">Continue Reading <i
-                    class="fas fa-arrow-right"></i></a>
-              </div>
-            </div>
-          </div>
+        <div id="blog-container-2" class="mt-4">
         </div>
+      </div>
+      <div class="col-xxl-12">
+        <div class="pagination"><ul></ul></div>
       </div>
     </div>
   </div>
