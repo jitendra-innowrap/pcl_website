@@ -24,7 +24,7 @@
 		</div>
 		<!-- end::page header -->
 
-		<div class="row">x
+		<div class="row">
 			<div class="col-md-12">
 				<div class="card">
 					<div class="card-body">

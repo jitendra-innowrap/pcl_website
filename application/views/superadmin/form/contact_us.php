@@ -36,11 +36,18 @@
 									<th>Client Name</th>
 									<th>Contact No</th>
 									<th>Email</th>
+									<th>Company Name</th>
+									<th>Designation</th>
 									<th>Enquiry For</th>
 									<th>Location</th>
 									<th>Date of Event</th>
 									<th>No of Guest</th>
 									<th>Event</th>
+									<th>Specify Other Event</th>
+									<th>Venue</th>
+									<th>Event Type</th>
+									<th>Artist Requirement</th>
+									<th>work Profile</th>
 									<th>Date</th>
 								</tr>
 								</thead>

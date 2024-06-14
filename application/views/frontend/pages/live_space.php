@@ -359,8 +359,8 @@ Service Area 01
       <div class="row">
         <div class="col-lg-12">
           <h4 class="form-messages"></h4>
-          <form action="<?php echo base_url("console/live_space_form"); ?>" method="POST"
-            class="contact-form form-contact-black" id="houseOfVivahForm">
+          <form method="POST"
+            class="contact-form form-contact-black" id="liveSpaceForm">
             <div class="row">
               <input type="hidden" name="enquiry_for" value="Live space" />
               <div class="col-lg-4">

@@ -15,7 +15,7 @@
       <div class="row">
         <div class="col-lg-12">
           <h4 class="form-messages"></h4>
-          <form action="<?php echo base_url("console/add_contact"); ?>" method="POST"
+          <form method="POST"
             class="contact-form form-contact-black" id="contactForm">
             <div class="row">
             <input type="hidden" name="enquiry_for" value="Party Cruisers Limited" />

@@ -129,9 +129,6 @@
 					<li><a class="<?php echo ($act == 17.2 ? 'active':'')?>" href="<?php echo base_url() ?>superadmin/administrator/entrepreneur">Entrepreneur program</a></li>
 					<li><a class="<?php echo ($act == 17.3 ? 'active':'')?>" href="<?php echo base_url() ?>superadmin/administrator/m_and_a">M&A</a></li> -->
 					<li><a class="<?php echo ($act == 17.4 ? 'active':'')?>" href="<?php echo base_url() ?>superadmin/administrator/contact_us">Contact us</a></li>
-					<li><a class="<?php echo ($act == 17.5 ? 'active':'')?>" href="<?php echo base_url() ?>superadmin/administrator/house_of_vivah">House of Vivah</a></li>
-					<li><a class="<?php echo ($act == 17.6 ? 'active':'')?>" href="<?php echo base_url() ?>superadmin/administrator/vows_vachan">Vows Vachan</a></li>
-					<li><a class="<?php echo ($act == 17.7 ? 'active':'')?>" href="<?php echo base_url() ?>superadmin/administrator/event_factory">Event Factory</a></li>
 				</ul>
 			</li>
 		</ul>

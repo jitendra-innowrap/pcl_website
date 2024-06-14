@@ -30,29 +30,29 @@
 												<option value="2">Investor Relation</option>
 										</select>
 								</div>
-								<div class="col-md-4 mb-3">
+								<div class="col-md-4 mb-3 div-investor-relation d-none">
 										<label for="name">Category</label>
 										<select name="category" class="form-control category category_select2" id="category-select">
 												<option value="">Select Category</option>
 										</select>
 								</div>
-								<div class="col-md-4 mb-3">
+								<div class="col-md-4 mb-3 div-investor-relation-sub d-none">
 										<label for="name">Sub Category</label>
 										<select name="sub_category" class="form-control sub_category sub_category_select2" id="sub_category-select">
 												<option value="">Select Sub Category</option>
 										</select>
 								</div>
-								<div class="col-md-4 mb-3">
+								<div class="col-md-4 mb-3 div-investor-relation-sub d-none">
 										<label for="name">Sub Category 2</label>
 										<select name="sub_category_2" class="form-control sub_category_2 sub_category_2_select2" id="sub_category_2-select">
 												<option value="">Select Sub Category 2</option>
 										</select>
 								</div>
-								<div class="col-md-4 mb-3">
+								<div class="col-md-4 mb-3 div-investor-relation-sub d-none">
 									<label for="">Table Label Column Title</label>
 									<input class="form-control" name="label_title" value="<?php echo isset($edit['label_title'])?$edit['label_title']:'';?>" placeholder="Enter Table Label Column Title">
 								</div>
-								<div class="col-md-4 mb-3">
+								<div class="col-md-4 mb-3 div-investor-relation-sub d-none">
 									<label for="">Table Link Column Title</label>
 									<input class="form-control" name="link_title" value="<?php echo isset($edit['link_title'])?$edit['link_title']:'';?>" placeholder="Enter Table Link Column Title">
 								</div>
@@ -112,6 +112,25 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
 $(document).ready(function() {
+	
+	$('.type_select2').on('change', function() {
+		var type = $(this).val();
+		if (type === "2") {  // Ensure type is compared as a string
+				$('.div-investor-relation').removeClass('d-none');
+		} else {
+				$('.div-investor-relation').addClass('d-none');
+				$('.div-investor-relation-sub').addClass('d-none');
+		}
+	});
+	
+	$('#category-select').on('change', function() {
+		var cateory = $(this).val();
+		if (cateory === "1") {  // Ensure type is compared as a string
+				$('.div-investor-relation-sub').removeClass('d-none');
+		} else {
+				$('.div-investor-relation-sub').addClass('d-none');
+		}
+	});
 	
 	$('.type_select2').select2({});
 	
@@ -191,9 +210,9 @@ $(document).ready(function() {
 	
 	$('.category_select2').select2({
 			language: {
-					noResults: function() {
-							return '<div class="select2-link d-grid gap-2"><a href="javascript:void(0);" class="btn btn-outline-success add_category_btn">Add New</a></div>';
-					}
+					// noResults: function() {
+					// 		return '<div class="select2-link d-grid gap-2"><a href="javascript:void(0);" class="btn btn-outline-success add_category_btn">Add New</a></div>';
+					// }
 			},
 			escapeMarkup: function(markup) {
 					return markup;

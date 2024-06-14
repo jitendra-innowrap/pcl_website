@@ -51,10 +51,11 @@
           <div class="title-area text-center mb-30">
             <h2 class="sec-title">Contact Us</h2>
           </div>
-          <form action="" method="POST"
+          <h4 class="form-messages"></h4>
+          <form method="POST"
             class="contact-form form-contact-white" id="franchiseForm">
             <div class="row">
-              <input type="hidden" name="enquiry_for" value="Party Cruisers Limited" />
+              <input type="hidden" name="enquiry_for" value="Franchise" />
               <div class="col-lg-6">
                 <label>Full Name*</label>
                 <div class="form-group style-4 form-icon-left">

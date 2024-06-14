@@ -1,63 +1,119 @@
 $(document).ready(function() {
-  var form = "#contactForm";
-  var invalidCls = "is-invalid";
-  var $email = '[name="email"]';
-  var $validation = '[name="name"],[name="email"],[name="subject"],[name="number"],[name="message"]';
-  var formMessages = $(".form-messages");
-  
-  var today = new Date().toISOString().split('T')[0];
-  // Set the min attribute to today's date
-  $('#date').attr('min', today);
+    var invalidCls = "is-invalid";
+    var formMessages = $(".form-messages");
 
-  // Validate form on submit
-  $(form).on("submit", function(event) {
-      event.preventDefault();
-      if (validateForm()) {
-          sendContact();
-      }
-  });
+    var today = new Date().toISOString().split('T')[0];
+    // Set the min attribute to today's date
+    $('#date').attr('min', today);
 
-  // Keyup validation for each input field
-  $('#name').on('keyup', function() {
-      validateName();
-  });
-  
-  $('#location').on('keyup', function() {
+    // Validate form on submit
+    $('#contactForm').on("submit", function(event) {
+        event.preventDefault();
+        if (contactValidateForm()) {
+            submitContactForm();
+        }
+    });
+
+    $('#houseOfVivahForm').on("submit", function(event) {
+        event.preventDefault();
+        if (houseValidateForm()) {
+            submitHouseForm();
+        }
+    });
+    
+    $('#eventFactoryForm').on("submit", function(event) {
+        event.preventDefault();
+        if (eventValidateForm()) {
+            submitEventForm();
+        }
+    });
+    
+    $('#liveSpaceForm').on("submit", function(event) {
+        event.preventDefault();
+        if (spaceValidateForm()) {
+            submitSpaceForm();
+        }
+    });
+    
+    $('#partyHouseForm').on("submit", function(event) {
+        event.preventDefault();
+        if (partyValidateForm()) {
+            submitPartyForm();
+        }
+    });
+    
+    $('#franchiseForm').on("submit", function(event) {
+        event.preventDefault();
+        if (franchiseValidateForm()) {
+            submitFranchiseForm();
+        }
+    });
+
+    // Keyup validation for each input field
+    $('#name').on('keyup', function() {
+        validateName();
+    });
+    
+    $('#eventType').on('keyup', function() {
+        validateEventType();
+    });
+    
+    $('#artistRequirement').on('keyup', function() {
+        validateArtist();
+    });
+
+    $('#location').on('keyup', function() {
     validateLocation();
-  });
+    });
+    
+    $('#companyname').on('keyup', function() {
+    validateCompanyName();
+    });
 
-  $('#contact').on('keyup', function() {
-      validateContact();
-  });
+    $('#designation').on('keyup', function() {
+    validateDesignation();
+    });
 
-  $('#email').on('keyup', function() {
-      validateEmail();
-  });
+    $('#contact').on('keyup', function() {
+        validateContact();
+    });
 
-  $('#date').on('change', function() { // Change event for date input
-      validateDate();
-  });
+    $('#email').on('keyup', function() {
+        validateEmail();
+    });
 
-  $('#number').on('keyup', function() {
-      validateNumberOfGuests();
-  });
+    $('#date').on('change', function() { // Change event for date input
+        validateDate();
+    });
 
-  $('#event').on('change', function() {
-      validateEvent();
-  });
-  
-  $('#otherEvent').on('change', function() {
+    $('#number').on('keyup', function() {
+        validateNumberOfGuests();
+    });
+
+    $('#event').on('change', function() {
+        validateEvent();
+    });
+    
+    $('#workProfile').on('change', function() {
+        validateWorkProfile();
+    });
+
+    $('#otherEvent').on('change', function() {
     validateSubEvent();
-  });
+    });
+    
+    $('#venue').on('keyup', function() {
+    validateVenue();
+    });
 
-  // Event dropdown change handler
-  $('#event').on('change', function() {
-      var selectedEvent = $(this).val();
-      var subEventOptions = '';
-      if (selectedEvent === 'other') {
-          $('#otherEventContainer').show();
-          $('#subEventContainer').hide();
-      } else if (selectedEvent === 'wedding') {
+    // Event dropdown change handler
+    $('#event').on('change', function() {
+        var selectedEvent = $(this).val();
+        var subEventOptions = '';
+        if (selectedEvent === 'other') {
+            $('#otherEventContainer').show();
+            $('#subEventContainer').hide();
+        } else if (selectedEvent === 'wedding') {
         subEventOptions = '<option value="haldi">Haldi</option><option value="sangeet">Sangeet</option><option value="mehendi">Mehendi</option><option value="wedding">Wedding</option>';
         $('#otherEventContainer').hide();
         $('#subEventContainer').show();
@@ -68,126 +124,268 @@ $(document).ready(function() {
         $('#subEventContainer').show();
         $('#subEvent').html(subEventOptions);
     } else{
-      $('#subEventContainer').hide();
-      $('#otherEventContainer').hide();
+        $('#subEventContainer').hide();
+        $('#otherEventContainer').hide();
     }  
-  });
+    });
+
+    // Function to validate the entire form
+    function contactValidateForm() {
+        var isValid = true;
+        if (!validateName()) isValid = false;
+        if (!validateLocation()) isValid = false;
+        if (!validateContact()) isValid = false;
+        if (!validateEmail()) isValid = false;
+        if (!validateDate()) isValid = false;
+        if (!validateNumberOfGuests()) isValid = false;
+        if (!validateEvent()) isValid = false;
+        if (!validateSubEvent()) isValid = false;
+        return isValid;
+    }
+    
+    function houseValidateForm() {
+        var isValid = true;
+        if (!validateName()) isValid = false;
+        if (!validateLocation()) isValid = false;
+        if (!validateContact()) isValid = false;
+        if (!validateEmail()) isValid = false;
+        if (!validateDate()) isValid = false;
+        if (!validateVenue()) isValid = false;
+        if (!validateEvent()) isValid = false;
+        return isValid;
+    }
+    
+    // Function to validate the entire form
+  function eventValidateForm() {
+    var isValid = true;
+    if (!validateName()) isValid = false;
+    if (!validateLocation()) isValid = false;
+    if (!validateContact()) isValid = false;
+    if (!validateCompanyName()) isValid = false;
+    if (!validateDesignation()) isValid = false;
+    if (!validateEmail()) isValid = false;
+    if (!validateDate()) isValid = false;
+    if (!validateVenue()) isValid = false;
+    if (!validateEvent()) isValid = false;
+    if (!validateSubEvent()) isValid = false;
+    return isValid;
+  }
   
-  // Function to validate the entire form
-  function validateForm() {
-      var isValid = true;
-      if (!validateName()) isValid = false;
-      if (!validateLocation()) isValid = false;
-      if (!validateContact()) isValid = false;
-      if (!validateEmail()) isValid = false;
-      if (!validateDate()) isValid = false;
-      if (!validateNumberOfGuests()) isValid = false;
-      if (!validateEvent()) isValid = false;
-      if (!validateSubEvent()) isValid = false;
-      return isValid;
+  function spaceValidateForm() {
+    var isValid = true;
+    if (!validateName()) isValid = false;
+    if (!validateLocation()) isValid = false;
+    if (!validateContact()) isValid = false;
+    if (!validateEmail()) isValid = false;
+    if (!validateDate()) isValid = false;
+    if (!validateVenue()) isValid = false;
+    if (!validateEventType()) isValid = false;
+    if (!validateArtist()) isValid = false;
+    return isValid;
+  }
+  
+  function partyValidateForm() {
+    var isValid = true;
+    if (!validateName()) isValid = false;
+    if (!validateLocation()) isValid = false;
+    if (!validateContact()) isValid = false;
+    if (!validateEmail()) isValid = false;
+    if (!validateDate()) isValid = false;
+    if (!validateVenue()) isValid = false;
+    if (!validateEvent()) isValid = false;
+    if (!validateSubEvent()) isValid = false;
+    return isValid;
+  }
+  
+  function franchiseValidateForm() {
+    var isValid = true;
+    if (!validateName()) isValid = false;
+    if (!validateLocation()) isValid = false;
+    if (!validateContact()) isValid = false;
+    if (!validateEmail()) isValid = false;
+    if (!validateWorkProfile()) isValid = false;
+    return isValid;
   }
 
-  // Individual validation functions
-  function validateName() {
-      var name = $('#name').val();
-      if (!/^[a-zA-Z\s]+$/.test(name)) {
-          $('#nameError').text('Please enter name.');
-          $('#name').addClass(invalidCls);
+    // Individual validation functions
+    function validateName() {
+        var name = $('#name').val();
+        if (!/^[a-zA-Z\s]+$/.test(name)) {
+            $('#nameError').text('Please enter name.');
+            $('#name').addClass(invalidCls);
+            return false;
+        } else {
+            $('#nameError').text('');
+            $('#name').removeClass(invalidCls);
+            return true;
+        }
+    }
+    
+    function validateEventType() {
+        var eventType = $('#eventType').val();
+        if (!/^[a-zA-Z\s]+$/.test(eventType)) {
+            $('#eventTypeError').text('Please enter event type.');
+            $('#eventType').addClass(invalidCls);
+            return false;
+        } else {
+            $('#eventTypeError').text('');
+            $('#eventType').removeClass(invalidCls);
+            return true;
+        }
+    }
+    
+    function validateArtist() {
+        var artistRequirement = $('#artistRequirement').val();
+        if (!/^[a-zA-Z\s]+$/.test(artistRequirement)) {
+            $('#artistRequirementError').text('Please enter event type.');
+            $('#artistRequirement').addClass(invalidCls);
+            return false;
+        } else {
+            $('#artistRequirementError').text('');
+            $('#artistRequirement').removeClass(invalidCls);
+            return true;
+        }
+    }
+    
+    function validateVenue() {
+        var venue = $('#venue').val().trim(); // Trim whitespace from the input
+        if (venue === '') {
+          $('#venueError').text('Please enter venue.');
+          $('#venue').addClass(invalidCls);
           return false;
-      } else {
-          $('#nameError').text('');
-          $('#name').removeClass(invalidCls);
-          return true;
-      }
-  }
-  
-  function validateLocation() {
+        } else {
+            $('#venueError').text('');
+            $('#venue').removeClass(invalidCls);
+            return true;
+        }
+    }
+    
+    function validateCompanyName() {
+    var companyname = $('#companyname').val();
+    if (!/^[a-zA-Z\s]+$/.test(companyname)) {
+        $('#companynameError').text('Please company name.');
+        $('#companyname').addClass(invalidCls);
+        return false;
+    } else {
+        $('#companynameError').text('');
+        $('#companyname').removeClass(invalidCls);
+        return true;
+    }
+    }
+    
+    function validateDesignation() {
+    var designation = $('#designation').val();
+    if (!/^[a-zA-Z\s]+$/.test(designation)) {
+        $('#designationError').text('Please designation.');
+        $('#designation').addClass(invalidCls);
+        return false;
+    } else {
+        $('#designationError').text('');
+        $('#designation').removeClass(invalidCls);
+        return true;
+    }
+    }
+
+    function validateLocation() {
     var location = $('#location').val().trim(); // Trim whitespace from the input
     if (location === '') {
-      $('#locationError').text('Please enter location.');
-      $('#location').addClass(invalidCls);
-      return false;
+        $('#locationError').text('Please enter location.');
+        $('#location').addClass(invalidCls);
+        return false;
     } else {
         $('#locationError').text('');
         $('#location').removeClass(invalidCls);
         return true;
     }
-  }
+    }
 
-  function validateContact() {
-      var contact = $('#contact').val();
-      if (!/^\d{10}$/.test(contact)) {
-          $('#contactError').text('Please enter a valid number.');
-          $('#contact').addClass(invalidCls);
-          return false;
-      } else {
-          $('#contactError').text('');
-          $('#contact').removeClass(invalidCls);
-          return true;
-      }
-  }
+    function validateContact() {
+        var contact = $('#contact').val();
+        if (!/^\d{10}$/.test(contact)) {
+            $('#contactError').text('Please enter a valid number.');
+            $('#contact').addClass(invalidCls);
+            return false;
+        } else {
+            $('#contactError').text('');
+            $('#contact').removeClass(invalidCls);
+            return true;
+        }
+    }
 
-  function validateEmail() {
-      var email = $('#email').val();
-      var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
-      if (!emailPattern.test(email)) {
-          $('#emailError').text('Please enter a valid email address.');
-          $('#email').addClass(invalidCls);
-          return false;
-      } else {
-          $('#emailError').text('');
-          $('#email').removeClass(invalidCls);
-          return true;
-      }
-  }
+    function validateEmail() {
+        var email = $('#email').val();
+        var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+        if (!emailPattern.test(email)) {
+            $('#emailError').text('Please enter a valid email address.');
+            $('#email').addClass(invalidCls);
+            return false;
+        } else {
+            $('#emailError').text('');
+            $('#email').removeClass(invalidCls);
+            return true;
+        }
+    }
 
-  function validateDate() {
-      var date1 = $('#date').val();;
-      var date = new Date($('#date').val());
-      var today = new Date();
-      today.setHours(0, 0, 0, 0); // Compare dates only, not times
-     if (date1 === '') {
+    function validateDate() {
+        var date1 = $('#date').val();;
+        var date = new Date($('#date').val());
+        var today = new Date();
+        today.setHours(0, 0, 0, 0); // Compare dates only, not times
+        if (date1 === '') {
         $('#dateError').text('Please enter date.');
         $('#date').addClass(invalidCls);
         return false;
-      } else if (date < today) {
+        } else if (date < today) {
         $('#dateError').text('Please select a date that is not in the past.');
         $('#date').addClass(invalidCls);
         return false;
-      } else {
-          $('#dateError').text('');
-          $('#date').removeClass(invalidCls);
-          return true;
-      }
-  }
+        } else {
+            $('#dateError').text('');
+            $('#date').removeClass(invalidCls);
+            return true;
+        }
+    }
 
-  function validateNumberOfGuests() {
-      var numberOfGuests = $('#number').val();
-      if (numberOfGuests < 1 || numberOfGuests > 100000) {
-          $('#numberError').text('Please enter a number of guests between 0 and 100,000.');
-          $('#number').addClass(invalidCls);
-          return false;
-      } else {
-          $('#numberError').text('');
-          $('#number').removeClass(invalidCls);
-          return true;
-      }
-  }
+    function validateNumberOfGuests() {
+        var numberOfGuests = $('#number').val();
+        if (numberOfGuests < 1 || numberOfGuests > 100000) {
+            $('#numberError').text('Please enter a number of guests between 0 and 100,000.');
+            $('#number').addClass(invalidCls);
+            return false;
+        } else {
+            $('#numberError').text('');
+            $('#number').removeClass(invalidCls);
+            return true;
+        }
+    }
 
-  function validateEvent() {
-      var event = $('#event').val();
-      if (!event) {
-          $('#eventError').text('Please select an event.');
-          $('#event').addClass(invalidCls);
-          return false;
-      } else {
-          $('#eventError').text('');
-          $('#event').removeClass(invalidCls);
-          return true;
-      }
-  }
-  
-  function validateSubEvent() {
+    function validateEvent() {
+        var event = $('#event').val();
+        if (!event) {
+            $('#eventError').text('Please select an event.');
+            $('#event').addClass(invalidCls);
+            return false;
+        } else {
+            $('#eventError').text('');
+            $('#event').removeClass(invalidCls);
+            return true;
+        }
+    }
+    
+    function validateWorkProfile() {
+        var workProfile = $('#workProfile').val();
+        if (!workProfile) {
+            $('#workProfileError').text('Please select work Profile.');
+            $('#workProfile').addClass(invalidCls);
+            return false;
+        } else {
+            $('#workProfileError').text('');
+            $('#workProfile').removeClass(invalidCls);
+            return true;
+        }
+    }
+
+    function validateSubEvent() {
     var otherEvent = $('#otherEvent').val();
     var event = $('#event').val();
     if (event === 'other'){
@@ -205,49 +403,137 @@ $(document).ready(function() {
         $('#otherEvent').removeClass(invalidCls);
         return true;
     }
-  }
-  
-  function sendContact() {
-    var formData = $(form).serialize();
-    var valid;
-    valid = validateContact();
-    if (valid) {
-        jQuery
-            .ajax({
-                url: $(form).attr("action"),
-                data: formData,
-                type: "POST",
-            })
-            .done(function (response) {
-                console.log("Response from server: ", response);
-                response = JSON.parse(response); // Ensure response is parsed correctly
-                if(response.code === 1){
-                    // Make sure that the formMessages div has the 'success' class.
+    }
+
+    function submitContactForm() {
+    var formData =  $('#contactForm').serialize();
+    $.ajax({
+        url : base_url+'console/add_contact',
+        type: "POST",
+        data: formData,
+        success: function(data) {
+            data = JSON.parse(data)
+            if (data.code === 1) {
+                formMessages.removeClass("error");
+                formMessages.addClass("success");
+                formMessages.text('Thank You for contacting us!');
+                $('#contactForm')[0].reset();
+                $('#subEventContainer').hide();
+                $('#otherEventContainer').hide();
+            }else {
+                formMessages.addClass("error");
+                formMessages.text('Something went wrong!!');
+            }
+        }
+    });
+    }
+    
+    function submitHouseForm() {
+        var formData =  $('#houseOfVivahForm').serialize();
+        $.ajax({
+            url : base_url+'console/house_of_vivah_form',
+            type: "POST",
+            data: formData,
+            success: function(data) {
+                data = JSON.parse(data)
+                if (data.code === 1) {
                     formMessages.removeClass("error");
                     formMessages.addClass("success");
-                    // Set the message text.
                     formMessages.text('Thank You for contacting us!');
-                    // Clear the form.
-                    $(form)[0].reset();
-                    $('#subEventContainer').hide();
-                    $('#otherEventContainer').hide();
-                } else {
+                    $('#contactForm')[0].reset();
+                }else {
                     formMessages.addClass("error");
                     formMessages.text('Something went wrong!!');
                 }
-            })
-            .fail(function (data) {
-                // Make sure that the formMessages div has the 'error' class.
-                formMessages.removeClass("success");
-                formMessages.addClass("error");
-                // Set the message text.
-                if (data.responseText !== "") {
-                    formMessages.html(data.responseText);
-                } else {
-                    formMessages.html("Oops! An error occurred and your message could not be sent.");
-                }
-            });
+            }
+        });
     }
-}
+    
+    function submitEventForm() {
+        var formData =  $('#eventFactoryForm').serialize();
+        $.ajax({
+            url : base_url+'console/event_factory_form',
+            type: "POST",
+            data: formData,
+            success: function(data) {
+                data = JSON.parse(data)
+                if (data.code === 1) {                    
+                    formMessages.removeClass("error");
+                    formMessages.addClass("success");
+                    formMessages.text('Thank You for contacting us!');
+                    $('#eventFactoryForm')[0].reset();
+                    $('#otherEventContainer').hide();
+                }else {
+                    formMessages.addClass("error");
+                    formMessages.text('Something went wrong!!');
+                }
+            }
+        });
+    }
+    
+    function submitSpaceForm() {
+        var formData =  $('#liveSpaceForm').serialize();
+        $.ajax({
+            url : base_url+'console/live_space_form',
+            type: "POST",
+            data: formData,
+            success: function(data) {
+                data = JSON.parse(data)
+                if (data.code === 1) {                    
+                    formMessages.removeClass("error");
+                    formMessages.addClass("success");
+                    formMessages.text('Thank You for contacting us!');
+                    $('#liveSpaceForm')[0].reset();
+                }else {
+                    formMessages.addClass("error");
+                    formMessages.text('Something went wrong!!');
+                }
+            }
+        });
+    }
+    
+    function submitPartyForm() {
+        var formData =  $('#partyHouseForm').serialize();
+        $.ajax({
+            url : base_url+'console/party_house_form',
+            type: "POST",
+            data: formData,
+            success: function(data) {
+                data = JSON.parse(data)
+                if (data.code === 1) {                    
+                    formMessages.removeClass("error");
+                    formMessages.addClass("success");
+                    formMessages.text('Thank You for contacting us!');
+                    $('#partyHouseForm')[0].reset();
+                    $('#subEventContainer').hide();
+                    $('#otherEventContainer').hide();
+                }else {
+                    formMessages.addClass("error");
+                    formMessages.text('Something went wrong!!');
+                }
+            }
+        });
+    }
+    
+    function submitFranchiseForm() {
+        var formData =  $('#franchiseForm').serialize();
+        $.ajax({
+            url : base_url+'console/franchise_form',
+            type: "POST",
+            data: formData,
+            success: function(data) {
+                data = JSON.parse(data)
+                if (data.code === 1) {                    
+                    formMessages.removeClass("error");
+                    formMessages.addClass("success");
+                    formMessages.text('Thank You for contacting us!');
+                    $('#franchiseForm')[0].reset();
+                }else {
+                    formMessages.addClass("error");
+                    formMessages.text('Something went wrong!!');
+                }
+            }
+        });
+    }
 
 });

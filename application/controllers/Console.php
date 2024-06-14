@@ -28,7 +28,6 @@ class Console extends CI_Controller
 		
 		$this->db->where('status', 1);
 		$this->db->order_by('order_no', 'asc');
-		$this->db->limit(5);
 		$query = $this->db->get("banner");
 		$data['banner_list'] = $query->result();
 		
@@ -409,32 +408,35 @@ class Console extends CI_Controller
 		$this->load->view('frontend/layout/template', $data);
 	}
 	
-	public function sendMail($to,$from,$subject,$message) {
-		$config = array(
-			'priority' => '1',
-			'protocol' => 'smtp',
-			'smtp_crypto' => 'tls',
-			'smtp_host' => 'smtp.gmail.com',
-			'smtp_port' => 587,
-			'smtp_user' => 'priya@innowrap.com', // change it to yours
-			'smtp_pass' => '', // change it to yours
-			'mailtype' => 'html',
-			'charset' => 'iso-8859-1',
-			'wordwrap' => TRUE,
-			'newline' => "\r\n"
-		);
-		$this->email->initialize($config);
-		$this->email->from($from);
-		$this->email->to("$to");
-		$this->email->subject($subject);
-		$this->email->message($message);
-		// echo $this->email->print_debugger();
-		if ($this->email->send()){
-			return true;
-		}else{
-			return false;
-		}
-	}
+	public function sendMail($to, $from, $subject, $message) {
+    $config = array(
+        'priority' => '1',
+        'protocol' => 'smtp',
+        'smtp_crypto' => 'tls',
+        'smtp_host' => 'smtp.gmail.com',
+        'smtp_port' => 587,
+				'smtp_user' => 'enquiry@partycruisersindialtd.com', // change it to yours
+				'smtp_pass' => 'vnnk vmok vryr rgng', // change it to yours
+        'mailtype' => 'html',
+        'charset' => 'utf-8',
+        'wordwrap' => TRUE,
+        'newline' => "\r\n"
+    );
+
+    $this->email->initialize($config);
+    $this->email->from($from);
+    $this->email->to($to);
+    $this->email->subject($subject);
+    $this->email->message($message);
+
+    if ($this->email->send()) {
+        return true;
+    } else {
+        // echo $this->email->print_debugger(); // Moved after send()
+				// exit();
+        return false;
+    }
+}
 	
 	public function add_contact(){
 		// echo '<pre>';print_r($_POST);exit();
@@ -455,24 +457,22 @@ class Console extends CI_Controller
 		}
 		
 		if ($this->db->insert('submit_contact', $add)){
-			// $msg_subject = "[PCL] Thanks for the inquiry";
-			// $msg = "HI". $add['u_name'] ."</br>Thank you for contact with us. <br>We will get back to you shortly.<br>Thanks<br>Team PARTY CRUISERS LTD.";
-			// $from_email = "priya@innowrap.com";
-			// if ($this->sendMail($add['u_email'],$from_email,$msg_subject,$msg)) {
-			// 	$phone =  $this->input->post('phone_number',true);
-			// 	$html = "Name: " . $add['u_name'] . "<br>Email: " . $add['u_email'] . "<br>Phone: " . $add['country_code'] . $add['u_mobile'] . "<br>Inquiry for: " . $add['event'] . " - " . $add['subEvent'] . "<br>Location: " . $add['location'] . "<br>Date: " . $add['date'] . "<br>No. of Guest: " . $add['number'] . ".";
-			// 	$from_email = "priya@innowrap.com";
-			// 	$msg_subject = "[PCL] Thanks for the inquiry";
-			// 	$this->sendMail($from_email,$from_email,$msg_subject,$html);
-			// 		if($this->Master_model->contact_us($name,$email,$msg_subject,$phone_number,$message,$ip_address)){
-			// 			echo json_encode(['code' => 1]);
-			// 		}else{
-			// 			echo json_encode(['code' => 0]);
-			// 		}
-			// }else {
-			// 	echo json_encode(['code' => 0]);
-			// }
-			echo json_encode(['code' => 1]);
+			$msg_subject = "[PCL] Thanks for the inquiry";
+			$msg = "HI ". $add['u_name'] ."<br>Thank you for contact with us. <br>We will get back to you shortly.<br><br>Thanks<br>Team PARTY CRUISERS LTD.";
+			$from_email = "enquiry@partycruisersindialtd.com";
+			if ($this->sendMail($add['u_email'],$from_email,$msg_subject,$msg)) {
+				$phone =  $this->input->post('phone_number',true);
+				$html = "Name: " . $add['u_name'] . "<br>Email: " . $add['u_email'] . "<br>Phone: " . $add['country_code'] . $add['u_mobile'] . "<br>Enquiry for: " . $add['enquiry_for']  . "<br>Event: " . $add['event'] . "<br>Sub Event: " . $add['subEvent'] . "<br>Location: " . $add['location'] . "<br>Date: " . $add['date'] . "<br>No. of Guest: " . $add['number'] . ".";
+				$from_email = "enquiry@partycruisersindialtd.com";
+				$msg_subject = "[PCL] Thanks for the inquiry";
+					if($this->sendMail($from_email,$from_email,$msg_subject,$html)){
+						echo json_encode(['code' => 1]);
+					}else{
+						echo json_encode(['code' => 0]);
+					}
+			}else {
+				echo json_encode(['code' => 0]);
+			}
 		}else{
 			echo json_encode(['code' => 0]);
 		}
@@ -715,6 +715,45 @@ class Console extends CI_Controller
 		$data['act'] = 12.1;
 		$data['middle_content'] = 'disclosures_under_regulation_46_of_the_lODR';	
 		
+		$this->db->select('gn.*, prc.name as category_name, prsc.name as sub_category_name, prsc2.name as sub_category_2_name');
+		$this->db->where('gn.status', 1);
+		$this->db->where('gn.type', 2);
+		$this->db->where('prc.id', 1);
+		$this->db->order_by('gn.order_no', 'asc');
+		$this->db->group_by('gn.id');
+		$this->db->join('policy_report_category prc', 'prc.id = gn.category', 'left');
+		$this->db->join('policy_report_sub_category prsc', 'prsc.id = gn.sub_category', 'left');
+		$this->db->join('policy_report_sub_category_2 prsc2', 'prsc2.id = gn.sub_category_2', 'left');
+		$data['policy'] = $this->db->get("gst_notification gn")->result_array();
+
+		$grouped = [
+				'blank' => [],
+				'categories' => []
+		];
+
+		foreach ($data['policy'] as $item) {
+				if (empty($item['sub_category_name'])) {
+						$grouped['blank'][] = $item;
+				} else {
+						$subCategory = $item['sub_category_name'];
+						$subCategory2 = $item['sub_category_2_name'];
+
+						if (!isset($grouped['categories'][$subCategory])) {
+								$grouped['categories'][$subCategory] = [];
+						}
+
+						if (!isset($grouped['categories'][$subCategory][$subCategory2])) {
+								$grouped['categories'][$subCategory][$subCategory2] = [];
+						}
+
+						$grouped['categories'][$subCategory][$subCategory2][] = $item;
+				}
+		}
+
+		$data['documents'] =  $grouped;
+		
+		// echo '<pre>'; print_r($data['grouped']);  echo'</pre>'; exit();
+		
 		$this->load->view('frontend/layout/template', $data);
 	}
 	
@@ -727,6 +766,18 @@ class Console extends CI_Controller
 		$data['act'] = 13.1;
 		$data['middle_content'] = 'company_internal_policy';	
 		
+		$this->db->select('gn.*,prc.name as category_name,prsc.name as sub_category_name,prsc2.name as sub_category_2_name');
+		$this->db->where('gn.status', 1);
+		$this->db->where('gn.type', 1);
+		$this->db->order_by('gn.order_no', 'asc');
+		$this->db->group_by('gn.id');
+		$this->db->join('policy_report_category prc', 'prc.id = gn.category', 'left');
+		$this->db->join('policy_report_sub_category prsc', 'prsc.id = gn.sub_category', 'left');
+		$this->db->join('policy_report_sub_category_2 prsc2', 'prsc2.id = gn.sub_category_2', 'left');
+		$data['policy'] = $this->db->get("gst_notification gn")->result_array();
+		
+		// echo '<pre>'; print_r($data['policy']);  echo'</pre>'; exit();
+		
 		$this->load->view('frontend/layout/template', $data);
 	}
 	
@@ -738,6 +789,19 @@ class Console extends CI_Controller
 		$data['active'] = 14;
 		$data['act'] = 14.1;
 		$data['middle_content'] = 'company_policies';	
+		
+		$this->db->select('gn.*,prc.name as category_name,prsc.name as sub_category_name,prsc2.name as sub_category_2_name');
+		$this->db->where('gn.status', 1);
+		$this->db->where('gn.type', 2);
+		$this->db->where('prc.id', 2);
+		$this->db->order_by('gn.order_no', 'asc');
+		$this->db->group_by('gn.id');
+		$this->db->join('policy_report_category prc', 'prc.id = gn.category', 'left');
+		$this->db->join('policy_report_sub_category prsc', 'prsc.id = gn.sub_category', 'left');
+		$this->db->join('policy_report_sub_category_2 prsc2', 'prsc2.id = gn.sub_category_2', 'left');
+		$data['policy'] = $this->db->get("gst_notification gn")->result_array();
+		
+		// echo '<pre>'; print_r($data['policy']);  echo'</pre>'; exit();
 		
 		$this->load->view('frontend/layout/template', $data);
 	}
@@ -924,25 +988,23 @@ class Console extends CI_Controller
 		$add['event'] = $this->input->post('event');
 		$add['enquiry_for'] = $this->input->post('enquiry_for');
 		
-		if ($this->db->insert('submit_house_of_vivah', $add)){
-			// $msg_subject = "[PCL] Thanks for the inquiry";
-			// $msg = "HI". $add['u_name'] ."</br>Thank you for contact with us. <br>We will get back to you shortly.<br>Thanks<br>Team PARTY CRUISERS LTD.";
-			// $from_email = "priya@innowrap.com";
-			// if ($this->sendMail($add['u_email'],$from_email,$msg_subject,$msg)) {
-			// 	$phone =  $this->input->post('phone_number',true);
-			// 	$html = "Name: " . $add['u_name'] . "<br>Email: " . $add['u_email'] . "<br>Phone: " . $add['country_code'] . $add['u_mobile'] . "<br>Inquiry for: " . $add['event'] . "<br>Location: " . $add['location'] . "<br>Date: " . $add['date'] . "<br>Venue: " . $add['venue'] . ".";
-			// 	$from_email = "priya@innowrap.com";
-			// 	$msg_subject = "[PCL] Thanks for the inquiry";
-			// 	$this->sendMail($from_email,$from_email,$msg_subject,$html);
-			// 		if($this->Master_model->contact_us($name,$email,$msg_subject,$phone_number,$message,$ip_address)){
-			// 			echo json_encode(['code' => 1]);
-			// 		}else{
-			// 			echo json_encode(['code' => 0]);
-			// 		}
-			// }else {
-			// 	echo json_encode(['code' => 0]);
-			// }
-			echo json_encode(['code' => 1]);
+		if ($this->db->insert('submit_contact', $add)){
+			$msg_subject = "[PCL] Thanks for the inquiry";
+			$msg = "HI ". $add['u_name'] ."<br>Thank you for contact with us. <br>We will get back to you shortly.<br><br>Thanks<br>Team PARTY CRUISERS LTD.";
+			$from_email = "enquiry@partycruisersindialtd.com";
+			if ($this->sendMail($add['u_email'],$from_email,$msg_subject,$msg)) {
+				$phone =  $this->input->post('phone_number',true);
+				$html = "Name: " . $add['u_name'] . "<br>Email: " . $add['u_email'] . "<br>Phone: " . $add['country_code'] . $add['u_mobile'] . "<br>Enquiry for: " . $add['enquiry_for']  . "<br>Event: " . $add['event'] . "<br>Venue: " . $add['venue'] . "<br>Location: " . $add['location'] . "<br>Date: " . $add['date'] . ".";
+				$from_email = "enquiry@partycruisersindialtd.com";
+				$msg_subject = "[PCL] Thanks for the inquiry";
+					if($this->sendMail($from_email,$from_email,$msg_subject,$html)){
+						echo json_encode(['code' => 1]);
+					}else{
+						echo json_encode(['code' => 0]);
+					}
+			}else {
+				echo json_encode(['code' => 0]);
+			}
 		}else{
 			echo json_encode(['code' => 0]);
 		}
@@ -961,32 +1023,134 @@ class Console extends CI_Controller
 		$add['date'] = $this->input->post('date');
 		$add['event'] = $this->input->post('event');
 		$add['enquiry_for'] = $this->input->post('enquiry_for');
-		if($add['event'] === 'Other'){
+		if($add['event'] === 'other'){
 			$add['subEvent'] = $this->input->post('otherEvent');
 		}
 		
-		if ($this->db->insert('submit_event_factory', $add)){
-			// $msg_subject = "[PCL] Thanks for the inquiry";
-			// $msg = "HI". $add['u_name'] ."</br>Thank you for contact with us. <br>We will get back to you shortly.<br>Thanks<br>Team PARTY CRUISERS LTD.";
-			// $from_email = "priya@innowrap.com";
-			// if ($this->sendMail($add['u_email'],$from_email,$msg_subject,$msg)) {
-			// 	$phone =  $this->input->post('phone_number',true);
-			// 	$html = "Name: " . $add['u_name'] . "<br>Email: " . $add['u_email'] . "<br>Phone: " . $add['country_code'] . $add['u_mobile'] . "<br>Inquiry for: " . $add['event'] . "<br>Location: " . $add['location'] . "<br>Date: " . $add['date'] . "<br>Venue: " . $add['venue'] . ".";
-			// 	$from_email = "priya@innowrap.com";
-			// 	$msg_subject = "[PCL] Thanks for the inquiry";
-			// 	$this->sendMail($from_email,$from_email,$msg_subject,$html);
-			// 		if($this->Master_model->contact_us($name,$email,$msg_subject,$phone_number,$message,$ip_address)){
-			// 			echo json_encode(['code' => 1]);
-			// 		}else{
-			// 			echo json_encode(['code' => 0]);
-			// 		}
-			// }else {
-			// 	echo json_encode(['code' => 0]);
-			// }
-			echo json_encode(['code' => 1]);
+		if ($this->db->insert('submit_contact', $add)){
+			$msg_subject = "[PCL] Thanks for the inquiry";
+			$msg = "HI ". $add['u_name'] ."<br>Thank you for contact with us. <br>We will get back to you shortly.<br><br>Thanks<br>Team PARTY CRUISERS LTD.";
+			$from_email = "enquiry@partycruisersindialtd.com";
+			if ($this->sendMail($add['u_email'],$from_email,$msg_subject,$msg)) {
+				$phone =  $this->input->post('phone_number',true);
+				$html = "Name: " . $add['u_name'] . "<br>Email: " . $add['u_email'] . "<br>Phone: " . $add['country_code'] . $add['u_mobile'] . "<br>Enquiry for: " . $add['enquiry_for'] . "<br>Company Name: " . $add['companyname'] . "<br>Designation: " . $add['designation']  . "<br>Event: " . $add['event'] . "<br>Sub Event: " . $add['subEvent'] . "<br>Venue: " . $add['venue'] . "<br>Location: " . $add['location'] . "<br>Date: " . $add['date'] . ".";
+				$from_email = "enquiry@partycruisersindialtd.com";
+				$msg_subject = "[PCL] Thanks for the inquiry";
+					if($this->sendMail($from_email,$from_email,$msg_subject,$html)){
+						echo json_encode(['code' => 1]);
+					}else{
+						echo json_encode(['code' => 0]);
+					}
+			}else {
+				echo json_encode(['code' => 0]);
+			}
 		}else{
 			echo json_encode(['code' => 0]);
 		}
 	}
 
+	public function live_space_form(){
+		// echo '<pre>';print_r($_POST);exit();
+		$add['u_name'] = $this->input->post('name');
+		$add['country_code'] = $this->input->post('countryCode');
+		$add['u_mobile'] = $this->input->post('contact');
+		$add['u_email'] = $this->input->post('email');
+		$add['location'] = $this->input->post('location');
+		$add['venue'] = $this->input->post('venue');
+		$add['date'] = $this->input->post('date');
+		$add['eventType'] = $this->input->post('eventType');
+		$add['enquiry_for'] = $this->input->post('enquiry_for');
+		$add['artistRequirement'] = $this->input->post('artistRequirement');
+		
+		if ($this->db->insert('submit_contact', $add)){
+			$msg_subject = "[PCL] Thanks for the inquiry";
+			$msg = "HI ". $add['u_name'] ."<br>Thank you for contact with us. <br>We will get back to you shortly.<br><br>Thanks<br>Team PARTY CRUISERS LTD.";
+			$from_email = "enquiry@partycruisersindialtd.com";
+			if ($this->sendMail($add['u_email'],$from_email,$msg_subject,$msg)) {
+				$phone =  $this->input->post('phone_number',true);
+				$html = "Name: " . $add['u_name'] . "<br>Email: " . $add['u_email'] . "<br>Phone: " . $add['country_code'] . $add['u_mobile'] . "<br>Enquiry for: " . $add['enquiry_for'] . "<br>Event Type: " . $add['eventType'] . "<br>Artist Requirement: " . $add['artistRequirement'] . "<br>Venue: " . $add['venue'] . "<br>Location: " . $add['location'] . "<br>Date: " . $add['date'] . ".";
+				$from_email = "enquiry@partycruisersindialtd.com";
+				$msg_subject = "[PCL] Thanks for the inquiry";
+					if($this->sendMail($from_email,$from_email,$msg_subject,$html)){
+						echo json_encode(['code' => 1]);
+					}else{
+						echo json_encode(['code' => 0]);
+					}
+			}else {
+				echo json_encode(['code' => 0]);
+			}
+		}else{
+			echo json_encode(['code' => 0]);
+		}
+	}
+	
+	public function party_house_form(){
+		// echo '<pre>';print_r($_POST);exit();
+		$add['u_name'] = $this->input->post('name');
+		$add['country_code'] = $this->input->post('countryCode');
+		$add['u_mobile'] = $this->input->post('contact');
+		$add['u_email'] = $this->input->post('email');
+		$add['location'] = $this->input->post('location');
+		$add['venue'] = $this->input->post('venue');
+		$add['date'] = $this->input->post('date');
+		$add['enquiry_for'] = $this->input->post('enquiry_for');
+		$add['event'] = $this->input->post('event');
+		if($add['event'] === 'other'){
+			$add['subEvent'] = $this->input->post('otherEvent');
+		}
+		
+		if ($this->db->insert('submit_contact', $add)){
+			$msg_subject = "[PCL] Thanks for the inquiry";
+			$msg = "HI ". $add['u_name'] ."<br>Thank you for contact with us. <br>We will get back to you shortly.<br><br>Thanks<br>Team PARTY CRUISERS LTD.";
+			$from_email = "enquiry@partycruisersindialtd.com";
+			if ($this->sendMail($add['u_email'],$from_email,$msg_subject,$msg)) {
+				$phone =  $this->input->post('phone_number',true);
+				$html = "Name: " . $add['u_name'] . "<br>Email: " . $add['u_email'] . "<br>Phone: " . $add['country_code'] . $add['u_mobile'] . "<br>Enquiry for: " . $add['enquiry_for'] . "<br>Event: " . $add['event'] . "<br>Sub Event: " . $add['subEvent'] . "<br>Venue: " . $add['venue'] . "<br>Location: " . $add['location'] . "<br>Date: " . $add['date'] . ".";
+				$from_email = "enquiry@partycruisersindialtd.com";
+				$msg_subject = "[PCL] Thanks for the inquiry";
+					if($this->sendMail($from_email,$from_email,$msg_subject,$html)){
+						echo json_encode(['code' => 1]);
+					}else{
+						echo json_encode(['code' => 0]);
+					}
+			}else {
+				echo json_encode(['code' => 0]);
+			}
+		}else{
+			echo json_encode(['code' => 0]);
+		}
+	}
+	
+	public function franchise_form(){
+		// echo '<pre>';print_r($_POST);exit();
+		$add['u_name'] = $this->input->post('name');
+		$add['enquiry_for'] = $this->input->post('enquiry_for');
+		$add['country_code'] = $this->input->post('countryCode');
+		$add['u_mobile'] = $this->input->post('contact');
+		$add['u_email'] = $this->input->post('email');
+		$add['location'] = $this->input->post('location');
+		$add['workProfile'] = $this->input->post('workProfile');
+		
+		if ($this->db->insert('submit_contact', $add)){
+			$msg_subject = "[PCL] Thanks for the inquiry";
+			$msg = "HI ". $add['u_name'] ."<br>Thank you for contact with us. <br>We will get back to you shortly.<br><br>Thanks<br>Team PARTY CRUISERS LTD.";
+			$from_email = "enquiry@partycruisersindialtd.com";
+			if ($this->sendMail($add['u_email'],$from_email,$msg_subject,$msg)) {
+				$phone =  $this->input->post('phone_number',true);
+				$html = "Name: " . $add['u_name'] . "<br>Email: " . $add['u_email'] . "<br>Phone: " . $add['country_code'] . $add['u_mobile'] . "<br>Enquiry for: " . $add['enquiry_for'] . "<br>Work Profile: " . $add['workProfile'] . "<br>Location: " . $add['location'] . ".";
+				$from_email = "enquiry@partycruisersindialtd.com";
+				$msg_subject = "[PCL] Thanks for the inquiry";
+					if($this->sendMail($from_email,$from_email,$msg_subject,$html)){
+						echo json_encode(['code' => 1]);
+					}else{
+						echo json_encode(['code' => 0]);
+					}
+			}else {
+				echo json_encode(['code' => 0]);
+			}
+		}else{
+			echo json_encode(['code' => 0]);
+		}
+	}
+	
 }

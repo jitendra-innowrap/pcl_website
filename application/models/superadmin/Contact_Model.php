@@ -10,9 +10,10 @@ class Contact_Model extends CI_Model
 	}
 
 	var $table = 'submit_contact c';
-	var $column_order = array(null, 'c.u_name','c.u_email','c.u_mobile','c.location','c.date','c.number','c.event','c.subEvent'); //set column field database for datatable orderable
-	var $column_search = array( 'c.u_name','c.u_email','c.u_mobile','c.location','c.date','c.number','c.event','c.subEvent'); 
+	var $column_order = array(null, 'c.u_name','c.u_email','c.u_mobile','c.companyname','c.designation','c.enquiry_for','c.venue','c.location','c.date','c.number','c.eventType','c.artistRequirement','c.workProfile','c.event','c.subEvent'); //set column field database for datatable orderable
+	var $column_search = array( 'c.u_name','c.u_email','c.u_mobile','c.companyname','c.designation','c.enquiry_for','c.venue','c.location','c.date','c.number','c.eventType','c.artistRequirement','c.workProfile','c.event','c.subEvent'); 
 
+	
 	private function _get_datatables_query()
 	{	
     

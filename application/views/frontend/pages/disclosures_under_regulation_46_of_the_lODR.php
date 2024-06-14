@@ -26,163 +26,53 @@
     <div class="row gy-4 align-items-center">
       <div class="col-lg-12">
         <div class="accordion-area accordion custom-accodin" style="padding:0px;border:none;" id="faqAccordion">
-          <div class="policy-contaner">
-            <p>Details of Business<a
-                href="https://www.partycruisersindia.com/wp-content/uploads/2022/10/Service-Agreement.pdf">Click to
-                View</a></p>
-          </div>
-          <div class="policy-contaner">
-            <p>Terms and conditions of appointment of independent directors <a
-                href="https://www.partycruisersindia.com/wp-content/uploads/2022/10/Service-Agreement.pdf">Click to
-                View</a></p>
-          </div>
-          <div class="accordion-card">
-            <div class="accordion-header" id="collapse-item-1">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                data-bs-target="#collapse-1" aria-expanded="false" aria-controls="collapse-1"> Is Mediterranean gin
-                good?</button>
+          <?php if (!empty($documents['blank'])): ?>
+            <?php foreach ($documents['blank'] as $item): ?>
+              <div class="policy-contaner">
+                <p><?php echo $item['document_name']; ?><a target="_blank"
+                    href="<?php echo $item['pdf']; ?>">Click to
+                    View</a></p>
+              </div>
+            <?php endforeach; ?>
+          <?php endif; ?>
+          <?php $i = 0; if (!empty($documents['categories'])): ?>
+            <?php foreach ($documents['categories'] as $subCategoryName => $subCategories): $i++; ?>
+          <div class="accordion-card <?php echo ($i == 1) ? 'active' : ''; ?>">
+            <div class="accordion-header" id="collapse-item-<?php echo $i; ?>">
+              <button class="accordion-button <?php echo ($i == 1) ? '' : 'collapsed'; ?>" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapse-<?php echo $i; ?>" aria-expanded="<?php echo ($i == 1) ? 'true' : 'false'; ?>" aria-controls="collapse-<?php echo $i; ?>"><?php echo $subCategoryName; ?></button>
             </div>
-            <div id="collapse-1" class="accordion-collapse collapse" aria-labelledby="collapse-item-1"
+            <div id="collapse-<?php echo $i; ?>" class="accordion-collapse collapse <?php echo ($i == 1) ? 'show' : ''; ?>" aria-labelledby="collapse-item<?php echo $i; ?>"
               data-bs-parent="#faqAccordion">
               <div class="accordion-body">
-                <div class="policy-contaner-sub">
-                  <p>Terms and conditions of appointment of independent directors</p>
-                </div>
-                <table class="woocommerce-table custom-table-2">
-                  <tbody>
-                    <tr>
-                      <th class="heading1">Date</th>
-                      <th class="heading2">Notice of Board Meeting</th>
-                    </tr>
-                    <tr>
-                      <th>Code of Practices and Procedures for Fair Disclosure of UPSI and Code of Conduct for
-                        Regulating,
-                        Monitoring and Reporting of Trading by Designated Persons</th>
-                      <td><a
-                          href="https://www.partycruisersindia.com/wp-content/uploads/2022/10/Service-Agreement.pdf">Click
-                          to
-                          View</a></td>
-                    </tr>
-                    <tr>
-                      <th>Nomination And Remuneration Policy</th>
-                      <td><a target="_blank"
-                          href="https://www.partycruisersindia.com/wp-content/uploads/2022/10/Service-Agreement.pdf">Click
-                          to
-                          View</a></td>
-                    </tr>
-                    <tr>
-                      <th>Policy for Prevention, Prohibition & Redressal of Sexual Harassment at Workplace</th>
-                      <td><a target="_blank"
-                          href="https://www.partycruisersindia.com/wp-content/uploads/2022/10/Service-Agreement.pdf">Click
-                          to
-                          View</a></td>
-                    </tr>
-                    <tr>
-                      <th>Preservation of documents and archival policy</th>
-                      <td><a target="_blank"
-                          href="https://www.partycruisersindia.com/wp-content/uploads/2022/10/Service-Agreement.pdf">Click
-                          to
-                          View</a></td>
-                    </tr>
-                  </tbody>
-                </table>
+                <?php foreach ($subCategories as $subCategory2Name => $items): ?>
+                  <?php if (!empty($subCategory2Name)): ?>
+                    <div class="policy-contaner-sub">
+                      <p><?php echo $subCategory2Name; ?></p>
+                    </div>
+                  <?php endif; ?>
+                  <table class="woocommerce-table custom-table-2 mb-3">
+                    <tbody>
+                      <?php if (!empty($items['0']['label_title'])): ?>
+                        <tr>
+                          <th class="heading1"><?php echo $items['0']['label_title']; ?></th>
+                          <th class="heading2"><?php echo $items['0']['link_title']; ?></th>
+                        </tr>
+                      <?php endif; ?>
+                      <?php foreach ($items as $item): ?>
+                        <tr>
+                          <th><?php echo $item['document_name']; ?></th>
+                          <td><a target="_blank" href="<?php echo $item['pdf']; ?>">Click to View</a></td>
+                        </tr>
+                      <?php endforeach; ?>
+                    </tbody>
+                  </table>
+                <?php endforeach; ?>
               </div>
             </div>
           </div>
-          <div class="accordion-card ">
-            <div class="accordion-header" id="collapse-item-2">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                data-bs-target="#collapse-2" aria-expanded="false" aria-controls="collapse-2"> What amenities and
-                facilities does your company offer?</button>
-            </div>
-            <div id="collapse-2" class="accordion-collapse collapse " aria-labelledby="collapse-item-2"
-              data-bs-parent="#faqAccordion">
-              <div class="accordion-body">
-                <div class="policy-contaner-sub">
-                  <p>Terms and conditions of appointment of independent directors</p>
-                </div>
-                <table class="woocommerce-table custom-table-2 mb-4">
-                  <tbody>
-                    <tr>
-                      <th class="heading1">Date</th>
-                      <th class="heading2">Notice of Board Meeting</th>
-                    </tr>
-                    <tr>
-                      <th>Code of Practices and Procedures for Fair Disclosure of UPSI and Code of Conduct for
-                        Regulating,
-                        Monitoring and Reporting of Trading by Designated Persons</th>
-                      <td><a
-                          href="https://www.partycruisersindia.com/wp-content/uploads/2022/10/Service-Agreement.pdf">Click
-                          to
-                          View</a></td>
-                    </tr>
-                    <tr>
-                      <th>Nomination And Remuneration Policy</th>
-                      <td><a target="_blank"
-                          href="https://www.partycruisersindia.com/wp-content/uploads/2022/10/Service-Agreement.pdf">Click
-                          to
-                          View</a></td>
-                    </tr>
-                    <tr>
-                      <th>Policy for Prevention, Prohibition & Redressal of Sexual Harassment at Workplace</th>
-                      <td><a target="_blank"
-                          href="https://www.partycruisersindia.com/wp-content/uploads/2022/10/Service-Agreement.pdf">Click
-                          to
-                          View</a></td>
-                    </tr>
-                    <tr>
-                      <th>Preservation of documents and archival policy</th>
-                      <td><a target="_blank"
-                          href="https://www.partycruisersindia.com/wp-content/uploads/2022/10/Service-Agreement.pdf">Click
-                          to
-                          View</a></td>
-                    </tr>
-                  </tbody>
-                </table>
-                <div class="policy-contaner-sub">
-                  <p>Terms and conditions of appointment of independent directors</p>
-                </div>
-                <table class="woocommerce-table custom-table-2 mb-4">
-                  <tbody>
-                    <tr>
-                      <th class="heading1">Date</th>
-                      <th class="heading2">Notice of Board Meeting</th>
-                    </tr>
-                    <tr>
-                      <th>Code of Practices and Procedures for Fair Disclosure of UPSI and Code of Conduct for
-                        Regulating,
-                        Monitoring and Reporting of Trading by Designated Persons</th>
-                      <td><a
-                          href="https://www.partycruisersindia.com/wp-content/uploads/2022/10/Service-Agreement.pdf">Click
-                          to
-                          View</a></td>
-                    </tr>
-                    <tr>
-                      <th>Nomination And Remuneration Policy</th>
-                      <td><a target="_blank"
-                          href="https://www.partycruisersindia.com/wp-content/uploads/2022/10/Service-Agreement.pdf">Click
-                          to
-                          View</a></td>
-                    </tr>
-                    <tr>
-                      <th>Policy for Prevention, Prohibition & Redressal of Sexual Harassment at Workplace</th>
-                      <td><a target="_blank"
-                          href="https://www.partycruisersindia.com/wp-content/uploads/2022/10/Service-Agreement.pdf">Click
-                          to
-                          View</a></td>
-                    </tr>
-                    <tr>
-                      <th>Preservation of documents and archival policy</th>
-                      <td><a target="_blank"
-                          href="https://www.partycruisersindia.com/wp-content/uploads/2022/10/Service-Agreement.pdf">Click
-                          to
-                          View</a></td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          </div>
+          <?php endforeach; ?>
+          <?php endif; ?>
         </div>
       </div>
     </div>

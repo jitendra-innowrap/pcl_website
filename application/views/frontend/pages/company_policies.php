@@ -27,30 +27,14 @@
       <div class="col-lg-12">
         <table class="woocommerce-table custom-table">
           <tbody>
+          <?php if (isset($policy)) {
+            foreach ($policy as $index => $item) { ?>
             <tr>
-              <th>Code of Practices and Procedures for Fair Disclosure of UPSI and Code of Conduct for Regulating,
-                Monitoring and Reporting of Trading by Designated Persons</th>
-              <td><a href="https://www.partycruisersindia.com/wp-content/uploads/2022/10/Service-Agreement.pdf">Click to
+              <th><?php echo $item['document_name']; ?></th>
+              <td><a target="_blank" href="<?php echo $item['pdf']; ?>">Click to
                   View</a></td>
             </tr>
-            <tr>
-              <th>Nomination And Remuneration Policy</th>
-              <td><a target="_blank"
-                  href="https://www.partycruisersindia.com/wp-content/uploads/2022/10/Service-Agreement.pdf">Click to
-                  View</a></td>
-            </tr>
-            <tr>
-              <th>Policy for Prevention, Prohibition & Redressal of Sexual Harassment at Workplace</th>
-              <td><a target="_blank"
-                  href="https://www.partycruisersindia.com/wp-content/uploads/2022/10/Service-Agreement.pdf">Click to
-                  View</a></td>
-            </tr>
-            <tr>
-              <th>Preservation of documents and archival policy</th>
-              <td><a target="_blank"
-                  href="https://www.partycruisersindia.com/wp-content/uploads/2022/10/Service-Agreement.pdf">Click to
-                  View</a></td>
-            </tr>
+            <?php } } ?>
           </tbody>
         </table>
       </div>

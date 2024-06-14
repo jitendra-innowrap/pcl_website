@@ -27,14 +27,14 @@
       <div class="col-lg-12">
         <table class="woocommerce-table custom-table">
           <tbody>
+            <?php if (isset($policy)) {
+            foreach ($policy as $index => $item) { ?>
             <tr>
-              <th>Company Policy</th>
-              <td><a href="https://www.partycruisersindia.com/wp-content/uploads/2022/10/Service-Agreement.pdf">Click to View</a></td>
+              <th><?php echo $item['document_name']; ?></th>
+              <td><a target="_blank" href="<?php echo $item['pdf']; ?>">Click to
+                  View</a></td>
             </tr>
-            <tr>
-              <th>Service Agreement</th>
-              <td><a target="_blank" href="https://www.partycruisersindia.com/wp-content/uploads/2022/10/Service-Agreement.pdf">Click to View</a></td>
-            </tr>
+            <?php } } ?>
           </tbody>
         </table>
       </div>

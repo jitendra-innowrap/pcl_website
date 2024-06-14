@@ -143,15 +143,8 @@
 <script src="<?php echo base_url();?>assets/js/main.js"></script>
 
 <!-- Custom JS -->
-<?php if($act === 1.1  || $act === 3.1 || $act === 12.1){ ?>
+<script>  var base_url  = "<?= base_url();?>"; </script>
 <script src="<?php echo base_url();?>assets/js/contact.js"></script>
-<?php } ?>
-<?php if($act === 4.1 || $act === 5.1 || $act === 8.1){ ?>
-<script src="<?php echo base_url();?>assets/js/house-of-vivah.js"></script>
-<?php } ?>
-<?php if($act === 6.1){ ?>
-<script src="<?php echo base_url();?>assets/js/event-factory.js"></script>
-<?php } ?>
 <script src="<?php echo base_url();?>assets/js/common.js"></script>
 </body>
 

@@ -356,8 +356,8 @@ Service Area 01
       <div class="row">
         <div class="col-lg-12">
           <h4 class="form-messages"></h4>
-          <form action="<?php echo base_url("console/party_house_form"); ?>" method="POST"
-            class="contact-form form-contact-black" id="houseOfVivahForm">
+          <form method="POST"
+            class="contact-form form-contact-black" id="partyHouseForm">
             <div class="row">
             <input type="hidden" name="enquiry_for" value="Party House" />
               <div class="col-lg-4">
@@ -428,7 +428,7 @@ Service Area 01
                     <option value="Anniversary">Anniversary</option>
                     <option value="Baby Shower">Baby Shower</option>
                     <option value="Social Gathering">Social Gathering</option>
-                    <option value="Other">Other</option>
+                    <option value="other">Other</option>
                   </select>
                   <div class="error" id="eventError"></div>
                 </div>

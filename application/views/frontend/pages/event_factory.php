@@ -356,7 +356,7 @@ Service Area 01
       <div class="row">
         <div class="col-lg-12">
           <h4 class="form-messages"></h4>
-          <form action="<?php echo base_url("console/event_factory_form"); ?>" method="POST"
+          <form method="POST"
             class="contact-form form-contact-black" id="eventFactoryForm">
             <div class="row">
             <input type="hidden" name="enquiry_for" value="Event Factory" />
@@ -446,7 +446,7 @@ Service Area 01
                     <option value="R&R/ Annual Awards">R&R/ Annual Awards</option>
                     <option value="Product Launch">Product Launch</option>
                     <option value="Offsite">Offsite</option>
-                    <option value="Other">Other</option>
+                    <option value="other">Other</option>
                   </select>
                   <div class="error" id="eventError"></div>
                 </div>
