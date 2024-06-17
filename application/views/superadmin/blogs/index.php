@@ -51,3 +51,34 @@
 		</div>
 	</div>
 </main>
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+	$(document).ready(function() {
+			$(document).on("click", ".enabled-disabled", function () {
+				var $button = $(this);
+        var dataId = $button.data('id');
+        $.ajax({
+            url: '<?php echo base_url("superadmin/administrator/enabled_disabled_blogs"); ?>',
+            type: 'POST',
+            data: { id: dataId},
+						success: function(response) {
+                if(response.success) {
+                    if($button.hasClass('btn-success')) {
+                        $button.removeClass('btn-success').addClass('btn-danger');
+                        $button.text('Disabled');
+                    } else {
+                        $button.removeClass('btn-danger').addClass('btn-success');
+                        $button.text('Enabled');
+                    }
+                } else {
+                    alert('Failed to update status.');
+                }
+            },
+            error: function() {
+                alert('Error in AJAX request.');
+            }
+        });
+			});
+	});
+	</script>

@@ -16,9 +16,9 @@ class Ajax extends CI_Controller
 		$no = $_POST['start'];
 		foreach ($list as $banners) {
 			if ($banners->status == 1){
-				$status = "<button class='btn btn-success btn-square waves-effect waves-button waves-light'>Enabled</button>";
+				$status = "<button data-id=".$banners->id." class='btn btn-success btn-square waves-effect waves-button waves-light enabled-disabled'>Enabled</button>";
 			}else{
-				$status = "<button class='btn btn-danger btn-square waves-effect waves-button waves-light'>Disabled</button>";
+					$status = "<button data-id=".$banners->id." class='btn btn-danger btn-square waves-effect waves-button waves-light enabled-disabled'>Disabled</button>";
 			}
 			$edit = "<a class='btn btn-dark btn-square waves-effect waves-button waves-light' href='".base_url('superadmin/administrator/add_edit_Banner?id='.$banners->id)."'>Edit</a>";
             $img = '';
@@ -64,9 +64,9 @@ class Ajax extends CI_Controller
 		$no = $_POST['start'];
 		foreach ($list as $BlogsCategory) {
 			if ($BlogsCategory->status == 1){
-				$status = "<button class='btn btn-success btn-square waves-effect waves-button waves-light'>Enabled</button>";
+				$status = "<button data-id=".$BlogsCategory->id." class='btn btn-success btn-square waves-effect waves-button waves-light enabled-disabled'>Enabled</button>";
 			}else{
-				$status = "<button class='btn btn-danger btn-square waves-effect waves-button waves-light'>Disabled</button>";
+					$status = "<button data-id=".$BlogsCategory->id." class='btn btn-danger btn-square waves-effect waves-button waves-light enabled-disabled'>Disabled</button>";
 			}
 			$edit = "<a class='btn btn-dark btn-square waves-effect waves-button waves-light' href='".base_url('superadmin/administrator/add_edit_blogsCategory?id='.$BlogsCategory->id)."'>Edit</a>";
 			$no++;
@@ -96,9 +96,9 @@ class Ajax extends CI_Controller
 //		print_r($list);exit();
 		foreach ($list as $Blogs) {
 			if ($Blogs->status == 1){
-				$status = "<button class='btn btn-success btn-square waves-effect waves-button waves-light'>Enabled</button>";
+				$status = "<button data-id=".$Blogs->id." class='btn btn-success btn-square waves-effect waves-button waves-light enabled-disabled'>Enabled</button>";
 			}else{
-				$status = "<button class='btn btn-danger btn-square waves-effect waves-button waves-light'>Disabled</button>";
+					$status = "<button data-id=".$Blogs->id." class='btn btn-danger btn-square waves-effect waves-button waves-light enabled-disabled'>Disabled</button>";
 			}
 			$edit = "<a class='btn btn-dark btn-square waves-effect waves-button waves-light' href='".base_url('superadmin/administrator/add_edit_blogs?id='.$Blogs->id)."'>Edit</a>";
 			$no++;
@@ -163,11 +163,11 @@ class Ajax extends CI_Controller
         $data = array();
         $no = $_POST['start'];
         foreach ($list as $Blogs) {
-            if ($Blogs->status == 1){
-                $status = "<button class='btn btn-success btn-square waves-effect waves-button waves-light'>Enabled</button>";
-            }else{
-                $status = "<button class='btn btn-danger btn-square waves-effect waves-button waves-light'>Disabled</button>";
-            }
+					if ($Blogs->status == 1){
+						$status = "<button data-id=".$Blogs->id." class='btn btn-success btn-square waves-effect waves-button waves-light enabled-disabled'>Enabled</button>";
+					}else{
+							$status = "<button data-id=".$Blogs->id." class='btn btn-danger btn-square waves-effect waves-button waves-light enabled-disabled'>Disabled</button>";
+					}
             $edit = "<a class='btn btn-dark btn-square waves-effect waves-button waves-light' href='".base_url('superadmin/administrator/add_edit_Success_Story?id='.$Blogs->id)."'>Edit</a>";
             $img = '';
             if ($Blogs->image){
@@ -214,11 +214,11 @@ class Ajax extends CI_Controller
 			$data = array();
 			$no = $_POST['start'];
 			foreach ($list as $BlogsCategory) {
-					if ($BlogsCategory->status == 1){
-							$status = "<button class='btn btn-success btn-square waves-effect waves-button waves-light'>Enabled</button>";
-					}else{
-							$status = "<button class='btn btn-danger btn-square waves-effect waves-button waves-light'>Disabled</button>";
-					}
+				if ($BlogsCategory->status == 1){
+					$status = "<button data-id=".$BlogsCategory->id." class='btn btn-success btn-square waves-effect waves-button waves-light enabled-disabled'>Enabled</button>";
+				}else{
+						$status = "<button data-id=".$BlogsCategory->id." class='btn btn-danger btn-square waves-effect waves-button waves-light enabled-disabled'>Disabled</button>";
+				}
 					$edit = "<a class='btn btn-dark btn-square waves-effect waves-button waves-light' href='".base_url('superadmin/administrator/add_edit_Category?id='.$BlogsCategory->id)."'>Edit</a>";
 					$no++;
 					$row = array();
@@ -245,11 +245,11 @@ class Ajax extends CI_Controller
 		$data = array();
 		$no = $_POST['start'];
 		foreach ($list as $Blogs) {
-				if ($Blogs->status == 1){
-						$status = "<button class='btn btn-success btn-square waves-effect waves-button waves-light'>Enabled</button>";
-				}else{
-						$status = "<button class='btn btn-danger btn-square waves-effect waves-button waves-light'>Disabled</button>";
-				}
+			if ($Blogs->status == 1){
+				$status = "<button data-id=".$Blogs->id." class='btn btn-success btn-square waves-effect waves-button waves-light enabled-disabled'>Enabled</button>";
+			}else{
+					$status = "<button data-id=".$Blogs->id." class='btn btn-danger btn-square waves-effect waves-button waves-light enabled-disabled'>Disabled</button>";
+			}
 				if ($Blogs->home == 1){
 					$home = "Yes";
 				}else{
@@ -305,9 +305,9 @@ class Ajax extends CI_Controller
         $no = $_POST['start'];				
         foreach ($list as $Blogs) {
             if ($Blogs->status == 1){
-                $status = "<button class='btn btn-success btn-square waves-effect waves-button waves-light'>Enabled</button>";
+                $status = "<button data-id=".$Blogs->id." class='btn btn-success btn-square waves-effect waves-button waves-light enabled-disabled'>Enabled</button>";
             }else{
-                $status = "<button class='btn btn-danger btn-square waves-effect waves-button waves-light'>Disabled</button>";
+                $status = "<button data-id=".$Blogs->id." class='btn btn-danger btn-square waves-effect waves-button waves-light enabled-disabled'>Disabled</button>";
             }
             $edit = "<a class='btn btn-dark btn-square waves-effect waves-button waves-light' href='".base_url('superadmin/administrator/add_edit_report_policies?id='.$Blogs->id)."'>Edit</a>";
 						$video_btn = '';

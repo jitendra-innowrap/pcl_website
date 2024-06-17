@@ -40,6 +40,33 @@ class Administrator extends CI_Controller
 		$data['middle_content'] = 'banner/index';
 		$this->load->view('superadmin/layout/template', $data);
 	}
+	
+	public function enabled_disabled_banner() {
+    header('Content-Type: application/json'); // Ensure JSON response
+    $id = $this->input->post('id');
+    
+    if ($id) {
+        // Get the current status
+        $this->db->select('status');
+        $this->db->from('banner');
+        $this->db->where('id', $id);
+        $query = $this->db->get();
+        $current_status = $query->row()->status;
+
+        // Toggle the status
+        $update['status'] = ($current_status == 1) ? 0 : 1;
+        
+        // Update the status in the database
+        $this->db->where('id', $id);
+        if ($this->db->update('banner', $update)) {
+          echo json_encode(['success' => true]);
+        } else {
+            echo json_encode(['success' => false]);
+        }
+    } else {
+        echo json_encode(['success' => false]);
+    }
+	}
 
 	function add_edit_Banner()
 	{
@@ -153,6 +180,33 @@ class Administrator extends CI_Controller
 		$data['middle_content'] = 'blogs/blogs_category';
 		$this->load->view('superadmin/layout/template', $data);
 	}
+	
+	public function enabled_disabled_blogs_category() {
+    header('Content-Type: application/json'); // Ensure JSON response
+    $id = $this->input->post('id');
+    
+    if ($id) {
+        // Get the current status
+        $this->db->select('status');
+        $this->db->from('blog_category');
+        $this->db->where('id', $id);
+        $query = $this->db->get();
+        $current_status = $query->row()->status;
+
+        // Toggle the status
+        $update['status'] = ($current_status == 1) ? 0 : 1;
+        
+        // Update the status in the database
+        $this->db->where('id', $id);
+        if ($this->db->update('blog_category', $update)) {
+          echo json_encode(['success' => true]);
+        } else {
+            echo json_encode(['success' => false]);
+        }
+    } else {
+        echo json_encode(['success' => false]);
+    }
+	}
 
 	public function add_edit_blogsCategory(){
 		$id = $this->input->get('id');
@@ -233,6 +287,33 @@ class Administrator extends CI_Controller
 		$this->load->view('superadmin/layout/template', $data);
 	}
 
+	public function enabled_disabled_blogs() {
+    header('Content-Type: application/json'); // Ensure JSON response
+    $id = $this->input->post('id');
+    
+    if ($id) {
+        // Get the current status
+        $this->db->select('status');
+        $this->db->from('blogs');
+        $this->db->where('id', $id);
+        $query = $this->db->get();
+        $current_status = $query->row()->status;
+
+        // Toggle the status
+        $update['status'] = ($current_status == 1) ? 0 : 1;
+        
+        // Update the status in the database
+        $this->db->where('id', $id);
+        if ($this->db->update('blogs', $update)) {
+          echo json_encode(['success' => true]);
+        } else {
+            echo json_encode(['success' => false]);
+        }
+    } else {
+        echo json_encode(['success' => false]);
+    }
+	}
+	
 	public function add_edit_blogs(){
 		$this->db->where('status',1);
 		$data['blogs_category'] = $this->db->get('blog_category')->result();
@@ -458,6 +539,33 @@ class Administrator extends CI_Controller
         $data['middle_content'] = 'CaseStudies/index';
         $this->load->view('superadmin/layout/template', $data);
     }
+		
+		public function enabled_disabled_success_story() {
+			header('Content-Type: application/json'); // Ensure JSON response
+			$id = $this->input->post('id');
+			
+			if ($id) {
+					// Get the current status
+					$this->db->select('status');
+					$this->db->from('case_studies');
+					$this->db->where('id', $id);
+					$query = $this->db->get();
+					$current_status = $query->row()->status;
+	
+					// Toggle the status
+					$update['status'] = ($current_status == 1) ? 0 : 1;
+					
+					// Update the status in the database
+					$this->db->where('id', $id);
+					if ($this->db->update('case_studies', $update)) {
+						echo json_encode(['success' => true]);
+					} else {
+							echo json_encode(['success' => false]);
+					}
+			} else {
+					echo json_encode(['success' => false]);
+			}
+		}
 		
 		public function delete_image() {
 			$id = $this->input->post('imageId');
@@ -823,6 +931,33 @@ class Administrator extends CI_Controller
 		$data['middle_content'] = 'Testimonial/Testimonial_category';
 		$this->load->view('superadmin/layout/template', $data);
 	}
+	
+	public function enabled_disabled_categories() {
+    header('Content-Type: application/json'); // Ensure JSON response
+    $id = $this->input->post('id');
+    
+    if ($id) {
+        // Get the current status
+        $this->db->select('status');
+        $this->db->from('testimonial_category');
+        $this->db->where('id', $id);
+        $query = $this->db->get();
+        $current_status = $query->row()->status;
+
+        // Toggle the status
+        $update['status'] = ($current_status == 1) ? 0 : 1;
+        
+        // Update the status in the database
+        $this->db->where('id', $id);
+        if ($this->db->update('testimonial_category', $update)) {
+          echo json_encode(['success' => true]);
+        } else {
+            echo json_encode(['success' => false]);
+        }
+    } else {
+        echo json_encode(['success' => false]);
+    }
+	}
 
 	public function add_edit_Category(){
 			$id = $this->input->get('id');
@@ -903,6 +1038,33 @@ class Administrator extends CI_Controller
 			$this->load->view('superadmin/layout/template', $data);
 	}
 
+	public function enabled_disabled_testimonail() {
+    header('Content-Type: application/json'); // Ensure JSON response
+    $id = $this->input->post('id');
+    
+    if ($id) {
+        // Get the current status
+        $this->db->select('status');
+        $this->db->from('testimonial');
+        $this->db->where('id', $id);
+        $query = $this->db->get();
+        $current_status = $query->row()->status;
+
+        // Toggle the status
+        $update['status'] = ($current_status == 1) ? 0 : 1;
+        
+        // Update the status in the database
+        $this->db->where('id', $id);
+        if ($this->db->update('testimonial', $update)) {
+          echo json_encode(['success' => true]);
+        } else {
+            echo json_encode(['success' => false]);
+        }
+    } else {
+        echo json_encode(['success' => false]);
+    }
+	}
+	
 	public function add_edit_Testimonial(){
 			$this->db->where('status',1);
 			$data['Testimonial_category'] = $this->db->get('testimonial_category')->result();
@@ -1053,6 +1215,33 @@ class Administrator extends CI_Controller
 		$data['act'] = 10.1;
 		$data['middle_content'] = 'gst-notification/index';
 		$this->load->view('superadmin/layout/template', $data);
+	}
+	
+	public function enabled_disabled_manage_report_policies() {
+    header('Content-Type: application/json'); // Ensure JSON response
+    $id = $this->input->post('id');
+    
+    if ($id) {
+        // Get the current status
+        $this->db->select('status');
+        $this->db->from('gst_notification');
+        $this->db->where('id', $id);
+        $query = $this->db->get();
+        $current_status = $query->row()->status;
+
+        // Toggle the status
+        $update['status'] = ($current_status == 1) ? 0 : 1;
+        
+        // Update the status in the database
+        $this->db->where('id', $id);
+        if ($this->db->update('gst_notification', $update)) {
+          echo json_encode(['success' => true]);
+        } else {
+            echo json_encode(['success' => false]);
+        }
+    } else {
+        echo json_encode(['success' => false]);
+    }
 	}
 	
 	public function get_categories() {
