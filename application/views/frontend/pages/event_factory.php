@@ -40,6 +40,11 @@
             <h4 class="sec-title">Corporate Impression Management Company</h4>
             <p class="sec-text">We specialize in lavish luxury/black-tie corporate events. Annual Meet, Product Launch, Team-Building Retreats, Gala Dinner, Activations, Mall Decor, MICE, Exhibition Installation, Stall Designing & Fabrication are the kinds of projects we work on.</p>
           </div>
+          <div class="social-btn style2 justify-content-center mt-4">
+            <a href="https://www.facebook.com/evenmanagement.company" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/event_factory_pcl?igsh=bmN6YWtnaGhlb2Vj" target="_blank"><i
+                class="fab fa-instagram"></i></a>
+          </div>
         </div>
       </div>
     </div>

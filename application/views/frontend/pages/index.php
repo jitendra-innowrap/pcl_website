@@ -581,6 +581,8 @@ Service Area 01
             <h3 class="blog-title"><a
                 href="<?php echo base_url('blog-details'); ?>?slug=<?php echo $blog['1']['slug']; ?>"><?php echo $blog['1']['title']; ?></a>
             </h3>
+            <a href="<?php echo base_url('blog-details'); ?>?slug=<?php echo $blog['1']['slug']; ?>"
+            class="link-btn style2 mt-4">Continue Reading <i class="fas fa-arrow-right"></i></a>
           </div>
         </div>
       </div>
@@ -607,6 +609,8 @@ Service Area 01
             <h3 class="blog-title"><a
                 href="<?php echo base_url('blog-details'); ?>?slug=<?php echo $blog['2']['slug']; ?>"><?php echo $blog['2']['title']; ?></a>
             </h3>
+            <a href="<?php echo base_url('blog-details'); ?>?slug=<?php echo $blog['2']['slug']; ?>"
+            class="link-btn style2 mt-4">Continue Reading <i class="fas fa-arrow-right"></i></a>
           </div>
         </div>
       </div>
@@ -633,6 +637,8 @@ Service Area 01
             <h3 class="blog-title"><a
                 href="<?php echo base_url('blog-details'); ?>?slug=<?php echo $blog['3']['slug']; ?>"><?php echo $blog['3']['title']; ?></a>
             </h3>
+            <a href="<?php echo base_url('blog-details'); ?>?slug=<?php echo $blog['3']['slug']; ?>"
+            class="link-btn style2 mt-4">Continue Reading <i class="fas fa-arrow-right"></i></a>
           </div>
         </div>
       </div>
@@ -659,6 +665,8 @@ Service Area 01
             <h3 class="blog-title"><a
                 href="<?php echo base_url('blog-details'); ?>?slug=<?php echo $blog['4']['slug']; ?>"><?php echo $blog['4']['title']; ?></a>
             </h3>
+            <a href="<?php echo base_url('blog-details'); ?>?slug=<?php echo $blog['4']['slug']; ?>"
+            class="link-btn style2 mt-4">Continue Reading <i class="fas fa-arrow-right"></i></a>
           </div>
         </div>
       </div>

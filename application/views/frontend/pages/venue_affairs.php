@@ -1,7 +1,7 @@
 <!--==============================
     Breadcumb
     ============================== -->
-    <div class="breadcumb-wrapper" data-bg-src="assets/img/bg/breadcrumb-bg.png">
+<div class="breadcumb-wrapper" data-bg-src="assets/img/bg/breadcrumb-bg.png">
   <!-- bg animated image/ -->
   <div class="container">
     <div class="row justify-content-between align-items-center">
@@ -26,10 +26,12 @@
     ==============================-->
 <div class="mt-4 mb-4">
   <div class="container">
-  <div class="row flex-row-reverse align-items-center justify-content-between">
+    <div class="row flex-row-reverse align-items-center justify-content-between">
       <div class="col-lg-6">
-        <div class="about-thumb mb-5 mb-lg-0 text-lg-end text-center img-anim" style="display:flex;align-items: center;justify-content: center;">
-          <img class="about-img-1" style="width:100%;max-width:500px;" src="<?php echo base_url();?>assets/images/logo/venue-affairs.png" alt="img">
+        <div class="about-thumb mb-5 mb-lg-0 text-lg-end text-center img-anim"
+          style="display:flex;align-items: center;justify-content: center;">
+          <img class="about-img-1" style="width:100%;max-width:500px;"
+            src="<?php echo base_url();?>assets/images/logo/venue-affairs.png" alt="img">
         </div>
       </div>
       <div class="col-lg-6">
@@ -38,7 +40,13 @@
             <span class="sub-title style2">More About Us</span>
             <h2 class="sec-title">Venue Affairs</h2>
             <!-- <h4 class="sec-title"> Design | Décor | Production</h4> -->
-            <p class="sec-text">An entertainment, artist and talent management agency specially designed and developed for budding new talents and artist who want a break through in wedding industry. We also have a special team to serve our wedding clients with unique entertainment acts.</p>
+            <p class="sec-text">An entertainment, artist and talent management agency specially designed and developed
+              for budding new talents and artist who want a break through in wedding industry. We also have a special
+              team to serve our wedding clients with unique entertainment acts.</p>
+          </div>
+          <div class="social-btn style2 justify-content-center mt-4">
+            <a href="https://www.instagram.com/venue_affairs?igsh=dG4xYmRmanFwaTBn" target="_blank"><i
+                class="fab fa-instagram"></i></a>
           </div>
         </div>
       </div>
@@ -356,10 +364,9 @@ Service Area 01
       <div class="row">
         <div class="col-lg-12">
           <h4 class="form-messages"></h4>
-          <form method="POST"
-            class="contact-form form-contact-black" id="houseOfVivahForm">
+          <form method="POST" class="contact-form form-contact-black" id="houseOfVivahForm">
             <div class="row">
-            <input type="hidden" name="enquiry_for" value="Venue Affairs" />
+              <input type="hidden" name="enquiry_for" value="Venue Affairs" />
               <div class="col-lg-4">
                 <label>Full Name*</label>
                 <div class="form-group form-icon-left">
@@ -380,7 +387,7 @@ Service Area 01
                     <i class="fas fa-phone-alt"></i>
                     <input type="number" class="form-control style-border" name="contact" id="contact"
                       placeholder="Enter Contact">
-                      <div class="error" id="contactError"></div>
+                    <div class="error" id="contactError"></div>
                   </div>
                 </div>
               </div>

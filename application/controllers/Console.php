@@ -124,7 +124,7 @@ class Console extends CI_Controller
     $this->db->where('b.status', 1);
     $this->db->order_by('b.order_no', 'asc');
     $this->db->group_by('b.id');
-		$this->db->limit(3);
+		$this->db->limit(7);
     $data['blog'] = $this->db->get("blogs b")->result_array();
 		
 		$this->load->view('frontend/layout/template', $data);
@@ -842,14 +842,14 @@ class Console extends CI_Controller
 		$this->load->view('frontend/layout/template', $data);
 	}
 	
-	public function m_and_a(){
-		$data['page_title'] = "Merger & Acquisition - Party Cruisers";
+	public function collabration_and_association(){
+		$data['page_title'] = "Collaboration & Association - Party Cruisers";
 		$data['meta_desc'] = "";
 		$data['meta_keyword'] = "";
 		$data['meta_image'] = '';
 		$data['active'] = 18;
 		$data['act'] = 18.1;
-		$data['middle_content'] = 'm_and_a';	
+		$data['middle_content'] = 'collabration_and_association';	
 		
 		$this->load->view('frontend/layout/template', $data);
 	}
@@ -1151,6 +1151,42 @@ class Console extends CI_Controller
 		}else{
 			echo json_encode(['code' => 0]);
 		}
+	}
+	
+	public function pep(){
+		$data['page_title'] = "Partnership Entrepreneurship Program - Party Cruisers";
+		$data['meta_desc'] = "";
+		$data['meta_keyword'] = "";
+		$data['meta_image'] = '';
+		$data['active'] = 21;
+		$data['act'] = 21.1;
+		$data['middle_content'] = 'pep';	
+		
+		$this->load->view('frontend/layout/template', $data);
+	}
+	
+	public function brand_ambassador(){
+		$data['page_title'] = "Brand Ambassador - Party Cruisers";
+		$data['meta_desc'] = "";
+		$data['meta_keyword'] = "";
+		$data['meta_image'] = '';
+		$data['active'] = 22;
+		$data['act'] = 22.1;
+		$data['middle_content'] = 'brand_ambassador';	
+		
+		$this->load->view('frontend/layout/template', $data);
+	}
+	
+	public function carrer(){
+		$data['page_title'] = "carrer - Party Cruisers";
+		$data['meta_desc'] = "";
+		$data['meta_keyword'] = "";
+		$data['meta_image'] = '';
+		$data['active'] = 23;
+		$data['act'] = 23.1;
+		$data['middle_content'] = 'carrer';	
+		
+		$this->load->view('frontend/layout/template', $data);
 	}
 	
 }

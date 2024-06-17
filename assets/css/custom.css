@@ -599,3 +599,18 @@
 .custom-footer .active a{
   color: black;
 }
+
+.whats-app-float{
+	position: fixed;
+    width: 50px;
+    height: 50px;
+    right: 30px;
+    bottom: 30px;
+    background-color: transparent;
+    color: #FFF;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 3px;
+    box-shadow: none;
+    z-index: 10000;
+}

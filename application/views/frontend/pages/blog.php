@@ -70,7 +70,11 @@
             </div>
           </div>
         </aside>
-        <div id="blog-container-2" class="mt-4">
+        <!-- <div id="blog-container-2" class="mt-4"> -->
+        </div>
+      </div>
+      <div class="col-xxl-12 col-lg-12 mt-4">
+        <div class="row gy-4 all-posts-wrapper" id="blog-container-2">
         </div>
       </div>
       <div class="col-xxl-12">
@@ -134,50 +138,28 @@ $(document).ready(function() {
                     </article>
                   </div>`;
             } else {
-              if (index % 2 === 1) {
-                blogPostHtml = `
-                  <div class="col-12 single-post-item">
-                    <article class="post-single blog-card style2">
-                      <div class="post-img blog-img">
-                        <img src="${blog.image_medium}" alt="${blog.image_alt}">
-                      </div>
-                      <div class="post-contents with-thum-img blog-content">
-                        <div class="post-meta-item blog-meta">
-                          <a >${blog.author.toUpperCase()}</a>
-                          <a >${DateFormate(blog.blog_date)}</a>
-                          <a >${blog.categories}</a>
-                        </div>
-                        <h3 class="post-title blog-title"><a href="<?php echo base_url('blog-details'); ?>?slug=${blog.slug}">${blog.title}</a></h3>
-                        <div class="post-content blog-text">
-                          <p>${blog.content} ...</p>
-                        </div>
-                        <div class="post-button">
-                          <a href="<?php echo base_url('blog-details'); ?>?slug=${blog.slug}" class="link-btn style2">Continue Reading <i class="fas fa-arrow-right"></i></a>
-                        </div>
-                      </div>
-                    </article>
-                  </div>`;
-              }else{
-                blogPostHtml2 = `
+              blogPostHtml2 = `
                 <div class="col-12 single-post-item">
-                  <div class="blog-area mb-4">
-                    <div class="blog-grid style2 style-big title-anim">
-                      <div class="blog-img">
-                        <img src="${blog.image_medium}" alt="${blog.image_alt}">
+                  <article class="post-single blog-card style2">
+                    <div class="post-img blog-img">
+                      <img src="${blog.image_medium}" alt="${blog.image_alt}">
+                    </div>
+                    <div class="post-contents with-thum-img blog-content">
+                      <div class="post-meta-item blog-meta">
+                        <a >${blog.author.toUpperCase()}</a>
+                        <a >${DateFormate(blog.blog_date)}</a>
+                        <a >${blog.categories}</a>
                       </div>
-                      <div class="blog-content">
-                        <div class="post-meta-item blog-meta">
-                          <a >${blog.author.toUpperCase()}</a>
-                          <a >${DateFormate(blog.blog_date)}</a>
-                          <a >${blog.categories}</a>
-                        </div>
-                        <h3 class="blog-title"><a href="<?php echo base_url('blog-details'); ?>?slug=${blog.slug}">${blog.title}</a></h3>
+                      <h3 class="post-title blog-title"><a href="<?php echo base_url('blog-details'); ?>?slug=${blog.slug}">${blog.title}</a></h3>
+                      <div class="post-content blog-text">
+                        <p>${blog.content} ...</p>
+                      </div>
+                      <div class="post-button">
                         <a href="<?php echo base_url('blog-details'); ?>?slug=${blog.slug}" class="link-btn style2">Continue Reading <i class="fas fa-arrow-right"></i></a>
                       </div>
                     </div>
-                  </div>
+                  </article>
                 </div>`;
-              }
             }
 
             blogContainer.append(blogPostHtml);

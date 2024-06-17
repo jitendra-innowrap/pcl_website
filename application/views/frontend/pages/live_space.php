@@ -30,7 +30,8 @@
       <div class="col-lg-6">
         <div class="about-thumb mb-5 mb-lg-0 text-lg-end text-center img-anim"
           style="display:flex;align-items: center;justify-content: center;">
-          <img class="about-img-1" style="width:100%;max-width:500px;" src="<?php echo base_url();?>assets/images/logo/live-space.png" alt="img">
+          <img class="about-img-1" style="width:100%;max-width:500px;"
+            src="<?php echo base_url();?>assets/images/logo/live-space.png" alt="img">
         </div>
       </div>
       <div class="col-lg-6">
@@ -42,6 +43,12 @@
             <p class="sec-text">An entertainment, artist and talent management agency specially designed and developed
               for budding new talents and artist who want a break through in wedding industry. We also have a special
               team to serve our wedding clients with unique entertainment acts.</p>
+          </div>
+          <div class="social-btn style2 justify-content-center mt-4">
+            <a href="https://www.facebook.com/LiveSpaceIndia" target="_blank"><i
+                class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/live.space_pcl?igsh=MXE4bWltcHVqMHJ1ZQ==" target="_blank"><i
+                class="fab fa-instagram"></i></a>
           </div>
         </div>
       </div>
@@ -359,8 +366,7 @@ Service Area 01
       <div class="row">
         <div class="col-lg-12">
           <h4 class="form-messages"></h4>
-          <form method="POST"
-            class="contact-form form-contact-black" id="liveSpaceForm">
+          <form method="POST" class="contact-form form-contact-black" id="liveSpaceForm">
             <div class="row">
               <input type="hidden" name="enquiry_for" value="Live space" />
               <div class="col-lg-4">

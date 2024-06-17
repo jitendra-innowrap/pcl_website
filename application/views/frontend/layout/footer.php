@@ -17,12 +17,18 @@
             <h3 class="widget_title">Brands</h3>
             <div class="menu-all-pages-container list-column2">
               <ul class="menu">
-                <li class="<?= ($active === 4 ? 'active' : '') ?>"><a href="<?php echo base_url();?>house-of-vivah">House of Vivah</a></li>
-                <li  class="<?= ($active === 5 ? 'active' : '') ?>"><a href="<?php echo base_url();?>vows-vachan">Vows Vachan</a></li>
-                <li  class="<?= ($active === 6 ? 'active' : '') ?>"><a href="<?php echo base_url();?>event-factory">Event Factory</a></li>
-                <li  class="<?= ($active === 7 ? 'active' : '') ?>"><a href="<?php echo base_url();?>live-space">Live Space</a></li>
-                <li  class="<?= ($active === 8 ? 'active' : '') ?>"><a href="<?php echo base_url();?>venue-affairs">Venue Affairs</a></li>
-                <li  class="<?= ($active === 9 ? 'active' : '') ?>"><a href="<?php echo base_url();?>party-house">Party House</a></li>
+                <li class="<?= ($active === 4 ? 'active' : '') ?>"><a
+                    href="<?php echo base_url();?>house-of-vivah">House of Vivah</a></li>
+                <li class="<?= ($active === 5 ? 'active' : '') ?>"><a href="<?php echo base_url();?>vows-vachan">Vows
+                    Vachan</a></li>
+                <li class="<?= ($active === 6 ? 'active' : '') ?>"><a href="<?php echo base_url();?>event-factory">Event
+                    Factory</a></li>
+                <li class="<?= ($active === 7 ? 'active' : '') ?>"><a href="<?php echo base_url();?>live-space">Live
+                    Space</a></li>
+                <li class="<?= ($active === 8 ? 'active' : '') ?>"><a href="<?php echo base_url();?>venue-affairs">Venue
+                    Affairs</a></li>
+                <li class="<?= ($active === 9 ? 'active' : '') ?>"><a href="<?php echo base_url();?>party-house">Party
+                    House</a></li>
               </ul>
             </div>
           </div>
@@ -32,9 +38,25 @@
             <h3 class="widget_title">Business Opportunity</h3>
             <div class="menu-all-pages-container list-column2">
               <ul class="menu">
-                <li  class="<?= ($active === 16 ? 'active' : '') ?>"><a href="<?php echo base_url();?>franchise">Franchise</a></li>
-                <li  class="<?= ($active === 17 ? 'active' : '') ?>"><a href="<?php echo base_url();?>entrepreneur-program">Entrepreneur Program</a></li>
-                <li  class="<?= ($active === 18 ? 'active' : '') ?>"><a href="<?php echo base_url();?>m-and-a">M&A</a></li>
+                <li class="<?= ($active === 16 ? 'active' : '') ?>"><a
+                    href="<?php echo base_url();?>franchise">Franchise</a></li>
+                <li class="<?= ($active === 18 ? 'active' : '') ?>"><a
+                    href="<?php echo base_url();?>collabration-and-association">Collaboration & Association</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 col-xl-3">
+          <div class="widget widget_nav_menu footer-widget">
+            <h3 class="widget_title">Growth Programs</h3>
+            <div class="menu-all-pages-container list-column2">
+              <ul class="menu">
+                <li class="<?= ($active === 21 ? 'active' : '') ?>"><a
+                    href="<?php echo base_url();?>partnership-entrepreneurship-program">PEP</a></li>
+                <li class="<?= ($active === 22 ? 'active' : '') ?>"><a
+                    href="<?php echo base_url();?>brand-ambassador">Brand Ambassador</a></li>
+                <li class="<?= ($active === 23 ? 'active' : '') ?>"><a href="<?php echo base_url();?>carrer">Career</a>
+                </li>
               </ul>
             </div>
           </div>
@@ -44,14 +66,15 @@
             <h3 class="widget_title">Policy</h3>
             <div class="menu-all-pages-container list-column2">
               <ul class="menu">
-                <li class="<?= ($active === 11 ? 'active' : '') ?>"><a href="<?php echo base_url();?>investor-relation">Investor Relation</a></li>
-                <li class="<?= ($active === 13 ? 'active' : '') ?>"><a href="<?php echo base_url();?>company-internal-policy">Company Internal Policy</a></li>
-                <li class="<?= ($active === 15 ? 'active' : '') ?>"><a href="<?php echo base_url();?>privacy-policy">Privacy & Policy</a></li>
+                <li class="<?= ($active === 11 ? 'active' : '') ?>"><a
+                    href="<?php echo base_url();?>investor-relation">Investor Relation</a></li>
+                <li class="<?= ($active === 13 ? 'active' : '') ?>"><a
+                    href="<?php echo base_url();?>company-internal-policy">Company Internal Policy</a></li>
+                <li class="<?= ($active === 15 ? 'active' : '') ?>"><a
+                    href="<?php echo base_url();?>privacy-policy">Privacy & Policy</a></li>
               </ul>
             </div>
           </div>
-        </div>
-        <div class="col-md-6 col-lg-4 col-xl-3">
           <div class="social-btn style2">
             <a href="https://www.facebook.com/partycruisersltd" target="_blank"><i class="fab fa-facebook-f"></i></a>
             <a href="https://youtube.com/@partycruiserslimited9671?si=eXu-T4VSv8e-IbBY" target="_blank"><i
@@ -103,13 +126,18 @@
 	******************************** -->
 
 <!-- Scroll To Top -->
-<div class="scroll-top">
+<div class="scroll-top d-none">
   <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
     <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"
       style="transition: stroke-dashoffset 10ms linear 0s; stroke-dasharray: 307.919, 307.919; stroke-dashoffset: 307.919;">
     </path>
   </svg>
 </div>
+
+<a href="https://api.whatsapp.com/send?phone=8433659225" class="whats-app-float" target="_blank">
+  <img src="<?php echo base_url();?>assets/images/whatsapp.png" style="width:50px;height:50x;border-radius:50%;"
+    alt="img">
+</a>
 
 <!--==============================
     All Js File
@@ -143,7 +171,9 @@
 <script src="<?php echo base_url();?>assets/js/main.js"></script>
 
 <!-- Custom JS -->
-<script>  var base_url  = "<?= base_url();?>"; </script>
+<script>
+var base_url = "<?= base_url();?>";
+</script>
 <script src="<?php echo base_url();?>assets/js/contact.js"></script>
 <script src="<?php echo base_url();?>assets/js/common.js"></script>
 </body>

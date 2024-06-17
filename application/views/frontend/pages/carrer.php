@@ -7,13 +7,13 @@
     <div class="row justify-content-between align-items-center">
       <div class="col-md-8">
         <div class="breadcumb-content">
-          <h1 class="breadcumb-title">Merger & Acquisition</h1>
+          <h1 class="breadcumb-title">Carrer</h1>
         </div>
       </div>
       <div class="col-md-4">
         <ul class="breadcumb-menu text-md-end">
           <li><a href="<?php echo base_url();?>">Home</a></li>
-          <li class="active">Merger & Acquisition</li>
+          <li class="active">Carrer</li>
         </ul>
       </div>
     </div>
@@ -27,12 +27,11 @@
       <div class="col-lg-12">
         <div class="about-content-wrap title-anim text-center">
           <div class="title-area mb-0">
-            <h2 class="sec-title">Merger & Acquisition</h2>
+            <h2 class="sec-title">Carrer</h2>
             <p class="hero-text title-animation"><a href="https://henna.freevision.me/wedding-planner/vendors/"
                 target="_blank" class="btn style2">Know
                 More</a></p>
-            <p class="sec-text">Do you want to boost your corporate performance or jump-start long-term growth? Party
-              Cruisers Limited, can help you achieve your goals.</p>
+            <p class="sec-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
           </div>
         </div>
       </div>
@@ -53,9 +52,9 @@
               <h2 class="sec-title">Contact Us</h2>
             </div>
             <h4 class="form-messages"></h4>
-            <form method="POST" class="contact-form form-contact-white" id="franchiseForm">
+            <form method="POST" class="contact-form form-contact-white" id="CarrerForm">
               <div class="row">
-                <input type="hidden" name="enquiry_for" value="M & A" />
+                <input type="hidden" name="enquiry_for" value="Carrer" />
                 <div class="col-lg-6">
                   <label>Full Name*</label>
                   <div class="form-group style-4 form-icon-left">
@@ -99,14 +98,10 @@
                   </div>
                 </div>
                 <div class="col-lg-6">
-                  <label>Work Profile*</label>
-                  <div class="style-4">
-                    <select name="workProfile" id="workProfile" class="form-control style-border">
-                      <option value="">Select Work Profile</option>
-                      <option value="Business">Business</option>
-                      <option value="Job">Job</option>
-                    </select>
-                    <div class="error" id="workProfileError"></div>
+                  <label>CV*</label>
+                  <div class="form-group style-4 ">
+                    <input type="file" style="padding: 0 30px 0 12px;" class="form-control style-border" accept="application/pdf" name="cv" id="cv">
+                    <div class="error" id="cvError"></div>
                   </div>
                 </div>
               </div>

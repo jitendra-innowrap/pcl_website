@@ -30,7 +30,8 @@
       <div class="col-lg-6">
         <div class="about-thumb mb-5 mb-lg-0 text-lg-end text-center img-anim"
           style="display:flex;align-items: center;justify-content: center;">
-          <img class="about-img-1" style="width:100%;max-width:500px;" src="<?php echo base_url();?>assets/images/logo/vivaah.png" alt="img">
+          <img class="about-img-1" style="width:100%;max-width:500px;"
+            src="<?php echo base_url();?>assets/images/logo/vivaah.png" alt="img">
         </div>
       </div>
       <div class="col-lg-6">
@@ -42,6 +43,10 @@
             <p class="sec-text">Explore unparalleled luxury weddings with House of Vivaah, a flagship brand of Party
               Cruisers Ltd., offering full-service wedding decor, ambiance styling, innovative wedding designs &
               seamless production.</p>
+          </div>
+          <div class="social-btn style2 justify-content-center mt-4">
+            <a href="https://www.facebook.com/Vivaahweddingdecorstylist" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/houseofvivaah?igsh=d3JjNzZmNHc3emRk" target="_blank"><i class="fab fa-instagram"></i></a>
           </div>
         </div>
       </div>
@@ -359,8 +364,7 @@ Service Area 01
       <div class="row">
         <div class="col-lg-12">
           <h4 class="form-messages"></h4>
-          <form method="POST"
-            class="contact-form form-contact-black" id="houseOfVivahForm">
+          <form method="POST" class="contact-form form-contact-black" id="houseOfVivahForm">
             <div class="row">
               <input type="hidden" name="enquiry_for" value="House of vivah" />
               <div class="col-lg-4">

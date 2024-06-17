@@ -40,6 +40,10 @@
             <!-- <h4 class="sec-title"> Design | Décor | Production</h4> -->
             <p class="sec-text">An entertainment, artist and talent management agency specially designed and developed for budding new talents and artist who want a break through in wedding industry. We also have a special team to serve our wedding clients with unique entertainment acts.</p>
           </div>
+          <div class="social-btn style2 justify-content-center mt-4">
+            <a href="https://www.instagram.com/partyhouse_pcl?igsh=MWV4b250MDk0bTJ3aQ==" target="_blank"><i
+                class="fab fa-instagram"></i></a>
+          </div>
         </div>
       </div>
     </div>
