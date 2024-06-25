@@ -431,7 +431,7 @@ Service Area 01
               <div class="col-lg-4 mt-2">
                 <label>Event Type*</label>
                 <div class="form-group form-icon-left">
-                  <i class="far fa-user"></i>
+                  <i class="far fa-calendar"></i>
                   <input type="text" class="form-control style-border" name="eventType" id="eventType"
                     placeholder="Enter Event Type">
                   <div class="error" id="eventTypeError"></div>
@@ -439,8 +439,7 @@ Service Area 01
               </div>
               <div class="col-lg-4 mt-2">
                 <label>Artist Requirement*</label>
-                <div class="form-group form-icon-left">
-                  <i class="far fa-user"></i>
+                <div class="">
                   <input type="text" class="form-control style-border" name="artistRequirement" id="artistRequirement"
                     placeholder="Enter Artist Requirement">
                   <div class="error" id="artistRequirementError"></div>

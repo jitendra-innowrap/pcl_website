@@ -297,9 +297,9 @@ Service Area 01
           <div class="counter-card">
             <div class="media-body" style="text-align: center;">
               <h3 class="counter-card_number">
-                <span class="odometer" data-odometer-final="256">.</span>
+                <span class="odometer" data-odometer-final="1500+">.</span>
               </h3>
-              <p class="counter-card_text">Weddings Per Year</p>
+              <p class="counter-card_text">Successful Projects</p>
             </div>
           </div>
         </div>
@@ -307,9 +307,9 @@ Service Area 01
           <div class="counter-card">
             <div class="media-body" style="text-align: center;">
               <h3 class="counter-card_number">
-                <span class="odometer" data-odometer-final="28">.</span>
+                <span class="odometer" data-odometer-final="250+">.</span>
               </h3>
-              <p class="counter-card_text">Years Of Celebration</p>
+              <p class="counter-card_text">Skilled Team Members</p>
             </div>
           </div>
         </div>
@@ -317,9 +317,9 @@ Service Area 01
           <div class="counter-card">
             <div class="media-body" style="text-align: center;">
               <h3 class="counter-card_number">
-                <span class="odometer" data-odometer-final="1369">.</span>
+                <span class="odometer" data-odometer-final="40+">.</span>
               </h3>
-              <p class="counter-card_text">Flower Bouquest</p>
+              <p class="counter-card_text">In-House Services Offered</p>
             </div>
           </div>
         </div>
@@ -327,9 +327,9 @@ Service Area 01
           <div class="counter-card">
             <div class="media-body" style="text-align: center;">
               <h3 class="counter-card_number">
-                <span class="odometer" data-odometer-final="256">.</span>
+                <span class="odometer" data-odometer-final="650+">.</span>
               </h3>
-              <p class="counter-card_text">Sunny Days Per Year</p>
+              <p class="counter-card_text">Vendors Onboard</p>
             </div>
           </div>
         </div>
@@ -582,7 +582,7 @@ Service Area 01
                 href="<?php echo base_url('blog-details'); ?>?slug=<?php echo $blog['1']['slug']; ?>"><?php echo $blog['1']['title']; ?></a>
             </h3>
             <a href="<?php echo base_url('blog-details'); ?>?slug=<?php echo $blog['1']['slug']; ?>"
-            class="link-btn style2 mt-4">Continue Reading <i class="fas fa-arrow-right"></i></a>
+              class="link-btn style2 mt-4">Continue Reading <i class="fas fa-arrow-right"></i></a>
           </div>
         </div>
       </div>
@@ -610,7 +610,7 @@ Service Area 01
                 href="<?php echo base_url('blog-details'); ?>?slug=<?php echo $blog['2']['slug']; ?>"><?php echo $blog['2']['title']; ?></a>
             </h3>
             <a href="<?php echo base_url('blog-details'); ?>?slug=<?php echo $blog['2']['slug']; ?>"
-            class="link-btn style2 mt-4">Continue Reading <i class="fas fa-arrow-right"></i></a>
+              class="link-btn style2 mt-4">Continue Reading <i class="fas fa-arrow-right"></i></a>
           </div>
         </div>
       </div>
@@ -638,7 +638,7 @@ Service Area 01
                 href="<?php echo base_url('blog-details'); ?>?slug=<?php echo $blog['3']['slug']; ?>"><?php echo $blog['3']['title']; ?></a>
             </h3>
             <a href="<?php echo base_url('blog-details'); ?>?slug=<?php echo $blog['3']['slug']; ?>"
-            class="link-btn style2 mt-4">Continue Reading <i class="fas fa-arrow-right"></i></a>
+              class="link-btn style2 mt-4">Continue Reading <i class="fas fa-arrow-right"></i></a>
           </div>
         </div>
       </div>
@@ -666,7 +666,7 @@ Service Area 01
                 href="<?php echo base_url('blog-details'); ?>?slug=<?php echo $blog['4']['slug']; ?>"><?php echo $blog['4']['title']; ?></a>
             </h3>
             <a href="<?php echo base_url('blog-details'); ?>?slug=<?php echo $blog['4']['slug']; ?>"
-            class="link-btn style2 mt-4">Continue Reading <i class="fas fa-arrow-right"></i></a>
+              class="link-btn style2 mt-4">Continue Reading <i class="fas fa-arrow-right"></i></a>
           </div>
         </div>
       </div>
