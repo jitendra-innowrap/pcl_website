@@ -718,6 +718,7 @@
         mainClass: 'mfp-zoom-in', 
         removalDelay: 260,
     });
+
     /* magnificPopup video view */
     $(".popup-content").magnificPopup({
         type: "inline",
