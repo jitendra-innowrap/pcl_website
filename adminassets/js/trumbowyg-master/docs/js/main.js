@@ -95,14 +95,14 @@ hljs.initHighlightingOnLoad();
     });
 
     // Force scroll to anchor
-    setTimeout(function () {
-        if (window.location.hash.length > 1 &&
-            $(window.location.hash).length > 0 &&
-            $(window.location.hash).offset().top > 0
-        ) {
-            $('main').scrollTop($(window.location.hash).offset().top);
-        }
-    }, 100);
+    // setTimeout(function () {
+    //     if (window.location.hash.length > 1 &&
+    //         $(window.location.hash).length > 0 &&
+    //         $(window.location.hash).offset().top > 0
+    //     ) {
+    //         $('main').scrollTop($(window.location.hash).offset().top);
+    //     }
+    // }, 100);
 
     // Show star count
     function setStarsCount(stars) {
