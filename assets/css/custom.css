@@ -18,7 +18,7 @@
   }
 }
 .custom-banner .item {
-  height: 85vh;
+  /* height: 85vh; */
   position: relative;
 }
 .custom-banner .item img {
@@ -599,6 +599,13 @@
 
 .custom-franchise .reservation-form-wrap {
   padding: 90px 40px !important;
+}
+
+.custom-franchise .reservation-form-wrap .contact-form .form-group.style-4 .form-group.style-4.form-icon-left{
+  width: -webkit-fill-available;
+}
+.contact-form .form-group .form-group.form-icon-left{
+  width: -webkit-fill-available;
 }
 
 .custom-footer .active:after {

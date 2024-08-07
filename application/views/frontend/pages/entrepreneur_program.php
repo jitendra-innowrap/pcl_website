@@ -53,7 +53,7 @@
           <img class="w-100" src="<?php echo base_url();?>assets/images/Franchise.jpg" alt="img">
         </div>
       </div>
-      <div class="col-lg-7 custom-franchise">
+      <div class="col-lg-8 custom-franchise">
         <div class="reservation-form-wrap">
           <div class="title-area text-center mb-30">
             <h2 class="sec-title">Contact Us</h2>

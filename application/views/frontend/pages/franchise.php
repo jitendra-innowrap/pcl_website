@@ -43,7 +43,7 @@
 <div class="mt-5 mb-5">
   <div class="container">
     <div class="row align-items-center justify-content-center">
-      <div class="col-lg-7 custom-franchise">
+      <div class="col-lg-8 custom-franchise">
         <div class="reservation-form-wrap">
           <div class="title-area text-center mb-30">
             <h2 class="sec-title">Connect With Us</h2>
@@ -96,7 +96,7 @@
               </div>
               <div class="col-lg-6">
                 <label>Occupation*</label>
-                <div class="style-4">
+                <div class="style-4" style="margin-bottom: 20px;">
                   <select name="occupation" id="occupation" class="form-control style-border">
                     <option value="">Select Occupation</option>
                     <option value="Business">Business</option>

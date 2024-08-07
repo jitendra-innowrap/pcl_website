@@ -1982,7 +1982,7 @@ textarea.is-invalid {
 
 @media (max-width: 400px) {
   .mobile-menu-wrapper .mobile-menu-area {
-    width: 100%;
+    width: calc( 100% - 20px);
     max-width: 270px;
   }
   .mobile-menu > ul {
@@ -2931,6 +2931,12 @@ textarea.is-invalid {
 }
 .cursor-follower.hovered {
   opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .cursor, .cursor-follower{
+    display: none;
+  }
 }
 
 /*------------------- 3.6. Font -------------------*/
@@ -4568,11 +4574,19 @@ ul.wp-block-latest-posts li:last-child {
 }
 
 /* Large devices */
-@media (max-width: 1199px) {
-  .widget {
-    --widget-padding-y: 30px;
-    --widget-padding-x: 30px;
-  }
+@media (max-width: 1400px) {
+  .social-btn.style2 a {
+    --icon-size: 35px;
+    line-height: 35px;
+    font-size: 20px;
+}
+}
+  /* Large devices */
+  @media (max-width: 1199px) {
+    .widget {
+      --widget-padding-y: 30px;
+      --widget-padding-x: 30px;
+    }
   .widget_title {
     font-size: 22px;
   }
@@ -5866,7 +5880,7 @@ ul.wp-block-latest-posts li:last-child {
   color: var(--white-color);
   margin: -0.25em 0 -0.2em 0;
   line-height: 1.1;
-  font-size: 48px;
+  font-size: 38px;
   font-weight: 400;
   z-index: 1;
   position: relative;
@@ -5876,17 +5890,17 @@ ul.wp-block-latest-posts li:last-child {
 }
 @media (max-width: 1399px) {
   .breadcumb-title {
-    font-size: 42px;
+    font-size: 32px;
   }
 }
 @media (max-width: 1199px) {
   .breadcumb-title {
-    font-size: 38px;
+    font-size: 28px;
   }
 }
 @media (max-width: 767px) {
   .breadcumb-title {
-    font-size: 34px;
+    font-size: 24px;
   }
 }
 
@@ -5914,7 +5928,7 @@ ul.wp-block-latest-posts li:last-child {
 /* Extra small devices */
 @media (max-width: 575px) {
   .breadcumb-title {
-    font-size: 38px;
+    font-size: 24px;
   }
   .breadcumb-menu {
     text-align: center;
@@ -10181,6 +10195,14 @@ span.select2-selection.select2-selection--single:focus {
   .blog-card.style2 .post-img,
   .blog-card.style2 .blog-img {
     width: auto;
+  }
+  .post-single .post-meta-item a, 
+  .post-single .blog-meta a, 
+  .blog-card .post-meta-item a, 
+  .blog-card .blog-meta a
+  .blog-grid .blog-meta span, 
+  .blog-grid .blog-meta a{
+    display: block;
   }
 }
 
