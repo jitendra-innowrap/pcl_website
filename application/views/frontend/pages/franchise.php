@@ -1,7 +1,7 @@
 <!--==============================
     Breadcumb
 ============================== -->
-<div class="breadcumb-wrapper" data-bg-src="assets/img/bg/breadcrumb-bg.png">
+<div class="breadcumb-wrapper bg-gradient">
   <!-- bg animated image/ -->
   <div class="container">
     <div class="row justify-content-between align-items-center">
@@ -21,16 +21,18 @@
   </div>
 </div>
 
-<div class="space-top">
+<div class="mt-5">
   <div class="container">
     <div class="row flex-row-reverse align-items-center justify-content-between">
       <div class="col-lg-12">
-         <div class="about-content-wrap title-anim text-center">
+        <div class="about-content-wrap title-anim text-center">
           <div class="title-area mb-0">
             <h2 class="sec-title">Franchise</h2>
-            <p class="sec-text">Expanding our wings across the country. Come join us and become a part of this booming
-              wedding industry.</p>
-            <p class="sec-text">Fill this form and come a step closer to your dream of owning a wedding business</p>
+              <p class="sec-text" style="max-width: 1000px;margin: auto;"> DISCOVER THE UNTAPPED POTENTIAL OF THIS BUSINESS MODEL WITH PARTY CRUISERS LTD</p>
+              <p class="sec-text" style="max-width: 1200px;margin: auto;margin-top: 10px;">HOW WILL FRANCHISING BENEFIT YOU?</p>
+              <p class="sec-text" style="max-width: 1200px;margin: auto;margin-top: 10px;"><b>PROVEN SUCCESS:</b> FRANCHISES OFFER A TRACK RECORD OF SUCCESS, REDUCING THE RISK OF FAILURE.</p>
+              <p class="sec-text" style="max-width: 1000px;margin: auto;margin-top: 10px;"><b>BRAND RECOGNITION:</b> TAP INTO AN ESTABLISHED BRAND AND CUSTOMER BASE.</p>
+              <p class="sec-text" style="max-width: 1200px;margin: auto;margin-top: 10px;"><b>SUPPORT & TRAINING:</b> ACCESS TO TRAINING, MARKETING, AND ONGOING SUPPORT FROM EXPERIENCED PROFESSIONALS. </p>
           </div>
         </div>
       </div>
@@ -38,22 +40,16 @@
   </div>
 </div>
 
-<div class="space">
+<div class="mt-5 mb-5">
   <div class="container">
-    <div class="row align-items-center flex-row-reverse justify-content-between">
-      <div class="col-lg-5 mb-5">
-        <div class="reservation-thumb">
-            <img class="w-100" src="<?php echo base_url();?>assets/images/Franchise.jpg" alt="img">
-        </div>
-      </div>
+    <div class="row align-items-center justify-content-center">
       <div class="col-lg-7 custom-franchise">
         <div class="reservation-form-wrap">
           <div class="title-area text-center mb-30">
-            <h2 class="sec-title">Contact Us</h2>
+            <h2 class="sec-title">Connect With Us</h2>
           </div>
           <h4 class="form-messages"></h4>
-          <form method="POST"
-            class="contact-form form-contact-white" id="franchiseForm">
+          <form method="POST" class="contact-form form-contact-white" id="franchiseForm">
             <div class="row">
               <input type="hidden" name="enquiry_for" value="Franchise" />
               <div class="col-lg-6">
@@ -99,14 +95,25 @@
                 </div>
               </div>
               <div class="col-lg-6">
-                <label>Work Profile*</label>
+                <label>Occupation*</label>
                 <div class="style-4">
-                  <select name="workProfile" id="workProfile" class="form-control style-border">
-                    <option value="">Select Work Profile</option>
+                  <select name="occupation" id="occupation" class="form-control style-border">
+                    <option value="">Select Occupation</option>
                     <option value="Business">Business</option>
                     <option value="Job">Job</option>
                   </select>
-                  <div class="error" id="workProfileError"></div>
+                  <div class="error" id="occupationError"></div>
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <label>Franchise type*</label>
+                <div class="style-4">
+                  <select name="franchiseType" id="franchiseType" class="form-control style-border">
+                    <option value="">Select Franchise Type</option>
+                    <option value="Unit (City)">Unit (City)</option>
+                    <option value=" Master (State)"> Master (State)</option>
+                  </select>
+                  <div class="error" id="franchiseTypeError"></div>
                 </div>
               </div>
             </div>
@@ -120,16 +127,18 @@
   </div>
 </div>
 
-<div class="pt-4 pb-4 position-relative" style="background: #543718;">
+
+<div class="pt-4 pb-4 position-relative">
   <div class="container">
     <div class="row align-items-center">
-      <div class="col-lg-12 text-center">
+      <div class="col-sm-5 mb-3">
+        <h2 style="max-width: 200px;margin: inherit;margin-bottom: 0px;" class="sec-title">Our</h2>
+        <h2 style="margin: inherit;" class="sec-title">Current Offices</h2>
+      </div>
+      <div class="col-sm-5 mb-3">
         <div class="title-anim">
-          <div class="title-area mb-0">
-            <h2 style="color: white;" class="sec-title">OUR CURRENT OFFICES</h2>
-            <p style="color: white;margin-bottom: 0px;">Mumbai (Head Office)</p>
-            <p style="color: white;">Delhi | Chandigarh | Hyderabad  | Bengaluru | Mysore | Indore | Nashik | Nanded</p>
-          </div>
+          <h6 style="margin-bottom: 0px;">Mumbai (Head Office)</h6>
+          <p>Delhi | Chandigarh | Hyderabad | Bengaluru | Mysore | Indore | Nashik | Nanded</p>
         </div>
       </div>
     </div>

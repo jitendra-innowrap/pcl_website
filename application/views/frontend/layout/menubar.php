@@ -64,9 +64,9 @@ Mobile Menu
           <a href="<?php echo base_url();?>">Home</a>
         </li>
         <li>
-          <a href="<?php echo base_url();?>about-us">About US</a>
+          <a href="<?php echo base_url();?>about-us">About Us</a>
         </li>
-        <li><a href="<?php echo base_url();?>house-of-vivah">House of Vivah</a></li>
+        <li><a href="<?php echo base_url();?>house-of-vivaah">House of Vivaah</a></li>
         <li><a href="<?php echo base_url();?>vows-vachan">Vows Vachan</a></li>
         <li><a href="<?php echo base_url();?>event-factory">Event Factory</a></li>
         <li><a href="<?php echo base_url();?>live-space">Live Space</a></li>
@@ -125,20 +125,20 @@ Header Area
         <div class="row align-items-center justify-content-between">
           <div class="col-auto logo-custom-padding">
             <div class="header-logo" style="padding:0px;">
-              <a href="<?php echo base_url();?>"><img class="company-logo"
-                  src="<?php echo base_url();?>assets/images/logo/Party Cruisers Limited black.png" alt="logo"></a>
+              <a href="<?php echo base_url();?>"><img class="Horizontal-company-logo"
+                  src="<?php echo base_url();?>assets/images/logo/PCL-logo.png" alt="logo"></a>
             </div>
           </div>
           <div class="col-auto">
             <nav class="main-menu d-none d-lg-inline-block">
               <ul>
-              <li class="<?= ($active === 10 ? 'active' : '') ?>"><a href="<?php echo base_url();?>about-us">About US</a></li>
-                <li class="<?= ($active === 4 ? 'active' : '') ?>"><a href="<?php echo base_url();?>house-of-vivah">House of Vivah</a></li>
+              <li class="<?= ($active === 10 ? 'active' : '') ?>"><a href="<?php echo base_url();?>about-us">About Us</a></li>
+                <li class="<?= ($active === 4 ? 'active' : '') ?>"><a href="<?php echo base_url();?>house-of-vivaah">House of Vivaah</a></li>
                 <li class="<?= ($active === 5 ? 'active' : '') ?>"><a href="<?php echo base_url();?>vows-vachan">Vows Vachan</a></li>
                 <li class="<?= ($active === 6 ? 'active' : '') ?>"><a href="<?php echo base_url();?>event-factory">Event Factory</a></li>
+                <li class="<?= ($active === 9 ? 'active' : '') ?>"><a href="<?php echo base_url();?>party-house">Party House</a></li>
                 <li class="<?= ($active === 7 ? 'active' : '') ?>"><a href="<?php echo base_url();?>live-space">Live Space</a></li>
                 <li class="<?= ($active === 8 ? 'active' : '') ?>"><a href="<?php echo base_url();?>venue-affairs">Venue Affairs</a></li>
-                <li class="<?= ($active === 9 ? 'active' : '') ?>"><a href="<?php echo base_url();?>party-house">Party House</a></li>
               </ul>
             </nav>
             <div class="navbar-right d-inline-flex d-lg-none">

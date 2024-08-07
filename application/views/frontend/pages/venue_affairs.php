@@ -1,7 +1,13 @@
+<style>
+  .form-contact-black option{
+    background-color: #ceb35c;
+  }
+</style>
+
 <!--==============================
     Breadcumb
     ============================== -->
-<div class="breadcumb-wrapper" data-bg-src="assets/img/bg/breadcrumb-bg.png">
+<div class="breadcumb-wrapper bg-gradient">
   <!-- bg animated image/ -->
   <div class="container">
     <div class="row justify-content-between align-items-center">
@@ -39,10 +45,8 @@
           <div class="title-area mb-0">
             <span class="sub-title style2">More About Us</span>
             <h2 class="sec-title">Venue Affairs</h2>
-            <!-- <h4 class="sec-title"> Design | Décor | Production</h4> -->
-            <p class="sec-text">An entertainment, artist and talent management agency specially designed and developed
-              for budding new talents and artist who want a break through in wedding industry. We also have a special
-              team to serve our wedding clients with unique entertainment acts.</p>
+            <h4 class="sec-title">Perfect Venues, Seamless Celebrations</h4>
+            <p class="sec-text">We offer a handpicked selection of extraordinary venues and all-inclusive services for your celebrations. Our dedicated team manages every detail, ensuring a unique and memorable experience while you relax and enjoy stress-free.</p>
           </div>
           <div class="social-btn style2 justify-content-center mt-4">
             <a href="https://www.instagram.com/venue_affairs?igsh=dG4xYmRmanFwaTBn" target="_blank"><i
@@ -57,11 +61,11 @@
 <!--==============================
     Portfolio Area  
 ==============================-->
-<div class="portfolio-area-1 space overflow-hidden"
-  data-bg-src="<?php echo base_url();?>assets/img/bg/portfolio-1-bg.png">
-  <div class="portfolio-shape1_1 shape-mockup jump d-lg-block d-none" data-top="0%" data-right="-10%">
+<?php if (isset($success_story['0'])) {  ?>
+<div class="portfolio-area-1 mb-5 mt-5 overflow-hidden">
+  <!-- <div class="portfolio-shape1_1 shape-mockup jump d-lg-block d-none" data-top="0%" data-right="-10%">
     <img src="<?php echo base_url();?>assets/img/normal/portfolio-shape_1-1.png" alt="img">
-  </div>
+  </div> -->
   <div class="container">
     <div class="title-area text-center title-anim">
       <span class="sub-title style2">Check out some of our</span>
@@ -169,14 +173,17 @@
   </div>
 </div>
 </div>
+<?php } ?>
 
 <!--==============================
 Service Area 01  
 ==============================-->
-<div class="space service-area-1 overflow-hidden">
-  <div class="service-shape1_1 shape-mockup jump d-lg-block d-none" data-top="0" data-left="-5%">
+<?php if (isset($testimonial['video'])) {
+   if(isset($testimonial['video']['0']->video_thumbnail) || isset($testimonial['text']['0']->text)) {?>
+<div class="mb-5 mt-5 service-area-1 overflow-hidden">
+  <!-- <div class="service-shape1_1 shape-mockup jump d-lg-block d-none" data-top="0" data-left="-5%">
     <img src="<?php echo base_url();?>assets/img/normal/service_1-1.png" alt="img">
-  </div>
+  </div> -->
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-lg-10 col-md-12">
@@ -342,29 +349,28 @@ Service Area 01
     </div>
   </div>
 </div>
+<?php } } ?>
 
 <!--==============================
     Contact Area  
 ==============================-->
 
-<div class="contact-area-1 space overflow-hidden" style="background-color: #543718;">
-  <div class="contact-shape1_1 shape-mockup jump d-lg-block d-none" data-top="0%" data-right="-8%">
+<div class="contact-area-1 overflow-hidden" style="background-color: #ceb35c;">
+  <!-- <div class="contact-shape1_1 shape-mockup jump d-lg-block d-none" data-top="0%" data-right="-8%">
     <img src="<?php echo base_url();?>assets/img/normal/contact-shape_1-1.png" alt="img">
-  </div>
-  <div class="contact-shape1_2 shape-mockup jump-reverse d-lg-block d-none" data-bottom="-3%" data-left="-12%">
+  </div> -->
+  <!-- <div class="contact-shape1_2 shape-mockup jump-reverse d-lg-block d-none" data-bottom="-3%" data-left="-12%">
     <img src="<?php echo base_url();?>assets/img/normal/contact-shape_1-2.png" alt="img">
-  </div>
+  </div> -->
   <div class="container-fluid p-0">
-    <div class="contact-form-area space">
+    <div class="contact-form-area mt-5 mb-5 pt-5 pb-5">
       <div class="title-area text-center title-anim">
-        <span class="sub-title style2 text-white">LET US KNOW IF YOU COMING
-        </span>
-        <h2 class="sec-title text-white">WE CANT WAIT TO SEE YOU!</h2>
+        <h2 class="sec-title text-white" style="background: transparent;-webkit-text-fill-color: white;">Connect With Us</h2>
       </div>
       <div class="row">
         <div class="col-lg-12">
           <h4 class="form-messages"></h4>
-          <form method="POST" class="contact-form form-contact-black" id="houseOfVivahForm">
+          <form method="POST" class="contact-form form-contact-black" id="houseOfVivaahForm">
             <div class="row">
               <input type="hidden" name="enquiry_for" value="Venue Affairs" />
               <div class="col-lg-4">

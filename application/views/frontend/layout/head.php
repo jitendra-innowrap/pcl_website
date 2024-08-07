@@ -44,7 +44,24 @@
     <link rel="stylesheet" href="<?php echo base_url();?>assets/css/slick.min.css">
     <!-- Odometer -->
     <link rel="stylesheet" href="<?php echo base_url();?>assets/css/odometer.css">
+    <!-- Tag -->
+    <link href="<?= base_url()?>assets/libs/tagify/tagify.css" rel="stylesheet" type="text/css" />
     <!-- Theme Custom CSS -->
+     <?php if($active == 4){ ?>
+      <link rel="stylesheet" href="<?php echo base_url();?>assets/css/house-of-vivaah.css">
+    <?php }elseif($active == 5){ ?>
+      <link rel="stylesheet" href="<?php echo base_url();?>assets/css/vows-vachan.css">
+    <?php }elseif($active == 6){ ?>
+      <link rel="stylesheet" href="<?php echo base_url();?>assets/css/event-factory.css">
+    <?php }elseif($active == 7){ ?>
+      <link rel="stylesheet" href="<?php echo base_url();?>assets/css/live-space.css">
+    <?php }elseif($active == 8){ ?>
+      <link rel="stylesheet" href="<?php echo base_url();?>assets/css/venue-affairs.css">
+    <?php }elseif($active == 9){ ?>
+      <link rel="stylesheet" href="<?php echo base_url();?>assets/css/party-house.css">
+    <?php }else{ ?>
+      <link rel="stylesheet" href="<?php echo base_url();?>assets/css/pcl.css">
+    <?php } ?>
     <link rel="stylesheet" href="<?php echo base_url();?>assets/css/style.css">
 		 <!-- Custom CSS -->
 		<link rel="stylesheet" href="<?php echo base_url();?>assets/css/custom.css">

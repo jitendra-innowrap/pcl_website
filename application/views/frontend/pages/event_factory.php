@@ -1,7 +1,13 @@
+<style>
+  .form-contact-black option{
+    background-color: #A78247;
+  }
+</style>
+
 <!--==============================
     Breadcumb
     ============================== -->
-    <div class="breadcumb-wrapper" data-bg-src="assets/img/bg/breadcrumb-bg.png">
+    <div class="breadcumb-wrapper bg-gradient">
   <!-- bg animated image/ -->
   <div class="container">
     <div class="row justify-content-between align-items-center">
@@ -37,8 +43,8 @@
           <div class="title-area mb-0">
             <span class="sub-title style2">More About Us</span>
             <h2 class="sec-title">Event Factory</h2>
-            <h4 class="sec-title">Corporate Impression Management Company</h4>
-            <p class="sec-text">We specialize in lavish luxury/black-tie corporate events. Annual Meet, Product Launch, Team-Building Retreats, Gala Dinner, Activations, Mall Decor, MICE, Exhibition Installation, Stall Designing & Fabrication are the kinds of projects we work on.</p>
+            <h4 class="sec-title" style="line-height: 34px;">Corporate Impression Management Division of Party Cruisers Ltd.</h4>
+            <p class="sec-text">We meticulously conceptualize & manage your annual meetings, conferences, exhibitions or any other event that highlights and elevates your brand positioning. Take your black-tie affairs to the next level and enhance your brand's image that leaves a lasting impression everywhere.</p>
           </div>
           <div class="social-btn style2 justify-content-center mt-4">
             <a href="https://www.facebook.com/evenmanagement.company" target="_blank"><i class="fab fa-facebook-f"></i></a>
@@ -54,11 +60,11 @@
 <!--==============================
     Portfolio Area  
 ==============================-->
-<div class="portfolio-area-1 space overflow-hidden"
-  data-bg-src="<?php echo base_url();?>assets/img/bg/portfolio-1-bg.png">
-  <div class="portfolio-shape1_1 shape-mockup jump d-lg-block d-none" data-top="0%" data-right="-10%">
+<?php if (isset($success_story['0'])) {  ?>
+<div class="portfolio-area-1 mb-5 mt-5 overflow-hidden">
+  <!-- <div class="portfolio-shape1_1 shape-mockup jump d-lg-block d-none" data-top="0%" data-right="-10%">
     <img src="<?php echo base_url();?>assets/img/normal/portfolio-shape_1-1.png" alt="img">
-  </div>
+  </div> -->
   <div class="container">
     <div class="title-area text-center title-anim">
       <span class="sub-title style2">Check out some of our</span>
@@ -166,14 +172,17 @@
   </div>
 </div>
 </div>
+<?php } ?>
 
 <!--==============================
 Service Area 01  
 ==============================-->
-<div class="space service-area-1 overflow-hidden">
-  <div class="service-shape1_1 shape-mockup jump d-lg-block d-none" data-top="0" data-left="-5%">
+<?php if (isset($testimonial['video'])) {
+   if(isset($testimonial['video']['0']->video_thumbnail) || isset($testimonial['text']['0']->text)) {?>
+<div class="mb-5 mt-5 service-area-1 overflow-hidden">
+  <!-- <div class="service-shape1_1 shape-mockup jump d-lg-block d-none" data-top="0" data-left="-5%">
     <img src="<?php echo base_url();?>assets/img/normal/service_1-1.png" alt="img">
-  </div>
+  </div> -->
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-lg-10 col-md-12">
@@ -339,24 +348,23 @@ Service Area 01
     </div>
   </div>
 </div>
+<?php } } ?>
 
 <!--==============================
     Contact Area  
 ==============================-->
 
-<div class="contact-area-1 space overflow-hidden" style="background-color: #543718;">
-  <div class="contact-shape1_1 shape-mockup jump d-lg-block d-none" data-top="0%" data-right="-8%">
+<div class="contact-area-1 overflow-hidden" style="background-color: #A78247;">
+  <!-- <div class="contact-shape1_1 shape-mockup jump d-lg-block d-none" data-top="0%" data-right="-8%">
     <img src="<?php echo base_url();?>assets/img/normal/contact-shape_1-1.png" alt="img">
-  </div>
-  <div class="contact-shape1_2 shape-mockup jump-reverse d-lg-block d-none" data-bottom="-3%" data-left="-12%">
+  </div> -->
+  <!-- <div class="contact-shape1_2 shape-mockup jump-reverse d-lg-block d-none" data-bottom="-3%" data-left="-12%">
     <img src="<?php echo base_url();?>assets/img/normal/contact-shape_1-2.png" alt="img">
-  </div>
+  </div> -->
   <div class="container-fluid p-0">
-    <div class="contact-form-area space">
+    <div class="contact-form-area mt-5 mb-5 pt-5 pb-5">
       <div class="title-area text-center title-anim">
-        <span class="sub-title style2 text-white">LET US KNOW IF YOU COMING
-        </span>
-        <h2 class="sec-title text-white">WE CANT WAIT TO SEE YOU!</h2>
+        <h2 class="sec-title text-white" style="background: transparent;-webkit-text-fill-color: white;">Connect With Us</h2>
       </div>
       <div class="row">
         <div class="col-lg-12">
@@ -448,8 +456,8 @@ Service Area 01
                   <select name="event" id="event" class="form-control style-border">
                     <option value="">Select Event</option>
                     <option value="MICE">MICE</option>
-                    <option value="R&R/ Annual Awards">R&R/ Annual Awards</option>
                     <option value="Product Launch">Product Launch</option>
+                    <option value="Concert">Concert</option>
                     <option value="Offsite">Offsite</option>
                     <option value="other">Other</option>
                   </select>

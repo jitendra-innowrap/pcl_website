@@ -47,7 +47,8 @@
 									<th>Venue</th>
 									<th>Event Type</th>
 									<th>Artist Requirement</th>
-									<th>work Profile</th>
+									<th>Occupation</th>
+									<th>Franchise Type</th>
 									<th>Date</th>
 								</tr>
 								</thead>

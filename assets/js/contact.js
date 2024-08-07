@@ -14,7 +14,7 @@ $(document).ready(function() {
         }
     });
 
-    $('#houseOfVivahForm').on("submit", function(event) {
+    $('#houseOfVivaahForm').on("submit", function(event) {
         event.preventDefault();
         if (houseValidateForm()) {
             submitHouseForm();
@@ -94,8 +94,12 @@ $(document).ready(function() {
         validateEvent();
     });
     
-    $('#workProfile').on('change', function() {
-        validateWorkProfile();
+    $('#occupation').on('change', function() {
+        validateOccupation();
+    });
+    
+    $('#franchiseType').on('change', function() {
+        validateFranchiseType();
     });
 
     $('#otherEvent').on('change', function() {
@@ -203,7 +207,8 @@ $(document).ready(function() {
     if (!validateLocation()) isValid = false;
     if (!validateContact()) isValid = false;
     if (!validateEmail()) isValid = false;
-    if (!validateWorkProfile()) isValid = false;
+    if (!validateOccupation()) isValid = false;
+    if (!validateFranchiseType()) isValid = false;
     return isValid;
   }
 
@@ -372,15 +377,28 @@ $(document).ready(function() {
         }
     }
     
-    function validateWorkProfile() {
-        var workProfile = $('#workProfile').val();
-        if (!workProfile) {
-            $('#workProfileError').text('Please select work Profile.');
-            $('#workProfile').addClass(invalidCls);
+    function validateOccupation() {
+        var occupation = $('#occupation').val();
+        if (!occupation) {
+            $('#occupationError').text('Please select Occupation.');
+            $('#occupation').addClass(invalidCls);
             return false;
         } else {
-            $('#workProfileError').text('');
-            $('#workProfile').removeClass(invalidCls);
+            $('#occupationError').text('');
+            $('#occupation').removeClass(invalidCls);
+            return true;
+        }
+    }
+    
+    function validateFranchiseType() {
+        var franchiseType = $('#franchiseType').val();
+        if (!franchiseType) {
+            $('#franchiseTypeError').text('Please select Franchise Type.');
+            $('#franchiseType').addClass(invalidCls);
+            return false;
+        } else {
+            $('#franchiseTypeError').text('');
+            $('#franchiseType').removeClass(invalidCls);
             return true;
         }
     }
@@ -416,7 +434,7 @@ $(document).ready(function() {
             if (data.code === 1) {
                 formMessages.removeClass("error");
                 formMessages.addClass("success");
-                formMessages.text('Thank You for contacting us!');
+                formMessages.text('Thank You!  We have received your event details and you will soon get a call from our team for further discussion.');
                 $('#contactForm')[0].reset();
                 $('#subEventContainer').hide();
                 $('#otherEventContainer').hide();
@@ -429,9 +447,9 @@ $(document).ready(function() {
     }
     
     function submitHouseForm() {
-        var formData =  $('#houseOfVivahForm').serialize();
+        var formData =  $('#houseOfVivaahForm').serialize();
         $.ajax({
-            url : base_url+'console/house_of_vivah_form',
+            url : base_url+'console/house_of_vivaah_form',
             type: "POST",
             data: formData,
             success: function(data) {
@@ -439,7 +457,7 @@ $(document).ready(function() {
                 if (data.code === 1) {
                     formMessages.removeClass("error");
                     formMessages.addClass("success");
-                    formMessages.text('Thank You for contacting us!');
+                    formMessages.text('Thank You!  We have received your event details and you will soon get a call from our team for further discussion.');
                     $('#contactForm')[0].reset();
                 }else {
                     formMessages.addClass("error");
@@ -460,7 +478,7 @@ $(document).ready(function() {
                 if (data.code === 1) {                    
                     formMessages.removeClass("error");
                     formMessages.addClass("success");
-                    formMessages.text('Thank You for contacting us!');
+                    formMessages.text('Thank You!  We have received your event details and you will soon get a call from our team for further discussion.');
                     $('#eventFactoryForm')[0].reset();
                     $('#otherEventContainer').hide();
                 }else {
@@ -482,7 +500,7 @@ $(document).ready(function() {
                 if (data.code === 1) {                    
                     formMessages.removeClass("error");
                     formMessages.addClass("success");
-                    formMessages.text('Thank You for contacting us!');
+                    formMessages.text('Thank You!  We have received your event details and you will soon get a call from our team for further discussion.');
                     $('#liveSpaceForm')[0].reset();
                 }else {
                     formMessages.addClass("error");
@@ -503,7 +521,7 @@ $(document).ready(function() {
                 if (data.code === 1) {                    
                     formMessages.removeClass("error");
                     formMessages.addClass("success");
-                    formMessages.text('Thank You for contacting us!');
+                    formMessages.text('Thank You!  We have received your event details and you will soon get a call from our team for further discussion.');
                     $('#partyHouseForm')[0].reset();
                     $('#subEventContainer').hide();
                     $('#otherEventContainer').hide();
@@ -526,7 +544,7 @@ $(document).ready(function() {
                 if (data.code === 1) {                    
                     formMessages.removeClass("error");
                     formMessages.addClass("success");
-                    formMessages.text('Thank You for contacting us!');
+                    formMessages.text('Thank You! We have received all your details and our team will connect with you.');
                     $('#franchiseForm')[0].reset();
                 }else {
                     formMessages.addClass("error");
@@ -535,5 +553,10 @@ $(document).ready(function() {
             }
         });
     }
+    
+    var input = document.querySelector('input[name=socialHandles]');
+    new Tagify(input, {
+        // options here
+    });
 
 });

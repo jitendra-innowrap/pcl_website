@@ -190,7 +190,7 @@ $siteName = $ret->site_title;
             <div class="card ezy__signin11-form-card">
               <div class="card-body p-md-5" style="max-width: 500px;">
                 <div class="m-b-20" style="text-align: center;">
-                  <img src="<?php echo base_url($ret->logo_img);?>" class="m-r-15" height="55" alt="">
+                  <img src="<?php echo base_url();?>assets/images/logo/PCL-logo.png" class="m-r-15" height="55" alt="">
                 </div>
                 <p style="text-align: center;font-size: 16px;">Hi, Welcome to PCL Admin Console, Please enter your login
                   credentials below</p>

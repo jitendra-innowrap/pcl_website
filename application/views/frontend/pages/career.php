@@ -7,13 +7,13 @@
     <div class="row justify-content-between align-items-center">
       <div class="col-md-8">
         <div class="breadcumb-content">
-          <h1 class="breadcumb-title">Partnership Entrepreneurship Program</h1>
+          <h1 class="breadcumb-title">Career</h1>
         </div>
       </div>
       <div class="col-md-4">
         <ul class="breadcumb-menu text-md-end">
           <li><a href="<?php echo base_url();?>">Home</a></li>
-          <li class="active">Partnership Entrepreneurship Program</li>
+          <li class="active">Career</li>
         </ul>
       </div>
     </div>
@@ -27,9 +27,13 @@
       <div class="col-lg-12">
         <div class="about-content-wrap title-anim text-center">
           <div class="title-area mb-0">
-            <h2 class="sec-title">Partnership Entrepreneurship Program</h2>
-            <p class="sec-text" style="max-width: 1000px;margin: auto;"> Partnership Entrepreneurship Program We believe that entrepreneurship isn't just about ideas; it's about the right mindset and initiatives taken by someone to achieve their goals. Whether you're a Wedding Designer, IT Professional, Digital Marketer or an expert in anything related to the events industry, we want to hear from you.</p>
-            <p class="sec-text" style="max-width: 1000px;margin: auto;margin-top: 10px;">We are looking for talented individuals with a drive to be an Entrepreneur and willingness to learn.</p>
+            <h2 class="sec-title">Career</h2>
+            <p class="sec-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+            <p class="sec-text" style="margin:10px;">Lorem Ipsum has been the industry's standard dummy text ever since
+              the 1500s.</p>
+            <p class="hero-text title-animation"><a href="https://henna.freevision.me/wedding-planner/vendors/"
+                target="_blank"style="margin:10px;background:var(--theme-color);color:var(--white-color);" class="btn style2">Know
+                More</a></p>
           </div>
         </div>
       </div>
@@ -46,9 +50,9 @@
             <h2 class="sec-title">Connect With Us</h2>
           </div>
           <h4 class="form-messages"></h4>
-          <form method="POST" class="contact-form form-contact-white" id="partnership_entrepreneurship_program_Form">
+          <form method="POST" class="contact-form form-contact-white" id="Career_Form">
             <div class="row">
-              <input type="hidden" name="enquiry_for" value="Partnership Entrepreneurship Program" />
+              <input type="hidden" name="enquiry_for" value="Career" />
               <div class="col-lg-6">
                 <label>Full Name*</label>
                 <div class="form-group style-4 form-icon-left">
@@ -92,10 +96,20 @@
                 </div>
               </div>
               <div class="col-lg-6">
-                <label>Social Handles*</label>
-                <div class="form-group style-4">
-                  <input name="socialHandles" class="form-custom-input custom-tag-input" placeholder="Enter Social Handles" id="socialHandles">
-                  <div class="error" id="socialHandlesError"></div>
+                <label>Applying for*</label>
+                <div class="form-group style-4 form-icon-left">
+                  <i class="far fa-star"></i>
+                  <input type="text" class="form-control style-border" name="applyFor" id="applyFor"
+                    placeholder="Enter Applying for">
+                  <div class="error" id="applyForError"></div>
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <label>CV*</label>
+                <div class="form-group style-4 ">
+                  <input type="file" style="padding: 0 30px 0 12px;" class="form-control style-border"
+                    accept="application/pdf" name="cv" id="cv">
+                  <div class="error" id="cvError"></div>
                 </div>
               </div>
             </div>

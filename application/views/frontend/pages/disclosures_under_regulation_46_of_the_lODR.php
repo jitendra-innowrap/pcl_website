@@ -1,7 +1,7 @@
 <!--==============================
     Breadcumb
     ============================== -->
-<div class="breadcumb-wrapper" data-bg-src="assets/img/bg/breadcrumb-bg.png">
+<div class="breadcumb-wrapper bg-gradient">
   <!-- bg animated image/ -->
   <div class="container">
     <div class="row justify-content-between align-items-center">
@@ -21,7 +21,7 @@
   </div>
 </div>
 
-<div class="cta-area-2 space title-anim">
+<div class="cta-area-2 mt-5 mb-5 title-anim">
   <div class="container">
     <div class="row gy-4 align-items-center">
       <div class="col-lg-12">

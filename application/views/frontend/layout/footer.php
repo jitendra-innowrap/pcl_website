@@ -1,14 +1,13 @@
 <!--==============================
         Footer Area
     ==============================-->
-<footer class="footer-wrapper footer-layout1 overflow-hidden"
-  data-bg-src="<?php echo base_url();?>assets/img/bg/footer-1-bg.png">
-  <div class="shape-mockup footer1-shape1 jump" data-top="20%" data-left="-2%">
+<footer class="footer-wrapper footer-layout1 overflow-hidden bg-gradient">
+  <!-- <div class="shape-mockup footer1-shape1 jump" data-top="20%" data-left="-2%">
     <img src="<?php echo base_url();?>assets/img/normal/footer-1-shape1.png" alt="img">
-  </div>
-  <div class="shape-mockup footer1-shape2 jump-reverse" data-top="-10%" data-right="-10%">
+  </div> -->
+  <!-- <div class="shape-mockup footer1-shape2 jump-reverse" data-top="-10%" data-right="-10%">
     <img src="<?php echo base_url();?>assets/img/normal/footer-1-shape2.png" alt="img">
-  </div>
+  </div> -->
   <div class="container">
     <div class="widget-area custom-footer">
       <div class="row justify-content-between">
@@ -18,7 +17,7 @@
             <div class="menu-all-pages-container list-column2">
               <ul class="menu">
                 <li class="<?= ($active === 4 ? 'active' : '') ?>"><a
-                    href="<?php echo base_url();?>house-of-vivah">House of Vivah</a></li>
+                    href="<?php echo base_url();?>house-of-vivaah">House of Vivaah</a></li>
                 <li class="<?= ($active === 5 ? 'active' : '') ?>"><a href="<?php echo base_url();?>vows-vachan">Vows
                     Vachan</a></li>
                 <li class="<?= ($active === 6 ? 'active' : '') ?>"><a href="<?php echo base_url();?>event-factory">Event
@@ -55,7 +54,7 @@
                     href="<?php echo base_url();?>partnership-entrepreneurship-program">PEP</a></li>
                 <li class="<?= ($active === 22 ? 'active' : '') ?>"><a
                     href="<?php echo base_url();?>brand-ambassador">Brand Ambassador</a></li>
-                <li class="<?= ($active === 23 ? 'active' : '') ?>"><a href="<?php echo base_url();?>carrer">Career</a>
+                <li class="<?= ($active === 23 ? 'active' : '') ?>"><a href="<?php echo base_url();?>career">Career</a>
                 </li>
               </ul>
             </div>
@@ -114,7 +113,7 @@
       <div class="row justify-content-center">
         <div class="col-auto align-self-center">
           <p class="copyright-text">© 2024 </p>
-          <p class="copyright-text"><a href="#">Party Cruisers Limited.</a> All Rights Reserved.</p>
+          <p class="copyright-text"><a href="<?php echo base_url();?>">Party Cruisers Limited.</a> All Rights Reserved.</p>
         </div>
       </div>
     </div>
@@ -166,6 +165,10 @@
 <script src="<?php echo base_url();?>assets/js/ScrollSmoother.min.js"></script>
 <script src="<?php echo base_url();?>assets/js/ScrollTrigger.min.js"></script>
 <script src="<?php echo base_url();?>assets/js/SplitText.min.js"></script>
+
+<!-- tags -->
+<script src="<?= base_url()?>assets/libs/tagify/tagify.js"></script>
+<script src="<?= base_url()?>assets/libs/tagify/tagify.polyfills.min.js"></script>
 
 <!-- Main Js File -->
 <script src="<?php echo base_url();?>assets/js/main.js"></script>

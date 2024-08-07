@@ -1,6 +1,22 @@
 .company-logo{
   width: 70px !important;
 }
+.Horizontal-company-logo{
+  width: 190px !important;
+  margin-block: 5px;
+}
+
+@media (max-width: 1510px) {
+  .Horizontal-company-logo{
+    width: 150px !important;
+    margin-block: 10px;
+  }
+}
+@media (max-width: 1470px) {
+  .Horizontal-company-logo{
+    width: 100px !important;
+  }
+}
 .custom-banner .item {
   height: 85vh;
   position: relative;
@@ -219,7 +235,7 @@
     color: #999999;
 }
 .success-story .nav-pills .nav-link.active, .nav-pills .show>.nav-link {
-  color: #d18964;
+  color: var(--theme-color);
   background-color: transparent;
 }
 
@@ -419,15 +435,11 @@
   color: red;
   font-size: 0.875em;
 }
-.form-contact-black option{
-  background-color: #000;
-}
 .success{
   font-size: 18px !important;
-    background-color: white !important;
-    width: fit-content !important;
-    padding: 5px 10px !important;
-    border-radius: 5px !important;
+  background-color: transparent;
+  width: fit-content !important;
+  padding: 5px 0px !important;
 }
 .form-contact-white select.style-border, .form-contact-white .single-select.style-border, .form-contact-white .form-control.style-border, .form-contact-white .form-select.style-border,.form-contact-white textarea.style-border, .form-contact-white input.style-border {
   background: transparent;
@@ -456,7 +468,7 @@
   background: #f1f1f1; 
 }
 .success-story-scroller::-webkit-scrollbar-thumb {
-  background: #d18964; 
+  background: var(--theme-color);
 }
 
 .flip-container {
@@ -476,6 +488,8 @@
 .flip-container img {
   width: 100%;
   height: 100%;
+  max-width: 370px;
+    margin: auto;
 }
 /* flip speed */
 
@@ -511,7 +525,7 @@
 
 .policy-contaner{
   width: 100%;
-  background: #f9f3f0;
+  border: 1px solid var(--theme-color);
   padding: 9px 12px;
   margin-bottom: 15px;
 }
@@ -526,7 +540,7 @@
 }
 
 .custom-accodin .accordion-card .accordion-button {
-  background-color: #f9f3f0 !important;
+  border: 1px solid var(--theme-color) !important;
   padding: 9px 12px !important;
   font-size: 16px;
   font-weight: 600;
@@ -594,10 +608,10 @@
   bottom: -3px;
   height: 1px;
   width: 50px;
-  background: var(--title-color);
+  background: var(--white-color);
 }
 .custom-footer .active a{
-  color: black;
+  color: white;
 }
 
 .whats-app-float{
@@ -613,4 +627,85 @@
     font-size: 3px;
     box-shadow: none;
     z-index: 10000;
+}
+
+.bg-gradient{
+  background-image: var(--bg-gradient) !important;
+}
+
+.service-card2_content{
+  background-color: var(--theme-color);
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border: 1px solid #afafaf;
+    transition: all 0.3s ease;
+    min-height: 141px;
+    width: 100%;
+    margin: auto;
+}
+
+.service-card2_content span{
+  color: var(--white-color);
+  font-size: 14px;
+}
+
+.service-card2_title{
+  margin-top: 12px;
+  text-align: left;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--white-color);
+}
+
+.service-card2_sub_title{
+  position: relative;
+  text-align: left;
+  margin-top: 18px;
+  margin-bottom: 0px;
+  color: var(--white-color);
+  font-size: 14px !important;
+}
+
+.service-card2_sub_title:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: -5px;
+  height: 1px;
+  width: 50px;
+  background: white;
+}
+
+
+.team-custom .team-card {
+  max-width: 215px !important;
+}
+
+@media (max-width: 470px) {
+  .team-custom .team-card {
+    max-width: 100% !important;
+  }
+}
+
+.about-company-collage img{
+  width: 100%;
+  height: auto;
+}
+
+.vision-mission .icon{
+  min-width: 60px;
+    max-width: 60px;
+    margin-right: 20px;
+    padding: 10px;
+}
+
+.custom-tag-input{
+  width: 100%;
+    min-height: 60px;
+    align-content: center;
+}
+
+.about-us-logo{
+  max-width: 215px;
 }

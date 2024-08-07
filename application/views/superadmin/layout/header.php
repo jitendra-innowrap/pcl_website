@@ -8,8 +8,8 @@
 	<div class="container-fluid">
 		<div class="header-logo">
 			<a href="#">
-				<img class="d-none d-lg-block" src="<?php echo base_url($logo);?>" alt="...">
-				<img class="d-lg-none d-sm-block" src="<?php echo base_url($logo);?>" alt="...">
+				<img class="d-none d-lg-block" src="<?php echo base_url();?>assets/images/logo/PCL-logo.png" alt="...">
+				<img class="d-lg-none d-sm-block" src="<?php echo base_url();?>assets/images/logo/PCL-logo.png" alt="...">
 			</a>
 		</div>
 

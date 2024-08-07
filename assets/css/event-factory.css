@@ -1,0 +1,29 @@
+:root {
+  --theme-color: #806230;
+  --theme-2-color: #7D5320;
+  --title-color: #666861;
+  --body-color: #84847c;
+  --smoke-color: #F8F7F4;
+  --smoke-color2: #FFF4EF;
+  --smoke-color3: #F5F5F6;
+  --smoke-color4: #F4F4F4;
+  --smoke-color5: #F0F2F4;
+  --black-color: #202020;
+  --gray-color: #303030;
+  --white-color: #ffffff;
+  --light-color: #9fa2ad;
+  --yellow-color: #FFB539;
+  --success-color: #28a745;
+  --error-color: #dc3545;
+  --border-color: #E3E3E3;
+  --title-font:  "DM Sans", sans-serif;
+  --body-font:  "DM Sans", sans-serif;
+  --icon-font: "Font Awesome 5 Free";
+  --main-container: 1320px;
+  --container-gutters: 24px;
+  --section-space: 120px;
+  --section-space-mobile: 80px;
+  --section-title-space: 65px;
+  --ripple-ani-duration: 5s;
+  --bg-gradient: linear-gradient(90deg, #806230, #A78247);
+}

@@ -1,7 +1,7 @@
 <!--==============================
     Breadcumb
     ============================== -->
-<div class="breadcumb-wrapper" data-bg-src="assets/img/bg/breadcrumb-bg.png">
+<div class="breadcumb-wrapper bg-gradient">
   <!-- bg animated image/ -->
   <div class="container">
     <div class="row justify-content-between align-items-center">
@@ -24,10 +24,10 @@
 <!--==============================
 Service Area 01  
 ==============================-->
-<div class="space service-area-1 overflow-hidden">
-  <div class="service-shape1_1 shape-mockup jump d-lg-block d-none" data-top="0" data-left="-5%">
+<div class="mt-5 mb-5 service-area-1 overflow-hidden">
+  <!-- <div class="service-shape1_1 shape-mockup jump d-lg-block d-none" data-top="0" data-left="-5%">
     <img src="<?php echo base_url();?>assets/img/normal/service_1-1.png" alt="img">
-  </div>
+  </div> -->
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-lg-10 col-md-12">

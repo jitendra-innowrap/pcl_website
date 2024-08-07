@@ -40,118 +40,125 @@ Hero Area
 <!--==============================
 Service Area 01  
 ==============================-->
-<div class="service-area-2 space overflow-hidden" style="background-color: #FFF4EF;">
+<div class="service-area-2 mt-5 mb-5 overflow-hidden">
   <div class="container">
-    <div class="row flex-row-reverse align-items-center justify-content-between">
+    <div class="row align-items-center justify-content-between">
+      <div class="col-lg-5">
+        <div class="about-content-wrap title-anim" style="perspective: 400px;">
+          <div
+            style="display: block; text-align: start; position: relative; translate: none; rotate: none; scale: none; transform-origin: 183px 194.297px; transform: translate3d(0px, 0px, 0px); opacity: 1;">
+            <div class="title-area mb-0">
+              <span class="sub-title">ABOUT US</span>
+              <h2 class="sec-title" style="margin: inherit;">PARTY CRUISERS LTD.</h2>
+              <p class="sec-text">As Party Cruisers Limited, listed on the NSE since 2021, we are a collective that
+                brings you the most luxe events you’ve experienced without having to worry if your guests are having an
+                engaging and personalized event.</p>
+              <p class="sec-text">Since 1994, we’ve expanded to a range of event services apart from our expertise in
+                wedding curation and execution, focused on end to end management by working with eminent service
+                providers.</p>
+            </div>
+          </div>
+          <div
+            style="display: block; text-align: start; position: relative; translate: none; rotate: none; scale: none; transform-origin: 183px 24px; transform: translate3d(0px, 0px, 0px); opacity: 1;">
+            <div class="btn-wrap mt-40">
+              <a href="<?php echo base_url();?>about-us" class="btn">Know More</a>
+            </div>
+          </div>
+        </div>
+      </div>
       <div class="col-lg-7">
         <div class="row">
           <div class="col-md-4 filter-item">
             <div class="flip-container">
-              <div class="flipper"><a href="<?php echo base_url();?>house-of-vivah">
+              <div class="flipper"><a href="<?php echo base_url();?>house-of-vivaah">
                   <div clas="front">
                     <img src="<?php echo base_url();?>assets/images/logo/vivaah.png">
                   </div>
-                  <div class="back">
-                    <p>For your big fat indian
-                      wedding, Vivah is a full service wedding boutique
-                      to bring your dreams to li</p>
-                </a></div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 filter-item">
-          <div class="flip-container">
-            <div class="flipper"><a href="<?php echo base_url();?>vows-vachan">
-                <div clas="front">
-                  <img src="<?php echo base_url();?>assets/images/logo/vows-vachan.png">
-                </div>
-                <div class="back">
-                  <p>For an intimate celebration, your search ends right here.</p>
-              </a></div>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4 filter-item">
-        <div class="flip-container">
-          <div class="flipper"><a href="<?php echo base_url();?>event-factory">
-              <div clas="front">
-                <img src="<?php echo base_url();?>assets/images/logo/event-factory.png">
+                </a>
+                <div class="back"><a href="<?php echo base_url();?>house-of-vivaah">
+                    <p> House Of Vivaah <br> Design | Decor | Production</p>
+                  </a></div>
               </div>
-              <div class="back">
-                <p>Elegant black tie affairs and more organized for + organizations
-                  (globally/nationally)</p>
-            </a></div>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-4 filter-item">
-      <div class="flip-container">
-        <div class="flipper"><a href="<?php echo base_url();?>live-space">
-            <div clas="front">
-              <img src="<?php echo base_url();?>assets/images/logo/live-space.png">
             </div>
-            <div class="back">
-              <p>Sunday, Sept. 18th 2022.
-                One World Observatory,
-                285 Fulton Street</p>
-          </a></div>
+          </div>
+          <div class="col-md-4 filter-item">
+            <div class="flip-container">
+              <div class="flipper"><a href="<?php echo base_url();?>vows-vachan">
+                  <div clas="front">
+                    <img src="<?php echo base_url();?>assets/images/logo/vows-vachan.png">
+                  </div>
+                </a>
+                <div class="back"><a href="<?php echo base_url();?>vows-vachan">
+                    <p>Vows Vachan <br> The Wedding Curators</p>
+                  </a></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 filter-item">
+            <div class="flip-container">
+              <div class="flipper"><a href="<?php echo base_url();?>event-factory">
+                  <div clas="front">
+                    <img src="<?php echo base_url();?>assets/images/logo/event-factory.png">
+                  </div>
+                </a>
+                <div class="back"><a href="<?php echo base_url();?>event-factory">
+                    <p>Event Factory <br> Corporate Impression Management</p>
+                  </a></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 filter-item">
+            <div class="flip-container">
+              <div class="flipper"><a href="<?php echo base_url();?>party-house">
+                  <div clas="front">
+                    <img src="<?php echo base_url();?>assets/images/logo/party-house.png">
+                  </div>
+                </a>
+                <div class="back"><a href="<?php echo base_url();?>party-house">
+                    <p>Party House <br> Milestone & Social Celebrations</p>
+                  </a></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 filter-item">
+            <div class="flip-container">
+              <div class="flipper"><a href="<?php echo base_url();?>live-space">
+                  <div clas="front">
+                    <img src="<?php echo base_url();?>assets/images/logo/live-space.png">
+                  </div>
+                </a>
+                <div class="back"><a href="<?php echo base_url();?>live-space">
+                    <p>Livespace <br> Entertainment & Artist Management</p>
+                  </a></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 filter-item">
+            <div class="flip-container">
+              <div class="flipper"><a href="<?php echo base_url();?>venue-affairs">
+                  <div clas="front">
+                    <img src="<?php echo base_url();?>assets/images/logo/venue-affairs.png">
+                  </div>
+                </a>
+                <div class="back"><a href="<?php echo base_url();?>venue-affairs">
+                    <p>Venue Affairs <br> Venues Bookings & Management</p>
+                  </a></div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-  <div class="col-md-4 filter-item">
-    <div class="flip-container">
-      <div class="flipper"><a href="<?php echo base_url();?>venue-affairs">
-          <div clas="front">
-            <img src="<?php echo base_url();?>assets/images/logo/venue-affairs.png">
-          </div>
-          <div class="back">
-            <p>Sunday, Sept. 18th 2022. Lymni Restaurant, 123 Francois Street</p>
-        </a></div>
-    </div>
-  </div>
-</div>
-<div class="col-md-4 filter-item">
-  <div class="flip-container">
-    <div class="flipper"><a href="<?php echo base_url();?>party-house">
-        <div clas="front">
-          <img src="<?php echo base_url();?>assets/images/logo/party-house.png">
-        </div>
-        <div class="back">
-          <p>Sunday, Sept. 18th 2022. Rooftoop, 123 Terry Francois Street</p>
-      </a></div>
-  </div>
-</div>
-</div>
-</div>
-</div>
-<div class="col-lg-5">
-  <div class="about-content-wrap title-anim">
-    <div class="title-area mb-0">
-      <span class="sub-title">ABOUT US</span>
-      <h2 class="sec-title">PARTY CRUISERS LTD.</h2>
-      <p class="sec-text">As Party Cruisers Limited, listed on the NSE since 2021, we are a collective that brings
-        you the most luxe events you’ve experienced without having to worry if your guests are having an engaging
-        and personalized event.</p>
-      <p class="sec-text">Since 1994, we’ve expanded to a range of event services apart from our expertise in
-        wedding curation and execution, focused on end to end management by working with eminent service
-        providers.</p>
-    </div>
-    <div class="btn-wrap mt-40">
-      <a href="<?php echo base_url();?>about-us" class="btn">Know More</a>
-    </div>
-  </div>
-</div>
-</div>
-</div>
 </div>
 
 <!--==============================
 Service Area 01  
 ==============================-->
-<div class="space service-area-1 overflow-hidden">
-  <div class="service-shape1_1 shape-mockup jump d-lg-block d-none" data-top="0" data-left="-5%">
+<div class="mb-5 service-area-1 overflow-hidden">
+  <!-- <div class="service-shape1_1 shape-mockup jump d-lg-block d-none" data-top="0" data-left="-5%">
     <img src="<?php echo base_url();?>assets/img/normal/service_1-1.png" alt="img">
-  </div>
+  </div> -->
   <div class="container">
     <div class="title-area text-center title-anim">
       <span class="sub-title style2">Check out some of our</span>
@@ -258,41 +265,12 @@ Service Area 01
 </div>
 
 <!--==============================
-    Video Area  
-    ==============================-->
-<div class="video-area-1 overflow-hidden">
-  <div class="container">
-    <div class="title-area text-center title-anim">
-      <span class="sub-title style2">ENJOY OUR MOMENTS</span>
-      <h2 class="sec-title">COME WITH US</h2>
-    </div>
-  </div>
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-12">
-        <div class="video-wrap">
-          <div class="service-shape1_1 shape-mockup jump d-lg-block d-none z-index-3" data-top="-10%" data-right="-10%">
-            <img src="assets/img/normal/video-shape_1-1.png" alt="img">
-          </div>
-          <div class="img-anim">
-            <img src="<?php echo base_url();?>assets/images/youtube.jpg" alt="img">
-          </div>
-          <a href="https://youtu.be/lGCVvEju__c?feature=shared" class="play-btn popup-video background-image">
-            <i class="fas fa-solid fa-play"></i>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!--==============================
     Counter Area  
-    ==============================-->
-<div class="counter-area-1" style="background-color: #D6A87F;">
-  <div class="counter-wrap1 space counter-item">
+==============================-->
+<div class="counter-area-2 bg-gradient">
+  <div class="counter-wrap1 pt-5 pb-5 counter-item">
     <div class="container">
-      <div class="row gy-40 justify-content-lg-between justify-content-center">
+      <div class="row gy-40 justify-content-lg-evenly justify-content-center">
         <div class="col-sm-6 col-lg-auto">
           <div class="counter-card">
             <div class="media-body" style="text-align: center;">
@@ -341,11 +319,10 @@ Service Area 01
 <!--==============================
     Portfolio Area  
 ==============================-->
-<div class="portfolio-area-1 space overflow-hidden"
-  data-bg-src="<?php echo base_url();?>assets/img/bg/portfolio-1-bg.png">
-  <div class="portfolio-shape1_1 shape-mockup jump d-lg-block d-none" data-top="0%" data-right="-10%">
+<div class="portfolio-area-1 mb-5 mt-5 overflow-hidden">
+  <!-- <div class="portfolio-shape1_1 shape-mockup jump d-lg-block d-none" data-top="0%" data-right="-10%">
     <img src="<?php echo base_url();?>assets/img/normal/portfolio-shape_1-1.png" alt="img">
-  </div>
+  </div> -->
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-lg-10 col-md-12">
@@ -519,9 +496,83 @@ Service Area 01
 
 
 <!--==============================
+    Media Area  
+==============================-->
+
+<section class="blog-area-2 mt-5">
+  <div class="container">
+    <div class="title-area text-center title-anim">
+      <h2 class="sec-title">Media</h2>
+    </div>
+    <div class="row gy-4 filter-active mb-60" style="position: relative; height: 1083.88px;">
+      <div class="col-md-6 col-lg-4 filter-item cat4" style="position: absolute; left: 0px; top: 0px;">
+        <div class="project-box title-anim" style="perspective: 400px;">
+          <div
+            style="display: block; text-align: start; position: relative; translate: none; rotate: none; scale: none; transform-origin: 212px 200.023px; transform: translate3d(0px, 0px, 0px); opacity: 1;">
+            <div class="project-img global-img">
+              <img src="<?php echo base_url();?>assets/images/media-1.png" alt="portfolio">
+            </div>
+          </div>
+          <div
+            style="display: block; text-align: start; position: relative; translate: none; rotate: none; scale: none; transform-origin: 212px 58.9453px; transform: translate3d(0px, 0px, 0px); opacity: 1;">
+            <div class="project-card-details">
+              <p class="subtitle">March 05, 2021</p>
+              <h3 class="title"><a target="_blank"
+                  href="https://x.com/valueeducator/status/1664270650385772544?s=48&t=VLEp7xwuMgk94BQaN6gfog">LISTING
+                  CEREMONY OF PARTY CRUISERS LTD.</a></h3>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4 filter-item cat4 cat2 cat3" style="position: absolute; left: 448px; top: 0px;">
+        <div class="project-box title-anim" style="perspective: 400px;">
+          <div
+            style="display: block; text-align: start; position: relative; translate: none; rotate: none; scale: none; transform-origin: 212px 200.023px; transform: translate3d(0px, 0px, 0px); opacity: 1;">
+            <div class="project-img global-img">
+              <img src="<?php echo base_url();?>assets/images/media-2.png" alt="portfolio">
+            </div>
+          </div>
+          <div
+            style="display: block; text-align: start; position: relative; translate: none; rotate: none; scale: none; transform-origin: 212px 58.9453px; transform: translate3d(0px, 0px, 0px); opacity: 1;">
+            <div class="project-card-details">
+              <p class="subtitle">March 05, 2021</p>
+              <h3 class="title"><a target="_blank"
+                  href="https://www.vogue.in/gallery/a-music-festival-inspired-wedding-in-the-thar-desert?fbclid=PAAaaM0ATCxfa5pYMXUH39dCiwaV9PzW6c76VVcs05NLRmhoOPIzJOR4YbK_U">Vows
+                  Vachan - The Wedding Curators</a></h3>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4 filter-item cat1 cat3" style="position: absolute; left: 896px; top: 0px;">
+        <div class="project-box title-anim" style="perspective: 400px;">
+          <div
+            style="display: block; text-align: start; position: relative; translate: none; rotate: none; scale: none; transform-origin: 212px 200.023px; transform: translate3d(0px, 0px, 0px); opacity: 1;">
+            <div class="project-img global-img">
+              <img src="<?php echo base_url();?>assets/images/media-3.png" alt="portfolio">
+            </div>
+          </div>
+          <div
+            style="display: block; text-align: start; position: relative; translate: none; rotate: none; scale: none; transform-origin: 212px 58.9453px; transform: translate3d(0px, 0px, 0px); opacity: 1;">
+            <div class="project-card-details">
+              <p class="subtitle">March 05, 2021</p>
+              <h3 class="title"><a target="_blank" href="https://www.youtube.com/watch?v=32EFHNHNGnY">Event Factory -
+                  Corporate Impression Management Division</a></h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="btn-wrap mt-40" style="justify-content: center;">
+      <a href="<?php echo base_url();?>media" class="btn">More</a>
+    </div>
+  </div>
+</section>
+
+
+<!--==============================
     Blog Area 02 
     ==============================-->
-<section class="blog-area-2 space">
+<section class="blog-area-2 space-top mb-5">
   <div class="container">
     <div class="title-area text-center title-anim">
       <span class="sub-title style2">Our Blogs Posts
@@ -569,7 +620,7 @@ Service Area 01
       <div class="col-xl-3 col-lg-6 col-md-6 filter-item">
         <div class="blog-card style4 title-anim">
           <div class="blog-img">
-            <img style="max-height: 250px;min-height: 250px;" src="<?php echo $blog['1']['image_medium']; ?>"
+            <img style="max-height: 200px;min-height: 200px;" src="<?php echo $blog['1']['image_medium']; ?>"
               alt="<?php echo $blog['1']['image_alt']; ?>">
           </div>
           <div class="blog-content">
@@ -578,7 +629,7 @@ Service Area 01
               <a><?php echo $formattedDate; ?></a>
               <a><?php echo $blog['1']['categories']; ?></a>
             </div>
-            <h3 class="blog-title"><a
+            <h3 class="blog-title"  title="<?php echo $blog['1']['title']; ?>" style="display: block;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;"><a
                 href="<?php echo base_url('blog-details'); ?>?slug=<?php echo $blog['1']['slug']; ?>"><?php echo $blog['1']['title']; ?></a>
             </h3>
             <a href="<?php echo base_url('blog-details'); ?>?slug=<?php echo $blog['1']['slug']; ?>"
@@ -597,7 +648,7 @@ Service Area 01
       <div class="col-xl-3 col-lg-6 col-md-6 filter-item">
         <div class="blog-card style4 title-anim">
           <div class="blog-img">
-            <img style="max-height: 250px;min-height: 250px;" src="<?php echo $blog['2']['image_medium']; ?>"
+            <img style="max-height: 200px;min-height: 200px;" src="<?php echo $blog['2']['image_medium']; ?>"
               alt="<?php echo $blog['2']['image_alt']; ?>">
           </div>
           <div class="blog-content">
@@ -606,7 +657,7 @@ Service Area 01
               <a><?php echo $formattedDate; ?></a>
               <a><?php echo $blog['2']['categories']; ?></a>
             </div>
-            <h3 class="blog-title"><a
+            <h3 class="blog-title"  title="<?php echo $blog['2']['title']; ?>" style="display: block;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;"><a
                 href="<?php echo base_url('blog-details'); ?>?slug=<?php echo $blog['2']['slug']; ?>"><?php echo $blog['2']['title']; ?></a>
             </h3>
             <a href="<?php echo base_url('blog-details'); ?>?slug=<?php echo $blog['2']['slug']; ?>"
@@ -625,7 +676,7 @@ Service Area 01
       <div class="col-xl-3 col-lg-6 col-md-6 filter-item">
         <div class="blog-card style4 title-anim">
           <div class="blog-img">
-            <img style="max-height: 250px;min-height: 250px;" src="<?php echo $blog['3']['image_medium']; ?>"
+            <img style="max-height: 200px;min-height: 200px;" src="<?php echo $blog['3']['image_medium']; ?>"
               alt="<?php echo $blog['3']['image_alt']; ?>">
           </div>
           <div class="blog-content">
@@ -634,7 +685,7 @@ Service Area 01
               <a><?php echo $formattedDate; ?></a>
               <a><?php echo $blog['3']['categories']; ?></a>
             </div>
-            <h3 class="blog-title"><a
+            <h3 class="blog-title" title="<?php echo $blog['3']['title']; ?>" style="display: block;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;"><a
                 href="<?php echo base_url('blog-details'); ?>?slug=<?php echo $blog['3']['slug']; ?>"><?php echo $blog['3']['title']; ?></a>
             </h3>
             <a href="<?php echo base_url('blog-details'); ?>?slug=<?php echo $blog['3']['slug']; ?>"
@@ -653,7 +704,7 @@ Service Area 01
       <div class="col-xl-3 col-lg-6 col-md-6 filter-item">
         <div class="blog-card style4 title-anim">
           <div class="blog-img">
-            <img style="max-height: 250px;min-height: 250px;" src="<?php echo $blog['4']['image_medium']; ?>"
+            <img style="max-height: 200px;min-height: 200px;" src="<?php echo $blog['4']['image_medium']; ?>"
               alt="<?php echo $blog['4']['image_alt']; ?>">
           </div>
           <div class="blog-content">
@@ -662,7 +713,7 @@ Service Area 01
               <a><?php echo $formattedDate; ?></a>
               <a><?php echo $blog['4']['categories']; ?></a>
             </div>
-            <h3 class="blog-title"><a
+            <h3 class="blog-title"  title="<?php echo $blog['4']['title']; ?>" style="display: block;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;"><a
                 href="<?php echo base_url('blog-details'); ?>?slug=<?php echo $blog['4']['slug']; ?>"><?php echo $blog['4']['title']; ?></a>
             </h3>
             <a href="<?php echo base_url('blog-details'); ?>?slug=<?php echo $blog['4']['slug']; ?>"

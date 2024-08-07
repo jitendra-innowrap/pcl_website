@@ -370,7 +370,8 @@ class Ajax extends CI_Controller
 					$row[] = $Blogs->venue;
 					$row[] = $Blogs->eventType;
 					$row[] = $Blogs->artistRequirement;
-					$row[] = $Blogs->workProfile;
+					$row[] = $Blogs->occupation;
+					$row[] = $Blogs->franchiseType;
 					$row[] = $Blogs->created_date;
 					$data[] = $row;
 			}

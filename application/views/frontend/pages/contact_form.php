@@ -1,16 +1,19 @@
-<div class="contact-area-1 space overflow-hidden" style="background-color: #543718;">
-  <div class="contact-shape1_1 shape-mockup jump d-lg-block d-none" data-top="0%" data-right="-8%">
+<style>
+  .form-contact-black option{
+    background-color: #222e63;
+  }
+</style>
+<div class="contact-area-1 overflow-hidden bg-gradient">
+  <!-- <div class="contact-shape1_1 shape-mockup jump d-lg-block d-none" data-top="0%" data-right="-8%">
     <img src="<?php echo base_url();?>assets/img/normal/contact-shape_1-1.png" alt="img">
-  </div>
-  <div class="contact-shape1_2 shape-mockup jump-reverse d-lg-block d-none" data-bottom="-3%" data-left="-12%">
+  </div> -->
+  <!-- <div class="contact-shape1_2 shape-mockup jump-reverse d-lg-block d-none" data-bottom="-3%" data-left="-12%">
     <img src="<?php echo base_url();?>assets/img/normal/contact-shape_1-2.png" alt="img">
-  </div>
+  </div> -->
   <div class="container-fluid p-0">
-    <div class="contact-form-area space">
+    <div class="contact-form-area mt-5 mb-5 pt-5 pb-5">
       <div class="title-area text-center title-anim">
-        <span class="sub-title style2 text-white">LET US KNOW IF YOU COMING
-        </span>
-        <h2 class="sec-title text-white">WE CANT WAIT TO SEE YOU!</h2>
+        <h2 class="sec-title" style="background: transparent;-webkit-text-fill-color: white;">Connect With Us</h2>
       </div>
       <div class="row">
         <div class="col-lg-12">

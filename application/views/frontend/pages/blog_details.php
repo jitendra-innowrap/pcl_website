@@ -1,7 +1,7 @@
 <!--==============================
     Breadcumb
     ============================== -->
-<div class="breadcumb-wrapper" data-bg-src="assets/img/bg/breadcrumb-bg.png">
+<div class="breadcumb-wrapper bg-gradient">
   <!-- bg animated image/ -->
   <div class="container">
     <div class="row justify-content-between align-items-center">
@@ -35,7 +35,7 @@
 <!--==============================
     Blog Area  
     ==============================-->
-<section class="blog-area space-top space-extra-bottom">
+<section class="blog-area mt-5 mb-5">
   <div class="container page-layout right-sidebar">
     <div class="row gx-40 blog-page-with-sideba">
       <div class="col-xxl-12">

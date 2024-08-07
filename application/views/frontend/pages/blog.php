@@ -3,7 +3,7 @@
     font-size: 18px !important;
     line-height: 1.5 !important;
     font-weight: 400 !important;
-     font-family:  "Montserrat", sans-serif !important;
+     font-family:  "DM Sans", sans-serif !important;
     margin-bottom:10px !important;
   }
 </style>
@@ -11,7 +11,7 @@
 <!--==============================
   Breadcumb
   ============================== -->
-<div class="breadcumb-wrapper" data-bg-src="assets/img/bg/breadcrumb-bg.png">
+<div class="breadcumb-wrapper bg-gradient">
   <!-- bg animated image/ -->
   <div class="container">
     <div class="row justify-content-between align-items-center">
@@ -34,7 +34,7 @@
 <!--==============================
   Blog Area  
   ==============================-->
-<div class="blog-area space-top space-extra-bottom">
+<div class="blog-area mt-5 mb-5">
   <div class="container page-layout right-sidebar">
     <div class="row gx-40 blog-page-with-sidebar">
       <div class="col-xxl-8 col-lg-7">
@@ -44,7 +44,7 @@
       <div class="col-xxl-4 col-lg-5 sidebar-widget-area">
         <aside class="sidebar-sticky-area sidebar-area custom-bolg-latest-post">
           <div class="widget">
-            <h3 class="widget_title">Latest Posts</h3>
+            <h3 class="widget_title custom-widget" style=" background: var(--bg-gradient);-webkit-text-fill-color: transparent;-webkit-background-clip: text;">Latest Posts</h3>
             <div class="recent-post-wrap">
               <?php       
                     if(isset($blog)){

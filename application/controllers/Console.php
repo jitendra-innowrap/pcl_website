@@ -204,14 +204,14 @@ class Console extends CI_Controller
 		$this->load->view('frontend/layout/template', $data);
 	}
 	
-	public function house_of_vivah(){
-		$data['page_title'] = "House Of Vivah - Party Cruisers";
+	public function house_of_vivaah(){
+		$data['page_title'] = "House Of Vivaah - Party Cruisers";
 		$data['meta_desc'] = "";
 		$data['meta_keyword'] = "";
 		$data['meta_image'] = '';
 		$data['active'] = 4;
 		$data['act'] = 4.1;
-		$data['middle_content'] = 'house_of_vivah';	
+		$data['middle_content'] = 'house_of_vivaah';	
 		
 		$this->db->select('id,video_thumbnail,video_url');
 		$this->db->where('status', 1);
@@ -976,7 +976,7 @@ class Console extends CI_Controller
 		$this->load->view('frontend/layout/template', $data);
 	}
 	
-	public function house_of_vivah_form(){
+	public function house_of_vivaah_form(){
 		// echo '<pre>';print_r($_POST);exit();
 		$add['u_name'] = $this->input->post('name');
 		$add['country_code'] = $this->input->post('countryCode');
@@ -987,6 +987,9 @@ class Console extends CI_Controller
 		$add['date'] = $this->input->post('date');
 		$add['event'] = $this->input->post('event');
 		$add['enquiry_for'] = $this->input->post('enquiry_for');
+		if($add['event'] === 'other'){
+			$add['subEvent'] = $this->input->post('otherEvent');
+		}
 		
 		if ($this->db->insert('submit_contact', $add)){
 			$msg_subject = "[PCL] Thanks for the inquiry";
@@ -994,7 +997,7 @@ class Console extends CI_Controller
 			$from_email = "enquiry@partycruisersindialtd.com";
 			if ($this->sendMail($add['u_email'],$from_email,$msg_subject,$msg)) {
 				$phone =  $this->input->post('phone_number',true);
-				$html = "Name: " . $add['u_name'] . "<br>Email: " . $add['u_email'] . "<br>Phone: " . $add['country_code'] . $add['u_mobile'] . "<br>Enquiry for: " . $add['enquiry_for']  . "<br>Event: " . $add['event'] . "<br>Venue: " . $add['venue'] . "<br>Location: " . $add['location'] . "<br>Date: " . $add['date'] . ".";
+				$html = "Name: " . $add['u_name'] . "<br>Email: " . $add['u_email'] . "<br>Phone: " . $add['country_code'] . $add['u_mobile'] . "<br>Enquiry for: " . $add['enquiry_for']  . "<br>Event: " . $add['event'] . "<br>Sub Event: " . $add['subEvent'] .  "<br>Venue: " . $add['venue'] . "<br>Location: " . $add['location'] . "<br>Date: " . $add['date'] . ".";
 				$from_email = "enquiry@partycruisersindialtd.com";
 				$msg_subject = "[PCL] Thanks for the inquiry";
 					if($this->sendMail($from_email,$from_email,$msg_subject,$html)){
@@ -1129,7 +1132,8 @@ class Console extends CI_Controller
 		$add['u_mobile'] = $this->input->post('contact');
 		$add['u_email'] = $this->input->post('email');
 		$add['location'] = $this->input->post('location');
-		$add['workProfile'] = $this->input->post('workProfile');
+		$add['occupation'] = $this->input->post('occupation');
+		$add['franchiseType'] = $this->input->post('franchiseType');
 		
 		if ($this->db->insert('submit_contact', $add)){
 			$msg_subject = "[PCL] Thanks for the inquiry";
@@ -1137,7 +1141,7 @@ class Console extends CI_Controller
 			$from_email = "enquiry@partycruisersindialtd.com";
 			if ($this->sendMail($add['u_email'],$from_email,$msg_subject,$msg)) {
 				$phone =  $this->input->post('phone_number',true);
-				$html = "Name: " . $add['u_name'] . "<br>Email: " . $add['u_email'] . "<br>Phone: " . $add['country_code'] . $add['u_mobile'] . "<br>Enquiry for: " . $add['enquiry_for'] . "<br>Work Profile: " . $add['workProfile'] . "<br>Location: " . $add['location'] . ".";
+				$html = "Name: " . $add['u_name'] . "<br>Email: " . $add['u_email'] . "<br>Phone: " . $add['country_code'] . $add['u_mobile'] . "<br>Enquiry for: " . $add['enquiry_for'] . "<br>Occupation: " . $add['occupation'] . "<br>Franchise Type: " . $add['franchiseType'] . "<br>Location: " . $add['location'] . ".";
 				$from_email = "enquiry@partycruisersindialtd.com";
 				$msg_subject = "[PCL] Thanks for the inquiry";
 					if($this->sendMail($from_email,$from_email,$msg_subject,$html)){
@@ -1177,14 +1181,27 @@ class Console extends CI_Controller
 		$this->load->view('frontend/layout/template', $data);
 	}
 	
-	public function carrer(){
-		$data['page_title'] = "carrer - Party Cruisers";
+	public function career(){
+		$data['page_title'] = "career - Party Cruisers";
 		$data['meta_desc'] = "";
 		$data['meta_keyword'] = "";
 		$data['meta_image'] = '';
 		$data['active'] = 23;
 		$data['act'] = 23.1;
-		$data['middle_content'] = 'carrer';	
+		$data['middle_content'] = 'career';	
+		
+		$this->load->view('frontend/layout/template', $data);
+	}
+	
+	public function media()
+	{
+		$data['page_title'] = "Media - Party Cruisers";
+		$data['meta_desc'] = "";
+		$data['meta_keyword'] = "";
+		$data['meta_image'] = '';
+		$data['active'] = 24;
+		$data['act'] = 24.1;
+		$data['middle_content'] = 'media';	
 		
 		$this->load->view('frontend/layout/template', $data);
 	}

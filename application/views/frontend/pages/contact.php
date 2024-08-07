@@ -1,7 +1,7 @@
  <!--==============================
     Breadcumb
     ============================== -->
- <div class="breadcumb-wrapper" data-bg-src="assets/img/bg/breadcrumb-bg.png">
+ <div class="breadcumb-wrapper bg-gradient">
    <!-- bg animated image/ -->
    <div class="container">
      <div class="row justify-content-between align-items-center">
@@ -139,7 +139,7 @@
              <div class="title-area mb-30">
                <span class="sub-title style2">Contact Us
                </span>
-               <h2 class="sec-title">Get In Touch!</h2>
+               <h2 class="sec-title" style="margin: inherit;">Connect With Us</h2>
              </div>
              <h4 class="form-messages"></h4>
              <form action="<?php echo base_url("console/add_contact"); ?>" method="POST"
