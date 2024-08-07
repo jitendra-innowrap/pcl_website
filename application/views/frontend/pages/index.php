@@ -68,7 +68,7 @@ Service Area 01
       </div>
       <div class="col-lg-7">
         <div class="row">
-          <div class="col-md-4 filter-item">
+          <div class="col-6 col-md-4 filter-item">
             <div class="flip-container">
               <div class="flipper"><a href="<?php echo base_url();?>house-of-vivaah">
                   <div clas="front">
@@ -81,7 +81,7 @@ Service Area 01
               </div>
             </div>
           </div>
-          <div class="col-md-4 filter-item">
+          <div class="col-6 col-md-4 filter-item">
             <div class="flip-container">
               <div class="flipper"><a href="<?php echo base_url();?>vows-vachan">
                   <div clas="front">
@@ -94,7 +94,7 @@ Service Area 01
               </div>
             </div>
           </div>
-          <div class="col-md-4 filter-item">
+          <div class="col-6 col-md-4 filter-item">
             <div class="flip-container">
               <div class="flipper"><a href="<?php echo base_url();?>event-factory">
                   <div clas="front">
@@ -107,7 +107,7 @@ Service Area 01
               </div>
             </div>
           </div>
-          <div class="col-md-4 filter-item">
+          <div class="col-6 col-md-4 filter-item">
             <div class="flip-container">
               <div class="flipper"><a href="<?php echo base_url();?>party-house">
                   <div clas="front">
@@ -120,7 +120,7 @@ Service Area 01
               </div>
             </div>
           </div>
-          <div class="col-md-4 filter-item">
+          <div class="col-6 col-md-4 filter-item">
             <div class="flip-container">
               <div class="flipper"><a href="<?php echo base_url();?>live-space">
                   <div clas="front">
@@ -133,7 +133,7 @@ Service Area 01
               </div>
             </div>
           </div>
-          <div class="col-md-4 filter-item">
+          <div class="col-6 col-md-4 filter-item">
             <div class="flip-container">
               <div class="flipper"><a href="<?php echo base_url();?>venue-affairs">
                   <div clas="front">
