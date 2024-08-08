@@ -103,11 +103,17 @@ $(document).ready(function() {
     });
 
     $('#otherEvent').on('change', function() {
-    validateSubEvent();
+        validateSubEvent();
+    });
+    $('#service').on('change', function() {
+        validateService();
     });
     
     $('#venue').on('keyup', function() {
-    validateVenue();
+        validateVenue();
+    });
+    $('#venue').on('keyup', function() {
+        validateService();
     });
 
     // Event dropdown change handler
@@ -118,7 +124,7 @@ $(document).ready(function() {
             $('#otherEventContainer').show();
             $('#subEventContainer').hide();
         } else if (selectedEvent === 'wedding') {
-        subEventOptions = '<option value="haldi">Haldi</option><option value="sangeet">Sangeet</option><option value="mehendi">Mehendi</option><option value="wedding">Wedding</option>';
+        subEventOptions = '<option value="haldi">Haldi</option><option value="sangeet">Sangeet</option><option value="mehendi">Mehendi</option><option value="wedding">Wedding</option><option value="all of the above">All of the above</option>';
         $('#otherEventContainer').hide();
         $('#subEventContainer').show();
         $('#subEvent').html(subEventOptions);
@@ -144,6 +150,7 @@ $(document).ready(function() {
         if (!validateNumberOfGuests()) isValid = false;
         if (!validateEvent()) isValid = false;
         if (!validateSubEvent()) isValid = false;
+        if (!validateService()) isValid = false;
         return isValid;
     }
     
@@ -373,6 +380,18 @@ $(document).ready(function() {
         } else {
             $('#eventError').text('');
             $('#event').removeClass(invalidCls);
+            return true;
+        }
+    }
+    function validateService() {
+        var service = $('#service').val();
+        if (!service) {
+            $('#serviceError').text('Please select an service.');
+            $('#service').addClass(invalidCls);
+            return false;
+        } else {
+            $('#serviceError').text('');
+            $('#service').removeClass(invalidCls);
             return true;
         }
     }

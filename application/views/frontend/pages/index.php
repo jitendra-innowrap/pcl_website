@@ -72,7 +72,7 @@ Service Area 01
             <div class="flip-container">
               <div class="flipper"><a href="<?php echo base_url();?>house-of-vivaah">
                   <div clas="front">
-                    <img src="<?php echo base_url();?>assets/images/logo/vivaah.png">
+                    <img class="scale-md-1" src="<?php echo base_url();?>assets/images/logo/vivaah.png">
                   </div>
                 </a>
                 <div class="back"><a href="<?php echo base_url();?>house-of-vivaah">
@@ -98,7 +98,7 @@ Service Area 01
             <div class="flip-container">
               <div class="flipper"><a href="<?php echo base_url();?>event-factory">
                   <div clas="front">
-                    <img src="<?php echo base_url();?>assets/images/logo/event-factory.png">
+                    <img class="scale-md-1" src="<?php echo base_url();?>assets/images/logo/event-factory.png">
                   </div>
                 </a>
                 <div class="back"><a href="<?php echo base_url();?>event-factory">
@@ -124,7 +124,7 @@ Service Area 01
             <div class="flip-container">
               <div class="flipper"><a href="<?php echo base_url();?>live-space">
                   <div clas="front">
-                    <img src="<?php echo base_url();?>assets/images/logo/live-space.png">
+                    <img class="scale-md-1" src="<?php echo base_url();?>assets/images/logo/live-space.png">
                   </div>
                 </a>
                 <div class="back"><a href="<?php echo base_url();?>live-space">
@@ -161,7 +161,7 @@ Service Area 01
   </div> -->
   <div class="container">
     <div class="title-area text-center title-anim">
-      <span class="sub-title style2">Check out some of our</span>
+      <!-- <span class="sub-title style2">Check out some of our</span> -->
       <h2 class="sec-title">Success Story</h2>
     </div>
     <div class="row gx-90 gy-40 justify-content-center success-story">
@@ -327,7 +327,7 @@ Service Area 01
     <div class="row justify-content-center">
       <div class="col-lg-10 col-md-12">
         <div class="title-area text-center title-anim">
-          <span class="sub-title style2">Testimonials</span>
+          <span class="sub-title style2" style="font-size: 16px;margin-bottom: 15px;">Testimonials</span>
           <h2 class="sec-title">Hear from our customers</h2>
         </div>
       </div>
@@ -499,12 +499,76 @@ Service Area 01
     Media Area  
 ==============================-->
 
-<section class="blog-area-2 mt-5">
+<section class="custom-banner blog-area-2 mt-5">
   <div class="container">
     <div class="title-area text-center title-anim">
       <h2 class="sec-title">Media</h2>
     </div>
-    <div class="row gy-4 filter-active mb-60" style="position: relative; height: 1083.88px;">
+    <div class="owl-carousel owl-theme d-block d-md-none">
+      <div class="row gy-4 filter-active" style="position: relative;">
+        <div class="col-md-6 col-lg-4 filter-item cat4" style="position: absolute; left: 0px; top: 0px;">
+          <div class="project-box title-anim" style="perspective: 400px;">
+            <div
+              style="display: block; text-align: start; position: relative; translate: none; rotate: none; scale: none; transform-origin: 212px 200.023px; transform: translate3d(0px, 0px, 0px); opacity: 1;">
+              <div class="project-img global-img">
+                <img src="<?php echo base_url();?>assets/images/media-1.png" alt="portfolio">
+              </div>
+            </div>
+            <div
+              style="display: block; text-align: start; position: relative; translate: none; rotate: none; scale: none; transform-origin: 212px 58.9453px; transform: translate3d(0px, 0px, 0px); opacity: 1;">
+              <div class="project-card-details">
+                <p class="subtitle">March 05, 2021</p>
+                <h3 class="title"><a target="_blank"
+                    href="https://x.com/valueeducator/status/1664270650385772544?s=48&t=VLEp7xwuMgk94BQaN6gfog">LISTING
+                    CEREMONY OF PARTY CRUISERS LTD.</a></h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row gy-4 filter-active" style="position: relative;">
+        <div class="col-md-6 col-lg-4 filter-item cat4 cat2 cat3" style="position: absolute; left: 448px; top: 0px;">
+          <div class="project-box title-anim" style="perspective: 400px;">
+            <div
+              style="display: block; text-align: start; position: relative; translate: none; rotate: none; scale: none; transform-origin: 212px 200.023px; transform: translate3d(0px, 0px, 0px); opacity: 1;">
+              <div class="project-img global-img">
+                <img src="<?php echo base_url();?>assets/images/media-2.png" alt="portfolio">
+              </div>
+            </div>
+            <div
+              style="display: block; text-align: start; position: relative; translate: none; rotate: none; scale: none; transform-origin: 212px 58.9453px; transform: translate3d(0px, 0px, 0px); opacity: 1;">
+              <div class="project-card-details">
+                <p class="subtitle">March 05, 2021</p>
+                <h3 class="title"><a target="_blank"
+                    href="https://www.vogue.in/gallery/a-music-festival-inspired-wedding-in-the-thar-desert?fbclid=PAAaaM0ATCxfa5pYMXUH39dCiwaV9PzW6c76VVcs05NLRmhoOPIzJOR4YbK_U">Vows
+                    Vachan - The Wedding Curators</a></h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row gy-4 filter-active" style="position: relative;">
+        <div class="col-md-6 col-lg-4 filter-item cat1 cat3" style="position: absolute; left: 896px; top: 0px;">
+          <div class="project-box title-anim" style="perspective: 400px;">
+            <div
+              style="display: block; text-align: start; position: relative; translate: none; rotate: none; scale: none; transform-origin: 212px 200.023px; transform: translate3d(0px, 0px, 0px); opacity: 1;">
+              <div class="project-img global-img">
+                <img src="<?php echo base_url();?>assets/images/media-3.png" alt="portfolio">
+              </div>
+            </div>
+            <div
+              style="display: block; text-align: start; position: relative; translate: none; rotate: none; scale: none; transform-origin: 212px 58.9453px; transform: translate3d(0px, 0px, 0px); opacity: 1;">
+              <div class="project-card-details">
+                <p class="subtitle">March 05, 2021</p>
+                <h3 class="title"><a target="_blank" href="https://www.youtube.com/watch?v=32EFHNHNGnY">Event Factory -
+                    Corporate Impression Management Division</a></h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="d-none d-md-block row gy-4 filter-active mb-60 d-" style="position: relative; height: 1083.88px;">
       <div class="col-md-6 col-lg-4 filter-item cat4" style="position: absolute; left: 0px; top: 0px;">
         <div class="project-box title-anim" style="perspective: 400px;">
           <div
@@ -572,14 +636,158 @@ Service Area 01
 <!--==============================
     Blog Area 02 
     ==============================-->
-<section class="blog-area-2 space-top mb-5">
+<section class="blog-area-2 custom-banner space-top mb-5">
   <div class="container">
     <div class="title-area text-center title-anim">
       <span class="sub-title style2">Our Blogs Posts
       </span>
       <h2 class="sec-title">Latest from our Journal</h2>
     </div>
-    <div class="row gy-40 masonary-active">
+    <div class="owl-carousel owl-theme d-block d-md-none">
+    <?php 
+        if(isset($blog['0'])){        
+
+            $formattedDate = '';
+            $dateString = $blog['0']['blog_date'];
+            $date = new DateTime($dateString);
+            $formattedDate = $date->format('d M Y');
+    ?>
+      <div class="col-xl-3 col-lg-6 col-md-6 filter-item">
+        <div class="blog-card style3 title-anim">
+          <div class="blog-img">
+            <img src="<?php echo $blog['0']['image_medium']; ?>" alt="<?php echo $blog['0']['image_alt']; ?>"
+              alt="blog image">
+          </div>
+          <div class="blog-content">
+            <div class="post-meta-item blog-meta">
+              <a><?php echo strtoupper($blog['0']['author']); ?></a>
+              <a><?php echo $formattedDate; ?></a>
+              <a><?php echo $blog['0']['categories']; ?></a>
+            </div>
+            <h3 class="blog-title"><a
+                href="<?php echo base_url('blog-details'); ?>?slug=<?php echo $blog['0']['slug']; ?>"><?php echo $blog['0']['title']; ?></a>
+            </h3>
+            <a href="<?php echo base_url('blog-details'); ?>?slug=<?php echo $blog['0']['slug']; ?>"
+              class="link-btn style2">Continue Reading <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+      <?php } ?>
+      <?php 
+          if(isset($blog['1'])){        
+
+              $formattedDate = '';
+              $dateString = $blog['1']['blog_date'];
+              $date = new DateTime($dateString);
+              $formattedDate = $date->format('d M Y');
+      ?>
+      <div class="col-xl-3 col-lg-6 col-md-6 filter-item">
+        <div class="blog-card style4 title-anim">
+          <div class="blog-img">
+            <img style="max-height: 200px;min-height: 200px;" src="<?php echo $blog['1']['image_medium']; ?>"
+              alt="<?php echo $blog['1']['image_alt']; ?>">
+          </div>
+          <div class="blog-content">
+            <div class="post-meta-item blog-meta">
+              <a><?php echo strtoupper($blog['1']['author']); ?></a>
+              <a><?php echo $formattedDate; ?></a>
+              <a><?php echo $blog['1']['categories']; ?></a>
+            </div>
+            <h3 class="blog-title"  title="<?php echo $blog['1']['title']; ?>" style="display: block;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;"><a
+                href="<?php echo base_url('blog-details'); ?>?slug=<?php echo $blog['1']['slug']; ?>"><?php echo $blog['1']['title']; ?></a>
+            </h3>
+            <a href="<?php echo base_url('blog-details'); ?>?slug=<?php echo $blog['1']['slug']; ?>"
+              class="link-btn style2 mt-4">Continue Reading <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+      <?php } 
+         if(isset($blog['2'])){        
+
+            $formattedDate = '';
+            $dateString = $blog['2']['blog_date'];
+            $date = new DateTime($dateString);
+            $formattedDate = $date->format('d M Y');
+        ?>
+      <div class="col-xl-3 col-lg-6 col-md-6 filter-item">
+        <div class="blog-card style4 title-anim">
+          <div class="blog-img">
+            <img style="max-height: 200px;min-height: 200px;" src="<?php echo $blog['2']['image_medium']; ?>"
+              alt="<?php echo $blog['2']['image_alt']; ?>">
+          </div>
+          <div class="blog-content">
+            <div class="post-meta-item blog-meta">
+              <a><?php echo strtoupper($blog['2']['author']); ?></a>
+              <a><?php echo $formattedDate; ?></a>
+              <a><?php echo $blog['2']['categories']; ?></a>
+            </div>
+            <h3 class="blog-title"  title="<?php echo $blog['2']['title']; ?>" style="display: block;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;"><a
+                href="<?php echo base_url('blog-details'); ?>?slug=<?php echo $blog['2']['slug']; ?>"><?php echo $blog['2']['title']; ?></a>
+            </h3>
+            <a href="<?php echo base_url('blog-details'); ?>?slug=<?php echo $blog['2']['slug']; ?>"
+              class="link-btn style2 mt-4">Continue Reading <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+      <?php } 
+         if(isset($blog['3'])){        
+
+            $formattedDate = '';
+            $dateString = $blog['3']['blog_date'];
+            $date = new DateTime($dateString);
+            $formattedDate = $date->format('d M Y');
+        ?>
+      <div class="col-xl-3 col-lg-6 col-md-6 filter-item">
+        <div class="blog-card style4 title-anim">
+          <div class="blog-img">
+            <img style="max-height: 200px;min-height: 200px;" src="<?php echo $blog['3']['image_medium']; ?>"
+              alt="<?php echo $blog['3']['image_alt']; ?>">
+          </div>
+          <div class="blog-content">
+            <div class="post-meta-item blog-meta">
+              <a><?php echo strtoupper($blog['3']['author']); ?></a>
+              <a><?php echo $formattedDate; ?></a>
+              <a><?php echo $blog['3']['categories']; ?></a>
+            </div>
+            <h3 class="blog-title" title="<?php echo $blog['3']['title']; ?>" style="display: block;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;"><a
+                href="<?php echo base_url('blog-details'); ?>?slug=<?php echo $blog['3']['slug']; ?>"><?php echo $blog['3']['title']; ?></a>
+            </h3>
+            <a href="<?php echo base_url('blog-details'); ?>?slug=<?php echo $blog['3']['slug']; ?>"
+              class="link-btn style2 mt-4">Continue Reading <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+      <?php } 
+         if(isset($blog['4'])){        
+
+            $formattedDate = '';
+            $dateString = $blog['4']['blog_date'];
+            $date = new DateTime($dateString);
+            $formattedDate = $date->format('d M Y');
+        ?>
+      <div class="col-xl-3 col-lg-6 col-md-6 filter-item">
+        <div class="blog-card style4 title-anim">
+          <div class="blog-img">
+            <img style="max-height: 200px;min-height: 200px;" src="<?php echo $blog['4']['image_medium']; ?>"
+              alt="<?php echo $blog['4']['image_alt']; ?>">
+          </div>
+          <div class="blog-content">
+            <div class="post-meta-item blog-meta">
+              <a><?php echo strtoupper($blog['4']['author']); ?></a>
+              <a><?php echo $formattedDate; ?></a>
+              <a><?php echo $blog['4']['categories']; ?></a>
+            </div>
+            <h3 class="blog-title"  title="<?php echo $blog['4']['title']; ?>" style="display: block;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;"><a
+                href="<?php echo base_url('blog-details'); ?>?slug=<?php echo $blog['4']['slug']; ?>"><?php echo $blog['4']['title']; ?></a>
+            </h3>
+            <a href="<?php echo base_url('blog-details'); ?>?slug=<?php echo $blog['4']['slug']; ?>"
+              class="link-btn style2 mt-4">Continue Reading <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+      <?php } ?>
+    </div>
+    <div class="row gy-40 masonary-active d-none d-md-block">
       <?php 
         if(isset($blog['0'])){        
 

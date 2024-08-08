@@ -13,7 +13,7 @@
       <div class="row justify-content-between">
         <div class="col-md-6 col-lg-4 col-xl-3">
           <div class="widget widget_nav_menu footer-widget">
-            <h3 class="widget_title">Brands</h3>
+            <h3 class="widget_title">Brand DIvision</h3>
             <div class="menu-all-pages-container list-column2">
               <ul class="menu">
                 <li class="<?= ($active === 4 ? 'active' : '') ?>"><a

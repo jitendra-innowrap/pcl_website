@@ -56,7 +56,7 @@ Mobile Menu
     <button class="menu-toggle"><i class="fas fa-times"></i></button>
     <div class="mobile-logo">
       <a href="<?php echo base_url();?>"><img class="company-logo"
-          src="<?php echo base_url();?>assets/images/logo/Party-Cruisers-Limited-White.png" alt="PCL"></a>
+          src="<?php echo base_url();?>assets/images/logo/PCL-logo.png" alt="PCL"></a>
     </div>
     <div class="mobile-menu">
       <ul>

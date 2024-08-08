@@ -30,13 +30,13 @@ Service Area 01
 ==============================-->
 <div class="service-area-2 mt-5 overflow-hidden">
   <div class="container">
-    <div class="row align-items-center justify-content-between">
+    <div class="row  align-items-center flex-column-reverse flex-lg-row justify-content-between">
       <div class="col-lg-5 mb-3">
         <div class="about-company-collage">
           <img src="<?php echo base_url();?>assets/images/about_us.png">
         </div>
       </div>
-      <div class="col-lg-7">
+      <div class="col-lg-7 mb-3">
         <div class="about-content-wrap title-anim" style="perspective: 400px;">
           <div
             style="display: block; text-align: start; position: relative; translate: none; rotate: none; scale: none; transform-origin: 183px 194.297px; transform: translate3d(0px, 0px, 0px); opacity: 1;">
@@ -82,7 +82,7 @@ Service Area 01
 
 <div class="mb-4 overflow-hidden">
   <div class="container">
-    <div class="mt-5 d-flex flex-wrap gy-40 justify-content-lg-center justify-content-center team-custom">
+    <div class="mt-4 d-flex flex-wrap gy-40 justify-content-lg-center justify-content-center team-custom">
       <div class="col-6 about-us-logo"><a href="<?php echo base_url();?>house-of-vivaah">
           <img src="<?php echo base_url();?>assets/images/logo/vivaah.png">
         </a></div>

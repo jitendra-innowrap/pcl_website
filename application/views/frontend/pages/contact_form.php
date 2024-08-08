@@ -112,6 +112,20 @@
                   <div class="error" id="otherEventError"></div>
                 </div>
               </div>
+              <div class="col-lg-4">
+                <label>Service Required*</label>
+                <div class="form-group form-icon-left">
+                  <select name="service" id="service" class="form-control style-border">
+                    <option value="">Select Service</option>
+                    <option value="design & Decor">Design & Decor</option>
+                    <option value="planning & Management">Planning & Management</option>
+                    <option value="artist & Entertainment">Artist & Entertainment</option>
+                    <option value="venue Booking">Venue Booking</option>
+                    <option value="all of the above">All of the above</option>
+                  </select>
+                  <div class="error" id="serviceError"></div>
+                </div>
+              </div>
             </div>
 
             <div class="form-btn col-12 text-center">
