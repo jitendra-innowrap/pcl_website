@@ -84,19 +84,19 @@ Service Area 01
   <div class="container">
     <div class="mt-4 d-flex flex-wrap gy-40 justify-content-lg-center justify-content-center team-custom">
       <div class="col-6 about-us-logo"><a href="<?php echo base_url();?>house-of-vivaah">
-          <img src="<?php echo base_url();?>assets/images/logo/vivaah.png">
+          <img class="scale-md-1" src="<?php echo base_url();?>assets/images/logo/vivaah.png">
         </a></div>
       <div class="col-6 about-us-logo"><a href="<?php echo base_url();?>vows-vachan">
           <img src="<?php echo base_url();?>assets/images/logo/vows-vachan.png">
         </a></div>
       <div class="col-6 about-us-logo"><a href="<?php echo base_url();?>event-factory">
-          <img src="<?php echo base_url();?>assets/images/logo/event-factory.png">
+          <img class="scale-md-1" src="<?php echo base_url();?>assets/images/logo/event-factory.png">
         </a></div>
         <div class="col-6 about-us-logo"><a href="<?php echo base_url();?>party-house">
           <img src="<?php echo base_url();?>assets/images/logo/party-house.png">
         </a></div>
       <div class="col-6 about-us-logo"><a href="<?php echo base_url();?>live-space">
-          <img src="<?php echo base_url();?>assets/images/logo/live-space.png">
+          <img class="scale-md-1" src="<?php echo base_url();?>assets/images/logo/live-space.png">
         </a></div>
       <div class="col-6 about-us-logo"><a href="<?php echo base_url();?>venue-affairs">
           <img src="<?php echo base_url();?>assets/images/logo/venue-affairs.png">
