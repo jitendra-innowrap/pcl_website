@@ -1283,71 +1283,96 @@
         gsap animation
     ---------------------------------------------------*/
     window.onload = function() {
+        const isIphoneDevice = isIphone();
+    
         let splitTitleLines = gsap.utils.toArray(".title-anim");
-    
         splitTitleLines.forEach(splitTextLine => {
-            const tl = gsap.timeline({
-                scrollTrigger: {
-                    trigger: splitTextLine,
-                    start: 'top 90%',
-                    end: 'bottom 60%',
-                    scrub: false,
-                    markers: false,
-                    toggleActions: 'play none none none'
-                }
-            });
+            if (!isIphoneDevice) {
+                const tl = gsap.timeline({
+                    scrollTrigger: {
+                        trigger: splitTextLine,
+                        start: 'top 90%',
+                        end: 'bottom 60%',
+                        scrub: false,
+                        markers: false,
+                        toggleActions: 'play none none none'
+                    }
+                });
     
-            const itemSplitted = new SplitText(splitTextLine, { type: "words, lines" });
-            gsap.set(splitTextLine, { perspective: 400 });
-            itemSplitted.split({ type: "lines" });
-            tl.from(itemSplitted.lines, { duration: 1, delay: 0.3, opacity: 0, rotationX: -80, force3D: true, transformOrigin: "top center -50", stagger: 0.1 });
-        });
-        const fadeElements = document.querySelectorAll(".fade_left");
-    
-        fadeElements.forEach((element, index) => {
-        gsap.set(element, { x: -50, opacity: 0 });
-        gsap.to(element, {
-            scrollTrigger: {
-            trigger: element,
-            start: "top center+=300"
-            },
-            x: 0,
-            opacity: 1,
-            ease: "power2.out",
-            duration: 1,
-            stagger: {
-            each: 0.2,
-            from: index * 0.2 // stagger delay based on element index
+                const itemSplitted = new SplitText(splitTextLine, { type: "words, lines" });
+                gsap.set(splitTextLine, { perspective: 400 });
+                itemSplitted.split({ type: "lines" });
+                tl.from(itemSplitted.lines, {
+                    duration: 1,
+                    delay: 0.3,
+                    opacity: 0,
+                    rotationX: -80,
+                    force3D: true,
+                    transformOrigin: "top center -50",
+                    stagger: 0.1
+                });
+            } else {
+                gsap.set(splitTextLine, { opacity: 1, rotationX: 0, transformOrigin: "top center -50" });
             }
         });
+    
+        const fadeElements = document.querySelectorAll(".fade_left");
+        fadeElements.forEach((element, index) => {
+            if (!isIphoneDevice) {
+                gsap.set(element, { x: -50, opacity: 0 });
+                gsap.to(element, {
+                    scrollTrigger: {
+                        trigger: element,
+                        start: "top center+=300"
+                    },
+                    x: 0,
+                    opacity: 1,
+                    ease: "power2.out",
+                    duration: 1,
+                    stagger: {
+                        each: 0.2,
+                        from: index * 0.2
+                    }
+                });
+            } else {
+                gsap.set(element, { x: 0, opacity: 1 });
+            }
         });
-        
-        gsap.registerPlugin(ScrollTrigger);
     
         let revealContainers = document.querySelectorAll(".img-anim");
-    
         revealContainers.forEach((container) => {
-        let image = container.querySelector("img");
-        let tl = gsap.timeline({
-            scrollTrigger: {
-            trigger: container,
-            toggleActions: "restart none none reset"
+            let image = container.querySelector("img");
+            if (!isIphoneDevice) {
+                let tl = gsap.timeline({
+                    scrollTrigger: {
+                        trigger: container,
+                        toggleActions: "restart none none reset"
+                    }
+                });
+    
+                tl.set(container, { autoAlpha: 1 });
+                tl.from(container, 1.5, {
+                    xPercent: -100,
+                    ease: Power2.out
+                });
+                tl.from(image, 1.5, {
+                    xPercent: 100,
+                    scale: 1.3,
+                    delay: -1.5,
+                    ease: Power2.out
+                });
+            } else {
+                gsap.set(container, { autoAlpha: 1, xPercent: 0 });
+                gsap.set(image, { xPercent: 0, scale: 1 });
             }
         });
-    
-        tl.set(container, { autoAlpha: 1 });
-        tl.from(container, 1.5, {
-            xPercent: -100,
-            ease: Power2.out
-        });
-        tl.from(image, 1.5, {
-            xPercent: 100,
-            scale: 1.3,
-            delay: -1.5,
-            ease: Power2.out
-        });
-        });
     };
+    
+    // iPhone detection function
+    function isIphone() {
+        return /iPhone/.test(navigator.userAgent) && !window.MSStream;
+    }
+    
     
 
 

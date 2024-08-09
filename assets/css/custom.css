@@ -296,7 +296,7 @@
     font-weight: 500;
 }
 .success-story ul{
-  justify-content: space-evenly;
+  justify-content: flex-start;
 }
 .custom-bolg-latest-post{
   display: none;
