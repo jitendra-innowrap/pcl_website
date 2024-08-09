@@ -327,7 +327,7 @@ Service Area 01
     <div class="row justify-content-center">
       <div class="col-lg-10 col-md-12">
         <div class="title-area text-center title-anim">
-          <span class="sub-title style2" style="font-size: 16px;margin-bottom: 15px;">Testimonials</span>
+          <span class="sub-title style2" style="font-size: 16px;margin-bottom: 15px; margin-top: unset;">Testimonials</span>
           <h2 class="sec-title">Hear from our customers</h2>
         </div>
       </div>
